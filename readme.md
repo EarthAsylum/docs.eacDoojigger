@@ -22,6 +22,12 @@ GitHub URI:             https://earthasylum.github.io/docs.eacDoojigger/
 
 > {eac}Doojigger - A new path to rapid plugin development. A powerful, extensible, multi-function architectural framework and utility plugin for WordPress. {eac}Doojigger streamlines the plugin development process and allows you to create professional-grade plugins in a fraction of the time. Take your WordPress development to the next level with {eac}Doojigger.
 
+### Links
+
++    [Download {eac}Dooojigger Extras](https://swregistry.earthasylum.com/software-updates/eacdoojigger-extras.zip)
++    [Extras Documentation Wiki](https://github.com/EarthAsylum/docs.eacDoojigger/wiki)
++    [PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
+
 ### Description
 
 #### Summary
