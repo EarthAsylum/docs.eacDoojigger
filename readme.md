@@ -11,7 +11,7 @@ Contributors:           [earthasylum](https://github.com/earthasylum),[kevinburk
 License:                EarthAsylum Consulting Proprietary License - {eac}PLv1  
 License URI:            https://eacDoojigger.earthasylum.com/end-user-license-agreement/  
 Tags:                   plugin development, rapid development, multi-function, security, encryption, debugging, administration, contextual-help, session management, maintenance mode, plugin framework, plugin derivative, plugin extensions, toolkit  
-GitHub URI:             https://earthasylum.github.io/docs.eacDoojigger/  
+GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki  
 
 </details>
 
@@ -23,11 +23,9 @@ GitHub URI:             https://earthasylum.github.io/docs.eacDoojigger/
 
 :open_file_folder: [{eac}Doojigger Wiki: documentation and examples](https://github.com/EarthAsylum/docs.eacDoojigger/wiki)
 
-:open_file_folder: [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
+:green_book: [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
 
 :bookmark_tabs: [{eac}Doojigger Web Site](https://eacdoojigger.earthasylum.com)
-
-:notebook: [Realted Plugins &amp; Extensions](https://github.com/orgs/EarthAsylum/repositories)
 
 ---
 
