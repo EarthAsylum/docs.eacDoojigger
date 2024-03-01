@@ -34,25 +34,25 @@ GitHub URI:             https://earthasylum.github.io/docs.eacDoojigger/
 
 #### See Also
 
-+   [{eac}SoftwareRegistry](/EarthAsylum/eacSoftwareRegistry/)
++   [{eac}SoftwareRegistry](https://github.com/EarthAsylum/eacSoftwareRegistry/)
 A full-featured Software Registration/Licensing Server built on {eac}Doojigger.
 
-+   [{eac}SimpleSMTP](/EarthAsylum/eacSimpleSMTP/)
++   [{eac}SimpleSMTP](https://github.com/EarthAsylum/eacSimpleSMTP/)
 An {eac}Doojigger extension to configure WordPress wp_mail and phpmailer to use your SMTP (outgoing) mail server when sending email.
 
-+   [{eac}SimpleAWS](/EarthAsylum/eacSimpleAWS/)
++   [{eac}SimpleAWS](https://github.com/EarthAsylum/eacSimpleAWS/)
 An {eac}Doojigger extension to include and enable use of the Amazon Web Services (AWS) PHP Software Development Kit (SDK).
 
-+   [{eac}SimpleCDN](/EarthAsylum/eacsimpleCDN/)
++   [{eac}SimpleCDN](https://github.com/EarthAsylum/eacsimpleCDN/)
 An {eac}Doojigger extension to enable the use of Content Delivery Network assets on your WordPress site, significantly decreasing your page load times and improving the user experience.
 
-+   [{eac}ObjectCache](/EarthAsylum/ObjectCache/)
++   [{eac}ObjectCache](https://github.com/EarthAsylum/ObjectCache/)
 A light-weight and very efficient drop-in persistent object cache that uses a fast SQLite database to cache WordPress objects.
 
-+   [{eac}Readme](/EarthAsylum/eacReadme/)
++   [{eac}Readme](https://github.com/EarthAsylum/eacReadme/)
 An {eac}Doojigger extension to translate a WordPress style markdown 'readme.txt' file and provides _shortcodes_ to access header lines, section blocks, or the entire document.
 
-+   [{eac}MetaPixel](/EarthAsylum/eacMetaPixel/)
++   [{eac}MetaPixel](https://github.com/EarthAsylum/eacMetaPixel/)
 An {eac}Doojigger extension to install the Facebook/Meta Pixel to enable tracking of PageView, ViewContent, AddToCart, InitiateCheckout and Purchase events.
 
 
