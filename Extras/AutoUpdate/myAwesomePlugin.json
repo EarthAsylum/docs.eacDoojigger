@@ -1,0 +1,41 @@
+{
+    "slug": "myAwesomePlugin",
+    "plugin": "myAwesomePlugin/myAwesomePlugin.php",
+    "name": "My Awesome Plugin",
+    "homepage": "https://myawesomeserver.com/myAwesomePlugin/",
+    "description": "My Awesome Plugin is a really awesome plugin.",
+    "version": "1.0.1",
+    "last_updated": "13-Sep-2022",
+    "requires": "5.5.0",
+    "tested": "6.0",
+    "requires_php": "7.2",
+    "download_link": "https://myawesomeserver.com/myAwesomePlugin/myAwesomePlugin.zip",
+    "donate_link": "",
+    "author": "<a href=\"https://www.myawesomeserver.com\">Me</a>",
+    "contributors": {
+        "_me_": {
+            "display_name": "Me",
+            "profile": "https://profiles.wordpress.org/_me_/",
+            "avatar": "https://www.gravatar.com/avatar/_mygravitarcode_"
+        }
+    },
+    "sections": {
+        "description": "<p><em>My Awesome Plugin</em> is a really awesome plugin.</p>",
+        "installation": "<p>Installation of this plugin can be managed from the WordPress Dashboard » Plugins » Add New page by clicking the [Upload Plugin] button, then selecting the myAwesomePlugin.zip file from your computer.</p>",
+        "changelog": "<h4>Version 1.0.1 – Sep 13, 2022</h4>\n<ul>\n<li>Critical bug fixes.</li>\n</ul>\n<h4>Version 1.0.0 – Aug 31, 2022</h4>\n<ul>\n<li>Initial public release.</li>\n</ul>",
+        "screenshots": "<ol>\n<li>myAwesomePlugin\n<img src=\"https://myawesomeserver.com/myAwesomePlugin/assets/screenshot-1.png\" alt=\"myAwesomePlugin\" /></li>\n</ol>",
+        "upgrade_notice": "<p>This version fixes critical bugs. Please update immediately.</p>",
+        "other_notes": "<p>myAwesomePlugin is a derivative plugin of and requires installation and registration of <a href=\"https://eacDoojigger.earthasylum.com/\">{eac}Doojigger</a></p>",
+        "copyright": "<p>Copyright © 2022, Me</p>"
+    },
+    "banners": {
+        "low": "https://myawesomeserver.com/myAwesomePlugin/assets/banner-772x250.jpg",
+        "high": "https://myawesomeserver.com/myAwesomePlugin/assets/banner-1544x500.jpg"
+    },
+    "icons": {
+        "low": "https://myawesomeserver.com/myAwesomePlugin/assets/icon-128x128.png",
+        "high": "https://myawesomeserver.com/myAwesomePlugin/assets/icon-256x256.png"
+    },
+    "rating": 100,
+    "num_ratings": 1
+}
