@@ -19,13 +19,15 @@ GitHub URI:             https://earthasylum.github.io/docs.eacDoojigger/
 
 ### Links
 
-:package:  [Download {eac}Doojigger Extras](https://swregistry.earthasylum.com/software-updates/eacdoojigger-extras.zip)
+:package: [Download {eac}Doojigger Extras](https://swregistry.earthasylum.com/software-updates/eacdoojigger-extras.zip)
 
-:open_file_folder:    [{eac}Doojigger Wiki: documentation and examples](https://github.com/EarthAsylum/docs.eacDoojigger/wiki)
+:open_file_folder: [{eac}Doojigger Wiki: documentation and examples](https://github.com/EarthAsylum/docs.eacDoojigger/wiki)
 
-:open_file_folder:    [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
+:open_file_folder: [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
 
-:bookmark_tabs:       [{eac}Doojigger Web Site](https://eacdoojigger.earthasylum.com)
+:bookmark_tabs: [{eac}Doojigger Web Site](https://eacdoojigger.earthasylum.com)
+
+:notebook: [Realted Plugins &amp; Extensions](https://github.com/orgs/EarthAsylum/repositories)
 
 ---
 
