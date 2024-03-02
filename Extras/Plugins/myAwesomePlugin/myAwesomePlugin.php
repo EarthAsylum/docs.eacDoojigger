@@ -35,8 +35,6 @@
  * 	                                    											/ abstract_frontend.class.php \
  *	myAwesomePlugin.php -> myAwesomePlugin.class.php - abstract_context.class.php -             or                	- abstract_core.class.php = object of class myAwesomePlugin
  *	                                    											\ abstract_backend.class.php  /
- *	*	use abstract_context_wp.class.php for WordPress hosted plugins
- *		does not add plugin update code (Update URI)
  */
 
 /*
