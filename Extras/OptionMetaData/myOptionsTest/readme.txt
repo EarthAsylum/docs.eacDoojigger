@@ -4,7 +4,7 @@ Author: 			[EarthAsylum Consulting](https://www.earthasylum.com)
 Stable tag:         1.2.1
 Last Updated:       03-Oct-2023
 Requires at least:  5.5.0
-Tested up to:       6.4
+Tested up to:       6.5
 Requires PHP:       7.2
 
 My Options Test - used to define and test {eac}Doojigger option types.

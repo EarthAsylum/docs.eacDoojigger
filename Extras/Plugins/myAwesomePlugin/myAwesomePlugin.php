@@ -16,7 +16,7 @@
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
  * Version:				1.2.2
  * Requires at least:	5.5.0
- * Tested up to: 		6.4
+ * Tested up to: 		6.5
  * Requires PHP:		7.4
  * Requires EAC:		2.0
  * Plugin URI:			https://myawesomeserver.com/plugins/myAwesomePlugin/myAwesomePlugin.html
@@ -52,9 +52,8 @@ namespace myAwesomeNamespace
 	{
 		\add_action( 'all_admin_notices', function()
 			{
-				echo '<div class="notice notice-error is-dismissible">'.
-					 '<h4>myAwesomePlugin requires installation & activation of <em>{eac}Doojigger</em>.</h4>'.
-					 '</div>';
+			echo '<div class="notice notice-error is-dismissible"><p>myAwesoomePlugin requires installation & activation of '.
+				 '<a href="https://eacdoojigger.earthasylum.com/eacdoojigger" target="_blank">{eac}Doojigger</a>.</p></div>';
 			}
 		);
 		return;

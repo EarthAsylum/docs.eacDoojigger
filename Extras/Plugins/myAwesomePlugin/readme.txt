@@ -4,7 +4,7 @@ Author:             [Me](https://www.myawesomeserver.com\)
 Stable tag:         1.2.2
 Last Updated:       16-Sep-2023
 Requires at least:  5.5.0
-Tested up to:       6.4
+Tested up to:       6.5
 Requires PHP:       7.2
 Requires EAC:       2.0
 

@@ -16,7 +16,7 @@
  * Description:			My Options Test - used to define and test {eac}Doojigger option types.
  * Version:				1.3.0
  * Requires at least:	5.5.0
- * Tested up to: 		6.4
+ * Tested up to: 		6.5
  * Requires PHP:		7.2
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
@@ -30,9 +30,8 @@ namespace EarthAsylumConsulting
 	{
 		\add_action( 'all_admin_notices', function()
 			{
-				echo '<div class="notice notice-error is-dismissible">'.
-					 '<h4>myOptionsTest requires installation & activation of <em>{eac}Doojigger</em>.</h4>'.
-					 '</div>';
+			echo '<div class="notice notice-error is-dismissible"><p>myAoptionsTest requires installation & activation of '.
+				 '<a href="https://eacdoojigger.earthasylum.com/eacdoojigger" target="_blank">{eac}Doojigger</a>.</p></div>';
 			}
 		);
 		return;
