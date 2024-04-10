@@ -1,1 +1,5 @@
-docs export-ignore
+.distignore     export-ignore
+.gitattributes  export-ignore
+.gitignore      export-ignore
+docs/           export-ignore
+docs            export-ignore
