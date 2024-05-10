@@ -5,7 +5,7 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2023 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
  * @version		1.x
  */
 
@@ -70,18 +70,22 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_options_settings()
 	{
-		// wrapping the <h1> header in "settings_banner" <div> creates a sticky/floating header.
-		// a "settings_info" <div> is floated to the right of the <h1> header.
+		// optional: wrapping the <h1> header in "settings_banner" <div> creates a sticky/floating header.
 		$this->add_filter("options_form_h1_html", function($h1)
 			{
 				return 	"<div id='settings_banner'>" .
-							$h1 .
-							"<div id='settings_info'>" .
-								// adds a dashicons button...
-								"<a href='".$this->getSettingsURL()."' title='This settings page'>" .
-									"<span class='dashicons dashicons-admin-plugins button'><p>Settings</p></span>" .
-								"</a>" .
-							"</div>" .
+						$this->formatPluginHelp($h1) .
+						// a "settings_info" <div> is floated to the right of the <h1> header.
+						"<div id='settings_info'>" .
+							// adds a dashicons button with tooltip using admin color scheme...
+							"<a href='".
+							( is_multisite()
+								? network_admin_url('plugin-install.php')
+								: admin_url('plugin-install.php')
+							).
+							"?tab=plugin-information&plugin=myAwesomePlugin' target='_blank'>".
+							"<span style='color:var(--eac-admin-icon)' class='tooltip dashicons dashicons-info-outline button' title='myAwesomePlugin Information'></span></a>".
+						"</div>" .
 						"</div>";
 			}
 		);
@@ -98,6 +102,34 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 				'optionImport'
 			]
 		));
+
+		// custom stylesheet action to add css following the admin stylesheet
+		$this->add_action('admin_enqueue_styles', function($styleId)
+		{
+			ob_start()
+			?>
+				/* custom css here */
+			<?php
+			$style = ob_get_clean();
+			wp_add_inline_style( $styleId, $this->plugin->minifyString($style) );
+		});
+	}
+
+
+	/**
+	 * Additional formatting calback for help content
+	 *
+	 * @param string $content tab content
+	 * @return string
+	 */
+	public function formatPluginHelp(string $content): string
+	{
+		// wraps "My Awesome Plugin" or "myAwesomePlugin" in a colorized span
+		return preg_replace(
+			"/(My Awesome Plugin|myAwesomePlugin)/",
+			"<span style='color:var(--eac-admin-base)'>$1</span>",
+			$content
+		);
 	}
 
 

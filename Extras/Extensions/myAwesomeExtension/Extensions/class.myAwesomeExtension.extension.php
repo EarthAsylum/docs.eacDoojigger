@@ -5,7 +5,7 @@
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2022 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
  * @version		1.x
  * @uses		EarthAsylumConsulting\eacDoojigger
  */
@@ -17,7 +17,7 @@ class myAwesomeExtension extends \EarthAsylumConsulting\abstract_extension
 	/**
 	 * @var string extension version
 	 */
-	const VERSION	= '22.1108.1';
+	const VERSION	= '24.0510.1';
 
 
 	/**
@@ -53,7 +53,7 @@ class myAwesomeExtension extends \EarthAsylumConsulting\abstract_extension
 		$this->registerExtensionOptions( $this->className,
 			[
 				'my_option_name'	=> array(
-										'type'			=> 	'type: {input type}',
+										'type'			=> 	'text',
 										'label'			=> 	'label: {field label}',
 										'title'			=> 	'title: information text/html to be displayed',
 									//	'options'		=>	array({option,...}),

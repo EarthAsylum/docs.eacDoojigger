@@ -1,18 +1,18 @@
 === My Awesome Plugin ===
 Plugin URI:         https://myawesomeserver.com/myAwesomePlugin/
 Author:             [Me](https://www.myawesomeserver.com\)
-Stable tag:         1.2.2
-Last Updated:       16-Sep-2023
-Requires at least:  5.5.0
+Stable tag:         1.2.3
+Last Updated:       10-May-2024
+Requires at least:  5.8
 Tested up to:       6.5
-Requires PHP:       7.2
-Requires EAC:       2.0
+Requires PHP:       7.4
+Requires EAC:       2.5
 
 My Awesome Plugin is a really awesome plugin.
 
 == Description ==
 
-*My Awesome Plugin* is a really awesome plugin.
+*My Awesome Plugin* is a really awesome plugin providing a base framework for you custom plugin.
 
 Version 1.2+ uses the {eac}Doojigger swRegistrationUI to register this software using the {eac}Software Registration SDK.
 
@@ -25,6 +25,10 @@ Version 1.2+ uses the {eac}Doojigger swRegistrationUI to register this software 
 Installation of this plugin can be managed from the WordPress Dashboard » Plugins » Add New page by clicking the [Upload Plugin] button, then selecting the myAwesomePlugin.zip file from your computer.
 
 == Changelog ==
+
+= Version 1.2.3 – May 10, 2024 =
+
++	Update minimum requirements.
 
 = Version 1.2.2 – September 16, 2023 =
 

@@ -145,7 +145,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 
@@ -183,7 +183,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2023 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2024 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
 </section>
 
                                     </dd>
@@ -233,7 +233,14 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_after_plugin_update">plugin_admin_after_plugin_update()</a>
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_deleteUpdaterTransient">deleteUpdaterTransient()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>delete updater transient</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_after_plugin_update">plugin_update_after_plugin_update()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -241,39 +248,39 @@
 occurs before new code is loaded</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_allow_external_host">plugin_admin_allow_external_host()</a>
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_allow_external_host">plugin_update_allow_external_host()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>allow access to external host on &#039;http_request_host_is_external&#039; filter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_disable_auto_update">plugin_admin_disable_auto_update()</a>
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_disable_auto_update">plugin_update_disable_auto_update()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>disable auto-update for this plugin - plugin_auto_update_setting_html</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_get_plugin_info">plugin_admin_get_plugin_info()</a>
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_get_plugin_info">plugin_update_get_plugin_info()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
 <dd>get plugin information on &#039;plugins_api&#039; filter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_push_hostname_update">plugin_admin_push_hostname_update()</a>
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_update_plugins_hostname">plugin_update_update_plugins_hostname()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
 <dd>check for plugin update on &#039;update_plugins_{$hostname}&#039; filter (WP 5.8.0+)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_push_plugin_update">plugin_admin_push_plugin_update()</a>
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_update_plugins_transient">plugin_update_update_plugins_transient()</a>
     <span>
                                 &nbsp;: object    </span>
 </dt>
-<dd>check for plugin update on &#039;site_transient_update_plugins&#039; filter</dd>
+<dd>check for plugin update on &#039;site_transient_update_plugins&#039; filter.</dd>
 
         </dl>
 
@@ -292,14 +299,47 @@ occurs before new code is loaded</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_plugin_admin_after_plugin_update">
-        plugin_admin_after_plugin_update()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_after_plugin_update" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_deleteUpdaterTransient">
+        deleteUpdaterTransient()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_deleteUpdaterTransient" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">507</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">delete updater transient</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteUpdaterTransient</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_plugin_update_after_plugin_update">
+        plugin_update_after_plugin_update()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_after_plugin_update" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">538</span>
 
     </aside>
 
@@ -308,7 +348,7 @@ occurs before new code is loaded</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">plugin_admin_after_plugin_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$WP_Upgrader</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hook_extra</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">plugin_update_after_plugin_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$WP_Upgrader</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hook_extra</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -344,14 +384,14 @@ occurs before new code is loaded</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_plugin_admin_allow_external_host">
-        plugin_admin_allow_external_host()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_allow_external_host" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_plugin_update_allow_external_host">
+        plugin_update_allow_external_host()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_allow_external_host" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">527</span>
+    <span class="phpdocumentor-element-found-in__line">558</span>
 
     </aside>
 
@@ -359,7 +399,7 @@ occurs before new code is loaded</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">plugin_admin_allow_external_host</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allow</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$host</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">plugin_update_allow_external_host</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allow</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$host</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -407,14 +447,14 @@ occurs before new code is loaded</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_plugin_admin_disable_auto_update">
-        plugin_admin_disable_auto_update()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_disable_auto_update" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_plugin_update_disable_auto_update">
+        plugin_update_disable_auto_update()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_disable_auto_update" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">249</span>
+    <span class="phpdocumentor-element-found-in__line">286</span>
 
     </aside>
 
@@ -422,7 +462,7 @@ occurs before new code is loaded</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">plugin_admin_disable_auto_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$html</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_file</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">plugin_update_disable_auto_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$html</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_file</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -469,14 +509,14 @@ occurs before new code is loaded</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_plugin_admin_get_plugin_info">
-        plugin_admin_get_plugin_info()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_get_plugin_info" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_plugin_update_get_plugin_info">
+        plugin_update_get_plugin_info()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_get_plugin_info" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">267</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 
     </aside>
 
@@ -484,7 +524,7 @@ occurs before new code is loaded</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">plugin_admin_get_plugin_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+                    <span class="phpdocumentor-signature__name">plugin_update_get_plugin_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -532,14 +572,14 @@ occurs before new code is loaded</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_plugin_admin_push_hostname_update">
-        plugin_admin_push_hostname_update()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_push_hostname_update" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_plugin_update_update_plugins_hostname">
+        plugin_update_update_plugins_hostname()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_update_plugins_hostname" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">311</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 
     </aside>
 
@@ -547,7 +587,7 @@ occurs before new code is loaded</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">plugin_admin_push_hostname_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|false&nbsp;</span><span class="phpdocumentor-signature__argument__name">$update</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_file</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$locales</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+                    <span class="phpdocumentor-signature__name">plugin_update_update_plugins_hostname</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|false&nbsp;</span><span class="phpdocumentor-signature__argument__name">$update</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_file</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$locales</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -606,24 +646,26 @@ occurs before new code is loaded</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_plugin_admin_push_plugin_update">
-        plugin_admin_push_plugin_update()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_push_plugin_update" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_plugin_update_update_plugins_transient">
+        plugin_update_update_plugins_transient()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_update_plugins_transient" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-update-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_update.trait.php">plugin_update.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">check for plugin update on &#039;site_transient_update_plugins&#039; filter</p>
+        <p class="phpdocumentor-summary">check for plugin update on &#039;site_transient_update_plugins&#039; filter.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">plugin_admin_push_plugin_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$transient</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+                    <span class="phpdocumentor-signature__name">plugin_update_update_plugins_transient</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$transient</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>the filter is called often</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">

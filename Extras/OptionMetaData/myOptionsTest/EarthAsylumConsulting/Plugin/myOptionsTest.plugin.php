@@ -2,11 +2,13 @@
 /**
  * EarthAsylum Consulting {eac}Doojigger derivative
  *
+ * Provides examples of input types, parameters, and processing callbacks & filters.
+ *
  * @category	WordPress Plugin
  * @package		myOptionsTest, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2023 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
+ * @version		24.0426.1
  */
 
 namespace EarthAsylumConsulting\Plugin;
@@ -94,78 +96,108 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 		foreach (self::INPUT_TYPES as $type)
 		{
 			$typeId = str_replace('-','_',$type);
-			/* define the input meta-data array */
-			$options[ "input_{$typeId}" ] = array(
-							'type'			=> 	$type,
-							'title'			=> 	"HTML input type: {$type}",
-							'label'			=> 	ucwords(str_replace('-',' ',$type)),
-							'before'		=>	'<span class="dashicons dashicons-arrow-left-alt2"></span>',
-                    		'options'       =>  [$type=>$type, 'option2'=>'2', 'option3'=>'3'],
-							'default'		=> 	$type,
-							'after'			=>	'<span class="dashicons dashicons-arrow-right-alt2"></span>',
-							'info'			=> 	"Saved option name: '".$this->prefixOptionName("input_{$typeId}")."'",
-						//	'class'			=>	"{$type}_class",
-						//	'style'			=>	"max-width: 50em;",
-							/* attributes as a string */
-							'attributes'	=>	"placeholder='{$type}' alt='{$type} input' title='input type: {$type}'",
-							/* attributes as array of strings */
-						//	'attributes'	=>	[ "placeholder='{$type}'", "alt='{$type} input'", "title='input type: {$type}'" ],
-							/* attributes as associative array */
-						//	'attributes'	=>	[ 'placeholder'=>$type, 'alt'=>"{$type} input", 'title'=>"input type: {$type}" ],
-							/* attributes as array of [strings] */
-						//	'attributes'	=> 	[ ["data-1"], ["data-2"], ["data-3"=>"data-3"] ],
-							'sanitize'		=>	[ $this,'sanitize_callback' ],
-							'filter'		=>	[ FILTER_CALLBACK, ['options'=>[$this,'filter_callback']] ],
-							'validate'		=>	[ $this,'validate_callback' ],
-						//  contextual help using meta ([title],[type],[info]) macros
-							'help'			=>	"<details><summary>[title]</summary>This field is an HTML input type '[type]'<br>[info]</details>",
+			/*
+				define the input meta-data array.
+				normally fields are defineed individually with appropriate parameters for each.
+				here we use a foreach loop for all input types where some parameters may not be applicable.
+			*/
+			$options[ "input_{$typeId}" ] = array
+			(
+					'type'				=> 	$type,
+					'title'				=> 	"HTML input type: {$type}",
+					'label'				=> 	ucwords(str_replace('-',' ',$type)),
+					'before'			=>	'<span class="dashicons dashicons-arrow-left-alt2"></span>',
+					'options'       	=>  [$type=>$type, 'option2'=>'2', 'option3'=>'3'],
+					'default'			=> 	$type,
+					'after'				=>	'<span class="dashicons dashicons-arrow-right-alt2"></span>',
+					'info'				=> 	"Saved option name: '".$this->prefixOptionName("input_{$typeId}")."'",
+					// info is converted to tooltip if tooltip isn't set, here we do both.
+					'tooltip'			=> 	"This field is an HTML input type '[type]'",
+				//	'class'				=>	"{$type}_class",
+				//	'style'				=>	"max-width: 50em;",
+					/* attributes as a string */
+					'attributes'		=>	"placeholder='{$type}' alt='{$type} input' title='input type: {$type}'",
+					/* attributes as array of strings */
+				//	'attributes'		=>	[ "placeholder='{$type}'", "alt='{$type} input'", "title='input type: {$type}'" ],
+					/* attributes as associative array */
+				//	'attributes'		=>	[ 'placeholder'=>$type, 'alt'=>"{$type} input", 'title'=>"input type: {$type}" ],
+					/* attributes as array of [strings] */
+				//	'attributes'		=> 	[ ["data-1"], ["data-2"], ["data-3"=>"data-3"] ],
+					'sanitize'			=>	[ $this,'sanitize_callback' ],
+					'filter'			=>	[ FILTER_CALLBACK, ['options'=>[$this,'filter_callback']] ],
+					'validate'			=>	[ $this,'validate_callback' ],
+				//  contextual help using meta ([title],[tooltip],[info]) macros
+					'help'				=>	"<details><summary>[title]</summary>[tooltip]<br>[info]</details>",
 			);
 
-			/* display values when changed */
+			/* display values when changed for these fields */
 			if (in_array($type,['color','date','datetime-local','month','time','week']))
 			{
-				$options["input_{$typeId}"]['attributes'] = ['oninput'=>"input_{$typeId}_show.value = this.value"	];
-				$options["input_{$typeId}"]['after'] .= 	"<output name='input_{$typeId}_show' for='input_{$typeId}' style='padding:2em;color:blue;'>...</output>";
+				$options["input_{$typeId}"]
+					['attributes'] 		= 	['oninput'=>"input_{$typeId}_show.value = this.value"];
+				$options["input_{$typeId}"]
+					['after'] 			.= 	"<output name='input_{$typeId}_show' for='input_{$typeId}' style='padding:2em;color:blue;'>...</output>";
+			}
+
+			/* don't use generic callbacks for file upload, see my_form_post_file() */
+			if ($type == 'file')
+			{
+				unset(	$options["input_{$typeId}"]['sanitize'],
+						$options["input_{$typeId}"]['filter'],
+						$options["input_{$typeId}"]['validate']
+				);
 			}
 
 			/* add output display and formatted data-points to our range input */
 			if ($type == 'range')
 			{
-				$options["input_{$typeId}"]['attributes'] = ['min="0"', 'max="10"','step="1"', "list='input_{$typeId}_ticks'",
-															 'oninput'=>"input_{$typeId}_show.value = this.value"	];
-				$options["input_{$typeId}"]['default'] = 5;
-				$options["input_{$typeId}"]['after'] .= 	"<output name='input_{$typeId}_show' for='input_{$typeId}' style='padding:2em;color:blue;'></output>".
-															"<datalist id='input_{$typeId}_ticks'>".
-																'<option value="0" label="0"></option>'.
-																'<option value="1"></option>'.
-																'<option value="2" label="2"></option>'.
-																'<option value="3"></option>'.
-																'<option value="4" label="4"></option>'.
-																'<option value="5"></option>'.
-																'<option value="6" label="6"></option>'.
-																'<option value="7"></option>'.
-																'<option value="8" label="8"></option>'.
-																'<option value="9"></option>'.
-																'<option value="10" label="10"></option>'.
-															'</datalist>';
+				unset($options["input_{$typeId}"]['before']);
+				$options["input_{$typeId}"]
+					['attributes'] 		= ['min="0"', 'max="10"','step=".5"', "list='input_{$typeId}_ticks'",
+											'oninput'=>"input_{$typeId}_show.value = this.value"];
+				$options["input_{$typeId}"]
+					['default'] 		= 5;
+				$options["input_{$typeId}"]
+					['after'] 			=
+								"<datalist id='input_{$typeId}_ticks'>".
+									'<option value="0" label="0"></option>'.
+									'<option value="1"></option>'.
+									'<option value="2" label="2"></option>'.
+									'<option value="3"></option>'.
+									'<option value="4" label="4"></option>'.
+									'<option value="5"></option>'.
+									'<option value="6" label="6"></option>'.
+									'<option value="7"></option>'.
+									'<option value="8" label="8"></option>'.
+									'<option value="9"></option>'.
+									'<option value="10" label="10"></option>'.
+								'</datalist>'.
+								"Range input: <code>".
+								"<output name='input_{$typeId}_show' for='input_{$typeId}' ".
+									"style='padding:1em;color:blue;'>[value]</output>".
+								"</code>";
 			}
 		}
 
 		/* register this plugin with options */
         $this->registerPluginOptions('plugin_settings',$options);
 
-		/* filters to handle 'custom' input field ('input_custom is field name)*/
-		$this->add_filter( 'options_form_input_input_custom',	array($this, 'options_form_input_custom'), 10, 4 );
-		$this->add_filter( 'options_form_post_input_custom', 	array($this, 'options_form_post_custom'), 10, 4 );
 
-		/* filter to handle 'file' input field ('input_file is field name)*/
-		$this->add_filter( 'options_form_post_input_file', 		array($this, 'options_form_post_file'), 10, 4 );
+		/* filters to handle 'custom' input field ('input_custom' is field name)*/
+		$this->add_filter( 'options_form_input_input_custom',	array($this, 'my_form_input_custom'), 10, 4 );
+		$this->add_filter( 'options_form_post_input_custom', 	array($this, 'my_form_post_custom'), 10, 4 );
 
-		/* filter to sanitize all fields */
-		$this->add_filter( 'sanitize_option', 					array($this, 'sanitize_options'), 10, 4 );
+
+		/* filter to handle 'file' input field ('input_file' is field name)*/
+		$this->add_filter( 'options_form_post_input_file', 		array($this, 'my_form_post_file'), 10, 4 );
+
+
+		/* filter to sanitize all fields individually  (redundant when using above 'sanitize' callback) */
+		$this->add_filter( 'sanitize_option', 					array($this, 'my_option_sanitize'), 10, 4 );
+
 
 		/* action after form posted and fields updated */
-	//	$this->add_action( 'options_form_post', 				array($this, 'my_options_form_post') );
+		$this->add_action( 'options_form_post', 				array($this, 'my_options_form_post') );
 	}
 
 
@@ -210,7 +242,10 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	{
 		parent::addActionsAndFilters();
 
-		/* custom stylesheet action - add formatting for our input_range data-points */
+		/*
+			custom stylesheet action - called when stylesheet is enqueued
+			add formatting for our input_range data-points
+		*/
 		$this->add_action('admin_enqueue_styles', function($styleId)
 		{
 			$style =
@@ -219,8 +254,8 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 					"display: flex; width: 80%; max-width: 38em;".
 					"justify-content: space-between;".
 					"font-size: 0.85em; color:blue;".
-					"padding-left: 2em;".
-				"}\n";
+					"padding-left: .2em;".
+				"}";
 
 			wp_add_inline_style( $styleId, $style );
 		});
@@ -228,7 +263,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 
 
 	/**
-	 * options_form_input_{$fieldName} filter
+	 * options_form_input_{$fieldName} filter - input_custom field
 	 *
 	 * @param	string	$html current html for field
 	 * @param	string	$fieldName option name
@@ -236,7 +271,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	 * @param	mixed	$value current option value
 	 * @return	string	new html for field
 	 */
-	public function options_form_input_custom($html, $fieldName, $metaData, $value)
+	public function my_form_input_custom($html, $fieldName, $metaData, $value)
 	{
 		// The default for custom is:
 		//	<blockquote>[title]</blockquote>
@@ -248,7 +283,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 					"<mark>Custom input field</mark>".
 					"<input type='{$metaData['type']}' name='{$fieldName}' id='{$fieldName}' ".
 						"value='{$value}' size='{$metaData['width']}'{$metaData['attributes']} />",
-					$html);
+				$html);
 		// return the updated input html wrapped in a styled <div>
 		return "<div class='custom-example' style='border: solid 1px yellow; padding: .5em; background: #ddd;'>" .
 				$html .
@@ -257,7 +292,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 
 
 	/**
-	 * options_form_post_{$fieldName} filter
+	 * options_form_post_{$fieldName} filter - input_custom field
 	 *
 	 * @param	mixed	$value posted option value(s)
 	 * @param	string	$fieldName option name
@@ -265,18 +300,19 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	 * @param	mixed	$priorValue prior option value
 	 * @return	mixed	new option value(s)
 	 */
-	public function options_form_post_custom($value, $fieldName, $metaData, $priorValue)
+	public function my_form_post_custom($value, $fieldName, $metaData, $priorValue)
 	{
 		// if no change, just return the value
 		if ($value == $priorValue) return $value;
 
 		// sanitize/validate (or otherwise process) the value before it is saved to the database
+
 		return $value;
 	}
 
 
 	/**
-	 * options_form_post_{$fieldName} filter
+	 * options_form_post_{$fieldName} filter - input_file field
 	 *
 	 * @param	mixed	$value posted option value(s)
 	 * @param	string	$fieldName option name
@@ -284,30 +320,37 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	 * @param	mixed	$priorValue prior option value
 	 * @return	mixed	new option value(s)
 	 */
-	public function options_form_post_file($value, $fieldName, $metaData, $priorValue)
+	public function my_form_post_file($value, $fieldName, $metaData, $priorValue)
 	{
-		if (! isset($value['error']) && $value['type'] == 'application/json')
+		// for 'file' type, $value is the array returned by wp_handle_upload()
+		if (! isset($value['error']))
 		{
-			// valid upload with expected file type, $values['file'] is pathname
-			if ($data = wp_json_file_decode($values['file'],['associative'=>true]))
+			if ($value['type'] == 'application/json')
 			{
-				// do something here...
+				// valid upload with expected file type, $values['file'] is pathname
+				if ($data = wp_json_file_decode($values['file'],['associative'=>true]))
+				{
+					// do something here...
+				}
+				unlink($value['file']);
+				return $value;
 			}
-			unlink($value['file']);
-			return $value;
+			else
+			{
+				$this->add_option_error(
+					$fieldName,
+					sprintf("%s : Input file of type '%s' could not be processed.",$metaData['label'],$value['type'])
+				);
+			}
 		}
 
-		$this->add_option_error(
-			$aOptionKey,
-			sprintf('%s : Input file could not be processed.',$aOptionMeta['label'])
-		);
 		unlink($values['file']);
 		return $value;
 	}
 
 
 	/**
-	 * sanitize_option filter
+	 * sanitize_option filter called for each option POSTed
 	 *
 	 * @param	mixed	$value posted option value(s)
 	 * @param	string	$fieldName option name
@@ -315,8 +358,11 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	 * @param	mixed	$priorValue prior option value
 	 * @return	mixed	new option value(s)
 	 */
-	public function sanitize_options($value, $fieldName, $metaData, $priorValue)
+	public function my_option_sanitize($value, $fieldName, $metaData, $priorValue)
 	{
+		// if no change, just return the value
+		if ($value == $priorValue) return $value;
+
 		switch ($fieldName)
 		{
 			case 'input_number':
@@ -355,6 +401,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function sanitize_callback($value, $fieldName, $metaData, $priorValue)
 	{
+		// sanitize value
 		return $value;
 	}
 
@@ -370,10 +417,13 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function filter_callback($value, $fieldName, $metaData, $priorValue)
 	{
+		// if no change, just return the value
+		if ($value == $priorValue) return $value;
+
 		// validate the value and display a notification
 		if (is_numeric($value))
 		{
-			// add admin notice using helper method (does not use transient)
+			// add admin notice using helper method
 			$this->add_admin_notice(
 				$fieldName.": {$value} May be the Answer to the Ultimate Question of Life, the Universe, and Everything.",
 				'notice',

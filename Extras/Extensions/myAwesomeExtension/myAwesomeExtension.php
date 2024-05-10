@@ -5,15 +5,15 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2022 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
  * @version		1.x
  *
  * @wordpress-plugin
  * Plugin Name:			My Awesome Extension
  * Description:			My Awesome Extension
- * Version:				1.1.0
- * Requires at least:	5.5
- * Requires PHP:		7.2
+ * Version:				1.1.1
+ * Requires at least:	5.8
+ * Requires PHP:		7.4
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
  */

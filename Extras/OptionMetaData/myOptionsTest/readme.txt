@@ -1,34 +1,39 @@
 === My Options Test ===
 Plugin URI:         https://myawesomeserver.com/myAwesomePlugin/
 Author: 			[EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.2.1
-Last Updated:       03-Oct-2023
+Stable tag:         1.4.0
+Last Updated:       26-Apr-2024
 Requires at least:  5.5.0
 Tested up to:       6.5
 Requires PHP:       7.2
 
-My Options Test - used to define and test {eac}Doojigger option types.
+My Options Test -  Provides examples of input types, parameters, and processing callbacks & filters.
 
 == Description ==
 
 *My Options Test* - used to define and test {eac}Doojigger option types.
 
-Creates an administrator option/field for every html and custom input type.
+Creates an administrator option/field for every html and custom input type. Includes callbacks and filters used to sanitize, validate, or otherwise process input.
 
 Makes use of
 ```
 	options_form_input_{fieldname}
 	options_form_post_{fieldname}
 	sanitize_option
+	filter_option
 	validate_option
 ```
-filters
+filters and callbacks
 
 == Installation ==
 
 Installation of this plugin can be managed from the WordPress Dashboard » Plugins » Add New page by clicking the [Upload Plugin] button, then selecting the myAwesomePlugin.zip file from your computer.
 
 == Changelog ==
+
+= Version 1.4.0 – April 26, 2024 =
+
++	Updated (again) with new {eac}Doojigger features.
 
 = Version 1.3.0 – Oct 3, 2023 =
 
@@ -48,4 +53,4 @@ Installation of this plugin can be managed from the WordPress Dashboard » Plugi
 
 == Other Notes ==
 
-myOptionsTest is a derivative plugin of and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v2.0+
+myOptionsTest is a derivative plugin of and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v2.6+

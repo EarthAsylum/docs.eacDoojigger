@@ -154,7 +154,7 @@
     
             <span class="phpdocumentor-element__extends">
             Uses
-                            <a href="classes/EarthAsylumConsulting-Traits-version-compare.html"><abbr title="\EarthAsylumConsulting\Traits\version_compare">version_compare</abbr></a>                    </span>
+                            <a href="classes/EarthAsylumConsulting-Traits-version-compare.html"><abbr title="\EarthAsylumConsulting\Traits\version_compare">version_compare</abbr></a>,                             <a href="classes/EarthAsylumConsulting-Traits-code-editor.html"><abbr title="\EarthAsylumConsulting\Traits\code_editor">code_editor</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -196,7 +196,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2023 EarthAsylum Consulting &lt;www.earthasylum.com&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2024 EarthAsylum Consulting &lt;www.earthasylum.com&gt;</p>
 </section>
 
                                     </dd>
@@ -204,7 +204,7 @@
                     <span class="phpdocumentor-tag__name">version</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">2.x</span>
+                                            <span class="phpdocumentor-tag-link">24.0507.1</span>
                                                                                 
                                              
                                     </dd>
@@ -256,7 +256,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-backend.html#constant_OPTION_META_KEYS">OPTION_META_KEYS</a>
     <span>
-        &nbsp;= [&#039;type&#039; =&gt; &#039;&#039;, &#039;label&#039; =&gt; &#039;&#039;, &#039;title&#039; =&gt; &#039;&#039;, &#039;before&#039; =&gt; &#039;&#039;, &#039;default&#039; =&gt; &#039;&#039;, &#039;after&#039; =&gt; &#039;&#039;, &#039;info&#039; =&gt; &#039;&#039;, &#039;attributes&#039; =&gt; []]                            </span>
+        &nbsp;= [&#039;type&#039; =&gt; &#039;&#039;, &#039;label&#039; =&gt; &#039;&#039;, &#039;title&#039; =&gt; &#039;&#039;, &#039;before&#039; =&gt; &#039;&#039;, &#039;default&#039; =&gt; &#039;&#039;, &#039;after&#039; =&gt; &#039;&#039;, &#039;info&#039; =&gt; &#039;&#039;, &#039;tooltip&#039; =&gt; &#039;&#039;, &#039;attributes&#039; =&gt; []]                            </span>
 </dt>
 <dd></dd>
 
@@ -343,6 +343,34 @@
                                 &nbsp;: void    </span>
 </dt>
 <dd>Add plugin shortcodes.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-abstract-backend.html#method_admin_color_scheme">admin_color_scheme()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get the selected admin color scheme</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_enqueue">codeedit_enqueue()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>enqueue code mirror</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_get_codemirror">codeedit_get_codemirror()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>add code mirror textarea</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_get_wpeditor">codeedit_get_wpeditor()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>add wp_editor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-backend.html#method_deleteTransients">deleteTransients()</a>
@@ -622,7 +650,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -631,7 +659,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">OPTION_META_KEYS</span>
-    = <span class="phpdocumentor-signature__default-value">[&#039;type&#039; =&gt; &#039;&#039;, &#039;label&#039; =&gt; &#039;&#039;, &#039;title&#039; =&gt; &#039;&#039;, &#039;before&#039; =&gt; &#039;&#039;, &#039;default&#039; =&gt; &#039;&#039;, &#039;after&#039; =&gt; &#039;&#039;, &#039;info&#039; =&gt; &#039;&#039;, &#039;attributes&#039; =&gt; []]</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;type&#039; =&gt; &#039;&#039;, &#039;label&#039; =&gt; &#039;&#039;, &#039;title&#039; =&gt; &#039;&#039;, &#039;before&#039; =&gt; &#039;&#039;, &#039;default&#039; =&gt; &#039;&#039;, &#039;after&#039; =&gt; &#039;&#039;, &#039;info&#039; =&gt; &#039;&#039;, &#039;tooltip&#039; =&gt; &#039;&#039;, &#039;attributes&#039; =&gt; []]</span>
 </code>
 
 
@@ -651,7 +679,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -680,7 +708,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -724,7 +752,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -762,7 +790,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">971</span>
+    <span class="phpdocumentor-element-found-in__line">998</span>
 
     </aside>
 
@@ -825,7 +853,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">892</span>
+    <span class="phpdocumentor-element-found-in__line">919</span>
 
     </aside>
 
@@ -897,7 +925,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">942</span>
+    <span class="phpdocumentor-element-found-in__line">969</span>
 
     </aside>
 
@@ -969,7 +997,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">927</span>
+    <span class="phpdocumentor-element-found-in__line">954</span>
 
     </aside>
 
@@ -1041,7 +1069,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">957</span>
+    <span class="phpdocumentor-element-found-in__line">984</span>
 
     </aside>
 
@@ -1113,7 +1141,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">912</span>
+    <span class="phpdocumentor-element-found-in__line">939</span>
 
     </aside>
 
@@ -1185,7 +1213,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">797</span>
+    <span class="phpdocumentor-element-found-in__line">824</span>
 
     </aside>
 
@@ -1258,7 +1286,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 
     </aside>
 
@@ -1307,7 +1335,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 
     </aside>
 
@@ -1349,6 +1377,268 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_admin_color_scheme">
+        admin_color_scheme()
+        <a href="classes/EarthAsylumConsulting-abstract-backend.html#method_admin_color_scheme" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">768</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the selected admin color scheme</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">admin_color_scheme</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_codeedit_enqueue">
+        codeedit_enqueue()
+        <a href="classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_enqueue" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/code_editor.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-code-editor-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/code_editor.trait.php">code_editor.trait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">enqueue code mirror</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">codeedit_enqueue</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$styles</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$styles</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional code editor styling</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$options</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional code editor settings</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_codeedit_get_codemirror">
+        codeedit_get_codemirror()
+        <a href="classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_get_codemirror" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/code_editor.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-code-editor-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/code_editor.trait.php">code_editor.trait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">157</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">add code mirror textarea</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">codeedit_get_codemirror</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;html&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>field name/id</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>field value</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;html&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>code editor type (js, css, html, php)</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$class</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional class name(s)</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$attributes</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional field attributes</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>textarea field</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_codeedit_get_wpeditor">
+        codeedit_get_wpeditor()
+        <a href="classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_get_wpeditor" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/code_editor.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-code-editor-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/code_editor.trait.php">code_editor.trait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">188</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">add wp_editor</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">codeedit_get_wpeditor</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$wpoptions</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tinymce</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$quicktags</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>field name/id</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>field value</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$class</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional class name(s)</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$wpoptions</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional override wp_editor options</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tinymce</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional override tinymce options</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$quicktags</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>optional override quicktags options</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>textarea field</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_deleteTransients">
         deleteTransients()
         <a href="classes/EarthAsylumConsulting-abstract-backend.html#method_deleteTransients" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1356,7 +1646,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">727</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -1424,7 +1714,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1347</span>
+    <span class="phpdocumentor-element-found-in__line">1376</span>
 
     </aside>
 
@@ -1457,7 +1747,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1370</span>
+    <span class="phpdocumentor-element-found-in__line">1399</span>
 
     </aside>
 
@@ -1490,7 +1780,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1293</span>
+    <span class="phpdocumentor-element-found-in__line">1322</span>
 
     </aside>
 
@@ -1523,7 +1813,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1316</span>
+    <span class="phpdocumentor-element-found-in__line">1345</span>
 
     </aside>
 
@@ -1556,7 +1846,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">634</span>
+    <span class="phpdocumentor-element-found-in__line">635</span>
 
     </aside>
 
@@ -1623,7 +1913,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1335</span>
+    <span class="phpdocumentor-element-found-in__line">1364</span>
 
     </aside>
 
@@ -1656,7 +1946,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1281</span>
+    <span class="phpdocumentor-element-found-in__line">1308</span>
 
     </aside>
 
@@ -1689,7 +1979,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1476</span>
+    <span class="phpdocumentor-element-found-in__line">1505</span>
 
     </aside>
 
@@ -1736,7 +2026,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1458</span>
+    <span class="phpdocumentor-element-found-in__line">1487</span>
 
     </aside>
 
@@ -1783,7 +2073,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1245</span>
+    <span class="phpdocumentor-element-found-in__line">1272</span>
 
     </aside>
 
@@ -1830,7 +2120,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1221</span>
+    <span class="phpdocumentor-element-found-in__line">1248</span>
 
     </aside>
 
@@ -1877,7 +2167,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">676</span>
+    <span class="phpdocumentor-element-found-in__line">677</span>
 
     </aside>
 
@@ -1924,7 +2214,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 
     </aside>
 
@@ -2434,7 +2724,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
@@ -2469,7 +2759,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1614</span>
+    <span class="phpdocumentor-element-found-in__line">1642</span>
 
     </aside>
 
@@ -2502,7 +2792,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">341</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 
     </aside>
 
@@ -2550,7 +2840,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1172</span>
+    <span class="phpdocumentor-element-found-in__line">1199</span>
 
     </aside>
 
@@ -2583,7 +2873,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1157</span>
+    <span class="phpdocumentor-element-found-in__line">1184</span>
 
     </aside>
 
@@ -2643,7 +2933,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1046</span>
+    <span class="phpdocumentor-element-found-in__line">1073</span>
 
     </aside>
 
@@ -2676,7 +2966,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">379</span>
+    <span class="phpdocumentor-element-found-in__line">385</span>
 
     </aside>
 
@@ -2724,7 +3014,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">413</span>
+    <span class="phpdocumentor-element-found-in__line">419</span>
 
     </aside>
 
@@ -2757,7 +3047,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">777</span>
+    <span class="phpdocumentor-element-found-in__line">804</span>
 
     </aside>
 
@@ -2792,7 +3082,7 @@ May occur twice on primary site (as network admin and not)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">321</span>
 
     </aside>
 
@@ -2848,7 +3138,7 @@ In multisite environment, network admin calls upgrade for each active site.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">992</span>
+    <span class="phpdocumentor-element-found-in__line">1019</span>
 
     </aside>
 
@@ -2911,7 +3201,7 @@ In multisite environment, network admin calls upgrade for each active site.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1515</span>
+    <span class="phpdocumentor-element-found-in__line">1544</span>
 
     </aside>
 
@@ -2965,7 +3255,7 @@ In multisite environment, network admin calls upgrade for each active site.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1492</span>
+    <span class="phpdocumentor-element-found-in__line">1521</span>
 
     </aside>
 
@@ -3019,7 +3309,7 @@ In multisite environment, network admin calls upgrade for each active site.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">712</span>
+    <span class="phpdocumentor-element-found-in__line">713</span>
 
     </aside>
 
@@ -3066,7 +3356,7 @@ In multisite environment, network admin calls upgrade for each active site.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-backend-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_backend.class.php">abstract_backend.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">690</span>
+    <span class="phpdocumentor-element-found-in__line">691</span>
 
     </aside>
 

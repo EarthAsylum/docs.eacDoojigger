@@ -71,6 +71,11 @@ Search.appendIndex(
             "summary": "delete\u0020identifiable\u0020transients\u0020belonging\u0020to\u0020this\u0020plugin",
             "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_deleteTransients"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aadmin_color_scheme\u0028\u0029",
+            "name": "admin_color_scheme",
+            "summary": "Get\u0020the\u0020selected\u0020admin\u0020color\u0020scheme",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_admin_color_scheme"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aplugin_admin_notices\u0028\u0029",
             "name": "plugin_admin_notices",
             "summary": "settings\u0020errors\u0020\/\u0020admin\u0020notices\u0020\u002D\u0020on\u0020\u0027all_admin_notices\u0027\u0020action.",
@@ -360,6 +365,11 @@ Search.appendIndex(
             "name": "ALLOW_ALL",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_ALL"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_extension\u003A\u003AALLOW_NON_PHP",
+            "name": "ALLOW_NON_PHP",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_frontend",
             "name": "abstract_frontend",
@@ -721,6 +731,11 @@ Search.appendIndex(
             "summary": "constructor\u0020method",
             "url": "classes/EarthAsylumConsulting-Extensions-file-system-extension.html#method___construct"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\file_system_extension\u003A\u003AaddActionsAndFilters\u0028\u0029",
+            "name": "addActionsAndFilters",
+            "summary": "Add\u0020extension\u0020actions\u0020and\u0020filter",
+            "url": "classes/EarthAsylumConsulting-Extensions-file-system-extension.html#method_addActionsAndFilters"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\file_system_extension\u003A\u003Aadmin_options_settings\u0028\u0029",
             "name": "admin_options_settings",
             "summary": "register\u0020options\u0020on\u0020options_settings_page",
@@ -786,6 +801,11 @@ Search.appendIndex(
             "summary": "constructor\u0020method",
             "url": "classes/EarthAsylumConsulting-Extensions-wpmu-installer.html#method___construct"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\wpmu_installer\u003A\u003AaddActionsAndFilters\u0028\u0029",
+            "name": "addActionsAndFilters",
+            "summary": "Add\u0020extension\u0020actions\u0020and\u0020filter",
+            "url": "classes/EarthAsylumConsulting-Extensions-wpmu-installer.html#method_addActionsAndFilters"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\wpmu_installer\u003A\u003Ainvoke\u0028\u0029",
             "name": "invoke",
             "summary": "invoke\u0020\u002D\u0020with\u0020no\u0020arguments,\u0020start\u0020de\u002Dspooling\u0020the\u0020queue,\n\t\t\twith\u0020arguments,\u0020invoke\u0020installer",
@@ -845,6 +865,26 @@ Search.appendIndex(
             "name": "INSTALLER_TRANSIENT",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-wpmu-installer.html#constant_INSTALLER_TRANSIENT"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\code_editor",
+            "name": "code_editor",
+            "summary": "code_editor\u0020trait\u0020\u002D\u0020Load\u0020CodeMirror\u0020and\/or\u0020WP_editor\u0020html\u0020editor\nwith\u0020consistant\u0020parameters",
+            "url": "classes/EarthAsylumConsulting-Traits-code-editor.html"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\code_editor\u003A\u003Acodeedit_enqueue\u0028\u0029",
+            "name": "codeedit_enqueue",
+            "summary": "enqueue\u0020code\u0020mirror",
+            "url": "classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_enqueue"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\code_editor\u003A\u003Acodeedit_get_codemirror\u0028\u0029",
+            "name": "codeedit_get_codemirror",
+            "summary": "add\u0020code\u0020mirror\u0020textarea",
+            "url": "classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_get_codemirror"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\code_editor\u003A\u003Acodeedit_get_wpeditor\u0028\u0029",
+            "name": "codeedit_get_wpeditor",
+            "summary": "add\u0020wp_editor",
+            "url": "classes/EarthAsylumConsulting-Traits-code-editor.html#method_codeedit_get_wpeditor"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\datetime",
             "name": "datetime",
@@ -941,6 +981,11 @@ Search.appendIndex(
             "summary": "enques\/loads\u0020options_settings_page\u0020stylesheet",
             "url": "classes/EarthAsylumConsulting-Traits-html-input-fields.html#method_html_input_style"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\html_input_fields\u003A\u003Ahtml_input_jquery\u0028\u0029",
+            "name": "html_input_jquery",
+            "summary": "enques\/loads\u0020jQuery\/jQuery\u002Dui",
+            "url": "classes/EarthAsylumConsulting-Traits-html-input-fields.html#method_html_input_jquery"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\html_input_fields\u003A\u003Ahtml_input_as_tabs\u0028\u0029",
             "name": "html_input_as_tabs",
             "summary": "When\u0020using\u0020html_input_section\u0028\u0029,\u0020html_input_block\u0028\u0029,\u0020convert\u0020sections\u0020to\u0020tabs.",
@@ -970,6 +1015,11 @@ Search.appendIndex(
             "name": "plugin_help_enabled",
             "summary": "plugin_help_enabled\u0020\u002D\u0020set\u0020or\u0020test\u0020enabled\u0020for\u0020use",
             "url": "classes/EarthAsylumConsulting-Traits-plugin-help.html#method_plugin_help_enabled"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_help\u003A\u003Aplugin_help_render\u0028\u0029",
+            "name": "plugin_help_render",
+            "summary": "Render\u0020the\u0020contextual\u0020help.",
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-help.html#method_plugin_help_render"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_help\u003A\u003AformatPluginHelp\u0028\u0029",
             "name": "formatPluginHelp",
@@ -1031,6 +1081,11 @@ Search.appendIndex(
             "summary": "Filter\u0020for\u0020automatic\u0020updates.",
             "url": "classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_plugin_updater_filter"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_loader\u003A\u003AisPHP\u0028\u0029",
+            "name": "isPHP",
+            "summary": "Only\u0020for\u0020PHP\u0020requests.",
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_isPHP"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_loader_environment",
             "name": "plugin_loader_environment",
             "summary": "Plugin\u0020Loader\u0020environment\u0020check\u0020trait\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
@@ -1076,35 +1131,40 @@ Search.appendIndex(
             "summary": "Plugin\u0020updater\u0020trait\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
             "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_admin_disable_auto_update\u0028\u0029",
-            "name": "plugin_admin_disable_auto_update",
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003AdeleteUpdaterTransient\u0028\u0029",
+            "name": "deleteUpdaterTransient",
+            "summary": "delete\u0020updater\u0020transient",
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_deleteUpdaterTransient"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_update_disable_auto_update\u0028\u0029",
+            "name": "plugin_update_disable_auto_update",
             "summary": "disable\u0020auto\u002Dupdate\u0020for\u0020this\u0020plugin\u0020\u002D\u0020plugin_auto_update_setting_html",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_disable_auto_update"
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_disable_auto_update"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_admin_get_plugin_info\u0028\u0029",
-            "name": "plugin_admin_get_plugin_info",
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_update_get_plugin_info\u0028\u0029",
+            "name": "plugin_update_get_plugin_info",
             "summary": "get\u0020plugin\u0020information\u0020on\u0020\u0027plugins_api\u0027\u0020filter",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_get_plugin_info"
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_get_plugin_info"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_admin_push_hostname_update\u0028\u0029",
-            "name": "plugin_admin_push_hostname_update",
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_update_update_plugins_hostname\u0028\u0029",
+            "name": "plugin_update_update_plugins_hostname",
             "summary": "check\u0020for\u0020plugin\u0020update\u0020on\u0020\u0027update_plugins_\u007B\u0024hostname\u007D\u0027\u0020filter\u0020\u0028WP\u00205.8.0\u002B\u0029",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_push_hostname_update"
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_update_plugins_hostname"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_admin_push_plugin_update\u0028\u0029",
-            "name": "plugin_admin_push_plugin_update",
-            "summary": "check\u0020for\u0020plugin\u0020update\u0020on\u0020\u0027site_transient_update_plugins\u0027\u0020filter",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_push_plugin_update"
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_update_update_plugins_transient\u0028\u0029",
+            "name": "plugin_update_update_plugins_transient",
+            "summary": "check\u0020for\u0020plugin\u0020update\u0020on\u0020\u0027site_transient_update_plugins\u0027\u0020filter.",
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_update_plugins_transient"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_admin_after_plugin_update\u0028\u0029",
-            "name": "plugin_admin_after_plugin_update",
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_update_after_plugin_update\u0028\u0029",
+            "name": "plugin_update_after_plugin_update",
             "summary": "cleanup\u0020after\u0020plugin\u0020update\u0020on\u0020\u0027upgrader_process_complete\u0027\u0020filter\noccurs\u0020before\u0020new\u0020code\u0020is\u0020loaded",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_after_plugin_update"
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_after_plugin_update"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_admin_allow_external_host\u0028\u0029",
-            "name": "plugin_admin_allow_external_host",
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update\u003A\u003Aplugin_update_allow_external_host\u0028\u0029",
+            "name": "plugin_update_allow_external_host",
             "summary": "allow\u0020access\u0020to\u0020external\u0020host\u0020on\u0020\u0027http_request_host_is_external\u0027\u0020filter",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_admin_allow_external_host"
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-update.html#method_plugin_update_allow_external_host"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_update_notice",
             "name": "plugin_update_notice",

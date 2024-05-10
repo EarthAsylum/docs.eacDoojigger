@@ -79,10 +79,10 @@ namespace myAwesomeNamespace
 				'PluginFile'		=> __FILE__,
 				'NameSpace'			=> __NAMESPACE__,
 				'PluginClass'		=> __NAMESPACE__.'\\Plugin\\myAwesomePlugin',
-				'RequiresWP'		=> '5.5',			// WordPress
-				'RequiresPHP'		=> '7.2',			// PHP
-				'RequiresEAC'		=> '2.3',			// eacDoojigger
-			//	'RequiresWC'		=> '5.2',			// WooCommerce
+				'RequiresWP'		=> '5.8',			// WordPress
+				'RequiresPHP'		=> '7.4',			// PHP
+				'RequiresEAC'		=> '2.5',			// eacDoojigger
+			//	'RequiresWC'		=> '8.0',			// WooCommerce
 				'NetworkActivate'	=>	false,			// require (or forbid) network activation
 				'AutoUpdate'		=> 'self',			// automatic update 'self' or 'wp'
 			];
@@ -93,6 +93,16 @@ namespace myAwesomeNamespace
 namespace // global scope
 {
 	defined( 'ABSPATH' ) or exit;
+
+	/**
+	 * Global function to return an instance of the plugin
+	 *
+	 * @return object
+	 */
+	function myAwesomePlugin()
+	{
+		return \myAwesomeNamespace\myAwesomePlugin::getInstance();
+	}
 
 	/**
 	 * Run the plugin loader - only for php files
