@@ -1,4 +1,4 @@
-## EarthAsylum Consulting {eac}Doojigger for WordPress  
+## {eac}Doojigger for WordPress  
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
@@ -26,6 +26,23 @@ GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki
 :green_book: [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
 
 :bookmark_tabs: [{eac}Doojigger Web Site](https://eacdoojigger.earthasylum.com)
+
+### Summary
+
+**{eac}Doojigger** by {EarthAsylum Consulting} is a multi functional and highly extensible WordPress plugin that provides existing extensions covering file access, security, debugging, encryption, session management, maintenance mode, administration tools, and more.
+
+_{eac}Doojigger_ is not only a fully functional plugin, but more so, an architectural development platform (using shared/abstract code) enabling the effortless creation of full featured...
+
+1.  Custom *Derivative* plugins.
+    +   Create your own plugin using a robust, efficient, and clean foundation.
+2.  Custom {eac}Doojigger *Extensions*.
+    +   Add easy-to-code, task-oriented extensions to your plugin or to {eac}Doojigger.
+3.  Custom *Extension Plugins*.
+    +   Load your custom extensions as their own WordPress plugins.
+
+Rather than updating or customizing themes and functions, it is often best to isolate your custom code in a plugin or plugin extension so that code is not lost when the theme is changed or updated. Themes should only be used and customized with code pertinent to the look and feel of your site. Any code that should be retained after changing a theme belongs in a plugin or plugin extension. This keeps your code reusable and theme independent.
+
+_{eac}Doojigger makes purpose-driven, task-oriented, theme-independent, reliable, and efficient code easy to create and maintain._
 
 ---
 
