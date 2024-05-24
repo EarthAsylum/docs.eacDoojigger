@@ -138,22 +138,33 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/earthasylumconsulting.html">EarthAsylumConsulting</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/earthasylumconsulting-traits.html">Traits</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -trait">
+    <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    plugin_uninstall
+    eacDoojiggerPluginUpdater
+
+    
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojiggerUtilities.html">eacDoojiggerUtilities</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojiggerUtilities-eacDoojiggerPluginUpdater.html">eacDoojiggerPluginUpdater</a></li>
+                            </ul>
+        </div>
+    
+    
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-uninstall-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php">plugin_uninstall.trait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerpluginupdater-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php">eacDoojiggerPluginUpdater.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Custom Plugin uninstaller trait - {eac}Doojigger for WordPress</p>
+            <p class="phpdocumentor-summary">{eac}DoojiggerPluginUpdater class - {eac}Doojigger for WordPress,
+Manage {eac}Doojigger, derivative and extensioon software updates</p>
 
 
 
@@ -185,17 +196,10 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2023 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Copyright 2024 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;
+Version: 	1.0.0</p>
 </section>
 
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">version</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">2.x</span>
-                                                                                
-                                             
                                     </dd>
                                                 <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">link</span>
@@ -203,14 +207,6 @@
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                                         <a class="phpdocumentor-tag-link" href="https://eacDoojigger.earthasylum.com/"> https://eacDoojigger.earthasylum.com/ </a>
                     
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">see</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="https://eacDoojigger.earthasylum.com/phpdoc/"><abbr title="https://eacDoojigger.earthasylum.com/phpdoc/">https://eacDoojigger.earthasylum.com/phpdoc/</abbr></a></span>
-                                        
-                                             
                                     </dd>
                         </dl>
 
@@ -225,44 +221,88 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_getUninstallOptions">getUninstallOptions()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#constant_REGISTER_OPTION_NAME">REGISTER_OPTION_NAME</a>
     <span>
-                                &nbsp;: mixed    </span>
+        &nbsp;= __NAMESPACE__ . &#039;_registered_plugins&#039;                            </span>
 </dt>
-<dd>get uninstall options</dd>
+<dd></dd>
+
+                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_prepare_plugin_updater">prepare_plugin_updater()</a>
+    <span>
+                                &nbsp;: object|array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>prepare_plugin_updater.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_uninstall">uninstall()</a>
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_register_plugin_updater">register_plugin_updater()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>uninstall</dd>
+<dd>register_plugin_updater.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_uninstallNetwork">uninstallNetwork()</a>
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_setPluginUpdates">setPluginUpdates()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>uninstall network</dd>
+<dd>setPluginUpdates.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_uninstallSite">uninstallSite()</a>
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_trigger_plugin_updater">trigger_plugin_updater()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>uninstall single site</dd>
+<dd>trigger_plugin_updater</dd>
 
         </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_REGISTER_OPTION_NAME">
+        REGISTER_OPTION_NAME
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#constant_REGISTER_OPTION_NAME" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerpluginupdater-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php">eacDoojiggerPluginUpdater.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">REGISTER_OPTION_NAME</span>
+    = <span class="phpdocumentor-signature__default-value">__NAMESPACE__ . &#039;_registered_plugins&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
+
+        
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -270,30 +310,32 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getUninstallOptions">
-        getUninstallOptions()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_getUninstallOptions" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_prepare_plugin_updater">
+        prepare_plugin_updater()
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_prepare_plugin_updater" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-uninstall-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php">plugin_uninstall.trait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerpluginupdater-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php">eacDoojiggerPluginUpdater.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">get uninstall options</p>
+        <p class="phpdocumentor-summary">prepare_plugin_updater.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getUninstallOptions</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$network</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">prepare_plugin_updater</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|array&lt;string|int, mixed&gt;</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>pre_site_transient_update_plugins &amp; plugins_api_args</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$network</span>
+                <span class="phpdocumentor-signature__argument__name">$args</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -301,9 +343,24 @@
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>object|array transient or args from calling filter</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">object|array&lt;string|int, mixed&gt;</span>
             &mdash;
         
     
@@ -314,37 +371,88 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_uninstall">
-        uninstall()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_uninstall" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_register_plugin_updater">
+        register_plugin_updater()
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_register_plugin_updater" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-uninstall-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php">plugin_uninstall.trait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerpluginupdater-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php">eacDoojiggerPluginUpdater.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">uninstall</p>
+        <p class="phpdocumentor-summary">register_plugin_updater.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">uninstall</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">register_plugin_updater</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_detail</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>eacDoojigger_register_plugin_updater action triggered from plugin_loader trait.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$className</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$plugin_detail</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>the short (sans namespace) class name of the plugin being uninstalled</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>
 
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array $plugin_detail from plugin_loader</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setPluginUpdates">
+        setPluginUpdates()
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_setPluginUpdates" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerpluginupdater-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php">eacDoojiggerPluginUpdater.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">setPluginUpdates.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">setPluginUpdates</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>add actions and filters for plugin updates</p>
+</section>
+
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -359,62 +467,72 @@
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_uninstallNetwork">
-        uninstallNetwork()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_uninstallNetwork" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_trigger_plugin_updater">
+        trigger_plugin_updater()
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_trigger_plugin_updater" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-uninstall-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php">plugin_uninstall.trait.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerpluginupdater-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerPluginUpdater.class.php">eacDoojiggerPluginUpdater.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">uninstall network</p>
+        <p class="phpdocumentor-summary">trigger_plugin_updater</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">uninstallNetwork</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">trigger_plugin_updater</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_slug</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin_detail</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$plugin_slug</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$plugin_detail</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array $$plugin_slug from plugin_basename()</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array $plugin_detail from plugin_loader</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_uninstallSite">
-        uninstallSite()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#method_uninstallSite" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-uninstall-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_uninstall.trait.php">plugin_uninstall.trait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">141</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">uninstall single site</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">uninstallSite</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
@@ -497,7 +615,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-uninstall.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

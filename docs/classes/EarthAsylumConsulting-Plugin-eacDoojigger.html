@@ -114,6 +114,10 @@
                 <a href="packages/eacDoojiggerUtilities-eacDoojigger.html" class="">eacDoojigger</a>
                 
             </li>
+                    <li>
+                <a href="packages/eacDoojiggerUtilities-eacDoojiggerPluginUpdater.html" class="">eacDoojiggerPluginUpdater</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -318,6 +322,13 @@
 <dd>Called after instantiating, loading extensions and initializing</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_allow_advanced_mode">allow_advanced_mode()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>alllow advanced mode - aids in complexity and/or licensing limits.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-frontend.html#method_filter_plugin_access">filter_plugin_access()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -358,13 +369,6 @@
                                 &nbsp;: void    </span>
 </dt>
 <dd>class initialization</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isAdvancedMode">isAdvancedMode()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>is advanced mode - aids in complexity and/or licensing limits.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isBasicLicense">isBasicLicense()</a>
@@ -408,6 +412,13 @@ frontend uses transient cache to load extensions</dd>
                                 &nbsp;: void    </span>
 </dt>
 <dd>add the admin bar menu</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_setAdvancedMode">setAdvancedMode()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>set advanced mode - aids in complexity and/or licensing limits.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-frontend.html#method_shortcode_plugin_access">shortcode_plugin_access()</a>
@@ -725,7 +736,7 @@ frontend uses transient cache to load extensions</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 
     </aside>
 
@@ -755,6 +766,55 @@ frontend uses transient cache to load extensions</dd>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_allow_advanced_mode">
+        allow_advanced_mode()
+        <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_allow_advanced_mode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">296</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">alllow advanced mode - aids in complexity and/or licensing limits.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">allow_advanced_mode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$allow</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>standard license or better to enable advanced mose</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$allow</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>allow or not</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -833,7 +893,7 @@ index		if array, index or key to array value</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -1059,66 +1119,6 @@ index		if array, index or key to array value</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isAdvancedMode">
-        isAdvancedMode()
-        <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isAdvancedMode" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">256</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">is advanced mode - aids in complexity and/or licensing limits.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">isAdvancedMode</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$what</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$level</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"><p>default uses EACDOOJIGGER_ADVANCED_MODE to set global and settings.</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$what</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>what is in advanced mode</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$level</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>what level is in advanced mode</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_isBasicLicense">
         isBasicLicense()
         <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isBasicLicense" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1126,7 +1126,7 @@ index		if array, index or key to array value</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -1159,7 +1159,7 @@ index		if array, index or key to array value</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">282</span>
 
     </aside>
 
@@ -1192,7 +1192,7 @@ index		if array, index or key to array value</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 
     </aside>
 
@@ -1225,7 +1225,7 @@ index		if array, index or key to array value</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 
     </aside>
 
@@ -1292,7 +1292,7 @@ frontend uses transient cache to load extensions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -1311,6 +1311,77 @@ frontend uses transient cache to load extensions</p>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>wp_admin_bar</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setAdvancedMode">
+        setAdvancedMode()
+        <a href="classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_setAdvancedMode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php"><a href="files/eacdoojigger-earthasylumconsulting-plugin-eacdoojigger-plugin.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Plugin/eacDoojigger.plugin.php">eacDoojigger.plugin.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">311</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">set advanced mode - aids in complexity and/or licensing limits.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setAdvancedMode</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$is</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$what</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$level</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>allow settings 'advanced' attribute of 'standard', 'professional', 'enterprise'</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$is</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>is or is not</li>
+</ul>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$what</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>what is in advanced mode (global, settings, ...)</li>
+</ul>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$level</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>what level is in advanced mode (default, basic, standard, pro)</li>
+</ul>
 </section>
 
             </dd>

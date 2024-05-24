@@ -131,6 +131,11 @@ Search.appendIndex(
             "summary": "Add\u0020Setting\u0020link\u0020on\u0020Plugins\u0020page\u0020\u002D\u0020on\u0020\u0027plugin_action_links_\u007Bplugin\u007D\u0027\u0020action",
             "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_plugin_admin_add_settings_link"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aplugin_admin_add_plugin_meta\u0028\u0029",
+            "name": "plugin_admin_add_plugin_meta",
+            "summary": "Add\u0020meta\u0020value\u0020to\u0020plugin\u0020row\u0020\u002D\u0020on\u0020after_plugin_row_meta\u0020action",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_plugin_admin_add_plugin_meta"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aplugin_admin_add_settings_help\u0028\u0029",
             "name": "plugin_admin_add_settings_help",
             "summary": "Add\u0020contextual\u0020help\u0020via\u0020plugin_help\u0020trait\u0020\u0028on\u0020admin_menu\u0020action\u0029",
@@ -200,6 +205,51 @@ Search.appendIndex(
             "name": "options_settings_page",
             "summary": "Creates\u0020HTML\u0020for\u0020the\u0020Administration\u0020page\u0020to\u0020set\u0020options\u0020for\u0020this\u0020plugin.",
             "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_sanitize\u0028\u0029",
+            "name": "options_settings_page_sanitize",
+            "summary": "Sanitize\u0020_POSTed\u0020fields",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_sanitize"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_validate\u0028\u0029",
+            "name": "options_settings_page_validate",
+            "summary": "Validate\u0020_POSTed\u0020fields",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_validate"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_section\u0028\u0029",
+            "name": "options_settings_page_section",
+            "summary": "for\u0020html\u0020input\u0020fields,\u0020get\u0020section\u0020headers",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_section"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_block\u0028\u0029",
+            "name": "options_settings_page_block",
+            "summary": "for\u0020html\u0020input\u0020fields,\u0020get\u0020input\u0020field\u0020block",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_block"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_field\u0028\u0029",
+            "name": "options_settings_page_field",
+            "summary": "create\u0020the\u0020correct\u0020form\u0020input\u0020control\u0020for\u0020an\u0020option\u0020\u0028used\u0020here\u0020and\u0020in\u0020custom\u0020WP_POST\u0020fields\u0029",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_field"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_help\u0028\u0029",
+            "name": "options_settings_page_help",
+            "summary": "add\u0020contextual\u0020help\u0020from\u0020meta\u0020data",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_help"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_style\u0028\u0029",
+            "name": "options_settings_page_style",
+            "summary": "Creates\u0020Style\u0020tag\u0020for\u0020the\u0020Administration\u0020page\u0020to\u0020set\u0020options\u0020for\u0020this\u0020plugin.",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_style"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_admin_style\u0028\u0029",
+            "name": "options_settings_page_admin_style",
+            "summary": "Get\u0020admin\u0020color\u0020variables",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_admin_style"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003Aoptions_settings_page_jquery\u0028\u0029",
+            "name": "options_settings_page_jquery",
+            "summary": "Creates\u0020Script\u0020tag\u0020for\u0020the\u0020jQuery\/jQuery\u002Dui.",
+            "url": "classes/EarthAsylumConsulting-abstract-backend.html#method_options_settings_page_jquery"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_backend\u003A\u003APLUGIN_INSTALLED_VERSION",
             "name": "PLUGIN_INSTALLED_VERSION",
@@ -681,10 +731,15 @@ Search.appendIndex(
             "summary": "is\u0020license\u0020L5\u0020\u0028enterprise\u0029\u0020or\u0020better",
             "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isEnterpriseLicense"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003AisAdvancedMode\u0028\u0029",
-            "name": "isAdvancedMode",
-            "summary": "is\u0020advanced\u0020mode\u0020\u002D\u0020aids\u0020in\u0020complexity\u0020and\/or\u0020licensing\u0020limits.",
-            "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isAdvancedMode"
+            "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003Aallow_advanced_mode\u0028\u0029",
+            "name": "allow_advanced_mode",
+            "summary": "alllow\u0020advanced\u0020mode\u0020\u002D\u0020aids\u0020in\u0020complexity\u0020and\/or\u0020licensing\u0020limits.",
+            "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_allow_advanced_mode"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003AsetAdvancedMode\u0028\u0029",
+            "name": "setAdvancedMode",
+            "summary": "set\u0020advanced\u0020mode\u0020\u002D\u0020aids\u0020in\u0020complexity\u0020and\/or\u0020licensing\u0020limits.",
+            "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_setAdvancedMode"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003AFOLDER_PERMISSION",
             "name": "FOLDER_PERMISSION",
@@ -981,6 +1036,11 @@ Search.appendIndex(
             "summary": "enques\/loads\u0020options_settings_page\u0020stylesheet",
             "url": "classes/EarthAsylumConsulting-Traits-html-input-fields.html#method_html_input_style"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\html_input_fields\u003A\u003Ahtml_input_admin_style\u0028\u0029",
+            "name": "html_input_admin_style",
+            "summary": "Get\u0020admin\u0020color\u0020variables",
+            "url": "classes/EarthAsylumConsulting-Traits-html-input-fields.html#method_html_input_admin_style"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\html_input_fields\u003A\u003Ahtml_input_jquery\u0028\u0029",
             "name": "html_input_jquery",
             "summary": "enques\/loads\u0020jQuery\/jQuery\u002Dui",
@@ -1075,11 +1135,6 @@ Search.appendIndex(
             "name": "loadPluginUpdater",
             "summary": "Load\u0020object\u0020\u0028once\u0029\u0020for\u0020automatic\u0020updates.",
             "url": "classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_loadPluginUpdater"
-        },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_loader\u003A\u003Aplugin_updater_filter\u0028\u0029",
-            "name": "plugin_updater_filter",
-            "summary": "Filter\u0020for\u0020automatic\u0020updates.",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_plugin_updater_filter"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_loader\u003A\u003AisPHP\u0028\u0029",
             "name": "isPHP",
@@ -1455,6 +1510,36 @@ Search.appendIndex(
             "name": "OPTION_WP_ENVIRONMENT",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-eacDoojiggerEnvironment.html#constant_OPTION_WP_ENVIRONMENT"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater",
+            "name": "eacDoojiggerPluginUpdater",
+            "summary": "\u007Beac\u007DDoojiggerPluginUpdater\u0020class\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress,\nManage\u0020\u007Beac\u007DDoojigger,\u0020derivative\u0020and\u0020extensioon\u0020software\u0020updates",
+            "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003AsetPluginUpdates\u0028\u0029",
+            "name": "setPluginUpdates",
+            "summary": "setPluginUpdates.",
+            "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_setPluginUpdates"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003Aregister_plugin_updater\u0028\u0029",
+            "name": "register_plugin_updater",
+            "summary": "register_plugin_updater.",
+            "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_register_plugin_updater"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003Aprepare_plugin_updater\u0028\u0029",
+            "name": "prepare_plugin_updater",
+            "summary": "prepare_plugin_updater.",
+            "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_prepare_plugin_updater"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003Atrigger_plugin_updater\u0028\u0029",
+            "name": "trigger_plugin_updater",
+            "summary": "trigger_plugin_updater",
+            "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#method_trigger_plugin_updater"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003AREGISTER_OPTION_NAME",
+            "name": "REGISTER_OPTION_NAME",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html#constant_REGISTER_OPTION_NAME"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\uninstall\\eacDoojigger",
             "name": "eacDoojigger",

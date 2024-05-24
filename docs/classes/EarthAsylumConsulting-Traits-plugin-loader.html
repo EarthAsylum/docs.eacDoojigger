@@ -114,6 +114,10 @@
                 <a href="packages/eacDoojiggerUtilities-eacDoojigger.html" class="">eacDoojigger</a>
                 
             </li>
+                    <li>
+                <a href="packages/eacDoojiggerUtilities-eacDoojiggerPluginUpdater.html" class="">eacDoojiggerPluginUpdater</a>
+                
+            </li>
             </ul>
 
                         </section>
@@ -261,13 +265,6 @@ or {classname}_extensions_loaded or {classname}_ready</p>
 </dt>
 <dd>Load object (once) for automatic updates.</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_plugin_updater_filter">plugin_updater_filter()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Filter for automatic updates.</dd>
-
         </dl>
 
 
@@ -407,7 +404,7 @@ or {classname}_extensions_loaded or {classname}_ready</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-loader-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php">plugin_loader.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">253</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
@@ -492,7 +489,7 @@ Add filters/actions and shortcodes once all plugins are loaded</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-loader-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php">plugin_loader.trait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 
     </aside>
 
@@ -502,63 +499,9 @@ Add filters/actions and shortcodes once all plugins are loaded</p>
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">loadPluginUpdater</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pluginFile</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$updateType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"><p>Uses 'pre_set_site_transient_update_plugins' and 'plugins_api_args' filter so we only do this when needed.</p>
+        <section class="phpdocumentor-description"><p>Now (as of v2.6) only used by extensions.</p>
 </section>
 
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$pluginFile</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>plugin file pathname ($plugin_detail['PluginFile'])</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$updateType</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>auto-update type ('self' | 'wp') ($plugin_detail['AutoUpdate'])</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_plugin_updater_filter">
-        plugin_updater_filter()
-        <a href="classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_plugin_updater_filter" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-loader-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php">plugin_loader.trait.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">214</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Filter for automatic updates.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">plugin_updater_filter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pluginFile</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$updateType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
