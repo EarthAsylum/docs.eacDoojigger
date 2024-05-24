@@ -7,19 +7,19 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2023 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
  * @version		1.x
  * @uses		EarthAsylumConsulting\Traits\plugin_loader
  *
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.2.2
+ * Version:				1.2.3
  * Requires at least:	5.5.0
  * Tested up to: 		6.5
  * Requires PHP:		7.4
  * Requires EAC:		2.0
- * Plugin URI:			https://myawesomeserver.com/plugins/myAwesomePlugin/myAwesomePlugin.html
+ * Plugin URI: 			https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
  * Text Domain:			myAwesomePlugin
