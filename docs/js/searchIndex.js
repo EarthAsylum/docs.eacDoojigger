@@ -1478,7 +1478,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerEnvironment",
             "name": "eacDoojiggerEnvironment",
-            "summary": "\u007Beac\u007DDoojigger\u0020Environment\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress,\nSet\u0020WP_ENVIRONMENT_TYPE\u0020used\u0020by\u0020wp_get_environment_type\u0028\u0029",
+            "summary": "\u007Beac\u007DDoojigger\u0020Environment\u0020\u002D\u0020Set\u0020WP_ENVIRONMENT_TYPE\u0020used\u0020by\u0020wp_get_environment_type\u0028\u0029",
             "url": "classes/EarthAsylumConsulting-eacDoojiggerEnvironment.html"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerEnvironment\u003A\u003AsetEnvironment\u0028\u0029",
@@ -1513,7 +1513,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater",
             "name": "eacDoojiggerPluginUpdater",
-            "summary": "\u007Beac\u007DDoojiggerPluginUpdater\u0020class\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress,\nManage\u0020\u007Beac\u007DDoojigger,\u0020derivative\u0020and\u0020extensioon\u0020software\u0020updates",
+            "summary": "\u007Beac\u007DDoojiggerPluginUpdater\u0020class\u0020\u002D\u0020Manage\u0020\u007Beac\u007DDoojigger,\u0020derivative\u0020and\u0020extensioon\u0020software\u0020updates",
             "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003AsetPluginUpdates\u0028\u0029",
