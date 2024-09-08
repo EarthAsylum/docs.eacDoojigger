@@ -60,15 +60,15 @@
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
+                <a href="namespaces/earthasylumconsulting-extensions.html" class="">Extensions</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/earthasylumconsulting-helpers.html" class="">Helpers</a>
                 
             </li>
                     <li>
                 <a href="namespaces/earthasylumconsulting-plugin.html" class="">Plugin</a>
-                
-            </li>
-                    <li>
-                <a href="namespaces/earthasylumconsulting-extensions.html" class="">Extensions</a>
                 
             </li>
                     <li>
@@ -81,6 +81,16 @@
             </li>
             </ul>
 
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="namespaces/psr.html" class="">Psr</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/psr-log.html" class="">Log</a>
+                
+            </li>
+            </ul>
+
                         </section>
                 <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
@@ -89,37 +99,19 @@
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
+                <a href="packages/eacDoojigger-Extensions.html" class="">Extensions</a>
+                
+            </li>
+                    <li>
                 <a href="packages/eacDoojigger-Helpers.html" class="">Helpers</a>
                 
             </li>
                     <li>
-                <a href="packages/eacDoojigger-Extensions.html" class="">Extensions</a>
-                
-            </li>
-            </ul>
-
-                                    <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="packages/eacDoojiggerUtilities.html" class="">eacDoojiggerUtilities</a>
-</h4>
-    <ul class="phpdocumentor-list">
-                    <li>
-                <a href="packages/eacDoojiggerUtilities-eacDoojigger.html" class="">eacDoojigger</a>
+                <a href="packages/eacDoojigger-Traits.html" class="">Traits</a>
                 
             </li>
                     <li>
-                <a href="packages/eacDoojiggerUtilities-eacDoojiggerActionTimer.html" class="">eacDoojiggerActionTimer</a>
-                
-            </li>
-                    <li>
-                <a href="packages/eacDoojiggerUtilities-eacDoojiggerAutoloader.html" class="">eacDoojiggerAutoloader</a>
-                
-            </li>
-                    <li>
-                <a href="packages/eacDoojiggerUtilities-eacDoojiggerEnvironment.html" class="">eacDoojiggerEnvironment</a>
-                
-            </li>
-                    <li>
-                <a href="packages/eacDoojiggerUtilities-eacDoojiggerPluginUpdater.html" class="">eacDoojiggerPluginUpdater</a>
+                <a href="packages/eacDoojigger-Utilities.html" class="">Utilities</a>
                 
             </li>
             </ul>
@@ -152,8 +144,9 @@
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojiggerUtilities.html">eacDoojiggerUtilities</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojiggerUtilities-eacDoojiggerAutoloader.html">eacDoojiggerAutoloader</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojigger.html">eacDoojigger</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojigger-Utilities.html">Utilities</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojigger-Utilities-eacDoojiggerAutoloader.html">eacDoojiggerAutoloader</a></li>
                             </ul>
         </div>
     
@@ -163,7 +156,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
@@ -201,7 +194,7 @@ Autoloader class for EarthAsylum Consulting {eac} Doojigger for WordPress classe
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
                                                  <section class="phpdocumentor-description"><p>Copyright 2024 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;
-Version: 	2.2.0</p>
+Version: 	24.0904.1</p>
 </section>
 
                                     </dd>
@@ -228,21 +221,42 @@ Version: 	2.2.0</p>
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#constant_AUTOLOAD_TYPES">AUTOLOAD_TYPES</a>
     <span>
-        &nbsp;= [&#039;Plugin&#039; =&gt; &#039;plugin&#039;, &#039;Helpers&#039; =&gt; &#039;class&#039;, &#039;Traits&#039; =&gt; &#039;trait&#039;, &#039;Interfaces&#039; =&gt; &#039;interface&#039;, &#039;Extensions&#039; =&gt; &#039;extension&#039;]                            </span>
+        &nbsp;= [
+    // namespace 		= file suffix (maybe)
+    &#039;Plugin&#039; =&gt; &#039;plugin&#039;,
+    &#039;Plugins&#039; =&gt; &#039;plugin&#039;,
+    &#039;Extensions&#039; =&gt; &#039;extension&#039;,
+    &#039;Helpers&#039; =&gt; &#039;helper&#039;,
+    &#039;Classes&#039; =&gt; &#039;class&#039;,
+    // default
+    &#039;Traits&#039; =&gt; &#039;trait&#039;,
+    &#039;Interfaces&#039; =&gt; &#039;interface&#039;,
+    &#039;Exceptions&#039; =&gt; &#039;exception&#039;,
+]                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#constant_FILE_PATTERNS">FILE_PATTERNS</a>
+    <span>
+        &nbsp;= [
+    &#039;%1$s.%2$s.php&#039;,
+    // &lt;classname&gt;.&lt;type&gt;.php
+    &#039;class.%1$s.%2$s.php&#039;,
+    // class.&lt;classname&gt;.&lt;type&gt;.php
+    &#039;%1$s.class.php&#039;,
+    // &lt;classname&gt;.class.php
+    &#039;class.%1$s.php&#039;,
+    // class.&lt;classname&gt;.php
+    &#039;%1$s.php&#039;,
+]                            </span>
 </dt>
 <dd></dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#property_isRegistered">$isRegistered</a>
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#property_history">$history</a>
     <span>
-                        &nbsp;: bool            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#property_loaderClassName">$loaderClassName</a>
-    <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -268,18 +282,25 @@ Version: 	2.2.0</p>
 <dd>autoloader</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#method_debugAutoLoader">debugAutoLoader()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>register the autoloader for the default and (maybe) derivative namespace</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#method_setAutoLoader">setAutoLoader()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>register the autoloader</dd>
+<dd>register the autoloader for the default and (maybe) derivative namespace</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#method_setEmailNotification">setEmailNotification()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>set the fatal email loader</dd>
+<dd>set the fatal email loader - no longer supported</dd>
 
         </dl>
 
@@ -300,7 +321,7 @@ Version: 	2.2.0</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -309,12 +330,62 @@ Version: 	2.2.0</p>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">AUTOLOAD_TYPES</span>
-    = <span class="phpdocumentor-signature__default-value">[&#039;Plugin&#039; =&gt; &#039;plugin&#039;, &#039;Helpers&#039; =&gt; &#039;class&#039;, &#039;Traits&#039; =&gt; &#039;trait&#039;, &#039;Interfaces&#039; =&gt; &#039;interface&#039;, &#039;Extensions&#039; =&gt; &#039;extension&#039;]</span>
+    = <span class="phpdocumentor-signature__default-value">[
+    // namespace 		= file suffix (maybe)
+    &#039;Plugin&#039; =&gt; &#039;plugin&#039;,
+    &#039;Plugins&#039; =&gt; &#039;plugin&#039;,
+    &#039;Extensions&#039; =&gt; &#039;extension&#039;,
+    &#039;Helpers&#039; =&gt; &#039;helper&#039;,
+    &#039;Classes&#039; =&gt; &#039;class&#039;,
+    // default
+    &#039;Traits&#039; =&gt; &#039;trait&#039;,
+    &#039;Interfaces&#039; =&gt; &#039;interface&#039;,
+    &#039;Exceptions&#039; =&gt; &#039;exception&#039;,
+]</span>
 </code>
 
 
     
         <section class="phpdocumentor-description"><p>map object namespace to file type</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_FILE_PATTERNS">
+        FILE_PATTERNS
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#constant_FILE_PATTERNS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">81</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">FILE_PATTERNS</span>
+    = <span class="phpdocumentor-signature__default-value">[
+    &#039;%1$s.%2$s.php&#039;,
+    // &lt;classname&gt;.&lt;type&gt;.php
+    &#039;class.%1$s.%2$s.php&#039;,
+    // class.&lt;classname&gt;.&lt;type&gt;.php
+    &#039;%1$s.class.php&#039;,
+    // &lt;classname&gt;.class.php
+    &#039;class.%1$s.php&#039;,
+    // class.&lt;classname&gt;.php
+    &#039;%1$s.php&#039;,
+]</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>file name patterns to look for - %1$s = classname, %2$s = classtype</p>
 </section>
 
     
@@ -335,62 +406,28 @@ Version: 	2.2.0</p>
             -public
             -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_isRegistered">
-        $isRegistered
-        <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#property_isRegistered" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_history">
+        $history
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#property_history" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$isRegistered</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$history</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>is autoloader registered</p>
-</section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
-            -static                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_loaderClassName">
-        $loaderClassName
-        <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#property_loaderClassName" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">70</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$loaderClassName</span>
-    </code>
-
-    
-        <section class="phpdocumentor-description"><p>who loaded us (short class name used for emailing fatal errors)</p>
+        <section class="phpdocumentor-description"><p>static debugging history</p>
 </section>
 
     
@@ -412,7 +449,7 @@ Version: 	2.2.0</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -424,7 +461,7 @@ Version: 	2.2.0</p>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>static array of [namespace =&gt; root_directory]</p>
+        <section class="phpdocumentor-description"><p>static array of [namespace =&gt; [ root_directory, ... ] ]</p>
 </section>
 
     
@@ -450,7 +487,7 @@ Version: 	2.2.0</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -492,7 +529,7 @@ Version: 	2.2.0</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>string $namespace plugin object root namespace name</p>
+                                                 <section class="phpdocumentor-description"><p>string $namespace 	root namespace name (namespace or namespace\subnamespace)</p>
 </section>
 
                                     </dd>
@@ -501,7 +538,7 @@ Version: 	2.2.0</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>string $root plugin root directory - '.../wp-content/plugins/plugin_folder/namespace_folder'</p>
+                                                 <section class="phpdocumentor-description"><p>string $root 		root directory for above namespace</p>
 </section>
 
                                     </dd>
@@ -528,7 +565,7 @@ Version: 	2.2.0</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
@@ -562,7 +599,75 @@ Version: 	2.2.0</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>string $class class to be loaded (NameSpace\SubNameSpace\ClassName)</p>
+                                                 <section class="phpdocumentor-description"><p>string $class class to be loaded (NameSpace\SubNameSpace\MaybeType\ClassName)</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_debugAutoLoader">
+        debugAutoLoader()
+        <a href="classes/EarthAsylumConsulting-eacDoojiggerAutoloader.html#method_debugAutoLoader" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">106</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">register the autoloader for the default and (maybe) derivative namespace</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">debugAutoLoader</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$debug_array</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$debug_array</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>string $namespace 	derivative plugin root namespace</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>string $root 		derivative plugin root directory - 'wp-content/plugins/plugin_folder/NameSpace'</p>
 </section>
 
                                     </dd>
@@ -587,11 +692,11 @@ Version: 	2.2.0</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">register the autoloader</p>
+        <p class="phpdocumentor-summary">register the autoloader for the default and (maybe) derivative namespace</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -629,7 +734,7 @@ Version: 	2.2.0</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>string $namespace plugin object root namespace</p>
+                                                 <section class="phpdocumentor-description"><p>string $namespace 	derivative plugin root namespace</p>
 </section>
 
                                     </dd>
@@ -638,7 +743,7 @@ Version: 	2.2.0</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>string $root plugin root directory - '.../wp-content/plugins/plugin_folder/NameSpace'</p>
+                                                 <section class="phpdocumentor-description"><p>string $root 		derivative plugin root directory - 'wp-content/plugins/plugin_folder/NameSpace'</p>
 </section>
 
                                     </dd>
@@ -663,11 +768,11 @@ Version: 	2.2.0</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php"><a href="files/eacdoojigger-earthasylumconsulting-utilities-eacdoojiggerautoloader-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Utilities/eacDoojiggerAutoloader.class.php">eacDoojiggerAutoloader.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">set the fatal email loader</p>
+        <p class="phpdocumentor-summary">set the fatal email loader - no longer supported</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
