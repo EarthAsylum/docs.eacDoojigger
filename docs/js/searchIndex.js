@@ -3453,7 +3453,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater",
             "name": "eacDoojiggerPluginUpdater",
-            "summary": "\u007Beac\u007DDoojiggerPluginUpdater\u0020class\u0020\u002D\u0020Manage\u0020\u007Beac\u007DDoojigger,\u0020derivative\u0020and\u0020extensioon\u0020software\u0020updates",
+            "summary": "\u007Beac\u007DDoojiggerPluginUpdater\u0020class\u0020\u002D\u0020Manage\u0020\u007Beac\u007DDoojigger,\u0020derivative\u0020and\u0020extension\u0020software\u0020updates",
             "url": "classes/EarthAsylumConsulting-eacDoojiggerPluginUpdater.html"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\eacDoojiggerPluginUpdater\u003A\u003AsetPluginUpdates\u0028\u0029",
