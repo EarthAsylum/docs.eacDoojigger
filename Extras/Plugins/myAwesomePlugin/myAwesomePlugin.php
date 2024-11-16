@@ -14,11 +14,11 @@
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.2.3
+ * Version:				1.3.0
  * Requires at least:	5.5.0
- * Tested up to: 		6.5
- * Requires PHP:		7.4
- * Requires EAC:		2.0
+ * Tested up to: 		6.7
+ * Requires PHP:		8.1
+ * Requires EAC:		3.0
  * Plugin URI: 			https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
@@ -48,7 +48,7 @@
 namespace myAwesomeNamespace
 {
 	// must have {eac}Doojigger and {eac}DoojiggerAutoloader activated
-	if (!defined('EAC_DOOJIGGER_VERSION'))
+	if (!defined('EACDOOJIGGER_VERSION'))
 	{
 		\add_action( 'all_admin_notices', function()
 			{
@@ -80,9 +80,9 @@ namespace myAwesomeNamespace
 				'NameSpace'			=> __NAMESPACE__,
 				'PluginClass'		=> __NAMESPACE__.'\\Plugin\\myAwesomePlugin',
 				'RequiresWP'		=> '5.8',			// WordPress
-				'RequiresPHP'		=> '7.4',			// PHP
-				'RequiresEAC'		=> '2.5',			// eacDoojigger
-			//	'RequiresWC'		=> '8.0',			// WooCommerce
+				'RequiresPHP'		=> '8.1',			// PHP
+				'RequiresEAC'		=> '3.0',			// eacDoojigger
+			//	'RequiresWC'		=> '9.0',			// WooCommerce
 				'NetworkActivate'	=>	false,			// require (or forbid) network activation
 				'AutoUpdate'		=> 'self',			// automatic update 'self' or 'wp'
 			];

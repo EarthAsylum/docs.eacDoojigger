@@ -1,10 +1,10 @@
 === My Options Test ===
 Plugin URI:         https://myawesomeserver.com/myAwesomePlugin/
 Author: 			[EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.4.0
-Last Updated:       26-Apr-2024
-Requires at least:  5.5.0
-Tested up to:       6.5
+Stable tag:         1.4.1
+Last Updated:       16-Nov-2024
+Requires at least:  5.8
+Tested up to:       6.7
 Requires PHP:       7.2
 
 My Options Test -  Provides examples of input types, parameters, and processing callbacks & filters.
@@ -30,6 +30,12 @@ filters and callbacks
 Installation of this plugin can be managed from the WordPress Dashboard » Plugins » Add New page by clicking the [Upload Plugin] button, then selecting the myAwesomePlugin.zip file from your computer.
 
 == Changelog ==
+
+= Version 1.4.1 – November 16, 2024 =
+
++   Compatible with WordPress 6.7 and {eac}Doojigger 3.0.
++   Minor tweaks.
++   Added 'switch' field.
 
 = Version 1.4.0 – April 26, 2024 =
 

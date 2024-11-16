@@ -157,7 +157,7 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">15</span>
 
@@ -213,9 +213,9 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALIAS">ALIAS</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_ALIAS">ALIAS</a>
     <span>
-        &nbsp;= null                            </span>
+        &nbsp;= &#039;security&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -257,14 +257,21 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP">ALLOW_NON_PHP</a>
     <span>
-        &nbsp;= 0b1000000                            </span>
+        &nbsp;= 0b100000                            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_DEFAULT_DISABLED">DEFAULT_DISABLED</a>
     <span>
-        &nbsp;= 0b100000                            </span>
+        &nbsp;= 0b1000000                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ENABLE_OPTION">ENABLE_OPTION</a>
+    <span>
+        &nbsp;= null                            </span>
 </dt>
 <dd></dd>
 
@@ -276,9 +283,16 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_TAB_NAME">TAB_NAME</a>
+    <span>
+        &nbsp;= &#039;Security&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_VERSION">VERSION</a>
     <span>
-        &nbsp;= &#039;24.0906.1&#039;                            </span>
+        &nbsp;= &#039;24.1113.1&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -367,6 +381,14 @@
 <dd>DISALLOW_FILE_EDIT was already set</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_embeds">disable_embeds()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>disable oEmbed
+creds: https://kinsta.com/knowledgebase/disable-embeds-wordpress/</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_file_mods">disable_file_mods()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -381,7 +403,42 @@
 <dd>DISALLOW_FILE_MODS was already set</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_invalid_json">disable_invalid_json()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>disable invalid json request</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_invalid_xml">disable_invalid_xml()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>disable invalid xml request</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_pings">disable_pings()</a>
+    <span>
+                                &nbsp;: void|array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>disable xml-rpc pings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest">disable_rest()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>disable REST API</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest_all">disable_rest_all()</a>
+    <span>
+                                &nbsp;: <abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr>    </span>
+</dt>
+<dd>disable All REST API</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest_auth">disable_rest_auth()</a>
     <span>
                                 &nbsp;: <abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr>    </span>
 </dt>
@@ -430,6 +487,13 @@
 <dd>disable xml-rpc</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_early_addActionsAndFilters">early_addActionsAndFilters()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Add filters and actions - called from constructor</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias">getAlias()</a>
     <span>
                                 &nbsp;: <abbr title="\EarthAsylumConsulting\const">const</abbr>    </span>
@@ -456,6 +520,27 @@
                                 &nbsp;: void    </span>
 </dt>
 <dd>initialize method - called from main plugin</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_invalid_rest">invalid_rest()</a>
+    <span>
+                                &nbsp;: void|array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>invalid rest call</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_invalid_rest_auth">invalid_rest_auth()</a>
+    <span>
+                                &nbsp;: <abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr>    </span>
+</dt>
+<dd>disable un-authenticated REST API</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_invalid_xml">invalid_xml()</a>
+    <span>
+                                &nbsp;: void|array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>invalid xml-rpc call</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_is_network_enabled">is_network_enabled()</a>
@@ -493,6 +578,13 @@
 <dd>is site or network option set</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_match_disabled_uris">match_disabled_uris()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>disable uri</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_mergePolicies">mergePolicies()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -500,60 +592,26 @@
 <dd>merge site and network policies</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secBlockIP">options_form_post_secBlockIP()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_register_risk_action">register_risk_action()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>filter for options_form_post_secBlockIP</dd>
+<dd>default action for &#039;register_risk&#039;, overridden by risk_assessment extension
+action {plugin}_register_[threat|fraud|abuse|risk]</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secCookies">options_form_post_secCookies()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>filter for options_form_post_secCookies</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secDisableURIs">options_form_post_secDisableURIs()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>filter for options_form_post_secDisableURIs</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secLoginUri">options_form_post_secLoginUri()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>filter for options_form_post_secLoginUri</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secPassLock">options_form_post_secPassLock()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>filter for options_form_post_secPassLock</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secPassTime">options_form_post_secPassTime()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>filter for options_form_post_secPassTime</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_rest_api_cors">rest_api_cors()</a>
-    <span>
-                                &nbsp;: <abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr>    </span>
-</dt>
-<dd>Set origin-specific CORS headers (rest_api_init -&gt; rest_pre_serve_request)</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_set_hearttbeat">set_hearttbeat()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_set_heartbeat">set_heartbeat()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>heartbeat_settings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_unauthorized_rest">unauthorized_rest()</a>
+    <span>
+                                &nbsp;: void|array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>unauthorized rest call</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_validate_authentication_attempts">validate_authentication_attempts()</a>
@@ -561,6 +619,13 @@
                                 &nbsp;: <abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr>    </span>
 </dt>
 <dd>validate authentication attempts</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_validate_http_header">validate_http_header()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>require a specific http header</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_validate_password_policy">validate_password_policy()</a>
@@ -577,11 +642,25 @@
 <dd>welcome email filter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_authenticate">wp_login_authenticate()</a>
+    <span>
+                                &nbsp;: object    </span>
+</dt>
+<dd>wp_login post action - validate custom nonce</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_filter">wp_login_filter()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>wp_login filter</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_form">wp_login_form()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>wp_login form action - add custom nonce</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_init">wp_login_init()</a>
@@ -604,6 +683,13 @@
 </dt>
 <dd>wp_login redirect action</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_nonce_failure">wp_nonce_failure()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>wp_nonce_failure (wp_verify_nonce_failed)</dd>
+
         </dl>
 
 
@@ -617,27 +703,27 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ALIAS">
         ALIAS
-        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALIAS" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_ALIAS" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\EarthAsylumConsulting\ALIAS">ALIAS</abbr></span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">ALIAS</span>
-    = <span class="phpdocumentor-signature__default-value">null</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;security&#039;</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>constant in child class for alias class name</p>
+        <section class="phpdocumentor-description"><p>extension alias</p>
 </section>
 
     
@@ -652,7 +738,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -681,7 +767,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -710,7 +796,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -739,7 +825,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -768,7 +854,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -797,7 +883,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -806,7 +892,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">ALLOW_NON_PHP</span>
-    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
+    = <span class="phpdocumentor-signature__default-value">0b100000</span>
 </code>
 
 
@@ -826,7 +912,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -835,13 +921,45 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">DEFAULT_DISABLED</span>
-    = <span class="phpdocumentor-signature__default-value">0b100000</span>
+    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
 </code>
 
 
         <section class="phpdocumentor-description"></section>
 
         <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ENABLE_OPTION">
+        ENABLE_OPTION
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ENABLE_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">44</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string|array&lt;string|int, mixed&gt;|bool</span>
+    <span class="phpdocumentor-signature__name">ENABLE_OPTION</span>
+    = <span class="phpdocumentor-signature__default-value">null</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>to set (or disable) default group display/switch
+false 		disable the 'Enabled'' option for this group
+string 		the label for the 'Enabled' option
+array 		override options for the 'Enabled' option (label,help,title,info, etc.)</p>
+</section>
 
     
 
@@ -855,7 +973,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -876,13 +994,42 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TAB_NAME">
+        TAB_NAME
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_TAB_NAME" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">TAB_NAME</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;Security&#039;</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>extension tab name</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_VERSION">
         VERSION
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 
@@ -893,7 +1040,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;24.0906.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;24.1113.1&#039;</span>
 </code>
 
 
@@ -926,7 +1073,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">581</span>
+    <span class="phpdocumentor-element-found-in__line">550</span>
 
     </aside>
 
@@ -980,9 +1127,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -1025,9 +1172,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method___destruct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -1060,7 +1207,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">601</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 
     </aside>
 
@@ -1105,9 +1252,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
 
     </aside>
 
@@ -1140,7 +1287,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">392</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 
     </aside>
 
@@ -1173,9 +1320,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_admin_options_help" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -1223,9 +1370,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
@@ -1271,9 +1418,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_block_ip_address" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1033</span>
+    <span class="phpdocumentor-element-found-in__line">1175</span>
 
     </aside>
 
@@ -1304,9 +1451,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_checkCookieFlags" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1092</span>
+    <span class="phpdocumentor-element-found-in__line">1202</span>
 
     </aside>
 
@@ -1337,9 +1484,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_code_edit" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">866</span>
+    <span class="phpdocumentor-element-found-in__line">689</span>
 
     </aside>
 
@@ -1370,9 +1517,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_code_edit_error" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">884</span>
+    <span class="phpdocumentor-element-found-in__line">707</span>
 
     </aside>
 
@@ -1398,14 +1545,48 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_disable_embeds">
+        disable_embeds()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_embeds" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1069</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable oEmbed
+creds: https://kinsta.com/knowledgebase/disable-embeds-wordpress/</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disable_embeds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_disable_file_mods">
         disable_file_mods()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_file_mods" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">897</span>
+    <span class="phpdocumentor-element-found-in__line">720</span>
 
     </aside>
 
@@ -1436,9 +1617,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_file_mods_error" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">915</span>
+    <span class="phpdocumentor-element-found-in__line">738</span>
 
     </aside>
 
@@ -1464,14 +1645,205 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_disable_invalid_json">
+        disable_invalid_json()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_invalid_json" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">937</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable invalid json request</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disable_invalid_json</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_disable_invalid_xml">
+        disable_invalid_xml()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_invalid_xml" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1008</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable invalid xml request</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disable_invalid_xml</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_disable_pings">
+        disable_pings()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_pings" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">976</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable xml-rpc pings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disable_pings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$methods</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$methods</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><ul>
+<li>empty array of xmlrpc methods</li>
+</ul>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_disable_rest">
         disable_rest()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">971</span>
+    <span class="phpdocumentor-element-found-in__line">751</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable REST API</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disable_rest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_disable_rest_all">
+        disable_rest_all()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest_all" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">812</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable All REST API</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disable_rest_all</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoints</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$endpoints</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_disable_rest_auth">
+        disable_rest_auth()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest_auth" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">878</span>
 
     </aside>
 
@@ -1479,13 +1851,13 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">disable_rest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$authError</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">disable_rest_auth</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoints</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$authError</span>
+                <span class="phpdocumentor-signature__argument__name">$endpoints</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -1513,9 +1885,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest_core" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">947</span>
+    <span class="phpdocumentor-element-found-in__line">835</span>
 
     </aside>
 
@@ -1523,10 +1895,21 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">disable_rest_core</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">disable_rest_core</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoints</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$endpoints</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1546,9 +1929,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rest_list" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">928</span>
+    <span class="phpdocumentor-element-found-in__line">792</span>
 
     </aside>
 
@@ -1590,9 +1973,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rss_feeds" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">794</span>
+    <span class="phpdocumentor-element-found-in__line">1037</span>
 
     </aside>
 
@@ -1623,9 +2006,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_rss_response" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">825</span>
+    <span class="phpdocumentor-element-found-in__line">1025</span>
 
     </aside>
 
@@ -1656,9 +2039,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_uris" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1000</span>
+    <span class="phpdocumentor-element-found-in__line">1137</span>
 
     </aside>
 
@@ -1689,9 +2072,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_disable_xml" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">840</span>
+    <span class="phpdocumentor-element-found-in__line">954</span>
 
     </aside>
 
@@ -1699,10 +2082,21 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">disable_xml</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">disable_xml</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$methods</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$methods</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -1721,6 +2115,39 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_early_addActionsAndFilters">
+        early_addActionsAndFilters()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_early_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">230</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add filters and actions - called from constructor</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">early_addActionsAndFilters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getAlias">
         getAlias()
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1728,7 +2155,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">485</span>
 
     </aside>
 
@@ -1763,7 +2190,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">487</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
@@ -1808,7 +2235,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">505</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 
     </aside>
 
@@ -1841,9 +2268,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 
     </aside>
 
@@ -1869,6 +2296,146 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_invalid_rest">
+        invalid_rest()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_invalid_rest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">860</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">invalid rest call</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">invalid_rest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><ul>
+<li>empty array of xmlrpc methods</li>
+</ul>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_invalid_rest_auth">
+        invalid_rest_auth()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_invalid_rest_auth" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">904</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable un-authenticated REST API</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">invalid_rest_auth</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$result</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_invalid_xml">
+        invalid_xml()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_invalid_xml" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">994</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">invalid xml-rpc call</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">invalid_xml</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><ul>
+<li>empty array of xmlrpc methods</li>
+</ul>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_is_network_enabled">
         is_network_enabled()
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_is_network_enabled" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1876,7 +2443,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 
     </aside>
 
@@ -1909,7 +2476,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">475</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 
     </aside>
 
@@ -1965,7 +2532,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">404</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 
     </aside>
 
@@ -2017,9 +2584,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_isNetworkPolicy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1164</span>
+    <span class="phpdocumentor-element-found-in__line">1274</span>
 
     </aside>
 
@@ -2064,9 +2631,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_isPolicyEnabled" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1177</span>
+    <span class="phpdocumentor-element-found-in__line">1287</span>
 
     </aside>
 
@@ -2117,14 +2684,58 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_match_disabled_uris">
+        match_disabled_uris()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_match_disabled_uris" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1150</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">disable uri</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">match_disabled_uris</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$optionName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$optionName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_mergePolicies">
         mergePolicies()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_mergePolicies" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1195</span>
+    <span class="phpdocumentor-element-found-in__line">1305</span>
 
     </aside>
 
@@ -2132,7 +2743,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">mergePolicies</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$optionName</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$getPost</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">mergePolicies</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$optionName</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$getPost</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -2162,7 +2773,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$getPost</span>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><ul>
 <li>POSTed values</li>
@@ -2186,67 +2797,51 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_secBlockIP">
-        options_form_post_secBlockIP()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secBlockIP" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_register_risk_action">
+        register_risk_action()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_register_risk_action" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">451</span>
+    <span class="phpdocumentor-element-found-in__line">415</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">filter for options_form_post_secBlockIP</p>
+        <p class="phpdocumentor-summary">default action for &#039;register_risk&#039;, overridden by risk_assessment extension
+action {plugin}_register_[threat|fraud|abuse|risk]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_secBlockIP</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">register_risk_action</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$score</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$http_status</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">403</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fieldName</span>
+                <span class="phpdocumentor-signature__argument__name">$message</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
+                    <section class="phpdocumentor-description"><p>additional comment text</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$metaData</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-signature__argument__name">$score</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
+                    <section class="phpdocumentor-description"><p>risk score (0-100)</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priorValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
+                <span class="phpdocumentor-signature__argument__name">$http_status</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">403</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
+                    <section class="phpdocumentor-description"><p>optional, set http status on die</p>
 </section>
 
             </dd>
@@ -2257,9 +2852,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -2268,459 +2861,14 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_secCookies">
-        options_form_post_secCookies()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secCookies" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_set_heartbeat">
+        set_heartbeat()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_set_heartbeat" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">506</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for options_form_post_secCookies</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_secCookies</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fieldName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$metaData</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priorValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_secDisableURIs">
-        options_form_post_secDisableURIs()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secDisableURIs" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">411</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for options_form_post_secDisableURIs</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_secDisableURIs</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fieldName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$metaData</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priorValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_secLoginUri">
-        options_form_post_secLoginUri()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secLoginUri" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">338</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for options_form_post_secLoginUri</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_secLoginUri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fieldName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$metaData</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priorValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_secPassLock">
-        options_form_post_secPassLock()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secPassLock" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">375</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for options_form_post_secPassLock</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_secPassLock</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fieldName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$metaData</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priorValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_secPassTime">
-        options_form_post_secPassTime()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_options_form_post_secPassTime" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">393</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for options_form_post_secPassTime</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_secPassTime</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$fieldName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$metaData</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$priorValue</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_rest_api_cors">
-        rest_api_cors()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_rest_api_cors" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">763</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Set origin-specific CORS headers (rest_api_init -&gt; rest_pre_serve_request)</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">rest_api_cors</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\EarthAsylumConsulting\Extensions\WP_Error">WP_Error</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>or $user</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_set_hearttbeat">
-        set_hearttbeat()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_set_hearttbeat" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">1140</span>
+    <span class="phpdocumentor-element-found-in__line">1250</span>
 
     </aside>
 
@@ -2728,7 +2876,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">set_hearttbeat</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">set_heartbeat</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -2759,14 +2907,62 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_unauthorized_rest">
+        unauthorized_rest()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_unauthorized_rest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">921</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">unauthorized rest call</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">unauthorized_rest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void|array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><ul>
+<li>empty array of xmlrpc methods</li>
+</ul>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_validate_authentication_attempts">
         validate_authentication_attempts()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_validate_authentication_attempts" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">734</span>
+    <span class="phpdocumentor-element-found-in__line">658</span>
 
     </aside>
 
@@ -2814,14 +3010,58 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_validate_http_header">
+        validate_http_header()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_validate_http_header" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1110</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">require a specific http header</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">validate_http_header</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$required</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$required</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_validate_password_policy">
         validate_password_policy()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_validate_password_policy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">671</span>
+    <span class="phpdocumentor-element-found-in__line">595</span>
 
     </aside>
 
@@ -2870,9 +3110,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_welcome_email_filter" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">654</span>
+    <span class="phpdocumentor-element-found-in__line">578</span>
 
     </aside>
 
@@ -2910,14 +3150,69 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_wp_login_authenticate">
+        wp_login_authenticate()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_authenticate" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">547</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">wp_login post action - validate custom nonce</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">wp_login_authenticate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$user</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>wp_user or wp_error</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">object</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>$user</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_wp_login_filter">
         wp_login_filter()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_filter" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">589</span>
+    <span class="phpdocumentor-element-found-in__line">473</span>
 
     </aside>
 
@@ -2925,7 +3220,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">wp_login_filter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$scheme</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$blogId</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">wp_login_filter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$scheme</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$blogId</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -2959,10 +3254,11 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$blogId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>site id or null (current)</p>
+</section>
 
             </dd>
             </dl>
@@ -2983,14 +3279,47 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_wp_login_form">
+        wp_login_form()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_form" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">533</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">wp_login form action - add custom nonce</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">wp_login_form</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_wp_login_init">
         wp_login_init()
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_init" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">606</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 
     </aside>
 
@@ -3021,9 +3350,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_notice" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">571</span>
+    <span class="phpdocumentor-element-found-in__line">455</span>
 
     </aside>
 
@@ -3066,9 +3395,9 @@
         <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_login_redirect" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">630</span>
+    <span class="phpdocumentor-element-found-in__line">509</span>
 
     </aside>
 
@@ -3091,6 +3420,39 @@
             </dd>
             </dl>
 
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_wp_nonce_failure">
+        wp_nonce_failure()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-extension.html#method_wp_nonce_failure" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security.extension.php">class.security.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">443</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">wp_nonce_failure (wp_verify_nonce_failed)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">wp_nonce_failure</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>

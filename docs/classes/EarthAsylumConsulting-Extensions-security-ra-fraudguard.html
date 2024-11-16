@@ -139,10 +139,10 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    material_icons
+    security_ra_fraudguard
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/EarthAsylumConsulting-abstract-extension.html"><abbr title="\EarthAsylumConsulting\abstract_extension">abstract_extension</abbr></a>
+        extends <a href="classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html"><abbr title="\EarthAsylumConsulting\Extensions\security_ra_abstract">security_ra_abstract</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -157,13 +157,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-material-icons-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php">class.material_icons.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Extension: material_icons - Add/enable Google&#039;s Material Icons to WordPress - {eac}Doojigger for WordPress</p>
+            <p class="phpdocumentor-summary">Extension: fraudguard - FraudGuard API - {eac}Doojigger for WordPress</p>
 
 
 
@@ -199,21 +199,6 @@
 </section>
 
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">link</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://eacDoojigger.earthasylum.com/"> https://eacDoojigger.earthasylum.com/ </a>
-                    
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">see</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="https://eacDoojigger.earthasylum.com/phpdoc/"><abbr title="https://eacDoojigger.earthasylum.com/phpdoc/">https://eacDoojigger.earthasylum.com/phpdoc/</abbr></a></span>
-                                        
-                                             
-                                    </dd>
                         </dl>
 
 
@@ -227,6 +212,20 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_ACCOUNT_LIMITS">ACCOUNT_LIMITS</a>
+    <span>
+        &nbsp;= [
+    //	id						name
+    &quot;hacker&quot; =&gt; [&quot;Hacker (free)&quot;, &#039;second&#039; =&gt; 1, &#039;month&#039; =&gt; 1000],
+    &quot;starter&quot; =&gt; [&quot;Starter&quot;, &#039;second&#039; =&gt; 2, &#039;month&#039; =&gt; 1000000],
+    &quot;professional&quot; =&gt; [&quot;Professional&quot;, &#039;second&#039; =&gt; 5, &#039;month&#039; =&gt; 5000000],
+    &quot;business&quot; =&gt; [&quot;Business&quot;, &#039;second&#039; =&gt; 10, &#039;month&#039; =&gt; 25000000],
+    &quot;enterprise&quot; =&gt; [&quot;Enterprise&quot;, &#039;second&#039; =&gt; 20, &#039;month&#039; =&gt; 100000000],
+]                            </span>
+</dt>
+<dd></dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALIAS">ALIAS</a>
     <span>
@@ -284,16 +283,9 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ENABLE_OPTION">ENABLE_OPTION</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_ENABLE_OPTION">ENABLE_OPTION</a>
     <span>
-        &nbsp;= null                            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#constant_MD_STYLE">MD_STYLE</a>
-    <span>
-        &nbsp;= &quot;\n/* Rules for sizing the icon. */\n.material-icons.md-18 { font-size: 18px; }\n.material-icons.md-24 { font-size: 24px; }\n.material-icons.md-36 { font-size: 36px; }\n.material-icons.md-48 { font-size: 48px; }\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light { color: rgba(255, 255, 255, 1); }\n.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }\n&quot;                            </span>
+        &nbsp;= [&#039;label&#039; =&gt; &quot;RA (&lt;abbr title=&#039;A service designed to provide an easy way to validate usage by continuously collecting and analyzing real-time internet traffic. &quot; . &quot;This API utilizes the FraudGuard database to block access based on the &lt;em&gt;fraud risk level&lt;/em&gt;.&#039;&gt;FraudGuard&lt;/abbr&gt;)&quot;, &#039;help&#039; =&gt; &quot;&lt;small&gt;Visit the &lt;a href=&#039;https://www.fraudguard.io&#039; target=&#039;_blank&#039;&gt;FraudGuard&lt;/a&gt; web site.&lt;/small&gt;&quot;]                            </span>
 </dt>
 <dd></dd>
 
@@ -305,6 +297,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_PROVIDER">PROVIDER</a>
+    <span>
+        &nbsp;= &#039;FraudGuard&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_TAB_NAME">TAB_NAME</a>
     <span>
         &nbsp;= null                            </span>
@@ -312,9 +311,9 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#constant_VERSION">VERSION</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_VERSION">VERSION</a>
     <span>
-        &nbsp;= &#039;24.1108.1&#039;                            </span>
+        &nbsp;= &#039;24.1107.1&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -326,11 +325,11 @@
 <dd>magic method to call plugin or extension methods</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#method___construct">__construct()</a>
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#method___construct">__construct()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: bool    </span>
 </dt>
-<dd>constructor method</dd>
+<dd>Extension constructor method</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method___destruct">__destruct()</a>
@@ -347,11 +346,11 @@
 <dd>magic method to call parent plugin __get()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#method_addActionsAndFilters">addActionsAndFilters()</a>
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addActionsAndFilters">addActionsAndFilters()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Called after instantiating, loading extensions and initializing</dd>
+<dd>Add extension actions and filter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addShortcodes">addShortcodes()</a>
@@ -361,11 +360,32 @@
 <dd>Add extension shortcodes</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#method_admin_options_settings">admin_options_settings()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_admin_options_help">admin_options_help()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Add help tab on admin page</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_admin_options_settings">admin_options_settings()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>register options on options_settings_page</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#method_check_for_risk">check_for_risk()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Use the provider APIs to validate/block IP address</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_get_assessment_result">get_assessment_result()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Use the FraudGuard API to validate/block IP address</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias">getAlias()</a>
@@ -389,11 +409,11 @@
 <dd>get the extension version</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_initialize">initialize()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_initialize">initialize()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>Extension initialization</dd>
+<dd>initialize method - called from main plugin</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_is_network_enabled">is_network_enabled()</a>
@@ -424,8 +444,44 @@
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
-            <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ACCOUNT_LIMITS">
+        ACCOUNT_LIMITS
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_ACCOUNT_LIMITS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">ACCOUNT_LIMITS</span>
+    = <span class="phpdocumentor-signature__default-value">[
+    //	id						name
+    &quot;hacker&quot; =&gt; [&quot;Hacker (free)&quot;, &#039;second&#039; =&gt; 1, &#039;month&#039; =&gt; 1000],
+    &quot;starter&quot; =&gt; [&quot;Starter&quot;, &#039;second&#039; =&gt; 2, &#039;month&#039; =&gt; 1000000],
+    &quot;professional&quot; =&gt; [&quot;Professional&quot;, &#039;second&#039; =&gt; 5, &#039;month&#039; =&gt; 5000000],
+    &quot;business&quot; =&gt; [&quot;Business&quot;, &#039;second&#039; =&gt; 10, &#039;month&#039; =&gt; 25000000],
+    &quot;enterprise&quot; =&gt; [&quot;Enterprise&quot;, &#039;second&#039; =&gt; 20, &#039;month&#039; =&gt; 100000000],
+]</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>account types and rate limits</p>
+</section>
+
+    
+
+</article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ALIAS">
         ALIAS
@@ -661,13 +717,13 @@
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ENABLE_OPTION">
         ENABLE_OPTION
-        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ENABLE_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_ENABLE_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -676,44 +732,12 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string|array&lt;string|int, mixed&gt;|bool</span>
     <span class="phpdocumentor-signature__name">ENABLE_OPTION</span>
-    = <span class="phpdocumentor-signature__default-value">null</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;label&#039; =&gt; &quot;RA (&lt;abbr title=&#039;A service designed to provide an easy way to validate usage by continuously collecting and analyzing real-time internet traffic. &quot; . &quot;This API utilizes the FraudGuard database to block access based on the &lt;em&gt;fraud risk level&lt;/em&gt;.&#039;&gt;FraudGuard&lt;/abbr&gt;)&quot;, &#039;help&#039; =&gt; &quot;&lt;small&gt;Visit the &lt;a href=&#039;https://www.fraudguard.io&#039; target=&#039;_blank&#039;&gt;FraudGuard&lt;/a&gt; web site.&lt;/small&gt;&quot;]</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>to set (or disable) default group display/switch
-false 		disable the 'Enabled'' option for this group
-string 		the label for the 'Enabled' option
-array 		override options for the 'Enabled' option (label,help,title,info, etc.)</p>
-</section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_MD_STYLE">
-        MD_STYLE
-        <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#constant_MD_STYLE" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-material-icons-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php">class.material_icons.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">27</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">MD_STYLE</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;\n/* Rules for sizing the icon. */\n.material-icons.md-18 { font-size: 18px; }\n.material-icons.md-24 { font-size: 24px; }\n.material-icons.md-36 { font-size: 36px; }\n.material-icons.md-48 { font-size: 48px; }\n/* Rules for using icons as black on a light background. */\n.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }\n.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }\n/* Rules for using icons as white on a dark background. */\n.material-icons.md-light { color: rgba(255, 255, 255, 1); }\n.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }\n&quot;</span>
-</code>
-
-
-    
-        <section class="phpdocumentor-description"><p>additional styling</p>
+        <section class="phpdocumentor-description"><p>to set (or disable) default group display/switch</p>
 </section>
 
     
@@ -744,6 +768,35 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
         <section class="phpdocumentor-description"></section>
 
         <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_PROVIDER">
+        PROVIDER
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_PROVIDER" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">PROVIDER</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;FraudGuard&#039;</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>risk assessment provider name (display name, array key, transient id)</p>
+</section>
 
     
 
@@ -780,13 +833,13 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_VERSION">
         VERSION
-        <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-material-icons-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php">class.material_icons.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -795,7 +848,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;24.1108.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;24.1107.1&#039;</span>
 </code>
 
 
@@ -813,7 +866,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -879,22 +932,24 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-material-icons-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php">class.material_icons.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">constructor method</p>
+        <p class="phpdocumentor-summary">Extension constructor method</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Child class constructors MUST call parent::__construct($plugin,$flags);</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -902,7 +957,16 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                 : <span class="phpdocumentor-signature__argument__return-type">object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>main plugin object</p>
+                    <section class="phpdocumentor-description"><p>parent/loader class object</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$flags</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>see const values</p>
 </section>
 
             </dd>
@@ -911,9 +975,11 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>is enabled</p>
+</section>
+
     
 </article>
                     <article
@@ -1004,38 +1070,26 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method_addActionsAndFilters">
         addActionsAndFilters()
-        <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-material-icons-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php">class.material_icons.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">344</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Called after instantiating, loading extensions and initializing</p>
+        <p class="phpdocumentor-summary">Add extension actions and filter</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">addActionsAndFilters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+        <section class="phpdocumentor-description"><p>Called after loading, instantiating, and initializing all extensions</p>
+</section>
+
     
     
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">see</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="https://codex.wordpress.org/Plugin_API"><abbr title="https://codex.wordpress.org/Plugin_API">https://codex.wordpress.org/Plugin_API</abbr></a></span>
-                                        
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
@@ -1084,14 +1138,64 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_admin_options_settings">
-        admin_options_settings()
-        <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_admin_options_help">
+        admin_options_help()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_admin_options_help" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-material-icons-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.material_icons.extension.php">class.material_icons.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add help tab on admin page</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">admin_options_help</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">todo</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><ul>
+<li>add contextual help</li>
+</ul>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_admin_options_settings">
+        admin_options_settings()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -1124,6 +1228,100 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_check_for_risk">
+        check_for_risk()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#method_check_for_risk" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/includes/security_ra.abstract.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-includes-security-ra-abstract.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/includes/security_ra.abstract.php">security_ra.abstract.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">151</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Use the provider APIs to validate/block IP address</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">check_for_risk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>from security_ra 'risk_assessment'</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>$data</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_assessment_result">
+        get_assessment_result()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_get_assessment_result" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Use the FraudGuard API to validate/block IP address</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">get_assessment_result</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>initialized data array</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>results</p>
+</section>
+
     
 </article>
                     <article
@@ -1249,33 +1447,29 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method_initialize">
         initialize()
-        <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-fraudguard-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_fraudguard.extension.php">class.security_ra_fraudguard.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Extension initialization</p>
+        <p class="phpdocumentor-summary">initialize method - called from main plugin</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">initialize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">initialize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"><p>Called after loading and instantiating all extensions</p>
-</section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>is enabled</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -1499,7 +1693,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 </section>
             </div>
         </div>
-        <a href="classes/EarthAsylumConsulting-Extensions-material-icons.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

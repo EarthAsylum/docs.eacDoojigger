@@ -8,7 +8,7 @@
  * @package		myOptionsTest, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
  * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
- * @version		24.0426.1
+ * @version		24.1116.1
  */
 
 namespace EarthAsylumConsulting\Plugin;
@@ -56,6 +56,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 		'codeedit-css',
 		'codeedit-html',
 		'codeedit-php',
+		'switch',
 		'custom',
 	];
 
@@ -69,7 +70,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 	{
 		parent::__construct($header);
 
-		$this->logAlways('version '.$this->getVersion().' '.wp_date('Y-m-d H:i:s',filemtime(__FILE__)),__CLASS__);
+		$this->logInfo('version '.$this->getVersion().' '.wp_date('Y-m-d H:i:s',filemtime(__FILE__)),__CLASS__);
 
 		/* we only need to do this on our admin settings page */
 		if ($this->is_admin())
@@ -107,7 +108,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 					'title'				=> 	"HTML input type: {$type}",
 					'label'				=> 	ucwords(str_replace('-',' ',$type)),
 					'before'			=>	'<span class="dashicons dashicons-arrow-left-alt2"></span>',
-					'options'       	=>  [$type=>$type, 'option2'=>'2', 'option3'=>'3'],
+					'options'       	=>  ["{$type}-1"=>"{$type}", "{$type}-2"=>"{$type}-2", "{$type}-3"=>"{$type}-3"],
 					'default'			=> 	$type,
 					'after'				=>	'<span class="dashicons dashicons-arrow-right-alt2"></span>',
 					'info'				=> 	"Saved option name: '".$this->prefixOptionName("input_{$typeId}")."'",
@@ -136,7 +137,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 				$options["input_{$typeId}"]
 					['attributes'] 		= 	['oninput'=>"input_{$typeId}_show.value = this.value"];
 				$options["input_{$typeId}"]
-					['after'] 			.= 	"<output name='input_{$typeId}_show' for='input_{$typeId}' style='padding:2em;color:blue;'>...</output>";
+					['after'] 			.= 	"<output name='input_{$typeId}_show' for='input_{$typeId}' style='padding:2em;color:var(--eac-admin-base);'>...</output>";
 			}
 
 			/* don't use generic callbacks for file upload, see my_form_post_file() */
@@ -173,8 +174,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 									'<option value="10" label="10"></option>'.
 								'</datalist>'.
 								"Range input: <code>".
-								"<output name='input_{$typeId}_show' for='input_{$typeId}' ".
-									"style='padding:1em;color:blue;'>[value]</output>".
+								"<output name='input_{$typeId}_show' for='input_{$typeId}'>[value]</output>".
 								"</code>";
 			}
 		}
@@ -194,7 +194,6 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 
 		/* filter to sanitize all fields individually  (redundant when using above 'sanitize' callback) */
 		$this->add_filter( 'sanitize_option', 					array($this, 'my_option_sanitize'), 10, 4 );
-
 
 		/* action after form posted and fields updated */
 		$this->add_action( 'options_form_post', 				array($this, 'my_options_form_post') );
@@ -252,8 +251,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 				"#input_range {width: 80%; max-width: 30em;}".
 				"#input_range_ticks {".
 					"display: flex; width: 80%; max-width: 38em;".
-					"justify-content: space-between;".
-					"font-size: 0.85em; color:blue;".
+					"color:var(--eac-admin-base);".
 					"padding-left: .2em;".
 				"}";
 
@@ -350,7 +348,66 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 
 
 	/**
-	 * sanitize_option filter called for each option POSTed
+	 * option sanitize callback - field ['sanitize']
+	 *
+	 * @param	mixed	$value posted option value(s)
+	 * @param	string	$fieldName option name
+	 * @param	array	$metaData option meta data
+	 * @param	mixed	$priorValue prior option value
+	 * @return	mixed	sanitized/validate value
+	 */
+	public function sanitize_callback($value, $fieldName, $metaData, $priorValue)
+	{
+		// sanitize value
+		return $value;
+	}
+
+
+	/**
+	 * filter callback filter a value - field ['filter']
+	 *
+	 * @param	mixed	$value posted option value(s)
+	 * @param	string	$fieldName option name
+	 * @param	array	$metaData option meta data
+	 * @param	mixed	$priorValue prior option value
+	 * @return	mixed	sanitized/validate value
+	 */
+	public function filter_callback($value, $fieldName, $metaData, $priorValue)
+	{
+		// if no change, just return the value
+		if ($value == $priorValue) return $value;
+
+		// validate the value and display a notification
+		if (is_numeric($value))
+		{
+			// add admin notice using helper method
+			$this->add_admin_notice(
+				$fieldName.": {$value} May be the Answer to the Ultimate Question of Life, the Universe, and Everything.",
+				'notice',
+				"(but we don't know for sure, maybe {$priorValue})"
+			);
+		}
+		return $value;
+	}
+
+
+	/**
+	 * option validate callback - field ['validate']
+	 *
+	 * @param	mixed	$value posted option value(s)
+	 * @param	string	$fieldName option name
+	 * @param	array	$metaData option meta data
+	 * @param	mixed	$priorValue prior option value
+	 * @return	mixed	sanitized/validate value
+	 */
+	public function validate_callback($value, $fieldName, $metaData, $priorValue)
+	{
+		return $value;
+	}
+
+
+	/**
+	 * sanitize_option filter called for each/all options POSTed
 	 *
 	 * @param	mixed	$value posted option value(s)
 	 * @param	string	$fieldName option name
@@ -391,66 +448,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 
 
 	/**
-	 * option sanitize callback
-	 *
-	 * @param	mixed	$value posted option value(s)
-	 * @param	string	$fieldName option name
-	 * @param	array	$metaData option meta data
-	 * @param	mixed	$priorValue prior option value
-	 * @return	mixed	sanitized/validate value
-	 */
-	public function sanitize_callback($value, $fieldName, $metaData, $priorValue)
-	{
-		// sanitize value
-		return $value;
-	}
-
-
-	/**
-	 * filter callback filter a value
-	 *
-	 * @param	mixed	$value posted option value(s)
-	 * @param	string	$fieldName option name
-	 * @param	array	$metaData option meta data
-	 * @param	mixed	$priorValue prior option value
-	 * @return	mixed	sanitized/validate value
-	 */
-	public function filter_callback($value, $fieldName, $metaData, $priorValue)
-	{
-		// if no change, just return the value
-		if ($value == $priorValue) return $value;
-
-		// validate the value and display a notification
-		if (is_numeric($value))
-		{
-			// add admin notice using helper method
-			$this->add_admin_notice(
-				$fieldName.": {$value} May be the Answer to the Ultimate Question of Life, the Universe, and Everything.",
-				'notice',
-				"(but we don't know for sure, maybe {$priorValue})"
-			);
-		}
-		return $value;
-	}
-
-
-	/**
-	 * option validate callback
-	 *
-	 * @param	mixed	$value posted option value(s)
-	 * @param	string	$fieldName option name
-	 * @param	array	$metaData option meta data
-	 * @param	mixed	$priorValue prior option value
-	 * @return	mixed	sanitized/validate value
-	 */
-	public function validate_callback($value, $fieldName, $metaData, $priorValue)
-	{
-		return $value;
-	}
-
-
-	/**
-	 * options_form_post action
+	 * options_form_post action - when the form is POSTed
 	 *
 	 * @param	array	$postArray array of $fieldName => $metaData
 	 * @return	void

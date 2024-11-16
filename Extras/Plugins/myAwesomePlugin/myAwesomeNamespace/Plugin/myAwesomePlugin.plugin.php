@@ -6,7 +6,7 @@
  * @package		myAwesomePlugin, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
  * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.x
+ * @version		1.3
  */
 
 namespace myAwesomeNamespace\Plugin;
@@ -34,7 +34,7 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	{
 		parent::__construct($header);
 
-		$this->logAlways('version '.$this->getVersion().' '.wp_date('Y-m-d H:i:s',filemtime(__FILE__)),__CLASS__);
+		$this->logInfo('version '.$this->getVersion().' '.wp_date('Y-m-d H:i:s',filemtime(__FILE__)),__CLASS__);
 
 		if ($this->is_admin())
 		{
@@ -125,6 +125,12 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	public function formatPluginHelp(string $content): string
 	{
 		// wraps "My Awesome Plugin" or "myAwesomePlugin" in a colorized span
+		// using '--eac-admin-*' color variables set by the user profile.
+		//	--eac-admin-base
+		//	--eac-admin-notify
+		//	--eac-admin-highlight
+		//	--eac-admin-icon:
+		//	--eac-admin-subtle:
 		return preg_replace(
 			"/(My Awesome Plugin|myAwesomePlugin)/",
 			"<span style='color:var(--eac-admin-base)'>$1</span>",

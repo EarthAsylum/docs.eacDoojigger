@@ -139,10 +139,10 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    abuse_extension
+    security_ra_ipgeolocation
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/EarthAsylumConsulting-abstract-extension.html"><abbr title="\EarthAsylumConsulting\abstract_extension">abstract_extension</abbr></a>
+        extends <a href="classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html"><abbr title="\EarthAsylumConsulting\Extensions\security_ra_abstract">security_ra_abstract</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -157,13 +157,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Extension: abuseipdb - AbuseIPDB API - {eac}Doojigger for WordPress</p>
+            <p class="phpdocumentor-summary">Extension: ipgeolocation - ipgeolocation API - {eac}Doojigger for WordPress</p>
 
 
 
@@ -213,6 +213,21 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_ACCOUNT_LIMITS">ACCOUNT_LIMITS</a>
+    <span>
+        &nbsp;= [
+    //	id						name
+    &quot;developer&quot; =&gt; [&quot;Developer (free)&quot;, &#039;day&#039; =&gt; 1000, &#039;month&#039; =&gt; 30000],
+    &quot;bronze&quot; =&gt; [&quot;Bronze&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 150000],
+    &quot;silver&quot; =&gt; [&quot;Silver&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 1000000],
+    &quot;silver+&quot; =&gt; [&quot;Silver+&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 3000000],
+    &quot;gold&quot; =&gt; [&quot;Gold&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 6000000],
+    &quot;platinum&quot; =&gt; [&quot;Platinum&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 20000000],
+]                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALIAS">ALIAS</a>
     <span>
         &nbsp;= null                            </span>
@@ -257,14 +272,21 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP">ALLOW_NON_PHP</a>
     <span>
-        &nbsp;= 0b1000000                            </span>
+        &nbsp;= 0b100000                            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_DEFAULT_DISABLED">DEFAULT_DISABLED</a>
     <span>
-        &nbsp;= 0b100000                            </span>
+        &nbsp;= 0b1000000                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_ENABLE_OPTION">ENABLE_OPTION</a>
+    <span>
+        &nbsp;= [&#039;label&#039; =&gt; &quot;RA (&lt;abbr title=&#039;IpGeoLocation provides geographical information about website visitors with any IPv4 or IPv6 address as well as a threat score with all paid plans. &quot; . &quot;This API utilizes the IpGeoLocation database to block access based on the &lt;em&gt;threat score&lt;/em&gt;.&#039;&gt;IpGeoLocation&lt;/abbr&gt;)&quot;, &#039;help&#039; =&gt; &quot;&lt;small&gt;Visit the &lt;a href=&#039;https://www.ipgeolocation.io&#039; target=&#039;_blank&#039;&gt;ipgeolocation&lt;/a&gt; web site.&lt;/small&gt;&quot;]                            </span>
 </dt>
 <dd></dd>
 
@@ -276,9 +298,23 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#constant_VERSION">VERSION</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_PROVIDER">PROVIDER</a>
     <span>
-        &nbsp;= &#039;24.0906.1&#039;                            </span>
+        &nbsp;= &#039;IpGeoLocation&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_TAB_NAME">TAB_NAME</a>
+    <span>
+        &nbsp;= null                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_VERSION">VERSION</a>
+    <span>
+        &nbsp;= &#039;24.1107.1&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -290,11 +326,11 @@
 <dd>magic method to call plugin or extension methods</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method___construct">__construct()</a>
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#method___construct">__construct()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: bool    </span>
 </dt>
-<dd>constructor method</dd>
+<dd>Extension constructor method</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method___destruct">__destruct()</a>
@@ -311,11 +347,11 @@
 <dd>magic method to call parent plugin __get()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_addActionsAndFilters">addActionsAndFilters()</a>
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addActionsAndFilters">addActionsAndFilters()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Add filters and actions - called from main plugin</dd>
+<dd>Add extension actions and filter</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addShortcodes">addShortcodes()</a>
@@ -325,32 +361,32 @@
 <dd>Add extension shortcodes</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_admin_options_help">admin_options_help()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_admin_options_help">admin_options_help()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Add help tab on admin page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_admin_options_settings">admin_options_settings()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_admin_options_settings">admin_options_settings()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>register options on options_settings_page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_check_for_abuse">check_for_abuse()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Use the AbuseIPDB API to validate/block IP address</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_get_AbuseIPDB">get_AbuseIPDB()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#method_check_for_risk">check_for_risk()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Use the AbuseIPDB API to validate/block IP address</dd>
+<dd>Use the provider APIs to validate/block IP address</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_get_assessment_result">get_assessment_result()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Use the ipgeolocation API to validate/block IP address</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias">getAlias()</a>
@@ -374,7 +410,7 @@
 <dd>get the extension version</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_initialize">initialize()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_initialize">initialize()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -401,13 +437,6 @@
 </dt>
 <dd>isEnabled - set or test extension enabled for use</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_isPolicyEnabled">isPolicyEnabled()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>is site or network option set</dd>
-
         </dl>
 
 
@@ -416,8 +445,47 @@
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
-            <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ACCOUNT_LIMITS">
+        ACCOUNT_LIMITS
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_ACCOUNT_LIMITS" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">ACCOUNT_LIMITS</span>
+    = <span class="phpdocumentor-signature__default-value">[
+    //	id						name
+    &quot;developer&quot; =&gt; [&quot;Developer (free)&quot;, &#039;day&#039; =&gt; 1000, &#039;month&#039; =&gt; 30000],
+    &quot;bronze&quot; =&gt; [&quot;Bronze&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 150000],
+    &quot;silver&quot; =&gt; [&quot;Silver&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 1000000],
+    &quot;silver+&quot; =&gt; [&quot;Silver+&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 3000000],
+    &quot;gold&quot; =&gt; [&quot;Gold&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 6000000],
+    &quot;platinum&quot; =&gt; [&quot;Platinum&quot;, &#039;day&#039; =&gt; 0, &#039;month&#039; =&gt; 20000000],
+]</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>account types and rate limits
+We rely on the api returning a 429 status if we hit the daily or monthly rate limit
+and pause until the following midnight (UTC). This allows for surcharged overages.</p>
+</section>
+
+    
+
+</article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ALIAS">
         ALIAS
@@ -434,14 +502,14 @@
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\EarthAsylumConsulting\ALIAS">ALIAS</abbr></span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">ALIAS</span>
     = <span class="phpdocumentor-signature__default-value">null</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>constant in child class for alias class name</p>
+        <section class="phpdocumentor-description"><p>in child class for alias class name</p>
 </section>
 
     
@@ -456,7 +524,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -485,7 +553,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -514,7 +582,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -543,7 +611,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -572,7 +640,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -601,7 +669,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -610,7 +678,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">ALLOW_NON_PHP</span>
-    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
+    = <span class="phpdocumentor-signature__default-value">0b100000</span>
 </code>
 
 
@@ -630,7 +698,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -639,13 +707,42 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">DEFAULT_DISABLED</span>
-    = <span class="phpdocumentor-signature__default-value">0b100000</span>
+    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
 </code>
 
 
         <section class="phpdocumentor-description"></section>
 
         <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ENABLE_OPTION">
+        ENABLE_OPTION
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_ENABLE_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string|array&lt;string|int, mixed&gt;|bool</span>
+    <span class="phpdocumentor-signature__name">ENABLE_OPTION</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;label&#039; =&gt; &quot;RA (&lt;abbr title=&#039;IpGeoLocation provides geographical information about website visitors with any IPv4 or IPv6 address as well as a threat score with all paid plans. &quot; . &quot;This API utilizes the IpGeoLocation database to block access based on the &lt;em&gt;threat score&lt;/em&gt;.&#039;&gt;IpGeoLocation&lt;/abbr&gt;)&quot;, &#039;help&#039; =&gt; &quot;&lt;small&gt;Visit the &lt;a href=&#039;https://www.ipgeolocation.io&#039; target=&#039;_blank&#039;&gt;ipgeolocation&lt;/a&gt; web site.&lt;/small&gt;&quot;]</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>to set (or disable) default group display/switch</p>
+</section>
 
     
 
@@ -659,7 +756,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -680,13 +777,71 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_VERSION">
-        VERSION
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_PROVIDER">
+        PROVIDER
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_PROVIDER" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">PROVIDER</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;IpGeoLocation&#039;</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>risk assessment provider name (display name, array key, transient id)</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TAB_NAME">
+        TAB_NAME
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_TAB_NAME" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">TAB_NAME</span>
+    = <span class="phpdocumentor-signature__default-value">null</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>to set default tab name</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_VERSION">
+        VERSION
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">20</span>
 
@@ -697,7 +852,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;24.0906.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;24.1107.1&#039;</span>
 </code>
 
 
@@ -715,7 +870,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -730,7 +885,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">581</span>
+    <span class="phpdocumentor-element-found-in__line">550</span>
 
     </aside>
 
@@ -781,22 +936,24 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">constructor method</p>
+        <p class="phpdocumentor-summary">Extension constructor method</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Child class constructors MUST call parent::__construct($plugin,$flags);</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -804,7 +961,16 @@
                 : <span class="phpdocumentor-signature__argument__return-type">object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>main plugin object</p>
+                    <section class="phpdocumentor-description"><p>parent/loader class object</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$flags</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>see const values</p>
 </section>
 
             </dd>
@@ -813,9 +979,11 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>is enabled</p>
+</section>
+
     
 </article>
                     <article
@@ -831,7 +999,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">211</span>
 
     </aside>
 
@@ -864,7 +1032,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">601</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 
     </aside>
 
@@ -906,22 +1074,24 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_addActionsAndFilters">
         addActionsAndFilters()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">344</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Add filters and actions - called from main plugin</p>
+        <p class="phpdocumentor-summary">Add extension actions and filter</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">addActionsAndFilters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Called after loading, instantiating, and initializing all extensions</p>
+</section>
+
     
     
 
@@ -944,7 +1114,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">392</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 
     </aside>
 
@@ -974,12 +1144,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_admin_options_help">
         admin_options_help()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_admin_options_help" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_admin_options_help" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -1024,12 +1194,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_admin_options_settings">
         admin_options_settings()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -1070,84 +1240,33 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_check_for_abuse">
-        check_for_abuse()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_check_for_abuse" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_check_for_risk">
+        check_for_risk()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#method_check_for_risk" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/includes/security_ra.abstract.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-includes-security-ra-abstract.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/includes/security_ra.abstract.php">security_ra.abstract.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Use the AbuseIPDB API to validate/block IP address</p>
+        <p class="phpdocumentor-summary">Use the provider APIs to validate/block IP address</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check_for_abuse</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arg</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">check_for_risk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$arg</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_get_AbuseIPDB">
-        get_AbuseIPDB()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_get_AbuseIPDB" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">220</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Use the AbuseIPDB API to validate/block IP address</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">get_AbuseIPDB</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$level</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$key</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$level</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">100</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>from security_ra 'risk_assessment'</p>
+</section>
 
             </dd>
             </dl>
@@ -1157,7 +1276,56 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>$data</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_get_assessment_result">
+        get_assessment_result()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_get_assessment_result" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">109</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Use the ipgeolocation API to validate/block IP address</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">get_assessment_result</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>initialized data array</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>result data array</p>
+</section>
+
     
 </article>
                     <article
@@ -1173,7 +1341,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">485</span>
 
     </aside>
 
@@ -1208,7 +1376,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">487</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
@@ -1253,7 +1421,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">505</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 
     </aside>
 
@@ -1283,12 +1451,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_initialize">
         initialize()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-ipgeolocation-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra_ipgeolocation.extension.php">class.security_ra_ipgeolocation.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -1321,7 +1489,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 
     </aside>
 
@@ -1354,7 +1522,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">475</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 
     </aside>
 
@@ -1410,7 +1578,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">404</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 
     </aside>
 
@@ -1447,64 +1615,6 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_isPolicyEnabled">
-        isPolicyEnabled()
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#method_isPolicyEnabled" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-security-abuseipdb-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.security_abuseipdb.extension.php">class.security_abuseipdb.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">312</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">is site or network option set</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">isPolicyEnabled</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$optionName</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$optionName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>policy/option name</li>
-</ul>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>check for specific value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -1587,7 +1697,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/EarthAsylumConsulting-Extensions-abuse-extension.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -11,7 +11,7 @@
  * @wordpress-plugin
  * Plugin Name:			My Awesome Extension
  * Description:			My Awesome Extension
- * Version:				1.1.1
+ * Version:				1.1.2
  * Requires at least:	5.8
  * Requires PHP:		7.4
  * Author:				Kevin Burkholder @ EarthAsylum Consulting

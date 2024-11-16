@@ -17,7 +17,18 @@ class myAwesomeExtension extends \EarthAsylumConsulting\abstract_extension
 	/**
 	 * @var string extension version
 	 */
-	const VERSION	= '24.0510.1';
+	const VERSION	= '24.1116.1';
+
+	/**
+	 * @var string extension tab name (if not set, add to 'General')
+	 */
+	//const TAB_NAME 		= 'Extensions';
+
+	/**
+	 * @var string|array|bool to set (or disable) default group display/switch
+	 */
+	const ENABLE_OPTION		=
+		"<abbr title='A really awesome extension'>My Awesome Extension</abbr>";
 
 
 	/**

@@ -13,9 +13,9 @@
  * @wordpress-plugin
  * Plugin Name:			My Options Test
  * Description:			My Options Test - Provides examples of input types, parameters, and processing callbacks & filters.
- * Version:				1.4.0
- * Requires at least:	5.8.0
- * Tested up to: 		6.5
+ * Version:				1.4.1
+ * Requires at least:	5.8
+ * Tested up to: 		6.7
  * Requires PHP:		7.4
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
@@ -25,7 +25,7 @@
 namespace EarthAsylumConsulting
 {
 	// must have {eac}Doojigger and {eac}DoojiggerAutoloader activated
-	if (!defined('EAC_DOOJIGGER_VERSION'))
+	if (!defined('EACDOOJIGGER_VERSION'))
 	{
 		\add_action( 'all_admin_notices', function()
 			{
