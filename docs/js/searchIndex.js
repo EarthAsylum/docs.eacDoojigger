@@ -291,16 +291,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-abstract-backend.html#property_defaultTabs"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\is_admin_request\u0028\u0029",
-            "name": "is_admin_request",
-            "summary": "admin\u002Dajax\u0020\u0026\u0020admin\u002Dpost\u0020request\u0020always\u0020return\u0020is_admin\u0028\u0029\u0020\u003D\u003D\u0020true\nare\u0020we\u0020calling\u0020for\u0020the\u0020frontend\u0020or\u0020backend\u003F",
-            "url": "namespaces/earthasylumconsulting.html#function_is_admin_request"
-        },                {
-            "fqsen": "\\EarthAsylumConsulting\\is_network_admin_request\u0028\u0029",
-            "name": "is_network_admin_request",
-            "summary": "admin\u002Dajax\u0020\u0026\u0020admin\u002Dpost\u0020request\u0020always\u0020return\u0020is_network_admin\u0028\u0029\u0020\u003D\u003D\u0020false\nare\u0020we\u0020calling\u0020for\u0020network\u0020admin\u003F",
-            "url": "namespaces/earthasylumconsulting.html#function_is_network_admin_request"
-        },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_context",
             "name": "abstract_context",
             "summary": "Plugin\u0020context\u0020switch\u0020front\u002Dend\u0020\u0028public\u0029\u0020vs\u0020back\u002Dend\u0020\u0028administration\u0029",
@@ -398,7 +388,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aadd_admin_notice\u0028\u0029",
             "name": "add_admin_notice",
-            "summary": "Add\u0020admin\u0020notice,\u0020noop\u0020when\u0020not\u0020admin\/backend",
+            "summary": "Add\u0020admin\u0020notice,\u0020log\u0020when\u0020not\u0020admin\/backend",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_add_admin_notice"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aprint_admin_notice\u0028\u0029",
@@ -2121,6 +2111,11 @@ Search.appendIndex(
             "summary": "Set\u0020origin\u002Dspecific\u0020CORS\u0020headers",
             "url": "classes/EarthAsylumConsulting-Extensions-security-cors.html#method_validate_cors_origin"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_cors\u003A\u003Acors_origin_headers\u0028\u0029",
+            "name": "cors_origin_headers",
+            "summary": "Set\u0020origin\u002Dspecific\u0020CORS\u0020headers",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-cors.html#method_cors_origin_headers"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_cors\u003A\u003AVERSION",
             "name": "VERSION",
             "summary": "",
@@ -2510,6 +2505,26 @@ Search.appendIndex(
             "name": "ACCOUNT_LIMITS",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#constant_ACCOUNT_LIMITS"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\is_request_type\u0028\u0029",
+            "name": "is_request_type",
+            "summary": "function\u003A\u0020\\EarthAsylumConsulting\\is_request_type\u0028\u0029.",
+            "url": "namespaces/earthasylumconsulting.html#function_is_request_type"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\is_php_request\u0028\u0029",
+            "name": "is_php_request",
+            "summary": "function\u003A\u0020\\EarthAsylumConsulting\\is_php_request\u0028\u0029.",
+            "url": "namespaces/earthasylumconsulting.html#function_is_php_request"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\is_admin_request\u0028\u0029",
+            "name": "is_admin_request",
+            "summary": "function\u003A\u0020\\EarthAsylumConsulting\\is_admin_request\u0028\u0029.",
+            "url": "namespaces/earthasylumconsulting.html#function_is_admin_request"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\is_network_admin_request\u0028\u0029",
+            "name": "is_network_admin_request",
+            "summary": "function\u003A\u0020\\EarthAsylumConsulting\\is_network_admin_request\u0028\u0029.",
+            "url": "namespaces/earthasylumconsulting.html#function_is_network_admin_request"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Helpers\\ipUtil",
             "name": "ipUtil",

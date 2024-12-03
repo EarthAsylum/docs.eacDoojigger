@@ -280,20 +280,32 @@
 <dd></dd>
 
                             <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/earthasylumconsulting.html#function_is_request_type">is_request_type()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>function: \EarthAsylumConsulting\is_request_type().</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/earthasylumconsulting.html#function_is_php_request">is_php_request()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>function: \EarthAsylumConsulting\is_php_request().</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/earthasylumconsulting.html#function_is_admin_request">is_admin_request()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>admin-ajax &amp; admin-post request always return is_admin() == true
-are we calling for the frontend or backend?</dd>
+<dd>function: \EarthAsylumConsulting\is_admin_request().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/earthasylumconsulting.html#function_is_network_admin_request">is_network_admin_request()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>admin-ajax &amp; admin-post request always return is_network_admin() == false
-are we calling for network admin?</dd>
+<dd>function: \EarthAsylumConsulting\is_network_admin_request().</dd>
 
     </dl>
 
@@ -428,7 +440,7 @@ are we calling for network admin?</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/autoload.php"><a href="files/eacdoojigger-autoload.html"><abbr title="eacDoojigger/autoload.php">autoload.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -485,25 +497,101 @@ are we calling for network admin?</dd>
             <a href="packages/eacDoojigger.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_is_request_type">
+        is_request_type()
+        <a href="namespaces/earthasylumconsulting.html#function_is_request_type" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-functions.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php">functions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">function: \EarthAsylumConsulting\is_request_type().</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">is_request_type</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;php&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>check request uri for file type</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;php&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>the file type ('php')</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_is_php_request">
+        is_php_request()
+        <a href="namespaces/earthasylumconsulting.html#function_is_php_request" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-functions.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php">functions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">function: \EarthAsylumConsulting\is_php_request().</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">is_php_request</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>check request uri for php script</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_is_admin_request">
         is_admin_request()
         <a href="namespaces/earthasylumconsulting.html#function_is_admin_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_context.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-context-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_context.class.php">abstract_context.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-functions.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php">functions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">admin-ajax &amp; admin-post request always return is_admin() == true
-are we calling for the frontend or backend?</p>
+        <p class="phpdocumentor-summary">function: \EarthAsylumConsulting\is_admin_request().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
                     <span class="phpdocumentor-signature__name">is_admin_request</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>admin-ajax &amp; admin-post request always return is_admin() == true
+are we calling for the frontend or backend?</p>
+</section>
+
     
     
 
@@ -519,20 +607,22 @@ are we calling for the frontend or backend?</p>
         <a href="namespaces/earthasylumconsulting.html#function_is_network_admin_request" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_context.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-context-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_context.class.php">abstract_context.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-functions.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/functions.php">functions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">admin-ajax &amp; admin-post request always return is_network_admin() == false
-are we calling for network admin?</p>
+        <p class="phpdocumentor-summary">function: \EarthAsylumConsulting\is_network_admin_request().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
                     <span class="phpdocumentor-signature__name">is_network_admin_request</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>admin-ajax &amp; admin-post request always return is_network_admin() == false
+are we calling for network admin?</p>
+</section>
+
     
     
 

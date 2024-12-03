@@ -7,15 +7,15 @@
 
 Plugin URI:         https://eacDoojigger.earthasylum.com/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:       2-Mar-2024  
+Last Updated:       2-Dec-2024  
 Contributors:       [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
-Requires EAC:       2.5  
+Requires EAC:       3.0  
 WordPress URI:      https://wordpress.org/plugins/search/earthasylum/  
 GitHub URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/  
 
 </details>
 
-> Custom extensions to {eac}Doojigger or derivatives - Add easy-to-code extensions to {eac}Doojigger or your own derivative plugins using the extension framework.
+> Doolollys - Custom extensions to {eac}Doojigger or derivatives - Add easy-to-code extensions to {eac}Doojigger or your own derivative plugins using the extension framework.
 
 ### Description
 
