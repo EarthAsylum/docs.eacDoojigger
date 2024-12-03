@@ -7,6 +7,7 @@
 
 Plugin URI:             https://eacDoojigger.earthasylum.com/  
 Author:                 [EarthAsylum Consulting](https://www.earthasylum.com)  
+Last Updated:           03-Dec-2024  
 Contributors:           [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
 License:                EarthAsylum Consulting Proprietary License - {eac}PLv1  
 License URI:            https://eacDoojigger.earthasylum.com/end-user-license-agreement/  
@@ -29,22 +30,22 @@ GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki
 
 ### Summary
 
-{EarthAsylum Consulting} **{eac}Doojigger** is a multi functional and highly extensible WordPress plugin that eases and advances WordPress development and includes several *Doolollys* (extensions) providing file access, security, debugging, encryption, session management, maintenance mode, administration tools, and more.
+{EarthAsylum Consulting} **{eac}Doojigger** is a multi functional and highly extensible WordPress plugin that eases and advances WordPress development and includes several 'Doolollys' (extensions) providing file access, security, debugging, encryption, session management, maintenance mode, administration tools, and more.
 
 *{eac}Doojigger* is not only a fully functional plugin, but more so, an architectural development platform (using shared/abstract code) enabling the effortless creation of full featured...
 
-1.  [Custom *Doojiggers* (Plugins derived from {eac}Doojigger)](#custom-derivative-plugins).
+1.  [Custom 'Doojiggers' (Plugins derived from {eac}Doojigger)](#custom-derivative-plugins).
     +   Create your own plugin with {eac}Doojigger as a robust, efficient, and clean foundation.
 
-2.  [Custom *Doolollys* (Doojigger Extensions)](#custom-eacdoojigger-extensions).
-    +   Add easy-to-code, task-oriented extensions installed or included in the "Extensions" folder of your Doojigger plugin or WordPress theme.
+2.  [Custom 'Doolollys' (Doojigger Extensions)](#custom-eacdoojigger-extensions).
+    +   Add easy-to-code, task-oriented extensions installed or included in the "Extensions" folder of your 'Doojigger' plugin or WordPress theme.
 
-3.  [Custom *Doohickeys* (Doololly Plugins)](#custom-extension-plugins).
-    +   Load your plugin extensions (*Doolollys*) as their own WordPress plugins with their own installation folder.
+3.  [Custom 'Doohickeys' (Doololly Plugins)](#custom-extension-plugins).
+    +   Load your plugin extensions ('Doolollys') as their own WordPress plugins with their own installation folder.
 
->   *Doojiggers* and *Doohickeys* (plugins) have their own activation and deactivation processes whereas *Doolollys* (extensions) are activated or deactivated along with their parent *Doojigger*. *Doohickeys* remain active but perform no function if their parent *Doojigger* is deactivated.
+>   'Doojiggers' and 'Doohickeys' (plugins) have their own activation and deactivation processes whereas 'Doolollys' (extensions) are activated or deactivated along with their parent 'Doojigger'. 'Doohickeys' remain active but perform no function if their parent 'Doojigger' is deactivated.
 
->   {eac}Doojigger is the ancestrial parent of all *Doojiggers*, *Doolollys*, and *Doohickeys*.
+>   {eac}Doojigger is the ancestrial parent of all 'Doojiggers', 'Doolollys', and 'Doohickeys'.
 
 Rather than updating or customizing themes and functions, it is often best to isolate your custom code in a plugin or plugin extension so that code is not lost when the theme is changed or updated. Themes should only be used and customized with code pertinent to the look and feel of your site. Any code that should be retained after changing a theme belongs in a plugin or plugin extension. This keeps your code reusable and theme independent.
 
@@ -52,21 +53,21 @@ _{eac}Doojigger makes purpose-driven, task-oriented, theme-independent, reliable
 
 ### Definitions
 
-_doojigger_ n
+_doojigger_ (n)
 1. Something unspecified whose name is either forgotten or not known.
-2. A Wordpress Plugin built with {eac}Doojigger.
+2. *A Wordpress Plugin built with {eac}Doojigger.*
 
-_doololly_ n.
+_doololly_ (n)
 1. Any nameless small object, typically some form of gadget.
-2. An extension to a Doojigger plugin.
+2. *An extension to a Doojigger plugin.*
 
-_doohickey_ n
+_doohickey_ (n)
 1. A thing (used in a vague way to refer to something whose name one does not know or cannot recall).
-2. A plugin used to load a Doololly extension.
+2. *A plugin used to load a Doololly extension.*
 
-_doodad_ n
+_doodad_ (n)
 1. Something, especially a small device or part, whose name is unknown or forgotten.
-2. A helper or trait included with a Doojigger plugin.
+2. *A helper or trait included with a Doojigger plugin.*
 
 
 ### See Also
