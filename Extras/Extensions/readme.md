@@ -7,7 +7,7 @@
 
 Plugin URI:         https://eacDoojigger.earthasylum.com/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:       2-Dec-2024  
+Last Updated:       21-Dec-2024  
 Contributors:       [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
 Requires EAC:       3.0  
 WordPress URI:      https://wordpress.org/plugins/search/earthasylum/  
@@ -23,6 +23,7 @@ The {eac}Doojigger Extras can now be found at this [Github Repository](https://g
 
 +   Documentation:
     +   [{eac}Doojigger, Custom Extensions](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Custom-Extensions)
+    +   [Github Wiki Pages](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/)
 
 +   Download:
     +   [{eac}Doojigger Extras](https://swregistry.earthasylum.com/software-updates/eacdoojigger-extras.zip)
