@@ -25,6 +25,9 @@ The 'Doodads' included here are code snippets, helpers, or traits that are a par
 
 As such, these 'Doodads' may not work 'as-is' outside of the {eac}Doojigger plugin but do provide examples and methods that may be used or adapted to your project.
 
+Details on some of these 'Doodads' may be found [here](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/How-To).
+
+
 #### For further documentation, see:
 
 :open_file_folder: [{eac}Doojigger Wiki: documentation and examples](https://github.com/EarthAsylum/docs.eacDoojigger/wiki)
