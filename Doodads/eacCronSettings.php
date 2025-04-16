@@ -80,10 +80,11 @@ namespace EarthAsylumConsulting\CronSettings
      */
     if (!defined('WP_CRON_SCHEDULE_INTERVALS'))
     {
+        $days_this_month = (int)wp_date('t');
         define('WP_CRON_SCHEDULE_INTERVALS', array(
             // add 'monthly' based on days this month
             'monthly'                           => [
-                    'interval'  => (int)wp_date('t') * DAY_IN_SECONDS,
+                    'interval'  => $days_this_month * DAY_IN_SECONDS,
                     'display'   => "Monthly ({$days_this_month} days)",
             ],
             // override Sumo Subscriptions schedule
