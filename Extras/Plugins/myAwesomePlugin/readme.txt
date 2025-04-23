@@ -35,8 +35,8 @@ Find this plugin, further documentation, and all {eac}Doojigger Extras at [this 
 
 == Screenshots ==
 
-1. myAwesomePlugin
-![myAwesomePlugin](https://dev.earthasylum.net/software-updates/myawesomeplugin/assets/screenshot-1.png)
+1. My Awesome Plugin with My Awesome Extension
+![myAwesomePlugin](https://swregistry.earthasylum.com/software-updates/eacdoojigger/assets/screenshot-9.png)
 
 == Copyright ==
 
