@@ -7,22 +7,22 @@
  * @category	WordPress Plugin
  * @package		myOptionsTest
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\Traits\plugin_loader
  *
  * @wordpress-plugin
  * Plugin Name:			My Options Test
  * Description:			My Options Test - Provides examples of input types, parameters, and processing callbacks & filters.
- * Version:				1.4.1
+ * Version:				1.4.2
  * Requires at least:	5.8
- * Tested up to: 		6.7
+ * Tested up to: 		6.8
  * Requires PHP:		7.4
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
  */
 
 
-namespace EarthAsylumConsulting
+namespace myAwesomeNamespace
 {
 	// must have {eac}Doojigger and {eac}DoojiggerAutoloader activated
 	if (!defined('EACDOOJIGGER_VERSION'))
@@ -67,5 +67,5 @@ namespace // global scope
 	/**
 	 * Run the plugin loader - only for php files
 	 */
- 	\EarthAsylumConsulting\myOptionsTest::loadPlugin(true);
+ 	\myAwesomeNamespace\myOptionsTest::loadPlugin(true);
 }

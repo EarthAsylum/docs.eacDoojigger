@@ -7,18 +7,19 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\Traits\plugin_loader
  *
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.3.0
- * Requires at least:	5.5.0
- * Tested up to: 		6.7
+ * Version:				1.3.1
+ * Requires at least:	5.8
+ * Tested up to: 		6.8
  * Requires PHP:		8.1
- * Requires EAC:		3.0
+ * Requires EAC:		3.1
  * Plugin URI: 			https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
+ * Update URI: 			https://dev.earthasylum.net/software-updates/myAwesomePlugin.json
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
  * Text Domain:			myAwesomePlugin
@@ -80,7 +81,7 @@ namespace myAwesomeNamespace
 				'PluginClass'		=> __NAMESPACE__.'\\Plugin\\myAwesomePlugin',
 				'RequiresWP'		=> '5.8',			// WordPress
 				'RequiresPHP'		=> '8.1',			// PHP
-				'RequiresEAC'		=> '3.0',			// eacDoojigger
+				'RequiresEAC'		=> '3.1',			// eacDoojigger
 			//	'RequiresWC'		=> '9.0',			// WooCommerce
 				'NetworkActivate'	=>	false,			// require (or forbid) network activation
 				'AutoUpdate'		=> 'self',			// automatic update 'self' or 'wp'

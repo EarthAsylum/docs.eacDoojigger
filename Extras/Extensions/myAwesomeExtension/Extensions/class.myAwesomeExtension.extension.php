@@ -5,8 +5,7 @@
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\eacDoojigger
  */
 
@@ -17,17 +16,20 @@ class myAwesomeExtension extends \EarthAsylumConsulting\abstract_extension
 	/**
 	 * @var string extension version
 	 */
-	const VERSION	= '24.1116.1';
+	const VERSION		= '25.0423.1';
 
 	/**
 	 * @var string extension tab name (if not set, add to 'General')
 	 */
-	//const TAB_NAME 		= 'Extensions';
+	//const TAB_NAME 	= 'Extensions';
 
 	/**
 	 * @var string|array|bool to set (or disable) default group display/switch
+	 * 		false 		disable the 'Enabled'' option for this group
+	 * 		string 		the label for the 'Enabled' option
+	 * 		array 		override options for the 'Enabled' option (label,help,title,info, etc.)
 	 */
-	const ENABLE_OPTION		=
+	const ENABLE_OPTION	=
 		"<abbr title='A really awesome extension'>My Awesome Extension</abbr>";
 
 
@@ -41,15 +43,12 @@ class myAwesomeExtension extends \EarthAsylumConsulting\abstract_extension
 	{
 		parent::__construct($plugin, self::DEFAULT_DISABLED);
 
-		if ($this->is_admin())
-		{
-			// $this->registerExtension( [ $this->className, 'awesome_examples' ] );	// loads on 'Awesome Examples' tab
-			$this->registerExtension( $this->className );								// loads on 'General' tab
-			// Register plugin options when needed
-			$this->add_action( "options_settings_page", array($this, 'admin_options_settings') );
-			// Add contextual help
-			$this->add_action( 'options_settings_help', array($this, 'admin_options_help') );
-		}
+		// $this->registerExtension( [ $this->className, 'awesome_examples' ] );	// loads on 'Awesome Examples' tab
+		$this->registerExtension( $this->className );								// loads on 'General' tab
+		// Register plugin options when needed
+		$this->add_action( "options_settings_page", array($this, 'admin_options_settings') );
+		// Add contextual help
+		$this->add_action( 'options_settings_help', array($this, 'admin_options_help') );
 	}
 
 

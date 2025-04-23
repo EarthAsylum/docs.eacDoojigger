@@ -12,7 +12,7 @@
  */
 
 
-namespace EarthAsylumConsulting\uninstall;
+namespace myAwesomeNamespace\uninstall;
 
 defined( 'WP_UNINSTALL_PLUGIN' ) or exit;
 

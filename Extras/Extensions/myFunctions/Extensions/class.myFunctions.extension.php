@@ -5,8 +5,7 @@
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2022 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\eacDoojigger
  */
 
@@ -17,7 +16,7 @@ class functions_extension extends \EarthAsylumConsulting\abstract_extension
 	/**
 	 * @var string extension version
 	 */
-	const VERSION	= '22.1108.1';
+	const VERSION	= '25.0423.1';
 
 
 	/**
@@ -30,13 +29,9 @@ class functions_extension extends \EarthAsylumConsulting\abstract_extension
 	{
 		parent::__construct($plugin, self::DEFAULT_DISABLED);
 
-		if ($this->is_admin())
-		{
-			// $this->registerExtension( [ $this->className, 'functions' ] );		// loads on 'Functions' tab
-			$this->registerExtension( $this->className );							// loads on 'General' tab
-			// Register plugin options when needed
-			$this->add_action( "options_settings_page", array($this, 'admin_options_settings') );
-		}
+		$this->registerExtension( $this->className );	// loads on 'General' tab
+		// Register plugin options when needed
+		$this->add_action( "options_settings_page", array($this, 'admin_options_settings') );
 	}
 
 
@@ -51,18 +46,18 @@ class functions_extension extends \EarthAsylumConsulting\abstract_extension
 		$this->registerExtensionOptions( $this->className,
 			[
 				'function_options'	=> array(
-										'type'		=> 	'checkbox',
-										'label'		=> 	'Options',
-										'options'	=>	[
-															['Load custom StyleSheet (functions.css)'	=> 'css'],
-															['Load custom JavaScript (functions.js)'	=> 'js'],
-															['Set uniqie visitor cookie'				=> 'visitor'],
-														],
-										'style'		=> 'display:block;',
-										'default'	=> 	['css','js'],
-										'help'		=>	'Enable (or disable) loading of custom style sheet and/or javascript; '.
-														'and, optionally, set a unique visitor cookie.',
-									),
+						'type'		=> 	'checkbox',
+						'label'		=> 	'Options',
+						'options'	=>	[
+											['Load custom StyleSheet (functions.css)'	=> 'css'],
+											['Load custom JavaScript (functions.js)'	=> 'js'],
+											['Set uniqie visitor cookie'				=> 'visitor'],
+										],
+						'style'		=> 'display:block;',
+						'default'	=> 	['css','js'],
+						'help'		=>	'Enable (or disable) loading of custom style sheet and/or javascript; '.
+										'and, optionally, set a unique visitor cookie.',
+				),
 			]
 		);
 	}
@@ -126,24 +121,24 @@ class functions_extension extends \EarthAsylumConsulting\abstract_extension
 		if ( $this->is_option('function_options','visitor') )
 		{
 			// append unique id to visitor id
-			$this->add_filter( 'set_visitor_id',			function($id)
+			$this->add_filter( 'set_visitor_id',		function($id)
 				{
 					return  $id.':'.$this->plugin->createUniqueId(); // eacDoojiggerid = sha1($id)
 				}
 			);
 			// and set time (days) period of cookie
-			$this->add_filter( 'enable_visitor_cookie',		function($days)
+			$this->add_filter( 'enable_visitor_cookie',	function($days)
 				{
 					return 90;
 				}
 			);
 		}
 
-		// eacDoojigger ready
-	//	$this->add_action( 'ready', 			array($this, 'eacDoojiggerReady' ) );
+		// when eacDoojigger is ready
+	//	$this->add_action( 'ready', 					array($this, 'eacDoojiggerReady' ) );
 
-		// do this daily at 1am (or 'hourly' on the hour or 'weekly' at midnight start_of_week)
-	//	$this->add_action( 'daily_event', 		array($this, 'eacDoojiggerEvent') );
+		// do this daily (or 'hourly' on the hour or 'weekly' at start_of_week)
+	//	$this->plugin->add_cron_task( 'daily', 			array($this, 'eacDoojiggerEvent') );
 	}
 
 

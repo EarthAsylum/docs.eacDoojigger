@@ -7,11 +7,11 @@
  * @category	WordPress Plugin
  * @package		myOptionsTest, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
- * @version		24.1116.1
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
+ * @version		25.0423.1
  */
 
-namespace EarthAsylumConsulting\Plugin;
+namespace myAwesomeNamespace\Plugin;
 
 class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 {

@@ -5,16 +5,16 @@
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2022 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\eacDoojigger
  *
  * @wordpress-plugin
  * Plugin Name:			myFunctions
  * Description:			myFunctions loads custom php functions, JavaScript and Stylesheet
- * Version:				1.1.0
- * Requires at least:	5.5
- * Requires PHP:		7.2
+ * Version:				1.1.1
+ * Requires at least:	5.8
+ * Tested up to: 		6.8
+ * Requires PHP:		7.4
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
  */

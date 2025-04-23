@@ -1,11 +1,11 @@
 === My Options Test ===
 Plugin URI:         https://myawesomeserver.com/myAwesomePlugin/
 Author: 			[EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.4.1
-Last Updated:       16-Nov-2024
+Stable tag:         1.4.2
+Last Updated:       23-Apr-2025
 Requires at least:  5.8
-Tested up to:       6.7
-Requires PHP:       7.2
+Tested up to:       6.8
+Requires PHP:       7.4
 
 My Options Test -  Provides examples of input types, parameters, and processing callbacks & filters.
 
@@ -29,7 +29,18 @@ filters and callbacks
 
 Installation of this plugin can be managed from the WordPress Dashboard » Plugins » Add New page by clicking the [Upload Plugin] button, then selecting the myAwesomePlugin.zip file from your computer.
 
+== Other Notes ==
+
+myOptionsTest is a derivative plugin of and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v2.6+
+
+Find this plugin, further documentation, and all {eac}Doojigger Extras at [this GitHub repository](https://github.com/EarthAsylum/docs.eacDoojigger)
+
 == Changelog ==
+
+= Version 1.4.2 – April 23, 2025 =
+
++   Compatible with WordPress 6.8 and {eac}Doojigger 3.1.
++   Changed namespace to `myAwesomNamespace`.
 
 = Version 1.4.1 – November 16, 2024 =
 
@@ -56,7 +67,3 @@ Installation of this plugin can be managed from the WordPress Dashboard » Plugi
 = Version 1.0.0 – Sep 17, 2022 =
 
 +	Initial release.
-
-== Other Notes ==
-
-myOptionsTest is a derivative plugin of and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v2.6+

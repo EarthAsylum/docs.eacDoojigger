@@ -7,9 +7,9 @@
 
 Plugin URI:         https://eacDoojigger.earthasylum.com/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:       21-Dec-2024  
+Last Updated:       23-Apr-2025  
 Contributors:       [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
-Requires EAC:       3.0  
+Requires EAC:       3.1  
 WordPress URI:      https://wordpress.org/plugins/search/earthasylum/  
 GitHub URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/  
 

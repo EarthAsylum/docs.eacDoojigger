@@ -11,8 +11,9 @@
  * @wordpress-plugin
  * Plugin Name:			My Awesome Extension
  * Description:			My Awesome Extension
- * Version:				1.1.2
+ * Version:				1.1.3
  * Requires at least:	5.8
+ * Tested up to: 		6.8
  * Requires PHP:		7.4
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
@@ -42,7 +43,7 @@ class myAwesomeExtension
 		 */
 		add_filter( 'myAwesomePlugin_load_extensions',	function($extensionDirectories)
 			{
-				$extensionDirectories[ plugin_basename( __FILE__ ) ] = [plugin_dir_path( __FILE__ ).'/Extensions'];
+				$extensionDirectories[ plugin_basename( __FILE__ ) ] = [plugin_dir_path( __FILE__ )];
 				return $extensionDirectories;
 			}
 		);

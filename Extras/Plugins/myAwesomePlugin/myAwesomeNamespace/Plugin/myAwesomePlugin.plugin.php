@@ -5,8 +5,8 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.3
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
+ * @version		1.3.1
  */
 
 namespace myAwesomeNamespace\Plugin;
@@ -222,6 +222,7 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_activated(bool $isNetwork=false)
 	{
+		$this->add_admin_notice($this->pluginHeader('title') . ' activated.', 'success');
 	}
 
 
@@ -233,6 +234,7 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_deactivated(bool $isNetwork=false)
 	{
+		$this->add_admin_notice($this->pluginHeader('title') . ' deactivated.', 'success');
 	}
 
 
@@ -248,6 +250,7 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_installed($curVersion, $newVersion, $asNetworkAdmin)
 	{
+		$this->add_admin_notice($this->pluginHeader('title') . ' installed.', 'success');
 	}
 
 
@@ -263,5 +266,6 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_updated($curVersion, $newVersion, $asNetworkAdmin)
 	{
+		$this->add_admin_notice($this->pluginHeader('title') . ' updated.', 'success');
 	}
 }
