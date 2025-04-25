@@ -16,7 +16,7 @@
  * @wordpress-plugin
  * Plugin Name:         {eac}CronSettings
  * Description:         {eac}CronSettings - Site wide settings and actions for WP-Cron / Action Scheduler
- * Version:             1.5.2
+ * Version:             1.5.3
  * Requires at least:   5.8
  * Tested up to:        6.8
  * Requires PHP:        7.4
@@ -39,9 +39,9 @@ namespace EarthAsylumConsulting\CronSettings
 
     /*
      * internal wp-cron may be disabled when triggered by external request to /wp-cron.php?doing_wp_cron
-     *          like server-based cron
+     *      like server-based crontab - wget -q -O - https://domain.com/wp-cron.php?doing_wp_cron >/dev/null 2>&1
      *          or uptimerobot - https://dashboard.uptimerobot.com/
-     *          or AWS EventBridge
+     *          or AWS EventBridge - https://aws.amazon.com/eventbridge/
      *          or some other external trigger
      */
     if (!defined('DISABLE_WP_CRON'))
@@ -49,21 +49,6 @@ namespace EarthAsylumConsulting\CronSettings
         define('DISABLE_WP_CRON', true);
     }
 
-    /*
-     * log wp-cron scheduling errors
-     */
-    if (!defined('WP_CRON_LOG_ERRORS'))
-    {
-        define('WP_CRON_LOG_ERRORS', true);
-    }
-
-    /*
-     * debug certain wp-cron scheduling actions
-     */
-    if (!defined('WP_CRON_DEBUG'))
-    {
-    //  define('WP_CRON_DEBUG', true);
-    }
 
     /*
      * set minimum interval time for all wp-cron jobs
@@ -73,6 +58,7 @@ namespace EarthAsylumConsulting\CronSettings
     {
         define('WP_CRON_MINIMUM_INTERVAL', 5 * MINUTE_IN_SECONDS);
     }
+
 
     /*
      * add or change wp-cron schedule intervals
@@ -98,18 +84,21 @@ namespace EarthAsylumConsulting\CronSettings
     }
 
 
-    /* *****
-     *
-     * Actions triggered with above constants
-     *
-     ***** */
-
+    /*
+     * log wp-cron scheduling errors
+     */
+    if (!defined('WP_CRON_LOG_ERRORS'))
+    {
+        define('WP_CRON_LOG_ERRORS', true);
+    }
 
     /*
-     * Change WP-Cron to ActionScheduler or ActionScheduler to WP-Cron
+     * debug certain wp-cron scheduling actions
      */
-    //wp_cron_to_action_scheduler();    // calls ActionScheduler functions too early
-    //action_scheduler_to_wp_cron();
+    if (!defined('WP_CRON_DEBUG'))
+    {
+//      define('WP_CRON_DEBUG', true);
+    }
 
 
     /*
@@ -123,6 +112,20 @@ namespace EarthAsylumConsulting\CronSettings
             }
         );
     }
+
+
+    /* *****
+     *
+     * Actions triggered with above constants
+     *
+     ***** */
+
+
+    /*
+     * Change WP-Cron to ActionScheduler or ActionScheduler to WP-Cron
+     */
+//    wp_cron_to_action_scheduler();    // calls ActionScheduler functions too early
+//    action_scheduler_to_wp_cron();
 
 
     /*
@@ -149,11 +152,29 @@ namespace EarthAsylumConsulting\CronSettings
 
 
     /*
-     * debugging filters & actions
+     * debugging filters
      */
     if (defined('WP_CRON_DEBUG'))
     {
-        cron_debugging();
+        add_filter( 'pre_reschedule_event', function($return,$event)
+        {
+            $event->_date_ = wp_date('c',$event->timestamp);
+            do_action('eacDoojigger_log_debug',$event,"pre_reschedule_event");
+            return $return;
+        },PHP_INT_MAX,2);
+
+        add_filter( 'pre_schedule_event', function($return,$event)
+        {
+            $event->_date_ = wp_date('c',$event->timestamp);
+            do_action('eacDoojigger_log_debug',$event,"pre_schedule_event");
+            return $return;
+        },PHP_INT_MAX,2);
+
+        add_filter( 'pre_unschedule_event', function($return, $timestamp, $hook, $args, $wp_error)
+        {
+            do_action('eacDoojigger_log_debug',[wp_date('c',$timestamp), $timestamp, $hook, $args],"pre_unschedule_event");
+            return $return;
+        },PHP_INT_MAX,5);
     }
 
 
@@ -190,44 +211,6 @@ namespace EarthAsylumConsulting\CronSettings
      * Methods used
      *
      ***** */
-
-
-    /**
-     * cron debugging
-     */
-    function cron_debugging()
-    {
-        add_filter( 'update_option_cron', function($old,$crons)
-        {
-            global $wp_filter;
-            $new = [];
-            foreach ($crons as $timestamp => $cron) {
-                if (is_int($timestamp)) $new[wp_date('c',$timestamp).' '.$timestamp] = $cron;
-            }
-            do_action('eacDoojigger_log_debug',$new,"update_option_cron");
-            return $crons;
-        },1,2);
-
-        add_filter( 'pre_reschedule_event', function($return,$event)
-        {
-            $event->_date_ = wp_date('c',$event->timestamp);
-            do_action('eacDoojigger_log_debug',$event,"pre_reschedule_event");
-            return $return;
-        },PHP_INT_MAX,2);
-
-        add_filter( 'pre_schedule_event', function($return,$event)
-        {
-            $event->_date_ = wp_date('c',$event->timestamp);
-            do_action('eacDoojigger_log_debug',$event,"pre_schedule_event");
-            return null;
-        },PHP_INT_MAX,2);
-
-        add_filter( 'pre_unschedule_event', function($return, $timestamp, $hook, $args, $wp_error)
-        {
-            do_action('eacDoojigger_log_debug',[$timestamp, wp_date('c',$timestamp), $hook, md5( serialize( $args ) ), $args],"($return) pre_unschedule_event");
-            return $return;
-        },PHP_INT_MAX,5);
-    }
 
 
     /**

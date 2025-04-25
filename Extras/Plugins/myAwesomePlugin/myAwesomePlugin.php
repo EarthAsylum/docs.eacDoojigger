@@ -13,7 +13,7 @@
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.3.1
+ * Version:				1.3.2
  * Requires at least:	5.8
  * Tested up to: 		6.8
  * Requires PHP:		8.1

@@ -50,6 +50,10 @@ Requires [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v3.1+
 
 == Changelog ==
 
+= Version 1.3.2 – April 23, 2025 =
+
++   Fix example add_admin_notice using plugin Title.
+
 = Version 1.3.1 – April 22, 2025 =
 
 +   Compatible with WordPress 6.8 and {eac}Doojigger 3.1.
