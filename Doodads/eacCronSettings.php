@@ -5,6 +5,7 @@
  * This is a self-contained piece of code - drop in to plugins or mu-plugins folder to invoke.
  *
  * -- REVIEW BEFORE IMPLEMENTING --
+ * Disables normal WP-Cron function;
  * Adds constants and actions used to control and debug WP-Cron and/or Action Scheduler
  *
  *
@@ -16,7 +17,8 @@
  * @wordpress-plugin
  * Plugin Name:         {eac}CronSettings
  * Description:         {eac}CronSettings - Site wide settings and actions for WP-Cron / Action Scheduler
- * Version:             1.5.3
+ * Version:             1.5.4
+ * Last Updated:        26-Apr-2025
  * Requires at least:   5.8
  * Tested up to:        6.8
  * Requires PHP:        7.4
@@ -40,7 +42,8 @@ namespace EarthAsylumConsulting\CronSettings
     /*
      * internal wp-cron may be disabled when triggered by external request to /wp-cron.php?doing_wp_cron
      *      like server-based crontab - wget -q -O - https://domain.com/wp-cron.php?doing_wp_cron >/dev/null 2>&1
-     *          or uptimerobot - https://dashboard.uptimerobot.com/
+     *          or EasyCron - https://www.easycron.com
+     *          or UptimeRobot - https://dashboard.uptimerobot.com/
      *          or AWS EventBridge - https://aws.amazon.com/eventbridge/
      *          or some other external trigger
      */
@@ -69,18 +72,11 @@ namespace EarthAsylumConsulting\CronSettings
         $days_this_month = (int)wp_date('t');
         define('WP_CRON_SCHEDULE_INTERVALS', array(
             // add 'monthly' based on days this month
-            'monthly'                           => [
-                    'interval'  => $days_this_month * DAY_IN_SECONDS,
-                    'display'   => "Monthly ({$days_this_month} days)",
-            ],
-            // override Sumo Subscriptions schedule
-            'sumosubscriptions_cron_interval'   => [
-                    'interval'  => 15 * MINUTE_IN_SECONDS,
-                    'display'   => "Every 15 Minutes"
+            'monthly'       => [
+                'interval'  => $days_this_month * DAY_IN_SECONDS,
+                'display'   => "Monthly ({$days_this_month} days)",
             ],
         ));
-        // sumo subscriptions uses the constant, not the schedule, when scheduling
-        define('SUMO_SUBSCRIPTIONS_CRON_INTERVAL', 15 * MINUTE_IN_SECONDS);
     }
 
 
@@ -104,14 +100,18 @@ namespace EarthAsylumConsulting\CronSettings
     /*
      * if eacDoojigger is not installed, add a replacement action for debugging
      */
-    if (!defined('EACDOOJIGGER_VERSION'))
-    {
-        add_action('eacDoojigger_log_debug', function($data,$source)
+    add_action('muplugins_loaded', function()
+        {
+            if (!defined('EACDOOJIGGER_VERSION'))
             {
-                error_log($source.': '.var_export($data,true));
+                add_action('eacDoojigger_log_debug', function($data,$source)
+                    {
+                        error_log($source.': '.var_export($data,true));
+                    }
+                );
             }
-        );
-    }
+        }
+    );
 
 
     /* *****
@@ -158,14 +158,14 @@ namespace EarthAsylumConsulting\CronSettings
     {
         add_filter( 'pre_reschedule_event', function($return,$event)
         {
-            $event->_date_ = wp_date('c',$event->timestamp);
+            $event->_datetime_ = wp_date('c',$event->timestamp);
             do_action('eacDoojigger_log_debug',$event,"pre_reschedule_event");
             return $return;
         },PHP_INT_MAX,2);
 
         add_filter( 'pre_schedule_event', function($return,$event)
         {
-            $event->_date_ = wp_date('c',$event->timestamp);
+            $event->_datetime_ = wp_date('c',$event->timestamp);
             do_action('eacDoojigger_log_debug',$event,"pre_schedule_event");
             return $return;
         },PHP_INT_MAX,2);
@@ -340,21 +340,12 @@ namespace EarthAsylumConsulting\CronSettings
         uasort($cron_schedules, function($a,$b) {
             return ($a['interval'] == $b['interval']) ? 0 : ( ($a['interval'] < $b['interval']) ? -1 : 1);
         });
+        // look for closest interval from any schedule
         foreach($cron_schedules as $name => $schedule) {
             if ($interval <= $schedule['interval']) {
                 return $name;
             }
         }
-        if( $interval < 6 * HOUR_IN_SECONDS ) {
-            return 'hourly';
-        } elseif( $interval < DAY_IN_SECONDS ) {
-            return 'twicedaily';
-        } elseif( $interval < WEEK_IN_SECONDS ) {
-            return 'daily';
-        } elseif( $interval < MONTH_IN_SECONDS ) {
-            return 'weekly';
-        } else {
-            return 'monthly';
-        }
+        return 'no-schedule-found';
     }
 }
