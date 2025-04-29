@@ -4,6 +4,9 @@ namespace EarthAsylumConsulting\Extensions;
 /**
  * Extension: cloudflare_extension - enable Cloudflare API
  *
+ * Drop this into
+ * 		/wp-content/themes/{your-theme}/eacDoojigger/Doolollys
+ *
  * @category	WordPress Plugin
  * @package		{eac}Doojigger\Extensions
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
