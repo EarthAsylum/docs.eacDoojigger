@@ -1381,11 +1381,6 @@ Search.appendIndex(
             "summary": "constructor\u0020method",
             "url": "classes/EarthAsylumConsulting-Extensions-ajaxAction.html#method___construct"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Extensions\\ajaxAction\u003A\u003Aadmin_options_settings\u0028\u0029",
-            "name": "admin_options_settings",
-            "summary": "register\u0020options\u0020on\u0020options_settings_page",
-            "url": "classes/EarthAsylumConsulting-Extensions-ajaxAction.html#method_admin_options_settings"
-        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\ajaxAction\u003A\u003AaddActionsAndFilters\u0028\u0029",
             "name": "addActionsAndFilters",
             "summary": "Add\u0020filters\u0020and\u0020actions\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
@@ -1521,6 +1516,16 @@ Search.appendIndex(
             "summary": "print_backtrace\nlike\u0020wp_debug_backtrace_summary",
             "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_print_backtrace"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003Aqm_log_data\u0028\u0029",
+            "name": "qm_log_data",
+            "summary": "log\u0020data\u0020to\u0020Queue\u0020Monitor",
+            "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_qm_log_data"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003Aqm_shutdown\u0028\u0029",
+            "name": "qm_shutdown",
+            "summary": "log\u0020data\u0020to\u0020Queue\u0020Monitor\u0020on\u0020shutdown",
+            "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_qm_shutdown"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003Apage_log_data\u0028\u0029",
             "name": "page_log_data",
             "summary": "save\u0020data\u0020to\u0020output\u0020on\u0020page\u0020footer",
@@ -1531,20 +1536,25 @@ Search.appendIndex(
             "summary": "Write\u0020to\u0020the\u0020log\u0020file.",
             "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_file_log_data"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003AlogClose\u0028\u0029",
-            "name": "logClose",
-            "summary": "Finish\u0020and\u0020close\u0020the\u0020log.",
-            "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_logClose"
-        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003ArequestURL\u0028\u0029",
             "name": "requestURL",
             "summary": "Log\u0020request\u0020server\u0020values",
             "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_requestURL"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003AlogClose\u0028\u0029",
+            "name": "logClose",
+            "summary": "Finish\u0020and\u0020close\u0020the\u0020log.",
+            "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_logClose"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003AVERSION",
             "name": "VERSION",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constant_VERSION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\debugging_extension\u003A\u003ATAB_NAME",
+            "name": "TAB_NAME",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constant_TAB_NAME"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\encryption_extension",
             "name": "encryption_extension",
@@ -1606,6 +1616,156 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-encryption-extension.html#constant_VERSION"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\encryption_extension\u003A\u003AENABLE_OPTION",
+            "name": "ENABLE_OPTION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-encryption-extension.html#constant_ENABLE_OPTION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension",
+            "name": "event_scheduler_extension",
+            "summary": "Extension\u003A\u0020event_schedule\u0020\u002D\u0020Schedule\u0020timed,\u0020repeating\u0020event\u0028s\u0029.",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor\u0020method",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method___construct"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003Aadmin_options_settings\u0028\u0029",
+            "name": "admin_options_settings",
+            "summary": "register\u0020options\u0020on\u0020options_settings_page",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_admin_options_settings"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003Avalidate_schedules\u0028\u0029",
+            "name": "validate_schedules",
+            "summary": "validate\/set\u0020validate_schedules\u0020when\u0020form\u0020submitted",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_validate_schedules"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003Aadmin_options_help\u0028\u0029",
+            "name": "admin_options_help",
+            "summary": "Add\u0020help\u0020tab\u0020on\u0020admin\u0020page",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_admin_options_help"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "initialize\u0020method\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_initialize"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003Averify_active_events\u0028\u0029",
+            "name": "verify_active_events",
+            "summary": "verify\u0020active\u0020events",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_verify_active_events"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003Aremove_active_events\u0028\u0029",
+            "name": "remove_active_events",
+            "summary": "deactivated\u0020active\u0020events",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_remove_active_events"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AaddActionsAndFilters_early\u0028\u0029",
+            "name": "addActionsAndFilters_early",
+            "summary": "Add\u0020filters\u0020and\u0020actions\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addActionsAndFilters_early"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AisInterval\u0028\u0029",
+            "name": "isInterval",
+            "summary": "Does\u0020a\u0020custom\u0020interval\u0020exist",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isInterval"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AgetInterval\u0028\u0029",
+            "name": "getInterval",
+            "summary": "Get\u0020a\u0020custom\u0020interval",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getInterval"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AsetInterval\u0028\u0029",
+            "name": "setInterval",
+            "summary": "Create\u0020a\u0020custom\u0020interval",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setInterval"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AunsetInterval\u0028\u0029",
+            "name": "unsetInterval",
+            "summary": "Delete\u0020a\u0020custom\u0020interval",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetInterval"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AgetIntervals\u0028\u0029",
+            "name": "getIntervals",
+            "summary": "Get\u0020a\u0020set\u0020of\u0020defined\u0020interval\u0020schedules",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getIntervals"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AsortIntervals\u0028\u0029",
+            "name": "sortIntervals",
+            "summary": "Sort\u0020array\u0020of\u0020defined\u0020interval\u0020schedules",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_sortIntervals"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AisEvent\u0028\u0029",
+            "name": "isEvent",
+            "summary": "Is\u0020a\u0020scheduled\u0020event\u0020already\u0020set",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isEvent"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AgetEvent\u0028\u0029",
+            "name": "getEvent",
+            "summary": "Get\u0020a\u0020scheduled\u0020event",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getEvent"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AsetEvent\u0028\u0029",
+            "name": "setEvent",
+            "summary": "Set\u0020a\u0020scheduled\u0020event",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setEvent"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AunsetEvent\u0028\u0029",
+            "name": "unsetEvent",
+            "summary": "Remove\u0020a\u0020scheduled\u0020event",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetEvent"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AisTask\u0028\u0029",
+            "name": "isTask",
+            "summary": "Is\u0020there\u0020a\u0020task\u0020hook\u0020for\u0020a\u0020scheduled\u0020event\u0020\u0028has_action\u0028\u0029\u0020shortcut\u0029",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isTask"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AsetTask\u0028\u0029",
+            "name": "setTask",
+            "summary": "Add\u0020a\u0020task\u0020hook\u0020for\u0020a\u0020scheduled\u0020event\u0020\u0028add_action\u0028\u0029\u0020shortcut\u0029",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setTask"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AunsetTask\u0028\u0029",
+            "name": "unsetTask",
+            "summary": "Remove\u0020a\u0020task\u0020hook\u0020for\u0020a\u0020scheduled\u0020event\u0020\u0028remove_action\u0028\u0029\u0020shortcut\u0029",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetTask"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AaddEventTask\u0028\u0029",
+            "name": "addEventTask",
+            "summary": "Add\u0020an\u0020event\u0020and\u0020task\u0020hook\u0020for\u0020the\u0020event",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addEventTask"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AscheduledEventName\u0028\u0029",
+            "name": "scheduledEventName",
+            "summary": "Get\u0020the\u0020eventName\u0020of\u0020a\u0020scheduled\u0020event.",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_scheduledEventName"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AVERSION",
+            "name": "VERSION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_VERSION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AALIAS",
+            "name": "ALIAS",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_ALIAS"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003ATAB_NAME",
+            "name": "TAB_NAME",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_TAB_NAME"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AENABLE_OPTION",
+            "name": "ENABLE_OPTION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_ENABLE_OPTION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AWP_CORE_SCHEDULES",
+            "name": "WP_CORE_SCHEDULES",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_WP_CORE_SCHEDULES"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\maintenance_mode",
             "name": "maintenance_mode",
             "summary": "Extension\u003A\u0020maintenance_mode\u0020\u002D\u0020put\u0020site\u0020in\u0020scheduled\u0020maintenance\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
@@ -1631,10 +1791,10 @@ Search.appendIndex(
             "summary": "initialize\u0020method\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
             "url": "classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_initialize"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Extensions\\maintenance_mode\u003A\u003AaddActionsAndFilters\u0028\u0029",
-            "name": "addActionsAndFilters",
-            "summary": "Add\u0020filters\u0020and\u0020actions\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
-            "url": "classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_addActionsAndFilters"
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\maintenance_mode\u003A\u003Acheck_maintenance_mode\u0028\u0029",
+            "name": "check_maintenance_mode",
+            "summary": "check\u0020maintenance\u0020mode",
+            "url": "classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_check_maintenance_mode"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\maintenance_mode\u003A\u003AaddShortcodes\u0028\u0029",
             "name": "addShortcodes",
@@ -1720,6 +1880,11 @@ Search.appendIndex(
             "name": "session_start",
             "summary": "Setup\u0020the\u0020session\u0020instance",
             "url": "classes/EarthAsylumConsulting-Extensions-session-extension.html#method_session_start"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\session_extension\u003A\u003Asession_init\u0028\u0029",
+            "name": "session_init",
+            "summary": "set\u0020session\u0020cookie\u0020\u0028on\u0020or\u0020after\u0020WP\u0020init\u0029",
+            "url": "classes/EarthAsylumConsulting-Extensions-session-extension.html#method_session_init"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\session_extension\u003A\u003AisNewSession\u0028\u0029",
             "name": "isNewSession",
@@ -2076,6 +2241,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-security-extension.html#constant_TAB_NAME"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_extension\u003A\u003A\u0024htaccess",
+            "name": "htaccess",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-extension.html#property_htaccess"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_extension\u003A\u003A\u0024wpConfig",
+            "name": "wpConfig",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-extension.html#property_wpConfig"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_extension\u003A\u003A\u0024userIni",
+            "name": "userIni",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-extension.html#property_userIni"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_cors",
             "name": "security_cors",
             "summary": "Extension\u003A\u0020fraudguard\u0020\u002D\u0020FraudGuard\u0020API\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
@@ -2100,6 +2280,11 @@ Search.appendIndex(
             "name": "initialize",
             "summary": "initialize\u0020method\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
             "url": "classes/EarthAsylumConsulting-Extensions-security-cors.html#method_initialize"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_cors\u003A\u003Ainitialize_hostIP\u0028\u0029",
+            "name": "initialize_hostIP",
+            "summary": "get\u0020host\u0020IP\u0020address\u0028es\u0029",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-cors.html#method_initialize_hostIP"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_cors\u003A\u003AaddActionsAndFilters\u0028\u0029",
             "name": "addActionsAndFilters",
@@ -3121,6 +3306,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-eacDoojigger-registration.html#constant_ALIAS"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\eacDoojigger_registration\u003A\u003AENABLE_OPTION",
+            "name": "ENABLE_OPTION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-eacDoojigger-registration.html#constant_ENABLE_OPTION"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\file_system_extension",
             "name": "file_system_extension",
             "summary": "Extension\u003A\u0020file_system\u0020\u002D\u0020expands\u0020on\u0020the\u0020WordPress\u0020WP_filesystem\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
@@ -3626,15 +3816,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Traits-plugin-environment.html"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_environment\u003A\u003Acheck_network_activation\u0028\u0029",
-            "name": "check_network_activation",
-            "summary": "Check\u0020network\u0020activation",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-environment.html#method_check_network_activation"
-        },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_environment\u003A\u003Aoutput_network_error\u0028\u0029",
-            "name": "output_network_error",
-            "summary": "admin\u0020error\u0020for\u0020network\u0020activation",
-            "url": "classes/EarthAsylumConsulting-Traits-plugin-environment.html#method_output_network_error"
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_environment\u003A\u003Ado_plugin_environment_check\u0028\u0029",
+            "name": "do_plugin_environment_check",
+            "summary": "The\u0020actual\u0020checks\u0020triggered\u0020by\u0020above\u0020hooks.",
+            "url": "classes/EarthAsylumConsulting-Traits-plugin-environment.html#method_do_plugin_environment_check"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\plugin_help",
             "name": "plugin_help",
@@ -3810,6 +3995,11 @@ Search.appendIndex(
             "name": "swRegistrationUI",
             "summary": "swRegistrationUI\u0020method",
             "url": "classes/EarthAsylumConsulting-Traits-swRegistrationUI.html#method_swRegistrationUI"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\swRegistrationUI\u003A\u003AswRegistrationAdminInit\u0028\u0029",
+            "name": "swRegistrationAdminInit",
+            "summary": "add\u0020additional\u0020actions\u0020and\u0020filters\u0020\u002D\u0020on\u0020admin_init\u0020to\u0020allow\u0020for\u0020translations",
+            "url": "classes/EarthAsylumConsulting-Traits-swRegistrationUI.html#method_swRegistrationAdminInit"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\swRegistrationUI\u003A\u003Aform_request_create\u0028\u0029",
             "name": "form_request_create",

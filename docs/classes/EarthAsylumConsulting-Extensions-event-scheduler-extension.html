@@ -149,7 +149,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    debugging_extension
+    event_scheduler_extension
 
         <span class="phpdocumentor-element__extends">
         extends <a href="classes/EarthAsylumConsulting-abstract-extension.html"><abbr title="\EarthAsylumConsulting\abstract_extension">abstract_extension</abbr></a>
@@ -158,8 +158,8 @@
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojigger.html">eacDoojigger</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojigger-Extensions.html">Extensions</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojiggerUtilities.html">eacDoojiggerUtilities</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/eacDoojiggerUtilities-eacDoojiggerObjectCache.html">eacDoojiggerObjectCache</a></li>
                             </ul>
         </div>
     
@@ -167,13 +167,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Extension: debugging - file logging &amp; debugging - {eac}Doojigger for WordPress</p>
+            <p class="phpdocumentor-summary">Extension: event_schedule - Schedule timed, repeating event(s).</p>
 
 
 
@@ -216,14 +216,6 @@
                                                                                                         <a class="phpdocumentor-tag-link" href="https://eacDoojigger.earthasylum.com/"> https://eacDoojigger.earthasylum.com/ </a>
                     
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">see</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="https://eacDoojigger.earthasylum.com/phpdoc/"><abbr title="https://eacDoojigger.earthasylum.com/phpdoc/">https://eacDoojigger.earthasylum.com/phpdoc/</abbr></a></span>
-                                        
-                                             
-                                    </dd>
                         </dl>
 
 
@@ -238,9 +230,9 @@
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALIAS">ALIAS</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_ALIAS">ALIAS</a>
     <span>
-        &nbsp;= null                            </span>
+        &nbsp;= &#039;cron&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -294,9 +286,9 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ENABLE_OPTION">ENABLE_OPTION</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_ENABLE_OPTION">ENABLE_OPTION</a>
     <span>
-        &nbsp;= null                            </span>
+        &nbsp;= [&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;label&#039; =&gt; &quot;&lt;abbr title=&#039;Set regularly scheduled, recurring events. These events do nothing by &quot; . &quot;themselves but can be used to trigger other actions by hooking into the event action name.&#039;&gt;&quot; . &quot;Scheduled Events&lt;/abbr&gt;&quot;, &#039;advanced&#039; =&gt; true]                            </span>
 </dt>
 <dd></dd>
 
@@ -308,16 +300,23 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constant_TAB_NAME">TAB_NAME</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_TAB_NAME">TAB_NAME</a>
     <span>
-        &nbsp;= &#039;Debugging&#039;                            </span>
+        &nbsp;= &#039;General&#039;                            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constant_VERSION">VERSION</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_VERSION">VERSION</a>
     <span>
-        &nbsp;= &#039;25.0427.1&#039;                            </span>
+        &nbsp;= &#039;25.0419.1&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_WP_CORE_SCHEDULES">WP_CORE_SCHEDULES</a>
+    <span>
+        &nbsp;= [&#039;hourly&#039; =&gt; &#039;Hourly&#039;, &#039;twicedaily&#039; =&gt; &#039;Twice Daily&#039;, &#039;daily&#039; =&gt; &#039;Daily&#039;, &#039;weekly&#039; =&gt; &#039;Weekly&#039;, &#039;monthly&#039; =&gt; &#039;Monthly&#039;]                            </span>
 </dt>
 <dd></dd>
 
@@ -329,7 +328,7 @@
 <dd>magic method to call plugin or extension methods</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method___construct">__construct()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -350,11 +349,25 @@
 <dd>magic method to call parent plugin __get()</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_addActionsAndFilters">addActionsAndFilters()</a>
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addActionsAndFilters">addActionsAndFilters()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Add extension actions and filter</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addActionsAndFilters_early">addActionsAndFilters_early()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Add filters and actions - called from main plugin</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addEventTask">addEventTask()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Add an event and task hook for the event</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addShortcodes">addShortcodes()</a>
@@ -364,67 +377,18 @@
 <dd>Add extension shortcodes</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_admin_options_help">admin_options_help()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_admin_options_help">admin_options_help()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Add help tab on admin page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_admin_options_settings">admin_options_settings()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_admin_options_settings">admin_options_settings()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>register options on options_settings_page</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_capture_deprecated_wrong">capture_deprecated_wrong()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>capture wp &#039;deprecated&#039; &amp; &#039;doing_it_wrong&#039; errors</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_capture_heartbeat">capture_heartbeat()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>capture wp &#039;heartbeat&#039;</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_capture_wp_error">capture_wp_error()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>capture wp errors when a new error is added - wp_error_added hook</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_clean_filepath">clean_filepath()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>strip leading directory from file</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_debug_debugging">debug_debugging()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Get the debugging array for our own filter</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_debug_logdata">debug_logdata()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Get the debugging log array</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_file_log_data">file_log_data()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Write to the log file.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias">getAlias()</a>
@@ -441,6 +405,27 @@
 <dd>getClassName - get the class/extension name without namespace</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getEvent">getEvent()</a>
+    <span>
+                                &nbsp;: object|bool    </span>
+</dt>
+<dd>Get a scheduled event</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getInterval">getInterval()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;|bool    </span>
+</dt>
+<dd>Get a custom interval</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getIntervals">getIntervals()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get a set of defined interval schedules</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getVersion">getVersion()</a>
     <span>
                                 &nbsp;: <abbr title="\EarthAsylumConsulting\const">const</abbr>    </span>
@@ -448,18 +433,11 @@
 <dd>get the extension version</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_initialize">initialize()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_initialize">initialize()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>initialize method - called from main plugin</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_install_actiontimer">install_actiontimer()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>install/uninstall actiontimer</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_is_network_enabled">is_network_enabled()</a>
@@ -483,89 +461,102 @@
 <dd>isEnabled - set or test extension enabled for use</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_logClose">logClose()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Finish and close the log.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_options_form_post_wp_debugging">options_form_post_wp_debugging()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>filter for options_form_post_wp_debugging</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_page_debugging_help">page_debugging_help()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>filter for current_screen, help screen</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_page_debugging_output">page_debugging_output()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>filter for wp_footer, admin_footer</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_page_log_data">page_log_data()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isEvent">isEvent()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>save data to output on page footer</dd>
+<dd>Is a scheduled event already set</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_phpErrorHandler">phpErrorHandler()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Handle PHP errors</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_print_backtrace">print_backtrace()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>print_backtrace
-like wp_debug_backtrace_summary</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_purge_logs">purge_logs()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>purge old log files - (never runs for network_admin)</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_qm_log_data">qm_log_data()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isInterval">isInterval()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>log data to Queue Monitor</dd>
+<dd>Does a custom interval exist</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_qm_shutdown">qm_shutdown()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isTask">isTask()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>log data to Queue Monitor on shutdown</dd>
+<dd>Is there a task hook for a scheduled event (has_action() shortcut)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_requestURL">requestURL()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_remove_active_events">remove_active_events()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Log request server values</dd>
+<dd>deactivated active events</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_showErrorReporting">showErrorReporting()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_scheduledEventName">scheduledEventName()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|string    </span>
+                                &nbsp;: bool|string    </span>
 </dt>
-<dd>show error reporting strings</dd>
+<dd>Get the eventName of a scheduled event.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setEvent">setEvent()</a>
+    <span>
+                                &nbsp;: int|bool    </span>
+</dt>
+<dd>Set a scheduled event</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setInterval">setInterval()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Create a custom interval</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setTask">setTask()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Add a task hook for a scheduled event (add_action() shortcut)</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_sortIntervals">sortIntervals()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Sort array of defined interval schedules</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetEvent">unsetEvent()</a>
+    <span>
+                                &nbsp;: int|bool    </span>
+</dt>
+<dd>Remove a scheduled event</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetInterval">unsetInterval()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Delete a custom interval</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetTask">unsetTask()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Remove a task hook for a scheduled event (remove_action() shortcut)</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_validate_schedules">validate_schedules()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>validate/set validate_schedules when form submitted</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_verify_active_events">verify_active_events()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>verify active events</dd>
 
         </dl>
 
@@ -575,18 +566,18 @@ like wp_debug_backtrace_summary</dd>
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
-            <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ALIAS">
         ALIAS
-        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALIAS" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_ALIAS" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -595,12 +586,12 @@ like wp_debug_backtrace_summary</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">ALIAS</span>
-    = <span class="phpdocumentor-signature__default-value">null</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;cron&#039;</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>in child class for alias class name</p>
+        <section class="phpdocumentor-description"><p>alias class name</p>
 </section>
 
     
@@ -812,13 +803,13 @@ like wp_debug_backtrace_summary</dd>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ENABLE_OPTION">
         ENABLE_OPTION
-        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ENABLE_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_ENABLE_OPTION" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -827,7 +818,7 @@ like wp_debug_backtrace_summary</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string|array&lt;string|int, mixed&gt;|bool</span>
     <span class="phpdocumentor-signature__name">ENABLE_OPTION</span>
-    = <span class="phpdocumentor-signature__default-value">null</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;type&#039; =&gt; &#039;hidden&#039;, &#039;label&#039; =&gt; &quot;&lt;abbr title=&#039;Set regularly scheduled, recurring events. These events do nothing by &quot; . &quot;themselves but can be used to trigger other actions by hooking into the event action name.&#039;&gt;&quot; . &quot;Scheduled Events&lt;/abbr&gt;&quot;, &#039;advanced&#039; =&gt; true]</span>
 </code>
 
 
@@ -873,13 +864,13 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_TAB_NAME">
         TAB_NAME
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constant_TAB_NAME" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_TAB_NAME" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -888,12 +879,12 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">TAB_NAME</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;Debugging&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;General&#039;</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>extension tab name</p>
+        <section class="phpdocumentor-description"><p>to set default tab name</p>
 </section>
 
     
@@ -902,13 +893,13 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_VERSION">
         VERSION
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_VERSION" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -917,13 +908,42 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;25.0427.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;25.0419.1&#039;</span>
 </code>
 
 
     
         <section class="phpdocumentor-description"><p>extension version</p>
 </section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_WP_CORE_SCHEDULES">
+        WP_CORE_SCHEDULES
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#constant_WP_CORE_SCHEDULES" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">78</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">WP_CORE_SCHEDULES</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;hourly&#039; =&gt; &#039;Hourly&#039;, &#039;twicedaily&#039; =&gt; &#039;Twice Daily&#039;, &#039;daily&#039; =&gt; &#039;Daily&#039;, &#039;weekly&#039; =&gt; &#039;Weekly&#039;, &#039;monthly&#039; =&gt; &#039;Monthly&#039;]</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
 
     
 
@@ -935,7 +955,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -1001,12 +1021,12 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
@@ -1126,12 +1146,47 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method_addActionsAndFilters">
         addActionsAndFilters()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_addActionsAndFilters" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add extension actions and filter</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addActionsAndFilters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>Called after loading, instantiating, and initializing all extensions</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addActionsAndFilters_early">
+        addActionsAndFilters_early()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addActionsAndFilters_early" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1139,7 +1194,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addActionsAndFilters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">addActionsAndFilters_early</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
     
@@ -1147,6 +1202,59 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addEventTask">
+        addEventTask()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addEventTask" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">696</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add an event and task hook for the event</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addEventTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -1194,12 +1302,12 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method_admin_options_help">
         admin_options_help()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_admin_options_help" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_admin_options_help" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 
     </aside>
 
@@ -1212,6 +1320,23 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">todo</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><ul>
+<li>add contextual help</li>
+</ul>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
@@ -1227,12 +1352,12 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method_admin_options_settings">
         admin_options_settings()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_admin_options_settings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 
     </aside>
 
@@ -1263,359 +1388,6 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_capture_deprecated_wrong">
-        capture_deprecated_wrong()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_capture_deprecated_wrong" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">380</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">capture wp &#039;deprecated&#039; &amp; &#039;doing_it_wrong&#039; errors</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">capture_deprecated_wrong</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>arguments vary by hook being captured</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_capture_heartbeat">
-        capture_heartbeat()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_capture_heartbeat" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">402</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">capture wp &#039;heartbeat&#039;</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">capture_heartbeat</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$response</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$screen_id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$response</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>response data set by filters</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>request data set by browser</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$screen_id</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>wp screen id</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$response</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_capture_wp_error">
-        capture_wp_error()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_capture_wp_error" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">366</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">capture wp errors when a new error is added - wp_error_added hook</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">capture_wp_error</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$wp_error</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$code</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>wp_error code</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$message</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>wp_error message</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>wp_error data</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$wp_error</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>wp_error object</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_clean_filepath">
-        clean_filepath()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_clean_filepath" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">784</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">strip leading directory from file</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">clean_filepath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$file</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_debug_debugging">
-        debug_debugging()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_debug_debugging" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">589</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Get the debugging array for our own filter</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">debug_debugging</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$debugging_array</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$debugging_array</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>extended array with [ extension_name =&gt; [key=&gt;value array] ]</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_debug_logdata">
-        debug_logdata()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_debug_logdata" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">664</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Get the debugging log array</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">debug_logdata</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>array with [ 'LogData' =&gt; log entries ]</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_file_log_data">
-        file_log_data()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_file_log_data" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">990</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Write to the log file.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">file_log_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"><p>we don't actually &quot;write&quot; anything but prep the string and add it to the text string.</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">array()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -1706,6 +1478,171 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getEvent">
+        getEvent()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getEvent" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">571</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a scheduled event</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getEvent</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>event name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">object|bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>event</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getInterval">
+        getInterval()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getInterval" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">368</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a custom interval</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getInterval</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$interval</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$display</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$interval</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>time interval in seconds</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$display</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>description for this interval</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>interval</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getIntervals">
+        getIntervals()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_getIntervals" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">483</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a set of defined interval schedules</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getIntervals</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$include</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$include</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>core = wp core, cron = added by plugins, self = ours</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$default</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getVersion">
         getVersion()
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getVersion" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1743,12 +1680,12 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 >
     <h4 class="phpdocumentor-element__name" id="method_initialize">
         initialize()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_initialize" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
@@ -1766,53 +1703,6 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_install_actiontimer">
-        install_actiontimer()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_install_actiontimer" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">297</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">install/uninstall actiontimer</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">install_actiontimer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$action</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$action</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href=""><abbr title=""></abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>button value ('Install' | 'Uninstall')</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$action</p>
-</section>
-
     
 </article>
                     <article
@@ -1964,26 +1854,185 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_logClose">
-        logClose()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_logClose" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_isEvent">
+        isEvent()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isEvent" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1383</span>
+    <span class="phpdocumentor-element-found-in__line">559</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Finish and close the log.</p>
+        <p class="phpdocumentor-summary">Is a scheduled event already set</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">logClose</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">isEvent</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"><p>now we write the data to the file and clean-up.</p>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>event name (e.g.'every_x_hours')</p>
 </section>
 
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isInterval">
+        isInterval()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isInterval" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">354</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Does a custom interval exist</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isInterval</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$interval</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$display</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$interval</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>time interval in seconds</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$display</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>description for this interval</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isTask">
+        isTask()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_isTask" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">637</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Is there a task hook for a scheduled event (has_action() shortcut)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_remove_active_events">
+        remove_active_events()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_remove_active_events" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">254</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">deactivated active events</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">remove_active_events</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
     
     
 
@@ -1999,34 +2048,460 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_options_form_post_wp_debugging">
-        options_form_post_wp_debugging()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_options_form_post_wp_debugging" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_scheduledEventName">
+        scheduledEventName()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_scheduledEventName" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">856</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">filter for options_form_post_wp_debugging</p>
+        <p class="phpdocumentor-summary">Get the eventName of a scheduled event.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">options_form_post_wp_debugging</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">scheduledEventName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool|string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setEvent">
+        setEvent()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setEvent" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">587</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set a scheduled event</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setEvent</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\EarthAsylumConsulting\Extensions\DateTime">DateTime</abbr>|int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$scheduledTime</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$interval</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$args</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>event name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$scheduledTime</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\EarthAsylumConsulting\Extensions\DateTime">DateTime</abbr>|int|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>custom start time</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$interval</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>arguments to pass to the hook’s callback function</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int|bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>timestamp</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setInterval">
+        setInterval()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setInterval" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">389</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Create a custom interval</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setInterval</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$interval</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$display</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$interval</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>time interval in seconds</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$display</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>description for this interval</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>custom intervals</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setTask">
+        setTask()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_setTask" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">656</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add a task hook for a scheduled event (add_action() shortcut)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the value POSTed</li>
-</ul>
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_sortIntervals">
+        sortIntervals()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_sortIntervals" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">539</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sort array of defined interval schedules</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">sortIntervals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$intervals</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$intervals</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unsetEvent">
+        unsetEvent()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetEvent" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">618</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Remove a scheduled event</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">unsetEvent</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>event name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int|bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>timestamp</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unsetInterval">
+        unsetInterval()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetInterval" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">413</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Delete a custom interval</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">unsetInterval</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>custom intervals</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unsetTask">
+        unsetTask()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_unsetTask" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">677</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Remove a task hook for a scheduled event (remove_action() shortcut)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">unsetTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>interval name (e.g.'every_x_hours')</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_validate_schedules">
+        validate_schedules()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_validate_schedules" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">168</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">validate/set validate_schedules when form submitted</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">validate_schedules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$scheduledTime</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metaData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$priorValue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$scheduledTime</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the value POSTed</p>
 </section>
 
             </dd>
@@ -2035,9 +2510,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the name of the field/option</li>
-</ul>
+                    <section class="phpdocumentor-description"><p>the name of the field/option</p>
 </section>
 
             </dd>
@@ -2046,9 +2519,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the option metadata</li>
-</ul>
+                    <section class="phpdocumentor-description"><p>the option metadata</p>
 </section>
 
             </dd>
@@ -2057,180 +2528,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>the previous value</li>
-</ul>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$value</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_page_debugging_help">
-        page_debugging_help()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_page_debugging_help" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">475</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for current_screen, help screen</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">page_debugging_help</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$screen</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$screen</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>current_screen</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_page_debugging_output">
-        page_debugging_output()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_page_debugging_output" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">511</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">filter for wp_footer, admin_footer</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">page_debugging_output</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_page_log_data">
-        page_log_data()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_page_log_data" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">946</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">save data to output on page footer</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">page_log_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">array()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_phpErrorHandler">
-        phpErrorHandler()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_phpErrorHandler" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">721</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Handle PHP errors</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">phpErrorHandler</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exception</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$exception</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int|object</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><ul>
-<li>exception or error type</li>
-</ul>
+                    <section class="phpdocumentor-description"><p>the previous value</p>
 </section>
 
             </dd>
@@ -2250,196 +2548,22 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_print_backtrace">
-        print_backtrace()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_print_backtrace" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_verify_active_events">
+        verify_active_events()
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_verify_active_events" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-event-scheduler-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.event_scheduler.extension.php">class.event_scheduler.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">805</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">print_backtrace
-like wp_debug_backtrace_summary</p>
+        <p class="phpdocumentor-summary">verify active events</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">print_backtrace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$trace</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$error</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$trace</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$error</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_purge_logs">
-        purge_logs()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_purge_logs" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">538</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">purge old log files - (never runs for network_admin)</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">purge_logs</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$asNetAdmin</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$asNetAdmin</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_qm_log_data">
-        qm_log_data()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_qm_log_data" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">860</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">log data to Queue Monitor</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">qm_log_data</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">array()</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_qm_shutdown">
-        qm_shutdown()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_qm_shutdown" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">928</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">log data to Queue Monitor on shutdown</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">qm_shutdown</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_requestURL">
-        requestURL()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_requestURL" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">1193</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Log request server values</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">requestURL</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">verify_active_events</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
     
@@ -2447,60 +2571,6 @@ like wp_debug_backtrace_summary</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_showErrorReporting">
-        showErrorReporting()
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#method_showErrorReporting" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-debugging-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.debugging.extension.php">class.debugging.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">678</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">show error reporting strings</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">showErrorReporting</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errReporting</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$asArray</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$errReporting</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>or error_reporting()</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$asArray</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>return array (else string)</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string</span>
             &mdash;
         
     
@@ -2583,7 +2653,7 @@ like wp_debug_backtrace_summary</p>
 </section>
             </div>
         </div>
-        <a href="classes/EarthAsylumConsulting-Extensions-debugging-extension.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
