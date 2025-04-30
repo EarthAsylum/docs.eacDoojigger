@@ -28,6 +28,44 @@ GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki
 
 :bookmark_tabs: [{eac}Doojigger Web Site](https://eacdoojigger.earthasylum.com)
 
+### What's Here
+
+#### Doodads
+
+Example extensions, code snippets, helpers, or traits that may be a part of the [{eac}Doojigger](https://eacdoojigger.earthasylum.com) plugin for WordPress.
+
+#### Doohickeys
+
+Plugins that may be dropped into your `/wp-content/plugins` (or `mu-plugins`) folder. *{eac}Doohickey* gives you an easy way to add additional Doolollys to your site simply by dropping them into the `/eacDoohickey/Doolollys` folder.
+
+#### Doolollys
+
+Extensions that may be added to the {eac}Doohickey plugin or dropped into your theme's `/eacDoojigger/Doolollys` folder.
+
+#### Extras
+
+The {eac}Doojigger `Extras` folder ([download](https://swregistry.earthasylum.com/software-updates/eacdoojigger-extras.zip)) contains documentation as well as examples, templates, skeletons and frameworks for using and building with {eac}Doojigger
+
+
+### Definitions
+
+_doojigger_ (n)
+1. Something unspecified whose name is either forgotten or not known.
+2. *A Wordpress Plugin built with {eac}Doojigger.*
+
+_doololly_ (n)
+1. Any nameless small object, typically some form of gadget.
+2. *An extension to a Doojigger plugin.*
+
+_doohickey_ (n)
+1. A thing (used in a vague way to refer to something whose name one does not know or cannot recall).
+2. *A plugin used to load a Doololly extension.*
+
+_doodad_ (n)
+1. Something, especially a small device or part, whose name is unknown or forgotten.
+2. *A helper or trait included with a Doojigger plugin.*
+
+
 ### Summary
 
 {EarthAsylum Consulting} **{eac}Doojigger** is a multi functional and highly extensible WordPress plugin that eases and advances WordPress development and includes several 'Doolollys' (extensions) providing file access, security, debugging, encryption, session management, maintenance mode, administration tools, and more.
@@ -50,24 +88,6 @@ GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki
 Rather than updating or customizing themes and functions, it is often best to isolate your custom code in a plugin or plugin extension so that code is not lost when the theme is changed or updated. Themes should only be used and customized with code pertinent to the look and feel of your site. Any code that should be retained after changing a theme belongs in a plugin or plugin extension. This keeps your code reusable and theme independent.
 
 _{eac}Doojigger makes purpose-driven, task-oriented, theme-independent, reliable, and efficient code easy to create and maintain._
-
-### Definitions
-
-_doojigger_ (n)
-1. Something unspecified whose name is either forgotten or not known.
-2. *A Wordpress Plugin built with {eac}Doojigger.*
-
-_doololly_ (n)
-1. Any nameless small object, typically some form of gadget.
-2. *An extension to a Doojigger plugin.*
-
-_doohickey_ (n)
-1. A thing (used in a vague way to refer to something whose name one does not know or cannot recall).
-2. *A plugin used to load a Doololly extension.*
-
-_doodad_ (n)
-1. Something, especially a small device or part, whose name is unknown or forgotten.
-2. *A helper or trait included with a Doojigger plugin.*
 
 
 ### See Also

@@ -7,9 +7,9 @@
 
 Plugin URI:         https://eacDoojigger.earthasylum.com/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:       21-Dec-2024  
+Last Updated:       30-Apr-2025  
 Contributors:       [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
-Requires EAC:       3.0  
+Requires EAC:       3.1  
 WordPress URI:      https://wordpress.org/plugins/search/earthasylum/  
 GitHub URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/  
 
@@ -21,9 +21,9 @@ _doodad_ (n)
 
 ### Description
 
-The 'Doodads' included here are code snippets, helpers, or traits that are a part of the [{eac}Doojigger](https://eacdoojigger.earthasylum.com) plugin for WordPress.
+The 'Doodads' included here are extensions, code snippets, helpers, or traits that may be a part of the [{eac}Doojigger](https://eacdoojigger.earthasylum.com) plugin for WordPress.
 
-As such, these 'Doodads' may not work 'as-is' outside of the {eac}Doojigger plugin but do provide examples and methods that may be used or adapted to your project.
+As such, these 'Doodads' may not work 'as-is' outside of the {eac}Doojigger environment but do provide examples and methods that may be used or adapted to your project.
 
 Details on some of these 'Doodads' may be found [here](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/How-To).
 

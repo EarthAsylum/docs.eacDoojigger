@@ -4,13 +4,10 @@ namespace EarthAsylumConsulting\Extensions;
 /**
  * Extension: cloudflare_extension - enable Cloudflare API
  *
- * Drop this into
- * 		/wp-content/themes/{your-theme}/eacDoojigger/Doolollys
- *
  * @category	WordPress Plugin
  * @package		{eac}Doojigger\Extensions
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
  */
 
 class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
@@ -18,14 +15,79 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	/**
 	 * @var string extension version
 	 */
-	const VERSION			= '24.1221.1';
+	const VERSION			= '25.0430.1';
+
+	/**
+	 * @var string to set default tab name
+	 */
+	const TAB_NAME			= 'CloudFlare';
 
 	/**
 	 * @var string|array|bool to set (or disable) default group display/switch
+	 * 		false 		disable the 'Enabled'' option for this group
+	 * 		string 		the label for the 'Enabled' option
+	 * 		array 		override options for the 'Enabled' option (label,help,title,info, etc.)
 	 */
 	const ENABLE_OPTION		= [
-		'label' 	=>	"<abbr title='With your Cloudflare account information, we can automatically purge ".
-						 "the Cloudflare cache when purging the local WordPress caches.'>Cloudflare Extension</abbr>",
+		'label' 	=>	"<abbr title='With your Cloudflare account information, we can set certain common Cloudflare options as well as ".
+						 "automatically purge the Cloudflare cache when purging the local WordPress caches.'>Cloudflare</abbr>",
+	];
+
+
+	/**
+	 * @var array Cloudflare on/off settings
+	 * @see https://cfapi.centminmod.com/#zone-settings-get-development-mode-setting
+	 * @see https://developers.cloudflare.com/api/resources/zones/subresources/settings/models/waf/#(schema)%20%3E%20(property)%20value
+	 */
+	const CLOUDFLARE_OPTIONS = [
+	/*
+		"<abbr title=''>".
+			"</abbr>"							=> '',
+	*/
+		"<abbr title='Prioritizes your website content (text, images, fonts, and more) by deferring the loading of all of your JavaScript until after rendering.'>".
+			"Rocket Loader</abbr>"				=> 'rocket_loader',
+
+		"<abbr title='When the client requesting an asset supports the Brotli compression algorithm, Cloudflare will serve a Brotli compressed version of the asset.'>".
+			"Brotli Compression</abbr>"			=> 'brotli',
+
+		"<abbr title='Reply to all requests for URLs that use http with a 301 redirect to the equivalent https URL.'>".
+			"Always Use Https</abbr>"			=> 'always_use_https',
+
+		"<abbr title='Enable the Automatic HTTPS Rewrites feature for this zone.'>".
+			"Automatic Https Rewrites</abbr>"	=> 'automatic_https_rewrites',
+
+		"<abbr title='Browser Integrity Check looks for common HTTP headers abused most commonly by spammers and denies access to your page. It will also challenge visitors that do not have a user agent or a non standard user agent.'>".
+			"Browser Check</abbr>"				=> 'browser_check',
+
+		"<abbr title='Reordering of query strings. When query strings have the same structure, caching improves.'>".
+			"Sort Query String For Cache</abbr>"=> 'sort_query_string_for_cache',
+
+		"<abbr title='Cloudflare will attempt to speed up overall page loads by serving 103 responses with Link headers from the final response.'>".
+			"Early Hints</abbr>"				=> 'early_hints',
+
+		"<abbr title='Cloudflare will prefetch any URLs that are included in the response headers. (Enterprise)'>".
+			"Prefetch Preload</abbr>"			=> 'prefetch_preload',
+
+		"<abbr title='Provides on-demand resizing, conversion and optimisation for images served through Cloudflare.'>".
+			"Image Resizing</abbr>"				=> 'image_resizing',
+
+		"<abbr title='When the client requesting the image supports the WebP image codec, and WebP offers a performance advantage over the original image format, Cloudflare will serve a WebP version of the original image.'>".
+			"WebP Image Codec</abbr>"			=> 'webp',
+
+		"<abbr title='Optimises the delivery of resources served through HTTP/2 to improve page load performance.'>".
+			"HTTP/2 Edge Prioritization</abbr>"	=> 'h2_prioritization',
+
+		"<abbr title='Encrypt email adresses on your web page from bots, while keeping them visible to humans.'>".
+			"Email Obfuscation</abbr>"			=> 'email_obfuscation',
+
+		"<abbr title='Ensures that other sites cannot suck up your bandwidth by building pages that use images hosted on your site.'>".
+			"Hotlink Protection</abbr>"			=> 'hotlink_protection',
+
+		"<abbr title='Enable IP Geolocation to have Cloudflare geolocate visitors to your website and pass the country code to you.'>".
+			"IP Geolocation</abbr>"				=> 'ip_geolocation',
+
+		"<abbr title='Bypass the Cloudflare accelerated cache. Development mode will last for 3 hours and then automatically toggle off.'>".
+			"Development Mode</abbr>"			=> 'development_mode',
 	];
 
 	/**
@@ -48,6 +110,11 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	 */
 	private $cloudflare_email;
 
+	/**
+	 * @var string cloudflare settings
+	 */
+	private $cloudflare_settings;
+
 
 	/**
 	 * constructor method
@@ -58,14 +125,14 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	{
 		parent::__construct($plugin, self::ALLOW_ALL|self::DEFAULT_DISABLED);
 
-		if ($this->is_admin())
+		add_action('admin_init', function()
 		{
-		//	$this->registerExtension( $this->className );
+			$this->registerExtension( $this->className );
 			// Register plugin options when needed
 			$this->add_action( "options_settings_page", array($this, 'admin_options_settings') );
 			// Add contextual help
 			$this->add_action( 'options_settings_help', array($this, 'admin_options_help') );
-		}
+		},50);	// <- tab at the right end
 	}
 
 
@@ -76,8 +143,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	 */
 	public function admin_options_settings()
 	{
-	//	$this->registerExtensionOptions( $this->className,
-		$this->registerExtension( $this->className,
+		$this->registerExtensionOptions( $this->className,
 			[
 				'cloudflare_email'	=> array(
 						'type'		=>	'text',
@@ -85,29 +151,75 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 						'info'		=>	'Your Cloudflare account email address.',
 						'default'	=>	get_bloginfo('admin_email'),
 				),
-				'cloudflare_zone'	=> array(
-						'type'		=>	'text',
-						'label'		=>	'Domain Zone',
-						'info'		=>	'Your Cloudflare zone for this domain.'.
-										'<br><small>From your <em>Account Home</em>, select <em>Copy zone ID</em> from the drop-down next to the domain name.</small>',
-				),
 				'cloudflare_key'	=> array(
 						'type'		=>	'text',
 						'label'		=>	'Global API Key',
-						'info'		=>	'Your Cloudflare global API key'.
+						'info'		=>	'Your Cloudflare global API key.'.
 										'<br><small>From your <em>Account Profile</em> &rarr; API Tokens &rarr; API Keys &rarr; Global API Key</small>',
-				),
-				'cloudflare_options'=> array(
-						'type'		=>	'switch',
-						'label'		=>	'Cache Optimization',
-						'options'	=>	[
-							"Caching for WP" => 'cache',
-						],
-						'default'	=>	['cache'],
-						'info'		=>	'Set platform=wordpress on cf-edge-cache header',
 				),
 			]
 		);
+
+		if ($this->get_cf_auth())
+		{
+			$this->get_cf_options();
+			$this->update_option('cloudflare_cachettl',(string)$this->cloudflare_settings['browser_cache_ttl']);
+			$this->registerExtensionOptions( $this->className,
+			[
+				'cloudflare_zone'	=> array(
+						'type'		=>	'select',
+						'label'		=>	'Domain Zone',
+						'options'	=> 	$this->get_zone_list(),
+						'info'		=>	'Your Cloudflare zone for this domain.',
+					//					'<br><small>From your <em>Account Home</em>, select <em>Copy zone ID</em> from the drop-down next to the domain name.</small>',
+				),
+				'cloudflare_cachettl'=> array(
+						'type'		=>	'select',
+						'label'		=>	'Cache Time-To-Live',
+						'options'	=> [
+							'Respect Existing Headers' 	=> 0,
+							'2 minutes'					=> 2*MINUTE_IN_SECONDS,
+							'5 minutes'					=> 5*MINUTE_IN_SECONDS,
+							'20 minutes'				=> 20*MINUTE_IN_SECONDS,
+							'30 minutes'				=> 30*MINUTE_IN_SECONDS,
+							'1 hour'					=> 1*HOUR_IN_SECONDS,
+							'2 hours'					=> 2*HOUR_IN_SECONDS,
+							'3 hours'					=> 3*HOUR_IN_SECONDS,
+							'4 hours'					=> 4*HOUR_IN_SECONDS,
+							'5 hours'					=> 5*HOUR_IN_SECONDS,
+							'8 hours'					=> 8*HOUR_IN_SECONDS,
+							'12 hours'					=> 12*HOUR_IN_SECONDS,
+							'16 hours'					=> 16*HOUR_IN_SECONDS,
+							'20 hours'					=> 20*HOUR_IN_SECONDS,
+							'1 day'						=> 1*DAY_IN_SECONDS,
+							'2 days'					=> 2*DAY_IN_SECONDS,
+							'3 days'					=> 3*DAY_IN_SECONDS,
+							'4 days'					=> 4*DAY_IN_SECONDS,
+							'5 days'					=> 5*DAY_IN_SECONDS,
+							'8 days'					=> 8*DAY_IN_SECONDS,
+							'16 days'					=> 16*DAY_IN_SECONDS,
+							'24 days'					=> 24*DAY_IN_SECONDS,
+							'1 month'					=> 1*MONTH_IN_SECONDS,
+							'2 months'					=> 2*MONTH_IN_SECONDS,
+							'6 months'					=> 6*MONTH_IN_SECONDS,
+							'1 year'					=> 1*YEAR_IN_SECONDS,
+						],
+						'info'		=>	'Adjust the Cloudflare cache time.',
+						'validate'	=>	[$this,'set_cache_ttl'],
+				),
+				'cloudflare_options'=> array(
+						'type'		=>	'switch',
+						'label'		=>	'CloudFlare Options',
+						'options'	=>	array_merge(
+							["<abbr title='Set platform=wordpress on cf-edge-cache header.'>Caching for WP</abbr>" => 'wp_edge_cache'],
+							array_filter(self::CLOUDFLARE_OPTIONS, function($v) {return isset($this->cloudflare_settings[$v]);})
+						),
+						'info'		=>	'Enable/disable certain CloudFlare options.',
+						'validate'	=>	[$this,'set_cf_options'],
+				),
+			],
+			);
+		}
 	}
 
 
@@ -130,10 +242,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 		if ( ! parent::initialize() ) return; // disabled
 
 		// check for required settings
-		if ( !($this->cloudflare_zone  = $this->get_option('cloudflare_zone')) ||
-			 !($this->cloudflare_key   = $this->get_option('cloudflare_key'))  ||
-			 !($this->cloudflare_email = $this->get_option('cloudflare_email'))
-		) {
+		if (!$this->get_cf_auth()) {
 			return $this->isEnabled(false);
 		}
 		$this->cloudflare_url = sprintf("https://api.cloudflare.com/client/v4/zones/%s/",$this->cloudflare_zone);
@@ -146,7 +255,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	 */
 	public function addActionsAndFilters()
 	{
-		if ($this->is_option('cloudflare_options','cache')) {
+		if ($this->is_option('cloudflare_options','wp_edge_cache')) {
 			add_filter('wp_headers',		array($this, 'cloudflare_cache'),100,1);
 		}
 
@@ -163,6 +272,168 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 		foreach ($purge_actions as $action) {
 			add_action($action,			array($this,'cloudflare_purge'),100);
 		}
+	}
+
+
+	/**
+	 * get/set cloudflare auth
+	 *
+	 */
+	public function get_cf_auth(): bool
+	{
+		// check for required settings
+		if ( (!$this->cloudflare_key   && !($this->cloudflare_key   = $this->get_option('cloudflare_key'))) ) {
+			return false;
+		}
+		if ( (!$this->cloudflare_email && !($this->cloudflare_email = $this->get_option('cloudflare_email'))) ) {
+			return false;
+		}
+		$this->cloudflare_zone  = $this->get_option('cloudflare_zone');
+		return true;
+	}
+
+
+	/**
+	 * Get the cloudflare cache time
+	 *
+	 */
+	public function get_zone_list(): array
+	{
+		$zones = [];
+		if ($this->get_cf_auth())
+		{
+			$cloudflare_url = sprintf( 'https://api.cloudflare.com/client/v4/zones?page=%s&per_page=%s', 1, 50 );
+			$result = wp_remote_get($cloudflare_url,
+				[
+					'headers'	=> $this->cloudflare_headers(),
+				]
+			);
+			$result = json_decode( wp_remote_retrieve_body($result), true );
+			if ($result['success']) {
+				foreach ( $result['result'] as $list ) {
+					if ( isset( $list['name'],$list['id'] ) ) {
+						$zones[ $list['name'] ] = $list['id'];
+					}
+				}
+			}
+		}
+		return $zones;
+	}
+
+
+	/**
+	 * Set the cloudflare cache time
+	 *
+	 */
+	public function set_cache_ttl($value, $fieldName, $metaData, $priorValue)
+	{
+		if ($value == $priorValue) return;
+
+		if ($this->get_cf_auth() && $this->cloudflare_url)
+		{
+			$this->set_cf_option('browser_cache_ttl', (int)$value);
+		}
+
+		return $value;
+	}
+
+
+	/**
+	 * Get the cloudflare options
+	 *
+	 */
+	public function get_cf_options(): array
+	{
+		$options 	= (isset($_POST,$_POST['cloudflare_options']))
+			? $_POST['cloudflare_options'] : $this->get_option('cloudflare_options');
+		if ($this->get_cf_auth() && $this->cloudflare_url)
+		{
+			$settings = $this->get_cf_settings();
+			$options = (is_array($options) && in_array('wp_edge_cache',$options)) ? ['wp_edge_cache'] : [];
+			foreach(self::CLOUDFLARE_OPTIONS as $name => $id) {
+				if (isset($settings[$id]) && $settings[$id] == 'on') {
+					$options[] = $id;
+				}
+			}
+	//		$this->add_admin_notice("<pre>options ".var_export($options,true)."</pre>");
+		}
+		$this->update_option('cloudflare_options',$options);
+		return (array)$options;
+	}
+
+
+	/**
+	 * Get the cloudflare settings
+	 *
+	 */
+	private function get_cf_settings(): array
+	{
+		$settings = [];
+		$result = wp_remote_get($this->cloudflare_url . "settings",
+			[
+				'headers'	=> $this->cloudflare_headers(),
+			]
+		);
+		$result = json_decode( wp_remote_retrieve_body($result), true );
+		if ($result['success']) {
+			foreach ( $result['result'] as $list ) {
+				if (isset($list['value'],$list['id'])) {
+					if ($list['editable']) $settings[ $list['id'] ] = $list['value'];
+				}
+			}
+	//		$this->add_admin_notice("<pre>settings ".var_export($settings,true)."</pre>");
+		} else {
+			$this->add_admin_notice('Unable to retrieve Cloudflare settings.','error');
+		}
+		$this->cloudflare_settings = $settings;
+		return (array)$settings;
+	}
+
+
+	/**
+	 * Set the cloudflare options
+	 *
+	 */
+	public function set_cf_options($value, $fieldName, $metaData, $priorValue)
+	{
+		if ($value == $priorValue) return;
+
+		$options 	= $this->get_option('cloudflare_options');
+
+		if ($this->get_cf_auth() && $this->cloudflare_url)
+		{
+			foreach(self::CLOUDFLARE_OPTIONS as $name => $id) {
+				if ( (in_array($id,$value) && !in_array($id,$priorValue))
+				||   (!in_array($id,$value) && in_array($id,$priorValue))
+				) {
+					$this->set_cf_option($id, in_array($id,$value) ? 'on' : 'off');
+				}
+			}
+		}
+
+		return $value;
+	}
+
+
+	/**
+	 * Set a single cloudflare option
+	 *
+	 */
+	private function set_cf_option($option, $value)
+	{
+		$result = wp_remote_post($this->cloudflare_url . "settings/{$option}",
+			[
+				'method'	=> 'PATCH',
+				'headers'	=> $this->cloudflare_headers(),
+				'body'		=> wp_json_encode([ 'value' => $value ])
+			]
+		);
+		$result = json_decode( wp_remote_retrieve_body($result), true );
+		if (!$result['success']) {
+			$this->add_admin_notice("Cloudflare {$option}: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+			return false;
+		}
+		return true;
 	}
 
 
@@ -189,22 +460,40 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	 */
 	public function cloudflare_purge()
 	{
-		$result = wp_remote_post($this->cloudflare_url . "purge_cache",
-				[
-					'headers'	=> [
-						'Accept'		=> 'application/json',
-						'X-Auth-Key'	=> $this->cloudflare_key,
-						'X-Auth-Email'	=> $this->cloudflare_email,
-					],
-					'body'		=> wp_json_encode([ 'purge_everything' => true ])
-				]
-		);
-		$result = json_decode( wp_remote_retrieve_body($result), true );
-		if ($result['success']) {
-			$this->add_admin_notice('The Cloudflare cache has been purged','success');
-		} else {
-			$this->add_admin_notice("Cloudflare Cache: ".$result['errors'][0]['message'],'error');
+		if ($this->get_cf_auth() && $this->cloudflare_url)
+		{
+			$result = wp_remote_post($this->cloudflare_url . "purge_cache",
+					[
+						'headers'	=> $this->cloudflare_headers(),
+						'body'		=> wp_json_encode([ 'purge_everything' => true ])
+					]
+			);
+			$result = json_decode( wp_remote_retrieve_body($result), true );
+			if (is_array($result)) {
+				if ($result['success']) {
+					$this->add_admin_notice('The Cloudflare cache has been purged','success');
+				} else {
+					$this->add_admin_notice("Cloudflare Cache Purge: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+				}
+			} else {
+				$this->add_admin_notice("Cloudflare Cache Purge: failed on unknown error",'error');
+			}
 		}
+	}
+
+
+	/**
+	 * Set the cloudflare header array
+	 *
+	 */
+	public function cloudflare_headers(): array
+	{
+		return [
+			'Accept'		=> 'application/json',
+			'Content-Type'	=> 'application/json',
+			'X-Auth-Key'	=> $this->cloudflare_key,
+			'X-Auth-Email'	=> $this->cloudflare_email,
+		];
 	}
 }
 /**
