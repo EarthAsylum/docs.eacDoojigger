@@ -5,17 +5,17 @@
 
 <details><summary>Document Header</summary>
 
-Plugin URI:             https://eacDoojigger.earthasylum.com/
-Author:                 [EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:             0.1.0
-Last Updated:           30-Apr-2025
-Requires at least:      5.8
-Tested up to:           6.8
-Requires PHP:           8.1
-Contributors:           earthasylum@github,kevinburkholder@wordpress
-License:				GPLv3 or later
-License URI:			https://www.gnu.org/licenses/gpl.html
-GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki
+Plugin URI:             https://eacDoojigger.earthasylum.com/  
+Author:                 [EarthAsylum Consulting](https://www.earthasylum.com)  
+Stable tag:             0.1.0  
+Last Updated:           30-Apr-2025  
+Requires at least:      5.8  
+Tested up to:           6.8  
+Requires PHP:           8.1  
+Contributors:           earthasylum@github,kevinburkholder@wordpress  
+License:				GPLv3 or later  
+License URI:			https://www.gnu.org/licenses/gpl.html  
+GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki  
 
 </details>
 
