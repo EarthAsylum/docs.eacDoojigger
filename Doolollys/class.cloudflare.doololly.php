@@ -15,7 +15,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 	/**
 	 * @var string extension version
 	 */
-	const VERSION			= '25.0430.1';
+	const VERSION			= '25.0501.1';
 
 	/**
 	 * @var string to set default tab name
@@ -400,6 +400,9 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 
 		$options 	= $this->get_option('cloudflare_options');
 
+		if (!is_array($value)) $value = [];
+		if (!is_array($priorValue)) $priorValue = [];
+
 		if ($this->get_cf_auth() && $this->cloudflare_url)
 		{
 			foreach(self::CLOUDFLARE_OPTIONS as $name => $id) {
@@ -411,7 +414,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 			}
 		}
 
-		return $value;
+		return (array)$value;
 	}
 
 
