@@ -5,12 +5,23 @@ namespace EarthAsylumConsulting\Extensions;
  * Extension: cloudflare_extension - enable Cloudflare API
  *
  * Provides limited control and cache purging when hosting your site behind CloudFlare.
+ * 1. Override the browser cache time-to-live.
+ * 2. Set 'cf-edge-cache' header to trigger APO or custom rules.
+ *      custom rules can look for this header set to 'cache,platform=wordpress' or 'no-cache' or not set.
+ * 3. Add 'Cache-Tag' header with mime type that can be used for selective cache purge.
+ * 4. Set certain cloudflare toggle options directly from WordPress.
+ * 5. Automatically purge cloudflare cache (by host name).
+ *
+ * Filters:
+ * 1. 'cloudflare_purge_everything_actions' (array) - filter actions that trigger a cache purge.
+ * 2. 'cloudflare_use_cache' (bool) - override `cf-edge-cache` setting (cache/no-cache).
  *
  * Recommended for free plans. Paid plans should use the official Cloudflare plugin with
  * Automatic Platform Optimization (APO).
  *
  * @see https://wordpress.org/plugins/cloudflare/
  * @see https://developers.cloudflare.com/automatic-platform-optimization/
+ * @see https://blog.cloudflare.com/building-automatic-platform-optimization-for-wordpress-using-cloudflare-workers/
  *
  * @category    WordPress Plugin
  * @package     {eac}Doojigger\Extensions
@@ -23,7 +34,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     /**
      * @var string extension version
      */
-    const VERSION           = '25.0509.1';
+    const VERSION           = '25.0518.1';
 
     /**
      * @var string to set default tab name
@@ -52,6 +63,9 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         "<abbr title=''>".
             "</abbr>"                           => '',
     */
+        "<abbr title='Speed Brain speeds up page load times by leveraging the Speculation Rules API. This instructs browsers to make speculative prefetch requests as a way to speed up next page navigation loading time.'>".
+            "Speed Brain</abbr>"                => 'speed_brain',
+
         "<abbr title='Prioritizes your website content (text, images, fonts, and more) by deferring the loading of all of your JavaScript until after rendering.'>".
             "Rocket Loader</abbr>"              => 'rocket_loader',
 
@@ -131,7 +145,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
      */
     public function __construct($plugin)
     {
-        parent::__construct($plugin, self::ALLOW_ALL|self::DEFAULT_DISABLED);
+        parent::__construct($plugin, self::ALLOW_ALL|self::ALLOW_NON_PHP|self::DEFAULT_DISABLED);
 
         add_action('admin_init', function()
         {
@@ -234,11 +248,11 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                         'type'      =>  'switch',
                         'label'     =>  'CloudFlare Options',
                         'options'   =>  array_merge(
-                            ["<abbr title='Set cf-edge-cache header for use with Automatic Platform Optimization.'>Caching for WP APO</abbr>" => 'wp_edge_cache'],
+                            ["<abbr title='Set cf-edge-cache header for use with Automatic Platform Optimization or custom rules.'>Caching for WP APO</abbr>" => 'wp_edge_cache'],
                             array_filter(self::CLOUDFLARE_OPTIONS, function($v) {return isset($this->cloudflare_settings[$v]);})
                         ),
                         'info'      =>  'Enable/disable certain CloudFlare options.',
-                        'validate'  =>  [$this,'set_cf_options'],
+                        'validate'  =>  [$this,'set_cf_settings'],
                 ),
             ],
             );
@@ -252,7 +266,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
      */
     public function admin_options_help()
     {
-        if (!$this->plugin->isSettingsPage('General')) return;
+        if (!$this->plugin->isSettingsPage(self::TAB_NAME)) return;
     }
 
 
@@ -262,8 +276,15 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
      */
     public function addActionsAndFilters()
     {
-        if ($this->is_option('cloudflare_options','wp_edge_cache')) {
-            add_filter('wp_headers',            array($this, 'cloudflare_cache'),100,1);
+        if ($this->is_option('cloudflare_options','wp_edge_cache'))
+        {
+            // do this late
+            add_filter('wp_headers',            array($this, 'cloudflare_wp_edge_cache'),900,1);
+            add_filter('nocache_headers',       function($headers)
+            {
+                $headers['cf-edge-cache'] = 'no-cache';
+                return $headers;
+            });
         }
 
         $this->add_filter('after_flush_caches', array($this,'cloudflare_purge'),100,1);
@@ -271,18 +292,26 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         $purge_actions = array(
             'switch_theme',                     // Switch theme
             'customize_save_after',             // Customizer
-            'edit_post',                        // Edit a post
-            'deleted_post',                     // Delete a post
-            'delete_attachment',                // Delete/replace an attachment
-            'transition_post_status',           // When published
+        //    'edit_post',                        // Edit a post
+        //    'deleted_post',                     // Delete a post
+        //    'delete_attachment',                // Delete/replace an attachment
+        //    'transition_post_status',           // When published
+            'clean_post_cache',                 // When a post changes
+            'clean_page_cache',                 // When a page changes
             'transition_comment_status',        // When approved
             'comment_post',                     // When added
+        /*
             'autoptimize_action_cachepurged'    // Autoptimize plugin
+            'cache_enabler_clear_site_cache'    // Cache Enabler plugin
+            'w3tc_flush_all'                    // W3 Total Cache plugin
+            'wpo_cache_flush'                   // WP Optimize plugin
+            'after_rocket_clean_domain'         // WP Rocket plugin
+            'wp_cache_cleared'                  // WP Super Cache plugin
+        */
         );
 
         /**
          * filter 'cloudflare_purge_everything_actions' (same as cloudflare plugin)
-         *
          * @param array actions to trigger cache purge
          */
         $purge_actions = apply_filters('cloudflare_purge_everything_actions', $purge_actions);
@@ -349,7 +378,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 
         if ($this->get_cf_auth() && $this->cloudflare_url)
         {
-            $this->set_cf_option('browser_cache_ttl', (int)$value);
+            $this->set_cf_setting('browser_cache_ttl', (int)$value);
         }
 
         return $value;
@@ -375,7 +404,6 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                     $options[] = $id;
                 }
             }
-    //      $this->add_admin_notice("<pre>options ".var_export($options,true)."</pre>");
         }
 
         $this->update_option('cloudflare_options',$options);
@@ -398,12 +426,12 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 
         $result = json_decode( wp_remote_retrieve_body($result), true );
         if ($result['success']) {
+            //$this->add_admin_notice("<pre>CF settings ".var_export($result['result'],true)."</pre>");
             foreach ( $result['result'] as $list ) {
                 if (isset($list['value'],$list['id'])) {
                     if ($list['editable']) $settings[ $list['id'] ] = $list['value'];
                 }
             }
-    //      $this->add_admin_notice("<pre>settings ".var_export($settings,true)."</pre>");
         } else {
             $this->add_admin_notice('Unable to retrieve Cloudflare settings.','error');
         }
@@ -417,11 +445,9 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
      * Set the cloudflare options
      *
      */
-    public function set_cf_options($value, $fieldName, $metaData, $priorValue)
+    public function set_cf_settings($value, $fieldName, $metaData, $priorValue)
     {
-        if ($value == $priorValue) return;
-
-        $options    = $this->get_option('cloudflare_options');
+        if ($value === $priorValue) return $value;
 
         if (!is_array($value)) $value = [];
         if (!is_array($priorValue)) $priorValue = [];
@@ -432,7 +458,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                 if ( (in_array($id,$value) && !in_array($id,$priorValue))
                 ||   (!in_array($id,$value) && in_array($id,$priorValue))
                 ) {
-                    $this->set_cf_option($id, in_array($id,$value) ? 'on' : 'off');
+                    $this->set_cf_setting($id, in_array($id,$value) ? 'on' : 'off');
                 }
             }
         }
@@ -445,7 +471,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
      * Set a single cloudflare option
      *
      */
-    private function set_cf_option($option, $value)
+    private function set_cf_setting($option, $value)
     {
         $result = wp_remote_post($this->cloudflare_url . "settings/{$option}",
             [
@@ -466,43 +492,132 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 
 
     /**
-     * Enable the cloudflare cache
+     * Eligible/Ineligible for cloudflare caching
      *
      * @param array $headers http headers
      */
-    public function cloudflare_cache($headers): array
+    public function cloudflare_wp_edge_cache($headers)
     {
-        $useCache = (!isset($headers['Cache-Control']) || !str_contains($headers['Cache-Control'],'no-cache'));
-        if (apply_filters('cloudflare_use_cache', $useCache && !is_user_logged_in())) {
-            $headers['cf-edge-cache'] = 'cache,platform=wordpress';
+        /**
+         * filter 'cloudflare_use_cache' - override cache setting (same as cloudflare plugin)
+         * @param bool enable caching
+         */
+        if (apply_filters('cloudflare_use_cache', $this->is_cacheable($headers))) {
+            $headers['cf-edge-cache']       = 'cache,platform=wordpress';
+            $headers['Cache-Tag']           = $this->get_mime_type($headers);
         } else {
-            $headers['cf-edge-cache'] = 'no-cache';
+            $headers['cf-edge-cache']       = 'no-cache';
         }
         return $headers;
     }
 
 
     /**
+     * Eligible/Ineligible for cloudflare caching
+     *
+     * @todo - check cookies and query parameters ?
+     *
+     * @param array $headers http headers
+     */
+    protected function is_cacheable($headers)
+    {
+        if ($_SERVER['REQUEST_METHOD'] != 'GET') {
+           return false;
+        }
+        if (http_response_code() != 200) {
+           return false;
+        }
+        if ($this->doing_ajax() || is_user_logged_in()) {
+           return false;
+        }
+        if (class_exists('woocommerce') &&
+            (is_cart() || is_checkout() || is_order_received_page() || is_account_page())) {
+            return false;
+        }
+        $checkHeaders = array_merge(
+            $this->explode_with_keys(':',headers_list()),
+            (array)$headers
+        );
+        if (isset($checkHeaders['Cache-Control'])) {
+            if (str_contains($checkHeaders['Cache-Control'],'no-cache')) {
+                return false;
+            }
+            if (str_contains($checkHeaders['Cache-Control'],'private')) {
+                return false;
+            }
+        }
+        if (isset($checkHeaders['Pragma'])) {
+            if (str_contains($checkHeaders['Pragma'],'no-cache')) {
+                return false;
+            }
+        }
+    }
+
+
+    /**
+     * Get the mime type for the current request
+     *
+     */
+    protected function get_mime_type($headers,$extension='')
+    {
+        // get mime type from content-type header
+        if (isset($headers['Content-Type']))
+        {
+            list($contentType,) = explode(';',$headers['Content-Type']);
+            return trim($contentType);
+        }
+
+        // get mime type from request extension
+        if (empty($extension) && array_key_exists('REQUEST_URI', $_SERVER))
+        {
+            $extension = explode('?',$_SERVER['REQUEST_URI']);
+            $extension = pathinfo(trim($extension[0],'/'),PATHINFO_EXTENSION);
+        }
+
+        if ($extension)
+        {
+            $mime_types = array_merge(wp_get_mime_types(),[
+                'json'      => 'application/json',
+                'xml'       => 'application/xml',
+                'rss'       => 'application/rss+xml',
+            ]);
+            $extensions = array_keys( $mime_types );
+
+            foreach ( $extensions as $_extension ) {
+                if ( preg_match( "/{$extension}/i", $_extension ) ) {
+                    return $mime_types[ $_extension ];
+                }
+            }
+        }
+
+        // get mime type from WP default
+        return get_option( 'html_type' );
+    }
+
+    /**
      * Purge the cloudflare cache
      *
+     * @param array caches purged - only with 'after_flush_caches'
      */
     public function cloudflare_purge($caches = [])
     {
-		static $onlyOnce = 0;
-		if ($onlyOnce++) return $caches;
+        static $onlyOnce = 0;
+        if ($onlyOnce++) return $caches;
 
         if ($this->get_cf_auth() && $this->cloudflare_url)
         {
+            $site_url = parse_url( get_site_url() );
+            $site_url = trailingslashit($site_url['host'] . $site_url['path'] ?: '').'*';
             $result = wp_remote_post($this->cloudflare_url . "purge_cache",
                     [
                         'headers'   => $this->cloudflare_headers(),
-                        'body'      => wp_json_encode([ 'purge_everything' => true ])
+                        'body'      => wp_json_encode([ "prefixes" => [$site_url] ])
                     ]
             );
             $result = json_decode( wp_remote_retrieve_body($result), true );
             if (is_array($result)) {
                 if ($result['success']) {
-                    $this->add_admin_notice('The Cloudflare cache has been purged','success');
+                    $this->add_admin_notice('The Cloudflare cache for '.$site_url.' has been purged','success');
                     $caches[] = 'Cloudflare Cache';
                 } else {
                     $this->add_admin_notice("Cloudflare Cache Purge: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
