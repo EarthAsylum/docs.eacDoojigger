@@ -1,11 +1,11 @@
-## {eac}Doohickey, Plugin Extensions  
+## {eac}CronSettings - Site wide settings and actions for WP-Cron / Action Scheduler  
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
 
 <details><summary>Document Header</summary>
 
-Plugin URI:             https://eacDoojigger.earthasylum.com/  
+Plugin URI:             https://github.com/EarthAsylum/docs.eacDoojigger 
 Author:                 [EarthAsylum Consulting](https://www.earthasylum.com)  
 Stable tag:             1.6.0  
 Last Updated:           02-Jun-2025  
@@ -84,9 +84,10 @@ Route WP-Cron events to Action Scheduler or Action Scheduler to WP-Cron.
 *Currently scheduled events are not changed.*
 
 Action Scheduler is not available until the WordPress `init` action.
-* WP-Cron events scheduled or checked before `init` are not routed through Action Scheduler.
+* WP-Cron events scheduled or checked before `init` are not routed through Action Scheduler.  
+
 Action Scheduler doesn't provide hooks for several rescheduling/unscheduling functions.
-* Only new Action Scheduler tasks can be routed to WP-Cron, scheduled recuring events remain in Action Scheduler.
+* Only new Action Scheduler tasks can be routed to WP-Cron, scheduled recuring events remain in Action Scheduler.  
 
 ##### WP_CRON_MINIMUM_INTERVAL 
 `int (seconds)` (default: 5 minutes)
@@ -131,7 +132,7 @@ Set Action Scheduler run time limit (default = 30 seconds).
 ##### AS_CLEANUP_RETENTION_PERIOD
 `int (seconds)` (default: 1 week)
 
-Set Action Scheduler retention time (default = 1 month).
+Set Action Scheduler retention time.
 Action Scheduler retains completed & failed events for 1 month which could lead to a bloated database table.
 
 ##### AS_CLEANUP_BATCH_SIZE
