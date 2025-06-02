@@ -34,7 +34,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     /**
      * @var string extension version
      */
-    const VERSION           = '25.0518.1';
+    const VERSION           = '25.0528.1';
 
     /**
      * @var string to set default tab name
@@ -607,7 +607,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         if ($this->get_cf_auth() && $this->cloudflare_url)
         {
             $site_url = parse_url( get_site_url() );
-            $site_url = trailingslashit($site_url['host'] . $site_url['path'] ?: '').'*';
+            $site_url = trailingslashit($site_url['host'] . $site_url['path'] ?? '').'*';
             $result = wp_remote_post($this->cloudflare_url . "purge_cache",
                     [
                         'headers'   => $this->cloudflare_headers(),
