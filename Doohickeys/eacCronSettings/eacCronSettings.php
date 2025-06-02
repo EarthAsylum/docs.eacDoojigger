@@ -26,12 +26,10 @@
 
 /* *****
  *
-    This is a self-contained piece of code - drop in to plugins or mu-plugins folder to invoke.
-
+    This is a self-contained piece of code - drop in to mu-plugins folder to invoke.
 
     --    REVIEW AND ADJUST BEFORE IMPLEMENTING     --
     -- Adjust the defined constants below as needed --
-
 
     WP-Cron is built in to WordPress and is used to schedule and run jobs or tasks in the background.
     By default, WP-Cron is triggered when a page is loaded on your web site making it dependent on web site traffic.
@@ -58,10 +56,6 @@
     Optionally...
 
     - Route WP-Cron events to Action Scheduler or Action Scheduler to WP-Cron (WP_CRON_REROUTE_EVENTS).
-            Action Scheduler is not ready until WP 'init' action.
-                WP-Cron events scheduled or checked before 'init' are not routed through AS.
-            Action Scheduler doesn't provide hooks for several rescheduling/unscheduling functions.
-                Only new AS tasks can be routedd to WP-Cron, scheduled recuring events remain in AS.
     - Disable the Action Scheduler queue runner (DISABLE_AS_QUEUE_RUNNER).
     - Log scheduling events for debugging (WP_CRON_DEBUG).
  *
@@ -165,7 +159,6 @@ define_constants([
     /*
      * Disable the Action Scheduler queue runner.
      * Does not disable or change Action Scheduler functions but stops events from running.
-     * When used with WP_CRON_REROUTE_EVENTS, this should not be disabled until pending events have run.
      */
 
     //'DISABLE_AS_QUEUE_RUNNER'         => true,
