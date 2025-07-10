@@ -116,16 +116,6 @@
             </li>
             </ul>
 
-                                    <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="packages/eacDoojiggerUtilities.html" class="">eacDoojiggerUtilities</a>
-</h4>
-    <ul class="phpdocumentor-list">
-                    <li>
-                <a href="packages/eacDoojiggerUtilities-eacDoojiggerObjectCache.html" class="">eacDoojiggerObjectCache</a>
-                
-            </li>
-            </ul>
-
                         </section>
             
     <section class="phpdocumentor-sidebar__category">
@@ -165,7 +155,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -187,7 +177,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>\EarthAsylumConsulting\Helpers\ipUtil::checkIp($myIP,$listOfIPs);</p>
+                                                 <section class="phpdocumentor-description"><p>$remote_ip = \EarthAsylumConsulting\Helpers\ipUtil::getRemoteIP();</p>
 </section>
 
                                     </dd>
@@ -196,9 +186,17 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>$remote_ip = \EarthAsylumConsulting\Helpers\ipUtil::getRemoteIP();</p>
+                                                 <section class="phpdocumentor-description"><p>\EarthAsylumConsulting\Helpers\ipUtil::checkIp($remote_ip,$listOfIPs);</p>
 </section>
 
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">version</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">25.0503.1</span>
+                                                                                
+                                             
                                     </dd>
                         </dl>
 
@@ -216,7 +214,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Helpers-ipUtil.html#constant_HTTP_IP_HEADERS">HTTP_IP_HEADERS</a>
     <span>
-        &nbsp;= [&#039;HTTP_X_REAL_IP&#039;, &#039;HTTP_CF_CONNECTING_IP&#039;, &#039;HTTP_AKAMAI_ORIGIN_HOP&#039;, &#039;HTTP_FASTLY_CLIENT_IP&#039;, &#039;HTTP_INCAP_CLIENT_IP&#039;, &#039;HTTP_TRUE_CLIENT_IP&#039;, &#039;HTTP_X_IP_TRAIL&#039;, &#039;HTTP_X_CLUSTER_CLIENT_IP&#039;, &#039;HTTP_X_FORWARDED_FOR&#039;, &#039;HTTP_FORWARDED_FOR&#039;, &#039;HTTP_X_FORWARDED&#039;, &#039;HTTP_FORWARDED&#039;, &#039;HTTP_CLIENT_IP&#039;, &#039;REMOTE_ADDR&#039;]                            </span>
+        &nbsp;= [&#039;HTTP_TRUE_CLIENT_IP&#039;, &#039;HTTP_X_REAL_IP&#039;, &#039;HTTP_CF_CONNECTING_IP&#039;, &#039;HTTP_X_KINSTA_EDGE_INCOMINGIP&#039;, &#039;HTTP_AKAMAI_ORIGIN_HOP&#039;, &#039;HTTP_FASTLY_CLIENT_IP&#039;, &#039;HTTP_INCAP_CLIENT_IP&#039;, &#039;HTTP_X_IP_TRAIL&#039;, &#039;HTTP_X_CLUSTER_CLIENT_IP&#039;, &#039;HTTP_X_FORWARDED_FOR&#039;, &#039;HTTP_FORWARDED_FOR&#039;, &#039;HTTP_X_FORWARDED&#039;, &#039;HTTP_FORWARDED&#039;, &#039;HTTP_CLIENT_IP&#039;, &#039;REMOTE_ADDR&#039;]                            </span>
 </dt>
 <dd></dd>
 
@@ -319,7 +317,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -328,7 +326,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">HTTP_IP_HEADERS</span>
-    = <span class="phpdocumentor-signature__default-value">[&#039;HTTP_X_REAL_IP&#039;, &#039;HTTP_CF_CONNECTING_IP&#039;, &#039;HTTP_AKAMAI_ORIGIN_HOP&#039;, &#039;HTTP_FASTLY_CLIENT_IP&#039;, &#039;HTTP_INCAP_CLIENT_IP&#039;, &#039;HTTP_TRUE_CLIENT_IP&#039;, &#039;HTTP_X_IP_TRAIL&#039;, &#039;HTTP_X_CLUSTER_CLIENT_IP&#039;, &#039;HTTP_X_FORWARDED_FOR&#039;, &#039;HTTP_FORWARDED_FOR&#039;, &#039;HTTP_X_FORWARDED&#039;, &#039;HTTP_FORWARDED&#039;, &#039;HTTP_CLIENT_IP&#039;, &#039;REMOTE_ADDR&#039;]</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;HTTP_TRUE_CLIENT_IP&#039;, &#039;HTTP_X_REAL_IP&#039;, &#039;HTTP_CF_CONNECTING_IP&#039;, &#039;HTTP_X_KINSTA_EDGE_INCOMINGIP&#039;, &#039;HTTP_AKAMAI_ORIGIN_HOP&#039;, &#039;HTTP_FASTLY_CLIENT_IP&#039;, &#039;HTTP_INCAP_CLIENT_IP&#039;, &#039;HTTP_X_IP_TRAIL&#039;, &#039;HTTP_X_CLUSTER_CLIENT_IP&#039;, &#039;HTTP_X_FORWARDED_FOR&#039;, &#039;HTTP_FORWARDED_FOR&#039;, &#039;HTTP_X_FORWARDED&#039;, &#039;HTTP_FORWARDED&#039;, &#039;HTTP_CLIENT_IP&#039;, &#039;REMOTE_ADDR&#039;]</span>
 </code>
 
 
@@ -348,7 +346,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -414,7 +412,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -470,7 +468,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -528,7 +526,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 
     </aside>
 
@@ -611,7 +609,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -646,7 +644,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -702,7 +700,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -758,7 +756,7 @@ Symphony https://github.com/symfony/http-foundation/blob/7.1/IpUtils.php</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php"><a href="files/eacdoojigger-earthasylumconsulting-helpers-iputil-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Helpers/ipUtil.class.php">ipUtil.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 

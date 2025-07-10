@@ -1,6 +1,16 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\FS_CHMOD_DIR",
+            "name": "FS_CHMOD_DIR",
+            "summary": "",
+            "url": "namespaces/default.html#constant_FS_CHMOD_DIR"
+        },                {
+            "fqsen": "\\FS_CHMOD_FILE",
+            "name": "FS_CHMOD_FILE",
+            "summary": "",
+            "url": "namespaces/default.html#constant_FS_CHMOD_FILE"
+        },                {
             "fqsen": "\\EACDOOJIGGER_HOME",
             "name": "EACDOOJIGGER_HOME",
             "summary": "",
@@ -498,7 +508,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aaccess_denied\u0028\u0029",
             "name": "access_denied",
-            "summary": "output\u0020forbidden\u0020response",
+            "summary": "output\u0020access\u0020denied\u0020response",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_access_denied"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AisTestSite\u0028\u0029",
@@ -1003,32 +1013,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aget_transient\u0028\u0029",
             "name": "get_transient",
-            "summary": "A\u0020wrapper\u0020function\u0020to\u0020WP\u0020get_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name\u0020and\u0020callable\u0020function",
+            "summary": "A\u0020similar\u0020function\u0020to\u0020WP\u0020get_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name\u0020and\u0020callable\u0020function",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_get_transient"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aset_transient\u0028\u0029",
             "name": "set_transient",
-            "summary": "A\u0020wrapper\u0020function\u0020to\u0020WP\u0020set_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
+            "summary": "A\u0020similar\u0020function\u0020to\u0020WP\u0020set_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_set_transient"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Adelete_transient\u0028\u0029",
             "name": "delete_transient",
-            "summary": "A\u0020wrapper\u0020function\u0020to\u0020WP\u0020delete_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
+            "summary": "A\u0020similar\u0020function\u0020to\u0020WP\u0020delete_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_delete_transient"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aget_site_transient\u0028\u0029",
             "name": "get_site_transient",
-            "summary": "A\u0020wrapper\u0020function\u0020to\u0020WP\u0020get_site_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name\u0020and\u0020callable\u0020function",
+            "summary": "A\u0020similar\u0020function\u0020to\u0020WP\u0020get_site_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name\u0020and\u0020callable\u0020function",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_get_site_transient"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aset_site_transient\u0028\u0029",
             "name": "set_site_transient",
-            "summary": "A\u0020wrapper\u0020function\u0020to\u0020WP\u0020set_site_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
+            "summary": "A\u0020similar\u0020function\u0020to\u0020WP\u0020set_site_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_set_site_transient"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Adelete_site_transient\u0028\u0029",
             "name": "delete_site_transient",
-            "summary": "A\u0020wrapper\u0020function\u0020to\u0020WP\u0020delete_site_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
+            "summary": "A\u0020similar\u0020function\u0020to\u0020WP\u0020delete_site_transient\u0028\u0029\u0020with\u0020prefixed\u0020transient\u0020name",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_delete_site_transient"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AprefixTransientName\u0028\u0029",
@@ -1736,6 +1746,11 @@ Search.appendIndex(
             "summary": "Add\u0020an\u0020event\u0020and\u0020task\u0020hook\u0020for\u0020the\u0020event",
             "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_addEventTask"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AdoTask\u0028\u0029",
+            "name": "doTask",
+            "summary": "Run\u0020\u0028do\u0029\u0020a\u0020single,\u0020non\u002Drecuring\u0020task",
+            "url": "classes/EarthAsylumConsulting-Extensions-event-scheduler-extension.html#method_doTask"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\event_scheduler_extension\u003A\u003AscheduledEventName\u0028\u0029",
             "name": "scheduledEventName",
             "summary": "Get\u0020the\u0020eventName\u0020of\u0020a\u0020scheduled\u0020event.",
@@ -1960,6 +1975,16 @@ Search.appendIndex(
             "name": "SESSION_GENERIC",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-session-extension.html#constant_SESSION_GENERIC"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\session_extension\u003A\u003ASESSION_OBJECTCACHE",
+            "name": "SESSION_OBJECTCACHE",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-session-extension.html#constant_SESSION_OBJECTCACHE"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\session_extension\u003A\u003ASESSION_KEYVALUE",
+            "name": "SESSION_KEYVALUE",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-session-extension.html#constant_SESSION_KEYVALUE"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\session_extension\u003A\u003ASESSION_TRANSIENT",
             "name": "SESSION_TRANSIENT",
