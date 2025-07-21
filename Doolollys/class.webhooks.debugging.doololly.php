@@ -141,18 +141,32 @@ class webhooks_debugging_extension extends \EarthAsylumConsulting\abstract_exten
      */
     public function wc_webhook_auth($rest)
     {
+        $hash   	= $this->get_option('debug_webhook_key');
+
         if ( ($authKey = $rest->get_header( 'x-wc-webhook-signature' )) )
         {
-            $hash   = $this->get_option('debug_webhook_key');
             $hash   = base64_encode(hash_hmac('sha256', $rest->get_body(), $hash, true));
+		}
+        else if ( ($authKey = $rest->get_header( 'x-hub-signature-256' )) )
+        {
+            $hash   = 'sha256=' . hash_hmac('sha256', $rest->get_body(), $hash);
+		}
 
+		if ($authKey)
+		{
             if ($hash == $authKey)
             {
-                $this->webhookAction = $rest->get_header( 'x-wc-webhook-topic' );
-                $origin = parse_url($rest->get_header( 'x-wc-webhook-source' ));
-                $this->webhookSource = $origin['host'];
-                // allow CORS origin
-                $origin = $origin['scheme'].'://'.$origin['host'];
+                $this->webhookAction = $rest->get_header( 'x-wc-webhook-topic' )
+                					?? $rest->get_header( 'x-github-event' );
+                if ($origin = $rest->get_header( 'x-wc-webhook-source' )) {
+                	$origin = parse_url($origin);
+                	$this->webhookSource = $origin['host'];
+                	$origin = $origin['scheme'].'://'.$origin['host'];
+                } else {
+                	$this->webhookSource = $this->getVisitorIP();
+                	$origin = (is_ssl()) ? 'https:' : 'http:';
+                	$origin .= '//'.$this->webhookSource;
+                }
                 add_filter( 'http_origin', function() use ($origin) {
                     return $origin;
                 });
@@ -163,7 +177,7 @@ class webhooks_debugging_extension extends \EarthAsylumConsulting\abstract_exten
                 return true;
             }
         }
-        else if (isset($_POST['webhook_id']))
+        else if (isset($_POST['webhook_id']) || $rest->get_header( 'X-GitHub-Hook-ID' ))
         {
             // test ping from woo when the webhook is first created
             http_response_code(200);
