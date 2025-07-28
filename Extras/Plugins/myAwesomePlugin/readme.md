@@ -7,8 +7,8 @@
 
 Plugin URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives  
 Author:             [Me](https://www.myawesomeserver.com/profile/me)  
-Stable tag:         1.3.1  
-Last Updated:       23-Apr-2025  
+Stable tag:         1.3.3  
+Last Updated:       25-Jul-2025  
 Requires at least:  5.8  
 Tested up to:       6.8  
 Requires PHP:       8.1  

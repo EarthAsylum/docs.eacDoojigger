@@ -9,8 +9,8 @@ namespace myAwesomeNamespace\Interfaces;
  * @category	WordPress Plugin
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2021 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version		25.0725.1
  */
 
 interface myAwesomePlugin_registration
@@ -62,6 +62,12 @@ interface myAwesomePlugin_registration
 	 * name used when scheduling the next refresh/verify action
 	 */
 	const SOFTWARE_REGISTRY_REFRESH		= self::SOFTWARE_REGISTRY_PRODUCTID.'_registry_refresh';
+
+	/**
+	 * @var string primary plugin file name
+	 * name used when checking for network activation (multisite)
+	 */
+	const SOFTWARE_REGISTRY_FILENAME	= self::SOFTWARE_REGISTRY_PRODUCTID;
 
 	/**
 	 * @var string the version number of the software registry API

@@ -9,8 +9,8 @@ namespace myAwesomeNamespace\Traits;
  * @category	WordPress Plugin
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2021 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version		25.0725.1
  */
 
 trait myAwesomePlugin_registration_wordpress
@@ -307,18 +307,6 @@ trait myAwesomePlugin_registration_wordpress
 
 
 	/**
-	 * is API error
-	 *
-	 * @param	string	$apiResponse
-	 * @return	bool
-	 */
-	public function is_api_error($apiResponse)
-	{
-		return ($apiResponse->status->code != '200');
-	}
-
-
-	/**
 	 * main_site() when network-enabled
 	 *
 	 * @return	bool
@@ -358,7 +346,7 @@ trait myAwesomePlugin_registration_wordpress
 			else
 			{
 				$slug = explode('/', str_replace(WP_PLUGIN_DIR . '/', '', __DIR__))[0];
-				$slug = "{$slug}/".self::SOFTWARE_REGISTRY_PRODUCTID.".php"; // this could be wrong
+				$slug = "{$slug}/".self::SOFTWARE_REGISTRY_FILENAME.".php"; // default could be wrong
 				$plugins = \get_site_option( 'active_sitewide_plugins' );
 				$is_network_enabled =  (isset( $plugins[ $slug ] ));
     		}

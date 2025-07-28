@@ -9,8 +9,8 @@ namespace myAwesomeNamespace\Traits;
  * @category	WordPress Plugin
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2021 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version		25.0725.1
  */
 
 trait myAwesomePlugin_registration_interface
@@ -115,12 +115,20 @@ trait myAwesomePlugin_registration_interface
 				$isValid = false;
 			} else if ($registry->registry_status == 'invalid') {
 				$isValid = false;
-			} else if (strtotime($registry->registry_expires.' 23:59:59 UTC') < time()) {
-				$isValid = false;
-			} else if (strtotime($registry->registry_effective.' 00:00:00 UTC') > time()) {
-				$isValid = false;
+			//} else if (strtotime($registry->registry_expires.' 23:59:59 UTC') < time()) {
+			//} else if (strtotime($registry->registry_effective.' 00:00:00 UTC') > time()) {
 			} else {
-				$isValid = true;
+				$timezone 	= timezone_open($currentRegistry->registrar->timezone ?? 'UTC');
+				$today		= date_create('now',$timezone);
+				$expires 	= date_create($registry->registry_expires.' 23:59:59',$timezone);
+				$effective 	= date_create($registry->registry_effective.' 00:00:00',$timezone);
+				if ($expires < $today) {
+					$isValid = false;
+				} else if ($effective > $today) {
+					$isValid = false;
+				} else {
+					$isValid = true;
+				}
 			}
 		}
 		return $isValid;
@@ -235,6 +243,8 @@ trait myAwesomePlugin_registration_interface
 				$this->purgeRegistrationCache();
 				return $response;
 			}
+
+			break;
 		}
 		return $response;
 	}
@@ -323,7 +333,7 @@ trait myAwesomePlugin_registration_interface
 			$remoteUrl = $this->getApiEndPoint($endpoint) .'?'. http_build_query($params);
 		} else {
 			$request['headers']['Content-Type'] = 'application/json';
-			$request['body'] = wp_json_encode($params);
+			$request['body'] = json_encode($params);
 			$remoteUrl = $this->getApiEndPoint($endpoint);
 		}
 
@@ -356,6 +366,9 @@ trait myAwesomePlugin_registration_interface
 	 * @param	string	$apiResponse
 	 * @return	bool
 	 */
-	abstract public function is_api_error($apiResponse);
+	public function is_api_error($apiResponse)
+	{
+		return ($apiResponse->status->code != '200');
+	}
 }
 ?>

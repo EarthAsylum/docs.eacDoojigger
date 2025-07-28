@@ -1,8 +1,8 @@
 === My Awesome Plugin ===
 Plugin URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
 Author:             [Me](https://www.myawesomeserver.com/profile/me)
-Stable tag:         1.3.1
-Last Updated:       23-Apr-2025
+Stable tag:         1.3.3
+Last Updated:       25-Jul-2025
 Requires at least:  5.8
 Tested up to:       6.8
 Requires PHP:       8.1
@@ -49,6 +49,10 @@ Copyright © 2025, Me
 Requires [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v3.1+
 
 == Changelog ==
+
+= Version 1.3.3 – July 25, 2025 =
+
++   Updated registration SDK.
 
 = Version 1.3.2 – April 23, 2025 =
 

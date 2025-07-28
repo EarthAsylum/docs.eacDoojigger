@@ -1,43 +1,54 @@
-=== {eac}SoftwareRegistry Distribution SDK ===
-Plugin URI:         https://swregistry.earthasylum.com/software-registry-sdk/
-Author:             [EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.0.6
-Last Updated:       15-Nov-2022
-Requires at least:  5.5.0
-Tested up to:       6.1
-Requires PHP:       7.2
-Contributors:       kevinburkholder
-License:            GPLv3 or later
-License URI:        https://www.gnu.org/licenses/gpl.html
-Tags:               software registration, software registry, software license, license manager, registration API, registration SDK, {eac}SoftwareRegistry
-WordPress URI:		https://wordpress.org/plugins/eacsoftwareregistry-distribution-sdk
+## {eac}SoftwareRegistry Distribution SDK  
+[![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
+[![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
+[![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
 
-{eac}SoftwareRegistry Distribution SDK for the Software Registration Server - Implementing the Software Registry SDK Package.
+<details><summary>Plugin Header</summary>
 
-== Description ==
+Plugin URI:         https://swregistry.earthasylum.com/software-registry-sdk/  
+Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
+Stable tag:         1.1.3  
+Last Updated:       25-Jul-2025  
+Requires at least:  5.8  
+Tested up to:       6.7  
+Requires PHP:       7.4  
+Contributors:       [kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
+Donate link:        https://github.com/sponsors/EarthAsylum  
+License:            GPLv3 or later  
+License URI:        https://www.gnu.org/licenses/gpl.html  
+Tags:               software registration, software registry, software license, license manager, registration API, registration SDK, {eac}SoftwareRegistry  
+WordPress URI:      https://wordpress.org/plugins/eacsoftwareregistry-distribution-sdk  
+Github URI:         https://github.com/EarthAsylum/eacsoftwareregistry-distribution-sdk  
+
+</details>
+
+> {eac}SoftwareRegistry Distribution SDK for the Software Registration Server - Implementing the Software Registry SDK Package.
+
+### Description
 
 **{eac}SoftwareRegistry Distribution SDK** is an extension plugin to [{eac}SoftwareRegistry Software Registration Server](https://swregistry.earthasylum.com/software-registration-server/).
 
 The Software Registry Distribution SDK is used to generate a custom PHP package that you can include in your software project to register your product with your registration server and manage that registration.
 
-_A custom version of this "readme.txt" file is included in the generated SDK package._
+_A custom version of this document is included in the generated SDK package._
 
 The SDK provides most of the PHP code you will need to implement the Application Program Interface with your Software Registration Server.
 
 Included with the Software Registration SDK package...
 
-+   myAwesomePlugin_registration.wordpress.trait.php
-+   myAwesomePlugin_registration.includes.php
-+   myAwesomePlugin_registration.interface.php
-+   myAwesomePlugin_registration.interface.trait.php
-+   myAwesomePlugin_registration.refresh.php
++   `myAwesomePlugin_registration.wordpress.trait.php`
++   `myAwesomePlugin_registration.includes.php`
++   `myAwesomePlugin_registration.interface.php`
++   `myAwesomePlugin_registration.interface.trait.php`
++   `myAwesomePlugin_registration.refresh.php`
++   `myAwesomePlugin_registration.readme.md`
 
 
-= Software Registry Implementation =
+#### Software Registry Implementation
 
 After extracting the `myAwesomePlugin_registration.zip` file, move the `myAwesomePlugin_registration` folder to your project.
 
-In your project or class file, include 'myAwesomePlugin_registration/myAwesomePlugin_registration.includes.php' to load the required interface and traits.
+In your project or class file, include `myAwesomePlugin_registration/myAwesomePlugin_registration.includes.php` to load the required interface and traits.
 
 Your class file must then:
 
@@ -63,7 +74,7 @@ myAwesomePlugin_registration.interface.php will have your product and registrati
     const SOFTWARE_REGISTRY_READ_KEY    = '{your_software_registry_read_key}';
 
 
-= Using The API =
+#### Using The API
 
 **API Parameters**
 
@@ -81,7 +92,7 @@ API parameters are passed as an array:
         'registry_title'        => 'Product Title',                 //   your product title
         'registry_description'  => 'Product Description',           //   your product description
         'registry_version'      => 'M.m.p',                         //   your product version
-        'registry_license'      => 'Lx',                            //   'L1'(Lite), 'L2'(Basic), 'L3'(Standard), 'L4'(Professional), 'L5'(Enterprise), 'LD'(Developer)
+        'registry_license'      => 'Lx',                            //   'L1'(Lite), 'L2'(Basic), 'L3'(Standard), 'L4'(Professional), 'L5'(Enterprise), 'LD'(Developer), 'LU'(Unlimited)
         'registry_count'        => int,                             //   Number of licenses (users/seats/devices)
         'registry_variations'   => array('name'=>'value',...),      //   array of name/value pairs
         'registry_options'      => array('value',...),              //   array of registry options
@@ -89,6 +100,7 @@ API parameters are passed as an array:
         'registry_sites'        => array('url',...),                //   array of valid/registered sites/uris
         'registry_transid'      => '',                              //   external transaction id
         'registry_timezone'     => '',                              //   standard timezone string (client timezone)
+        'registry_locale'       => '',                              //   standard locale/language code
     ];
 
 \* *Required values (registry_key not required when creating a new registration).*
@@ -101,8 +113,8 @@ Although typically set by the Software Registry server, with the proper option s
 
     [
         'registry_status'       => 'status',                        // 'pending', 'trial', 'active', 'inactive', 'expired', 'terminated'
-        'registry_effective'    => 'YYYY-MM-DD',                    // Effective date (Y-m-d)
-        'registry_expires'      => 'YYYY-MM-DD',                    // Expiration date (Y-m-d) or term ('30 days', '1 year',... added to effective date)
+        'registry_effective'    => 'DD-MMM-YYYY',                   // Effective date
+        'registry_expires'      => 'DD-MMM-YYYY',                   // Expiration date or term ('30 days', '1 year',... added to effective date)
     ];
 
 Payment information may be posted with:
@@ -110,9 +122,9 @@ Payment information may be posted with:
     [
         'registry_paydue'       => float,                           // amount to be paid/billed,
         'registry_payamount'    => float,                           // amount paid,
-        'registry_paydate'      => 'YYYY-MM-DD',                    // date paid
+        'registry_paydate'      => 'DD-MMM-YYYY',                   // date paid
         'registry_payid'        => 'payment id'                     // transaction id/check #, etc.
-        'registry_nextpay'      => 'YYYY-MM-DD',                    // next payment/renewal date
+        'registry_nextpay'      => 'DD-MMM-YYYY',                   // next payment/renewal date
     ];
 
 
@@ -149,61 +161,74 @@ The API response is a standard object. status->code is an http status, 200 indic
 
     status      ->
     (
-        'code'                  -> 200,             // HTTP status code
-        'message'               -> '(action) ok'    // (action) = 'create', 'activate', 'deactivate', 'verify', 'revise'
+        code                  -> 200,             // HTTP status code
+        message               -> '(action) ok'    // (action) = 'create', 'activate', 'deactivate', 'verify', 'revise'
     ),
     registration ->
     (
-        'registry_key'          -> string           // UUID,
-        'registry_status'       -> string,          // 'pending', 'trial', 'active', 'inactive', 'expired', 'terminated', 'invalid'
-        'registry_effective'    -> string,          // DD-MMM-YYYY effective date
-        'registry_expires'      -> string,          // DD-MMM-YYYY expiration date
-        'registry_name'         -> string,
-        'registry_email'        -> string,
-        'registry_company'      -> string,
-        'registry_address'      -> string,
-        'registry_phone'        -> string,
-        'registry_product'      -> string,
-        'registry_title'        -> string,
-        'registry_description'  -> string,
-        'registry_version'      -> string,
-        'registry_license'      -> string,
-        'registry_count'        -> int,
-        'registry_variations'   -> array,
-        'registry_options'      -> array,
-        'registry_domains'      -> array,
-        'registry_sites'        -> array,
-        'registry_transid'      -> string,
-        'registry_timezone'     -> string,
-        'registry_valid'        -> bool,            // true/false
+        registry_key          -> string           // UUID,
+        registry_status       -> string,          // 'pending', 'trial', 'active', 'inactive', 'expired', 'terminated', 'invalid'
+        registry_effective    -> string,          // DD-MMM-YYYY effective date
+        registry_expires      -> string,          // DD-MMM-YYYY expiration date
+        registry_name         -> string,
+        registry_email        -> string,
+        registry_company      -> string,
+        registry_address      -> string,
+        registry_phone        -> string,
+        registry_product      -> string,
+        registry_title        -> string,
+        registry_description  -> string,
+        registry_version      -> string,
+        registry_license      -> string,
+        registry_count        -> int,
+        registry_variations   -> array,
+        registry_options      -> array,
+        registry_domains      -> array,
+        registry_sites        -> array,
+        registry_transid      -> string,
+        registry_timezone     -> string,
+        registry_locale       -> string,
+        registry_valid        -> bool,
     ),
     registrar ->
     (
-        'contact'               -> object(
-            'name'              -> string           // Registrar Name
-            'email'             -> string           // Registrar Support Email
-            'phone'             -> string           // Registrar Telephone
-            'web'               -> string           // Registrar Web Address
+        contact               -> object(
+            name              -> string           // Registrar Name
+            email             -> string           // Registrar Support Email
+            phone             -> string           // Registrar Telephone
+            web               -> string           // Registrar Web Address
         ),
-        'cacheTime'             -> int,             // in seconds, time to cache the registration response (Default Cache Time)
-        'refreshInterval'       -> int,             // in seconds, time before refreshing the registration (Default Refresh Time)
-        'refreshSchedule'       -> string,          // 'hourly','twicedaily','daily','weekly' corresponding to refreshInterval
-        'options'               -> array(           // from settings page, registrar_options (Allow API to...)
+        timezone              -> string,          // standard timezone string
+        locale                -> string,          // WordPress locale
+        cacheTime             -> int,             // in seconds, time to cache the registration response (Default Cache Time)
+        refreshInterval       -> int,             // in seconds, time before refreshing the registration (Default Refresh Time)
+        refreshSchedule       -> string,          // 'hourly', 'twicedaily', 'daily', 'twiceweekly', 'weekly',  'twicemonthly', 'monthly' - corresponding to refreshInterval
+        options               -> array(           // from settings page, registrar_options (Allow API to...)
             'allow_set_key',
             'allow_set_status',
             'allow_set_effective',
             'allow_set_expiration',
             'allow_activation_update'
         ),
-        'notices'               -> object(
-            'info'              -> string,          // information message text
-            'warning'           -> string,          // warning message text
-            'error'             -> string,          // error message text
-            'success'           -> string,          // success message text
+        licenseCodes          -> object(          // may be changed by filter on registration server
+            L1                -> 'Lite'
+            L2                -> 'Basic'
+            L3                -> 'Standard'
+            L4                -> 'Professional'
+            L5                -> 'Enterprise'
+            LD                -> 'Developer'
+            LU                -> 'Unlimited'
         ),
-        'message'               -> string,          // html message
+        notices               -> object(
+            info              -> string,          // information message text
+            warning           -> string,          // warning message text
+            error             -> string,          // error message text
+            success           -> string,          // success message text
+        ),
+        message               -> string,          // html message
     ),
-    registryHtml                -> string,          // html (table) of human-readable registration values
+    registryHtml              -> string,          // html (table) of human-readable registration values
+    supplemental              -> mixed,           // supplemental data/html assigned via filters (developer's discretion).
 
 On a successful response (status->code = 200), the SDK will automatically cache the registration data and schedule the next refresh event (you do not have to do this).
 
@@ -211,12 +236,14 @@ _notices_ may be set (according to severity) to indicate an expiration or pendin
 
 _message_ is set via the `eacSoftwareRegistry_api_registration_message` filter.
 
+_supplemental_ is set via the `eacSoftwareRegistry_api_registration_supplemental` filter.
+
 On an error response, an additional element is included:
 
     error      ->
     (
-        'code'                  -> 'error_code',
-        'message'               -> 'error message'
+        code                  -> 'error_code',
+        message               -> 'error message'
     ),
 
 error->message may be more informative than status->message.
@@ -228,7 +255,7 @@ Errors may be handled with something like:
     }
 
 
-= Methods, Hooks, and Callbacks =
+#### Methods, Hooks, and Callbacks
 
 Useful methods built into the SDK...
 
@@ -282,7 +309,7 @@ In WordPresss, there are several actions and filters, for file based projects th
      action/callback: myAwesomePlugin_purge_registration()
 
 
-= What You Need To Do =
+#### What You Need To Do
 
 **For WordPress Projects**
 
@@ -316,10 +343,16 @@ Example:
         }
     }
 
+Note:
+
+If your primary plugin file name is not the same as the product id, edit your `myAwesomePlugin.interface.tpl` file and change the `SOFTWARE_REGISTRY_FILENAME` constant.
+
+        const SOFTWARE_REGISTRY_FILENAME    = 'myPluginName';
+
 
 **For Other File Based Projects**
 
-The `scheduleRegistryRefresh()` method in myAwesomePlugin_registration.filebased.trait.php is called to schedule the next registration refresh. This method can be modified to schedule a cron event to execute the refresh at a future time. The scheduled event may run `myAwesomePlugin_registration.refresh.php <registrationKeyValue>` from the command line to refresh the registration.
+The `scheduleRegistryRefresh()` method in `myAwesomePlugin_registration.filebased.trait.php` is called to schedule the next registration refresh. This method can be modified to schedule a cron event to execute the refresh at a future time. The scheduled event may run `myAwesomePlugin_registration.refresh.php <registrationKeyValue>` from the command line to refresh the registration.
 
 When left as is, the `checkRegistryRefreshEvent()` method uses the key file to check for a needed registration refresh.
 
@@ -339,7 +372,7 @@ Example:
             ...
         public function __destruct()
         {
-            /* if necessary, set HOME and/or TMP/TMPDIR/TEMP directories */
+            /* if necessary, set HOME/USERPROFILE and/or TMP/TMPDIR/TEMP directories */
             // putenv('HOME={your home directory}');   // where the registration key is stored, otherwise use $_SERVER['DOCUMENT_ROOT']
             // putenv('TMP={your temp directory}');    // where the registration data is stored, otherwise use sys_get_temp_dir()
             $this->checkRegistryRefreshEvent();
@@ -347,7 +380,7 @@ Example:
     }
 
 
-= User Interface =
+#### User Interface
 
 Of course, the user interface is up to you, the developer, but you may look at (and maybe use) the registration UI trait included  with _{eac}Doojigger_ and used by _{eac}SoftwareRegistry_ as an example.
 
@@ -357,37 +390,37 @@ see:
 +   .../Extensions/class.eacSoftwareRegistry_registration.extension.php in the eacSoftwareRegistry folder.
 
 
-== Installation ==
+### Installation
 
 **{eac}SoftwareRegistry Distribution SDK** is an extension plugin to and requires installation and registration of [{eac}SoftwareRegistry](https://swregistry.earthasylum.com/).*
 
-= Automatic Plugin Installation =
+#### Automatic Plugin Installation
 
 This plugin is available from the [WordPress Plugin Repository](https://wordpress.org/plugins/search/earthasylum/) and can be installed from the WordPress Dashboard » *Plugins* » *Add New* page. Search for 'EarthAsylum', click the plugin's [Install] button and, once installed, click [Activate].
 
 See [Managing Plugins -> Automatic Plugin Installation](https://wordpress.org/support/article/managing-plugins/#automatic-plugin-installation-1)
 
-= Upload via WordPress Dashboard =
+#### Upload via WordPress Dashboard
 
 Installation of this plugin can be managed from the WordPress Dashboard » *Plugins* » *Add New* page. Click the [Upload Plugin] button, then select the eacsoftwareregistry-distribution-sdk.zip file from your computer.
 
 See [Managing Plugins -> Upload via WordPress Admin](https://wordpress.org/support/article/managing-plugins/#upload-via-wordpress-admin)
 
-= Manual Plugin Installation =
+#### Manual Plugin Installation
 
 You can install the plugin manually by extracting the eacsoftwareregistry-distribution-sdk.zip file and uploading the 'eacsoftwareregistry-distribution-sdk' folder to the 'wp-content/plugins' folder on your WordPress server.
 
 See [Managing Plugins -> Manual Plugin Installation](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation-1)
 
-= Settings =
+#### Settings
 
 Options for this extension will be added to the *Software Registry » Settings » Distribution* tab.
 
 
-== Screenshots ==
+### Screenshots
 
 1. {eac}SoftwareRegistry Distribution
-![{eac}SoftwareRegistry Distribution](https://ps.w.org/eacsoftwareregistry-distribution-sdk/assets/screenshot-1.png))
+![{eac}SoftwareRegistry Distribution](https://ps.w.org/eacsoftwareregistry-distribution-sdk/assets/screenshot-1.png)
 
 2. UI Example 1 (Activate/Register):
 ![Software Registration](https://ps.w.org/eacsoftwareregistry-distribution-sdk/assets/screenshot-2.png)
@@ -396,69 +429,23 @@ Options for this extension will be added to the *Software Registry » Settings �
 ![Software Registration](https://ps.w.org/eacsoftwareregistry-distribution-sdk/assets/screenshot-3.png)
 
 
-== Other Notes ==
+### Other Notes
 
-= See Also =
+#### See Also
 
 +   [{eac}SoftwareRegistry – Software Registration Server](https://swregistry.earthasylum.com/software-registration-server/)
 
 +   [{eac}SoftwareRegistry Custom Hooks](https://swregistry.earthasylum.com/software-registry-hooks/)
 
 
-== Copyright ==
+### Copyright
 
-= Copyright © 2019-2022, EarthAsylum Consulting, distributed under the terms of the GNU GPL. =
+#### Copyright © 2019-2025, EarthAsylum Consulting, distributed under the terms of the GNU GPL.
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.  
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should receive a copy of the GNU General Public License along with this program. If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
 
 
-== Changelog ==
-
-= Version 1.0.6 – November 15, 2022 =
-
-+	Updated for {eac}SoftwareRegistry v1.2 and {eac}Doojigger v2.0.
-+	Uses 'options_settings_page' action to register options.
-+	Moved plugin_action_links_ hook to eacSoftwareRegistry_load_extensions filter.
-+	Improved plugin loader and updater.
-
-= Version 1.0.5 – October 23, 2022 =
-
-+	Fixed slug name in WordPress trait.
-+	Fix potential PHP notice in interface.trait on registry api error.
-+	Lowered API timeout to 6 seconds.
-+	Added API retry on http status 408.
-
-= Version 1.0.4 – September 24, 2022 =
-
-+	Fixed potential PHP notice on load (plugin_action_links_).
-+   Added upgrade notice trait for plugins page.
-+	Fixed pattern attribute.
-
-= Version 1.0.3 – September 10, 2022 =
-
-+	Fix validation attributes on input fields.
-
-= Version 1.0.2 – August 28, 2022 =
-
-+	Updated to / Requires {eac}Doojigger 1.2.0
-+	Added 'Settings', 'Docs' and 'Support' links on plugins page.
-
-= Version 1.0.1 – July 14, 2022 =
-
-+   Cosmetic changes for WordPress submission.
-+	Renamed SDK .php files to .tpl to prevent SVN pre-compile errors.
-
-= Version 1.0.0 – May 4, 2022 =
-
-+   Initial public release.
-
-
-== Upgrade Notice ==
-
-= 1.0.6 =
-
-This version requires {eac}SoftwareRegistry v1.2+
