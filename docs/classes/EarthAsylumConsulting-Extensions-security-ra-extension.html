@@ -276,6 +276,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_ALLOW_LIST">IP_ALLOW_LIST</a>
+    <span>
+        &nbsp;= ABSPATH . &quot;ip_allow_list.conf&quot;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLOCK_LIST">IP_BLOCK_LIST</a>
     <span>
         &nbsp;= ABSPATH . &quot;ip_block_list.conf&quot;                            </span>
@@ -306,7 +313,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_VERSION">VERSION</a>
     <span>
-        &nbsp;= &#039;25.0628.1&#039;                            </span>
+        &nbsp;= &#039;25.0718.1&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -365,6 +372,13 @@
                                 &nbsp;: void    </span>
 </dt>
 <dd>register options on options_settings_page</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_allow_ip_file">allow_ip_file()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Input ip allow file</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_check_for_blocks">check_for_blocks()</a>
@@ -751,6 +765,35 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_IP_ALLOW_LIST">
+        IP_ALLOW_LIST
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_ALLOW_LIST" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">54</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">IP_ALLOW_LIST</span>
+    = <span class="phpdocumentor-signature__default-value">ABSPATH . &quot;ip_allow_list.conf&quot;</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>IP allow list file name</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_IP_BLOCK_LIST">
         IP_BLOCK_LIST
         <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLOCK_LIST" class="headerlink"><i class="fas fa-link"></i></a>
@@ -885,7 +928,7 @@ when reported within the app without giving a score, the score is calculated and
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;25.0628.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;25.0718.1&#039;</span>
 </code>
 
 
@@ -974,7 +1017,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -1099,7 +1142,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -1167,7 +1210,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -1217,7 +1260,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">127</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 
     </aside>
 
@@ -1258,6 +1301,39 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_allow_ip_file">
+        allow_ip_file()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_allow_ip_file" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">710</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Input ip allow file</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">allow_ip_file</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_check_for_blocks">
         check_for_blocks()
         <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_check_for_blocks" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1265,7 +1341,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">203</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
@@ -1298,7 +1374,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">641</span>
+    <span class="phpdocumentor-element-found-in__line">647</span>
 
     </aside>
 
@@ -1458,7 +1534,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">156</span>
 
     </aside>
 
@@ -1634,7 +1710,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">689</span>
+    <span class="phpdocumentor-element-found-in__line">695</span>
 
     </aside>
 
@@ -1679,7 +1755,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">714</span>
+    <span class="phpdocumentor-element-found-in__line">738</span>
 
     </aside>
 
@@ -1754,7 +1830,7 @@ status</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">539</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 
     </aside>
 
@@ -1818,7 +1894,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">455</span>
+    <span class="phpdocumentor-element-found-in__line">468</span>
 
     </aside>
 
@@ -1851,7 +1927,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">479</span>
+    <span class="phpdocumentor-element-found-in__line">492</span>
 
     </aside>
 
@@ -1895,7 +1971,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">511</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 
     </aside>
 
@@ -1940,7 +2016,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 
     </aside>
 

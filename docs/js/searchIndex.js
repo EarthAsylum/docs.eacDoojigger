@@ -556,9 +556,14 @@ Search.appendIndex(
             "summary": "get\u0020the\u0020current\u0020url\u0020part\u0028s\u0029\u0020based\u0020on\u0020WP\u0020request",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_getRequestParts"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AgetRequestScheme\u0028\u0029",
+            "name": "getRequestScheme",
+            "summary": "Returns\u0020the\u0020request\u0020scheme",
+            "url": "classes/EarthAsylumConsulting-abstract-core.html#method_getRequestScheme"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AgetRequestHost\u0028\u0029",
             "name": "getRequestHost",
-            "summary": "Returns\u0020the\u0020local\u0020host\u0020from\u0020home_url",
+            "summary": "Returns\u0020the\u0020request\u0020host",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_getRequestHost"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AgetRequestPath\u0028\u0029",
@@ -570,6 +575,11 @@ Search.appendIndex(
             "name": "getRequestOrigin",
             "summary": "get\u0020the\u0020the\u0020request\u0020origin",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_getRequestOrigin"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aallow_request_origin\u0028\u0029",
+            "name": "allow_request_origin",
+            "summary": "allow\u0020CORS\u0020origin",
+            "url": "classes/EarthAsylumConsulting-abstract-core.html#method_allow_request_origin"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AcurrentURL\u0028\u0029",
             "name": "currentURL",
@@ -2476,6 +2486,11 @@ Search.appendIndex(
             "summary": "Check\u0020an\u0020IP\u0020address\u0020is\u0020in\u0020ignored\u0020list",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isIpIgnored"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aallow_ip_file\u0028\u0029",
+            "name": "allow_ip_file",
+            "summary": "Input\u0020ip\u0020allow\u0020file",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_allow_ip_file"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aoutput_ip_file\u0028\u0029",
             "name": "output_ip_file",
             "summary": "Output\u0020to\u0020ip\u0020block\u0020file",
@@ -2510,6 +2525,11 @@ Search.appendIndex(
             "name": "IP_BLOCK_LIST",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLOCK_LIST"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003AIP_ALLOW_LIST",
+            "name": "IP_ALLOW_LIST",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_ALLOW_LIST"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_abuseipdb",
             "name": "security_ra_abuseipdb",
@@ -3286,6 +3306,16 @@ Search.appendIndex(
             "summary": "is\u0020license\u0020L5\u0020\u0028enterprise\u0029\u0020or\u0020better",
             "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isEnterpriseLicense"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003AisDeveloperLicense\u0028\u0029",
+            "name": "isDeveloperLicense",
+            "summary": "is\u0020license\u0020LD\u0020\u0028developer\u0029",
+            "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isDeveloperLicense"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003AisUnlimitedLicense\u0028\u0029",
+            "name": "isUnlimitedLicense",
+            "summary": "is\u0020license\u0020LU\u0020\u0028unlimited\u0029",
+            "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger.html#method_isUnlimitedLicense"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger\u003A\u003Aallow_advanced_mode\u0028\u0029",
             "name": "allow_advanced_mode",
             "summary": "alllow\u0020advanced\u0020mode\u0020\u002D\u0020aids\u0020in\u0020complexity\u0020and\/or\u0020licensing\u0020limits.",
@@ -3776,6 +3806,11 @@ Search.appendIndex(
             "summary": "When\u0020using\u0020html_input_section\u0028\u0029,\u0020html_input_block\u0028\u0029,\u0020convert\u0020sections\u0020to\u0020tabs.",
             "url": "classes/EarthAsylumConsulting-Traits-html-input-fields.html#method_html_input_as_tabs"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Traits\\load_extensions",
+            "name": "load_extensions",
+            "summary": "load_extensions\u0020trait\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
+            "url": "classes/EarthAsylumConsulting-Traits-load-extensions.html"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\logging",
             "name": "logging",
             "summary": "logger\u0020trait\u0020\u002D\u0020logging\u0020functions\u0020using\u0020Logger\u0020healper",
@@ -4018,13 +4053,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\swRegistrationUI\u003A\u003AswRegistrationUI\u0028\u0029",
             "name": "swRegistrationUI",
-            "summary": "swRegistrationUI\u0020method",
+            "summary": "swRegistrationUI\u0020\u002D\u0020User\u0020Interface",
             "url": "classes/EarthAsylumConsulting-Traits-swRegistrationUI.html#method_swRegistrationUI"
-        },                {
-            "fqsen": "\\EarthAsylumConsulting\\Traits\\swRegistrationUI\u003A\u003AswRegistrationAdminInit\u0028\u0029",
-            "name": "swRegistrationAdminInit",
-            "summary": "add\u0020additional\u0020actions\u0020and\u0020filters\u0020\u002D\u0020on\u0020admin_init\u0020to\u0020allow\u0020for\u0020translations",
-            "url": "classes/EarthAsylumConsulting-Traits-swRegistrationUI.html#method_swRegistrationAdminInit"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Traits\\swRegistrationUI\u003A\u003Aform_request_create\u0028\u0029",
             "name": "form_request_create",
