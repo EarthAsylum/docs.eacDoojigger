@@ -23,14 +23,21 @@ The {eac}Doojigger Extras folder ([download]) contains documentation as well as 
 
 ### Description
 
-| Folder                       | Content       |
-| ---------------------------- | ------------- |
-| :file_folder: AutoUpdate     | {eac}Doojigger derivative plugins (Doojiggers) and custom extension plugins (Doohickeys) may provide automatic updating similar to WordPress-hosted plugins. |
-| :file_folder: ContextualHelp | Using contextual help in {eac}Doojigger derivative plugins and extensions. |
-| :file_folder: Extensions     | Doolollys - Custom extensions to {eac}Doojigger or derivatives - Add easy-to-code extensions to {eac}Doojigger or your own derivative plugins using the extension framework. |
-| :file_folder: OptionMetaData | Defining options (settings) in WordPress Administration used by {eac}Doojigger, derivative plugins, and extensions. |
-| :file_folder: Plugins        | Doojiggers - Custom plugin derivatives of {eac}Doojigger - Build your own plugin using a robust, efficient, and clean, foundation. |
-| :file_folder: UsingDoojigger | Using the methods, filters, and actions provided by {eac}Doojigger. |
+| Folder                         | Content       |
+| ------------------------------ | ------------- |
+| :file_folder: [AutoUpdate]     | {eac}Doojigger derivative plugins (Doojiggers) and custom extension plugins (Doohickeys) may provide automatic updating similar to WordPress-hosted plugins. |
+| :file_folder: [ContextualHelp] | Using contextual help in {eac}Doojigger derivative plugins and extensions. |
+| :file_folder: [Extensions]     | Doolollys - Custom extensions to {eac}Doojigger or derivatives - Add easy-to-code extensions to {eac}Doojigger or your own derivative plugins using the extension framework. |
+| :file_folder: [OptionMetaData] | Defining options (settings) in WordPress Administration used by {eac}Doojigger, derivative plugins, and extensions. |
+| :file_folder: [Plugins]        | Doojiggers - Custom plugin derivatives of {eac}Doojigger - Build your own plugin using a robust, efficient, and clean, foundation. |
+| :file_folder: [UsingDoojigger] | Using the methods, filters, and actions provided by {eac}Doojigger. |
+
+[AutoUpdate]:       https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Automatic-Updating
+[ContextualHelp]:   https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Contextual-Help
+[Extensions]:       https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Custom-Extensions
+[OptionMetaData]:   https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Administrator-Options-and-Settings
+[Plugins]:          https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
+[UsingDoojigger]:   https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Using-%7Beac%7DDoojigger
 
 #### For further documentation, see:
 
