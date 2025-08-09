@@ -23,14 +23,14 @@ The {eac}Doojigger Extras folder ([download]) contains documentation as well as 
 
 ### Description
 
-| Folder | Content |
+| Folder                       | Content       |
 | ---------------------------- | ------------- |
-| :file_folder: AutoUpdate     | {eac}Doojigger derivative plugins (Doojiggers) and custom extension plugins (Doohickeys) may provide automatic updating similar to WordPress-hosted plugins. |
-| :file_folder: ContextualHelp | Using contextual help in {eac}Doojigger derivative plugins and extensions. |
-| :file_folder: Extensions     | Doolollys - Custom extensions to {eac}Doojigger or derivatives - Add easy-to-code extensions to {eac}Doojigger or your own derivative plugins using the extension framework. |
-| :file_folder: OptionMetaData | Defining options (settings) in WordPress Administration used by {eac}Doojigger, derivative plugins, and extensions. |
-| :file_folder: Plugins        | Doojiggers - Custom plugin derivatives of {eac}Doojigger - Build your own plugin using a robust, efficient, and clean, foundation. |
-| :file_folder: UsingDoojigger | Using the methods, filters, and actions provided by {eac}Doojigger. |
+| :file_folder: AutoUpdate     | {eac}Doojigger derivative plugins (Doojiggers) and custom extension plugins (Doohickeys) may provide automatic updating similar to WordPress-hosted plugins. |
+| :file_folder: ContextualHelp | Using contextual help in {eac}Doojigger derivative plugins and extensions. |
+| :file_folder: Extensions     | Doolollys - Custom extensions to {eac}Doojigger or derivatives - Add easy-to-code extensions to {eac}Doojigger or your own derivative plugins using the extension framework. |
+| :file_folder: OptionMetaData | Defining options (settings) in WordPress Administration used by {eac}Doojigger, derivative plugins, and extensions. |
+| :file_folder: Plugins        | Doojiggers - Custom plugin derivatives of {eac}Doojigger - Build your own plugin using a robust, efficient, and clean, foundation. |
+| :file_folder: UsingDoojigger | Using the methods, filters, and actions provided by {eac}Doojigger. |
 
 #### For further documentation, see:
 
@@ -40,4 +40,4 @@ The {eac}Doojigger Extras folder ([download]) contains documentation as well as 
 
 :green_book: [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
 
-:package: [{eac}Doojigger Extras][download]
+:package: [Download {eac}Doojigger Extras][download]
