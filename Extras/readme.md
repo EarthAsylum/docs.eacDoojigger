@@ -23,6 +23,7 @@ The {eac}Doojigger Extras folder ([download]) contains documentation as well as 
 
 ### Description
 
+| Folder | Content |
 | ---------------------------- | ------------- |
 | :file_folder: AutoUpdate     | {eac}Doojigger derivative plugins (Doojiggers) and custom extension plugins (Doohickeys) may provide automatic updating similar to WordPress-hosted plugins. |
 | :file_folder: ContextualHelp | Using contextual help in {eac}Doojigger derivative plugins and extensions. |
