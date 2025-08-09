@@ -18,8 +18,8 @@ namespace EarthAsylumConsulting\Traits;
  * @category	WordPress Plugin
  * @package		{eac}Doojigger\Traits
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2021 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		2.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version		25.0723.1
  * @link		https://eacDoojigger.earthasylum.com/
  * @see 		https://eacDoojigger.earthasylum.com/phpdoc/
  */
@@ -38,7 +38,7 @@ trait datetime
 	{
 		if (empty($timezone))
 		{
-			if ($datetime instanceOf \DateTime) {
+			if ($datetime instanceOf \DateTimeInterface) {
 				$timezone = $datetime->getTimezone();
 			} else {
 				$timezone = wp_timezone();
@@ -48,7 +48,7 @@ trait datetime
 		{
 			$timezone = new \DateTimeZone($timezone);
 		}
-		else if ($timezone instanceOf \DateTime)
+		else if ($timezone instanceOf \DateTimeInterface)
 		{
 			$timezone = $datetime->getTimezone();
 		}
@@ -69,26 +69,31 @@ trait datetime
 	{
 		$timezone = $this->getTimeZone($timezone,$datetime);
 
-		if (is_numeric($datetime))							// timestamp
+		if (is_numeric($datetime))								// timestamp
 		{
-			$datetime = new \DateTime('@'.$datetime);		// timestamp ignores timezone here
-			$datetime->setTimeZone($timezone);				// so set timezone here
+			$datetime = new \DateTimeImmutable('@'.$datetime);	// timestamp ignores timezone here
 		}
-		else if ($datetime instanceOf \DateTime)			// date/time object
+		else if (is_a($datetime,'DateTime'))					// date/time (mutable) object
 		{
-			$datetime->setTimeZone($timezone);
+			$datetime = \DateTimeImmutable::createFromMutable($datetime);
 		}
-		else												// date/time string (Supported Date and Time Format)
+
+		if ($datetime instanceOf \DateTimeInterface)			// date/time object
 		{
-			$datetime = new \DateTime($datetime,$timezone);
+			$datetime = $datetime->setTimeZone($timezone);
+		}
+		else													// date/time string (Supported Date and Time Format)
+		{
+			$datetime = new \DateTimeImmutable($datetime,$timezone);
 		}
 
 		if (!empty($modify))
 		{
-			$datetime->modify($modify);
+			$datetime = $datetime->modify($modify);
 		}
 
-		return $datetime;
+		// return a DateTime (mutable) object for backward compatibility (is_a($datetime,'DateTime'))
+		return \DateTime::createFromImmutable($datetime);
 	}
 
 
