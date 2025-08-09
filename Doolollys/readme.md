@@ -1,4 +1,4 @@
-## Doohickey, A plugin used to load a Doololly extension. 
+## Doololly, An extension to a Doojigger plugin.. 
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
@@ -17,13 +17,13 @@ GitHub URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/
 
 </details>
 
-_doohickey_ (n)
-1. A thing (used in a vague way to refer to something whose name one does not know or cannot recall).
-2. *A plugin used to load a Doololly extension.*
+_doololly_ (n)
+1. Any nameless small object, typically some form of gadget.
+2. *An extension to a Doojigger plugin.*
 
 ### Description
 
-Plugins that may be dropped into your /wp-content/plugins (or mu-plugins) folder. {eac}Doohickey gives you an easy way to add additional Doolollys to your site simply by dropping them into the /eacDoohickey/Doolollys folder.
+A Doololly extension is a PHP program class that adds functionality to the base plugin. Extensions can be coded for specific needs and can be as simple or complex as needed.
 
 #### For further documentation, see:
 
