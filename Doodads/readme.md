@@ -8,7 +8,7 @@
 
 Plugin URI:         https://eacDoojigger.earthasylum.com/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:       09-Aug-2025  
+Last Updated:       25-Aug-2025  
 Contributors:       [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
 Donate link:        https://github.com/sponsors/EarthAsylum  
 Requires EAC:       3.1  
@@ -32,8 +32,18 @@ Details on some of these 'Doodads' may be found [here](https://github.com/EarthA
 
 #### For further documentation, see:
 
-:open_file_folder: [{eac}Doojigger Wiki: documentation and examples](https://github.com/EarthAsylum/docs.eacDoojigger/wiki)
+:package: [Download {eac}Doojigger Extras][extras]
 
-:bookmark_tabs: [{eac}Doojigger Web Site](https://eacdoojigger.earthasylum.com)
+:open_file_folder: [{eac}Doojigger Wiki: documentation and examples][wiki]
 
-:green_book: [{eac}Doojigger PHP Reference](https://earthasylum.github.io/docs.eacDoojigger/)
+:green_book: [{eac}Doojigger PHP Reference][reference]
+
+:bookmark_tabs: [{eac}Doojigger Web Site][website]
+
+:package: [Download eacDoojigger.zip][download]
+
+[extras]:       https://swregistry.earthasylum.com/software-updates/eacdoojigger-extras.zip
+[wiki]:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki
+[reference]:    https://earthasylum.github.io/docs.eacDoojigger/
+[website]:      https://eacdoojigger.earthasylum.com
+[download]:	    https://swregistry.earthasylum.com/software-updates/eacdoojigger.zip "Download eacDoojigger.zip, latest release, ready to install"
