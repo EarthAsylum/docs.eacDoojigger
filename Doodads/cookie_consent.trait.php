@@ -7,8 +7,8 @@ namespace EarthAsylumConsulting\Traits;
  * @category    WordPress Plugin
  * @package     {eac}Doojigger\Traits
  * @author      Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright   Copyright (c) 2024 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version     24.1108.1
+ * @copyright   Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version     26.0805.1
  * @see         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/How-To#wp-consent-api-and-cookies
  */
 trait cookie_consent
@@ -63,6 +63,18 @@ trait cookie_consent
                     return ($category == 'necessary') ? true : $has_consent;
                 },5,3);
 
+				// some consent management platforms may not set wp_get_consent_type
+				add_filter('wp_get_consent_type',function($type)
+					{
+						if ((empty($type))) {   // has not (yet) been set
+							$prefix = \WP_CONSENT_API::$config->consent_cookie_prefix();
+							return $this->get_cookie("{$prefix}_consent_type",'optout');
+						}
+						return $type;
+					},
+					PHP_INT_MAX - 100
+				);
+
                 // add javascript and filter for consent type (optin/optout)
                 add_action( 'wp_enqueue_scripts', array( $this, 'cookie_consent_patch' ),PHP_INT_MAX);
             }
@@ -83,18 +95,6 @@ trait cookie_consent
             "document.addEventListener('wp_consent_type_defined',function(){".
                 "consent_api_set_cookie(consent_api.cookie_prefix+'_consent_type',window.wp_consent_type);".
             "});"
-        );
-
-        // some consent management platforms may not set wp_get_consent_type
-        add_filter('wp_get_consent_type',function($type)
-            {
-                if ((empty($type))) {   // has not (yet) been set
-                    $prefix = \WP_CONSENT_API::$config->consent_cookie_prefix();
-                    return $this->get_cookie("{$prefix}_consent_type",'optout');
-                }
-                return $type;
-            },
-            PHP_INT_MAX - 100
         );
     }
 
@@ -161,7 +161,9 @@ trait cookie_consent
                 'expires'   => $expStr,
             ]);
 
-            if (! wp_has_consent($consent['category'])) return false;
+			if (! $this->has_cookie_consent($consent['category'],$consent['plugin_or_service'])) {
+				return false;
+			}
         }
 
         foreach ($options as $n => $v)
@@ -169,9 +171,8 @@ trait cookie_consent
             $options[$n] = apply_filters( "wp_setcookie_{$n}", $v, $name, $value );
         }
 
-        if (setcookie($name,$value,$options))
+        if (!headers_sent() && setcookie($name,$value,$options))
         {
-            //  echo "<div class='notice'><pre>".__METHOD__." ".var_export([$name,$value,$options,$consent],true)."</pre></div>";
             if ($options['expires'] == 0 || $options['expires'] > time()) {
                 $_COOKIE[$name] = $value;
                 do_action( 'wp_setcookie_success',$name,$value,$options,$consent );
@@ -272,6 +273,10 @@ trait cookie_consent
             $name
         );
 
+        $consent['plugin_or_service'] = wp_validate_consent_service(
+			apply_filters( 'wp_setcookie_service',$consent['plugin_or_service'],$name )
+        );
+
         if ($register && !empty($consent['function']) && self::$cookie_consent_loaded)
         {
             // maybe replace placeholders with cookie array values
@@ -334,13 +339,28 @@ trait cookie_consent
      * check consent is loaded and category set (convenience method)
      *
      * @param string        $category consent category to check.
+     * @param string        $service consent service to check.
      * @return  bool
      */
-    public function has_cookie_consent(string $category = null): bool
+    public function has_cookie_consent(?string $category = null, ?string $service = null): bool
     {
-        if (is_null($category)) {
+        if (empty($category) && empty($service)) {
             return self::$cookie_consent_loaded;
         }
-        return (self::$cookie_consent_loaded) ? wp_has_consent($category) : true;
+
+        if (self::$cookie_consent_loaded)
+        {
+			if ($service && function_exists('wp_is_service_denied') && wp_is_service_denied($service)) {
+				return false;	// explicitly denied service
+			}
+			if ($service && function_exists('wp_has_service_consent') && wp_has_service_consent($service)) {
+				return true;	// explicitly granted service or implicitly granted via associated category
+			}
+			if ($category && function_exists('wp_has_consent') && wp_has_consent($category)) {
+				return true;	// implicitly granted via category
+			}
+			return false;
+		}
+		return true;
     }
 }
