@@ -1,0 +1,70 @@
+# GitHub workflow action when creating/editing a release:
+#   Adds {plugin-name}.{version}.zip to release assets.
+#
+# wordpress.org plugin slug is the repository name (upper/lower case is retained).
+# Expects tag name to be version (M.m.p) with or without preceding "v" (v1.2.3 or 1.2.3)
+# Expects wordpress.org assets (screenshots, icons, banners) to be in /.wp-assets.
+# Uses .distignore or default list for exclusions from zip file.
+#
+# Version: 26.0814.1
+
+name: On Release, create plugin zip
+
+on:
+  # When a release is created or edited
+  release:
+    types: [created,edited]
+
+permissions:
+  contents: write
+
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+  TAG_NAME:  ${{ github.ref_name }}
+  WORKFLOW:  ${{ github.run_id }}
+
+jobs:
+  release:
+    name: Create plugin zip
+    runs-on: ubuntu-latest
+    steps:
+
+    # Get plugin SLUG from REPO_NAME and VERSION (sans 'v') from TAG_NAME
+    - name: Plugin-Slug
+      run: |
+        echo "SLUG=${REPO_NAME}" >>${GITHUB_ENV}
+        echo "VERSION=${TAG_NAME#v}" >>${GITHUB_ENV}
+
+    # Checkout the repository code
+    - name: Checkout-Code
+      uses: actions/checkout@v7
+
+    # Create archive temp directory containing only files to include in zip archive
+    - name: Prepare-Zip-Archive
+      run: |
+        mkdir -p .${WORKFLOW}/${SLUG}
+        rsync -rc --exclude-from=.distignore --exclude='.${WORKFLOW}' ./ ./.${WORKFLOW}/${SLUG}/ || \
+        rsync -rc \
+            --exclude='.*' \
+            --exclude='/tests' \
+            --exclude='/build' \
+            --exclude='phpunit.xml*' \
+            --exclude='composer.json' \
+            --exclude='composer.lock' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+        ./ ./.${WORKFLOW}/${SLUG}/
+
+    # Compress the temp directory to an installable WordPress zip file
+    - name: Create-Zip-Archive
+      run: |
+        cd .${WORKFLOW}
+        zip -r ../${REPO_NAME}.${VERSION}.zip ./${SLUG}
+
+    # Upload {plugin-name}.{version}.zip to github release
+    - name: Upload-Release-Asset
+      uses: softprops/action-gh-release@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: ${{ github.workspace }}/${{ env.REPO_NAME }}.${{ env.VERSION }}.zip
