@@ -2,7 +2,7 @@
 * text=auto
 
 # Hidden
-.*                  export-ignore
+.git*               export-ignore
 
 # Directories
 /tests              export-ignore
