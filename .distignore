@@ -1,2 +1,12 @@
+# Hidden
 .*
+
+# Directories
 /docs
+
+# Files
+phpunit.xml*
+composer.json
+composer.lock
+package.json
+package-lock.json
