@@ -1,5 +1,5 @@
 # Hidden
-.*
+.git*
 
 # Directories
 /docs
