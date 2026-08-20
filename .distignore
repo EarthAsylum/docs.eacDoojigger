@@ -3,3 +3,6 @@
 
 # Directories
 /docs
+
+# Allowed
+!readme.txt
