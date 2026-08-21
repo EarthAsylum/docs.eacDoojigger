@@ -1,8 +1,8 @@
-# Allowed
+# Explicitly Allowed
 !readme.md
 
-# Hidden
+# Exclude Hidden
 /.+
 
-# Directories
+# Exclude Directories
 /docs
