@@ -1,18 +1,20 @@
-## My Awesome Plugin  
+## My Awesome Plugin
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
+[![Sponsorship](https://img.shields.io/static/v1?label=Sponsorship&message=%E2%9D%A4&logo=GitHub&color=bf3889)](https://github.com/sponsors/EarthAsylum)
 
 <details><summary>Plugin Header</summary>
 
-Plugin URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives  
+Plugin URI: 		https://github.com/EarthAsylum/myAwesomePlugin  
 Author:             [Me](https://www.myawesomeserver.com/profile/me)  
-Stable tag:         1.3.3  
-Last Updated:       25-Jul-2025  
+Stable tag:         1.3.4  
+Last Updated:       31-Aug-2026  
 Requires at least:  5.8  
-Tested up to:       6.8  
+Tested up to:       7.1  
 Requires PHP:       8.1  
 Requires EAC:       3.1  
+Support link: 		https://github.com/EarthAsylum/docs.eacDoojigger  
 
 </details>
 
@@ -45,4 +47,14 @@ Find this plugin, further documentation, and all {eac}Doojigger Extras at [this 
 
 1. My Awesome Plugin with My Awesome Extension
 ![myAwesomePlugin](https://swregistry.earthasylum.com/software-updates/eacdoojigger/assets/screenshot-9.png)
+
+### Copyright
+
+Copyright © 2026, Me
+
+### Upgrade Notice
+
+#### 1.3
+
+Requires [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v3.1+
 

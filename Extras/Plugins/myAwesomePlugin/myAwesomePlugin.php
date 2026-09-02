@@ -7,18 +7,18 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\Traits\plugin_loader
  *
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.3.3
+ * Version:				1.3.4
  * Requires at least:	5.8
- * Tested up to: 		6.8
+ * Tested up to: 		7.1
  * Requires PHP:		8.1
  * Requires EAC:		3.1
- * Plugin URI: 			https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
+ * Plugin URI: 			https://github.com/EarthAsylum/myAwesomePlugin
  * Update URI: 			https://dev.earthasylum.net/software-updates/myAwesomePlugin.json
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
@@ -50,10 +50,12 @@ namespace myAwesomeNamespace
 	// must have {eac}Doojigger and {eac}DoojiggerAutoloader activated
 	if (!defined('EACDOOJIGGER_VERSION'))
 	{
-		\add_action( 'all_admin_notices', function()
+		\add_action( 'admin_notices', function()
 			{
-			echo '<div class="notice notice-error is-dismissible"><p>myAwesoomePlugin requires installation & activation of '.
-				 '<a href="https://eacdoojigger.earthasylum.com/eacdoojigger" target="_blank">{eac}Doojigger</a>.</p></div>';
+				echo '<div class="notice notice-error is-dismissible">'.
+					 '<em>My Awesome Plugin</em> requires installation & activation of '.
+					 '<a href="https://eacdoojigger.earthasylum.com/eacdoojigger" target="_blank">'.
+					 '{eac}Doojigger</a>.</div>';
 			}
 		);
 		return;

@@ -5,8 +5,8 @@
  * @category	WordPress Plugin
  * @package		myAwesomePlugin, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.3.2
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
+ * @version		26.0831.1
  */
 
 namespace myAwesomeNamespace\Plugin;
@@ -192,6 +192,37 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	public function addActionsAndFilters(): void
 	{
 		parent::addActionsAndFilters();
+
+		if (is_admin())
+		{
+			/*
+			 * Optional - add links to the plugins page listing - Documentation, Support after Settings.
+			 *	Documentation
+			 * 		Uses 'Plugin URI' from readme.txt
+			 * 		@param mixed  $plugin true=use this plugin title, array=get_plugin_data array, string = title
+			 * 		@param string $permalink uri (/sample-post, ?p=nnn, /2026/08/26/sample-post/, etc.)
+			 * 		@param string $name link name ('Docs')
+			 * 		@param string $title title ('%1s Documentation')
+			 * Support
+			 * 		Uses 'Support link' (non-standard) or (default) WordPress plugin support url for support link
+			 * 		@param mixed  $plugin true=use this plugin title, array=get_plugin_data array, string = title
+			 * 		@param string $slug WP plugin slug
+			 * 		@param string $name link name ('Support')
+			 * 		@param string $title title ('%1s Support')
+			 */
+			add_filter( (is_network_admin() ? 'network_admin_' : '').'plugin_action_links_' . $this->PLUGIN_SLUG,
+				function($pluginLinks, $pluginFile, $pluginData) {
+					return array_merge(
+						[
+							'documentation'	=> $this->getDocumentationLink(/* $pluginData */),
+							'support'		=> $this->getSupportLink(/* $pluginData */),
+						//	'something'		=> "<a href='...'>something</a>"
+						],
+						$pluginLinks
+					);
+				},20,3
+			);
+		}
 	}
 
 

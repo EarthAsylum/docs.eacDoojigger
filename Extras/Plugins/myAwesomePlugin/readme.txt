@@ -1,12 +1,13 @@
 === My Awesome Plugin ===
-Plugin URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Plugin-Derivatives
+Plugin URI: 		https://github.com/EarthAsylum/myAwesomePlugin
 Author:             [Me](https://www.myawesomeserver.com/profile/me)
-Stable tag:         1.3.3
-Last Updated:       25-Jul-2025
+Stable tag:         1.3.4
+Last Updated:       31-Aug-2026
 Requires at least:  5.8
-Tested up to:       6.8
+Tested up to:       7.1
 Requires PHP:       8.1
 Requires EAC:       3.1
+Support link: 		https://github.com/EarthAsylum/docs.eacDoojigger
 
 My Awesome Plugin is a really awesome {eac}Doojigger derivative plugin that provides an example and framework for building custom Doojigger plugins.
 
@@ -40,7 +41,7 @@ Find this plugin, further documentation, and all {eac}Doojigger Extras at [this 
 
 == Copyright ==
 
-Copyright © 2025, Me
+Copyright © 2026, Me
 
 == Upgrade Notice ==
 
@@ -49,6 +50,11 @@ Copyright © 2025, Me
 Requires [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v3.1+
 
 == Changelog ==
+
+= Version 1.3.4 – August 31, 2026 =
+
++	Compatible with WordPress 7.1.
++	Added Documentation, Support links to plugins page listing.
 
 = Version 1.3.3 – July 25, 2025 =
 
