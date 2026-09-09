@@ -8,7 +8,7 @@
 
 Plugin URI:             https://eacDoojigger.earthasylum.com/  
 Author:                 [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:           25-Aug-2025  
+Last Updated:           07-Sep-2025  
 Contributors:           [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
 Donate link:            https://github.com/sponsors/EarthAsylum  
 License:                EarthAsylum Consulting Proprietary License - {eac}PLv1  
@@ -18,7 +18,8 @@ GitHub URI:             https://github.com/EarthAsylum/docs.eacDoojigger/wiki
 
 </details>
 
-> {eac}Doojigger - A new path to rapid plugin development. A powerful, extensible, multi-function architectural framework and utility plugin for WordPress. {eac}Doojigger streamlines the plugin development process and allows you to create professional-grade plugins in a fraction of the time.
+> {eac}Doojigger is a powerful, extensible WordPress framework: a ready-to-use utility plugin combined with an architecture for building your own plugins, so you can ship professional-grade results in a fraction of the usual development time.
+
 
 ### Links
 
@@ -59,71 +60,78 @@ The {eac}Doojigger `Extras` folder ([download](https://swregistry.earthasylum.co
 
 ### Definitions
 
-_doojigger_ (n)
+__doojigger_ (n)
 1. Something unspecified whose name is either forgotten or not known.
-2. *A Wordpress Plugin built with {eac}Doojigger.*
+2. *A plugin built on {eac}Doojigger (including {eac}Doojigger itself)*
 
 _doololly_ (n)
 1. Any nameless small object, typically some form of gadget.
-2. *An extension to a Doojigger plugin.*
+2. *An extension added to a Doojigger *
 
 _doohickey_ (n)
 1. A thing (used in a vague way to refer to something whose name one does not know or cannot recall).
-2. *A plugin used to load a Doololly extension.*
+2. *A Doololly packaged as its own standalone plugin*
 
 _doodad_ (n)
 1. Something, especially a small device or part, whose name is unknown or forgotten.
-2. *A helper or trait included with a Doojigger plugin.*
+2. *A shared helper or trait included with a Doojigger*
 
 
 ### Summary
 
-{EarthAsylum Consulting} **{eac}Doojigger** is a multi functional and highly extensible WordPress plugin that eases and advances WordPress development and includes several 'Doolollys' (extensions) providing file access, security, debugging, encryption, session management, maintenance mode, administration tools, and more.
+{eac}Doojigger is a WordPress plugin framework: a base plugin that ships with a working set of security, debugging, encryption, session, and administration features, plus an architecture for building your own plugins and extensions on top of it without rewriting WordPress boilerplate each time.
 
-*{eac}Doojigger* is not only a fully functional plugin, but more so, an architectural development platform (using shared/abstract code) enabling the effortless creation of full featured...
+If you build or maintain multiple WordPress plugins — internal tools, client work, or products — {eac}Doojigger's abstract classes and traits handle the repetitive plumbing (activation/deactivation, multi-site awareness, options storage, updates, settings UI, logging) so your code only has to handle what's actually specific to your plugin.
 
-1.  [Custom 'Doojiggers' (Plugins derived from {eac}Doojigger)](#custom-derivative-plugins).
-    +   Create your own plugin with {eac}Doojigger as a robust, efficient, and clean foundation.
+__Three ways to build with {eac}Doojigger__
 
-2.  [Custom 'Doolollys' (Doojigger Extensions)](#custom-eacdoojigger-extensions).
-    +   Add easy-to-code, task-oriented extensions installed or included in the "Extensions" folder of your 'Doojigger' plugin or WordPress theme.
+1. 	**Derivative plugins ("Doojiggers")**
+— build your own plugin by extending {eac}Doojigger's abstract classes (`abstract_context`, `abstract_frontend`, `abstract_backend`). You write a small loader file plus a class file; the framework handles the rest.
 
-3.  [Custom 'Doohickeys' (Doololly Plugins)](#custom-extension-plugins).
-    +   Load your plugin extensions ('Doolollys') as their own WordPress plugins with their own installation folder.
+2. 	**Extensions ("Doolollys")**
+— a PHP class dropped into the `Extensions` folder (of the plugin or a child theme) that adds functionality to an existing Doojigger. Lowest-effort option for small, task-specific additions.
 
->   'Doojiggers' and 'Doohickeys' (plugins) have their own activation and deactivation processes whereas 'Doolollys' (extensions) are activated or deactivated along with their parent 'Doojigger'. 'Doohickeys' remain active but perform no function if their parent 'Doojigger' is deactivated.
+3. 	**Extension plugins ("Doohickeys")**
+— an extension packaged as its own plugin, so it isn't at risk of being overwritten on the parent plugin's next update or reinstall. Can ship its own automatic updates via the included `plugin_update` trait.
 
->   {eac}Doojigger is the ancestrial parent of all 'Doojiggers', 'Doolollys', and 'Doohickeys'.
-
-Rather than updating or customizing themes and functions, it is often best to isolate your custom code in a plugin or plugin extension so that code is not lost when the theme is changed or updated. Themes should only be used and customized with code pertinent to the look and feel of your site. Any code that should be retained after changing a theme belongs in a plugin or plugin extension. This keeps your code reusable and theme independent.
-
-_{eac}Doojigger makes purpose-driven, task-oriented, theme-independent, reliable, and efficient code easy to create and maintain._
+If you're customizing a WordPress site, code that needs to survive a theme change belongs in a plugin, not a theme. Themes should hold presentation code only — anything functional should live in a plugin or plugin extension so it isn't lost the next time the theme is updated or swapped.
 
 
 ### See Also
 
-+   [{eac}SoftwareRegistry](https://swregistry.earthasylum.com/)
++   [{eac}SoftwareRegistry]
 A full-featured Software Registration/Licensing Server built on {eac}Doojigger.
 
-+   [{eac}SimpleGTM](https://eacDoojigger.earthasylum.com/eacsimplegtm/)
-Installs and configures the Google Tag Manager (GTM) or Google Analytics (GA4) script with optional tracking events.
++   [{eac}ObjectCache]
+A light-weight and very efficient drop-in persistent object cache that uses a fast SQLite database and even faster APCu shared memory to cache WordPress objects.
 
-+   [{eac}SimpleSMTP](https://eacDoojigger.earthasylum.com/eacsimplesmtp/)
-An {eac}Doojigger extension to configure WordPress wp_mail and phpmailer to use your SMTP (outgoing) mail server when sending email.
-
-+   [{eac}SimpleAWS](https://eacDoojigger.earthasylum.com/eacsimpleaws/)
-An {eac}Doojigger extension to include and enable use of the Amazon Web Services (AWS) PHP Software Development Kit (SDK).
-
-+   [{eac}SimpleCDN](https://eacDoojigger.earthasylum.com/eacsimplecdn/)
++   [{eac}SimpleCDN]
 An {eac}Doojigger extension to enable the use of Content Delivery Network assets on your WordPress site, significantly decreasing your page load times and improving the user experience.
 
-+   [{eac}ObjectCache](https://eacDoojigger.earthasylum.com/objectcache/)
-A light-weight and very efficient drop-in persistent object cache that uses a fast SQLite database to cache WordPress objects.
++   [{eac}SimpleSMTP]
+An {eac}Doojigger extension to configure WordPress wp_mail and phpmailer to use your SMTP (outgoing) mail server when sending email.
 
-+   [{eac}Readme](https://eacDoojigger.earthasylum.com/eacreadme/)
++   [{eac}SimpleAWS]
+An {eac}Doojigger extension to include and enable use of the Amazon Web Services (AWS) PHP Software Development Kit (SDK).
+
++   [{eac}Readme]
 An {eac}Doojigger extension to translate a WordPress style markdown 'readme.txt' file and provides _shortcodes_ to access header lines, section blocks, or the entire document.
 
-+   [{eac}MetaPixel](https://eacDoojigger.earthasylum.com/eacmetapixel/)
++   [{eac}SimpleGTM]
+Installs and configures the Google Tag Manager (GTM) or Google Analytics (GA4) script with optional tracking events.
+
++   [{eac}MetaPixel]
 An {eac}Doojigger extension to install the Facebook/Meta Pixel to enable tracking of PageView, ViewContent, AddToCart, InitiateCheckout and Purchase events.
 
++	[{eac}KeyValue]
+An easy to use, efficient, key-value pair storage mechanism for WordPress that takes advatage of the WP Object Cache. Similar to WP options/transients with less overhead and greater efficiency (and fewer hooks).
 
+[{eac}SoftwareRegistry]:	https://github.com/EarthAsylum/eacSoftwareRegistry
+[{eac}ObjectCache]:			https://github.com/EarthAsylum/eacObjectCache/
+[{eac}SimpleCDN]:			https://github.com/EarthAsylum/eacSimpleCDN/
+[{eac}SimpleSMTP]:			https://github.com/EarthAsylum/eacSimpleSMTP/
+[{eac}SimpleAWS]:			https://github.com/EarthAsylum/eacSimpleAWS/
+[{eac}Readme]:				https://github.com/EarthAsylum/eacReadme/
+[{eac}SimpleGTM]:			https://github.com/EarthAsylum/eacSimpleGTM/
+[{eac}MetaPixel]:			https://github.com/EarthAsylum/eacMetaPixel/
+[{eac}KeyValue]:			https://github.com/EarthAsylum/eacKeyValue/

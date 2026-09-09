@@ -1,4 +1,4 @@
-## {eac}Doojigger, Contextual Help  
+## {eac}Doojigger - Providing Contextual Help
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
@@ -7,7 +7,7 @@
 
 Plugin URI:         https://eacDoojigger.earthasylum.com/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Last Updated:       21-Dec-2024  
+Last Updated:       07-Sep-2026  
 Contributors:       [earthasylum](https://github.com/earthasylum),[kevinburkholder](https://profiles.wordpress.org/kevinburkholder)  
 Donate link:        https://github.com/sponsors/EarthAsylum  
 Requires EAC:       3.0  
@@ -23,7 +23,7 @@ GitHub URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/
 The {eac}Doojigger Extras can now be found at this [Github Repository](https://github.com/EarthAsylum/docs.eacDoojigger):
 
 +   Documentation:
-    +   [{eac}Doojigger, Contextual Help](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Contextual-Help)
+    +   [Providing Contextual Help](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Contextual-Help)
     +   [Github Wiki Pages](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/)
 
 +   Download:

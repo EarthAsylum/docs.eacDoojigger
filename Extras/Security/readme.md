@@ -1,4 +1,4 @@
-## {eac}Doojigger - Administrator Options and Settings 
+## {eac}Doojigger - Site Security  
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
@@ -16,14 +16,14 @@ GitHub URI:         https://github.com/EarthAsylum/docs.eacDoojigger/wiki/
 
 </details>
 
-> Defining options (settings) in WordPress Administration used by {eac}Doojigger, derivative plugins, and extensions.
+> {eac}Doojigger Security Extension.
 
 ### Description
 
 The {eac}Doojigger Extras can now be found at this [Github Repository](https://github.com/EarthAsylum/docs.eacDoojigger):
 
 +   Documentation:
-    +   [Administrator Options and Settings](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Administrator-Options-and-Settings)
+    +   [Site Security](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/Security)
     +   [Github Wiki Pages](https://github.com/EarthAsylum/docs.eacDoojigger/wiki/)
 
 +   Download:
