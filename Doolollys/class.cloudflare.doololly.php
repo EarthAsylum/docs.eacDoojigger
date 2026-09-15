@@ -5,16 +5,22 @@ namespace EarthAsylumConsulting\Extensions;
  * Extension: cloudflare_extension - enable Cloudflare API
  *
  * Provides limited control and cache purging when hosting your site behind CloudFlare.
- * 1. Override the browser cache time-to-live.
- * 2. Set 'cf-edge-cache' header to trigger APO or custom rules.
+ * 1. Pause/Resume Cloudflare service.
+ * 2. Override the browser cache time-to-live.
+ * 3. Set 'cf-edge-cache' header to trigger APO or custom rules.
  *      custom rules can look for this header set to 'cache,platform=wordpress' or 'no-cache' or not set.
- * 3. Add 'Cache-Tag' header with mime type that can be used for selective cache purge.
- * 4. Set certain cloudflare toggle options directly from WordPress.
- * 5. Automatically purge cloudflare cache (by host name).
+ * 4. Add 'Cache-Tag' header with mime type that can be used for selective cache purge.
+ * 5. Set certain cloudflare toggle options directly from WordPress.
+ * 6. Automatically purge cloudflare cache (by host name).
  *
  * Filters:
  * 1. 'cloudflare_purge_everything_actions' (array) - filter actions that trigger a cache purge.
  * 2. 'cloudflare_use_cache' (bool) - override `cf-edge-cache` setting (cache/no-cache).
+ *
+ * Actions:
+ * 1. 'eacDoojigger_cloudflare_pause'   - pause the cloudflare service
+ * 2. 'eacDoojigger_cloudflare_resume'  - resume the cloudflare service
+ * 3. 'eacDoojigger_cloudflare_purge'   - purge the cloudflare cache
  *
  * Recommended for free plans. Paid plans should use the official Cloudflare plugin with
  * Automatic Platform Optimization (APO).
@@ -26,7 +32,7 @@ namespace EarthAsylumConsulting\Extensions;
  * @category    WordPress Plugin
  * @package     {eac}Doojigger\Extensions
  * @author      Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright   Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @copyright   Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
  */
 
 class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
@@ -34,7 +40,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     /**
      * @var string extension version
      */
-    const VERSION           = '25.0707.1';
+    const VERSION           = '26.0914.1';
 
     /**
      * @var string to set default tab name
@@ -133,9 +139,14 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     private $cloudflare_email;
 
     /**
-     * @var string cloudflare settings
+     * @var array cloudflare settings
      */
     private $cloudflare_settings;
+
+    /**
+     * @var array cloudflare status
+     */
+    private $cloudflare_status;
 
 
     /**
@@ -202,6 +213,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         {
             $this->get_cf_options();
             $this->update_option('cloudflare_cachettl',(string)$this->cloudflare_settings['browser_cache_ttl']);
+
             $this->registerExtensionOptions( $this->className,
             [
                 'cloudflare_zone'   => array(
@@ -209,6 +221,25 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                         'label'     =>  'Domain Zone',
                         'options'   =>  $this->get_zone_list(),
                         'info'      =>  'Your Cloudflare zone for this domain.',
+                ),
+            ],
+            );
+        }
+        if ($this->is_option('cloudflare_zone'))
+        {
+            $this->cloudflare_status = $this->get_zone_status();
+            $isPaused = ($this->cloudflare_status['paused']) ? 'Resume' : 'Pause';
+
+            $this->registerExtensionOptions( $this->className,
+            [
+                '_cloudflare_pause'=> array(
+                        'type'      =>  'button',
+                        'label'     =>  "{$isPaused} This Zone",
+                        'default'   =>  $isPaused,
+                        'info'      =>  "Pausing stops traffic from passing through the Cloudflare network, ".
+                                        "making your origin server IP address visible. ".
+                                        "Also, Cloudflare’s security and protection features become disabled.",
+                        'validate'  =>  function($value) {return $this->cloudflare_pause($value);},
                 ),
                 'cloudflare_cachettl'=> array(
                         'type'      =>  'select',
@@ -288,6 +319,9 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         }
 
         $this->add_filter('after_flush_caches', array($this,'cloudflare_purge'),100,1);
+        $this->add_action('cloudflare_purge',   array($this,'cloudflare_purge'),100,1);
+        $this->add_action('cloudflare_pause',   function(){$this->cloudflare_pause('Pause');});
+        $this->add_action('cloudflare_resume',  function(){$this->cloudflare_pause('Resume');});
 
         $purge_actions = array(
             'switch_theme',                     // Switch theme
@@ -341,7 +375,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 
 
     /**
-     * Get the cloudflare cache time
+     * Get the cloudflare zone list
      *
      */
     public function get_zone_list(): array
@@ -365,6 +399,42 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
             }
         }
         return $zones;
+    }
+
+
+    /**
+     * Get the cloudflare zone status
+     *
+     *    "success": true,
+     *    "errors": [],
+     *    "messages": [],
+     *    "result": {
+     *      "id": "023e105f4ecef8ad9ca31a8372d0c353",
+     *      "name": "example.com",
+     *      "status": "active",
+     *      "paused": true,
+     *      "type": "full",
+     *      "created_on": "2026-01-01T00:00:00.000000Z",
+     *      "modified_on": "2026-09-14T00:00:00.000000Z"
+     */
+    public function get_zone_status()
+    {
+        if ($this->get_cf_auth() && $this->cloudflare_url)
+        {
+            $result = wp_remote_post($this->cloudflare_url,
+                [
+                    'method'    => 'GET',
+                    'headers'   => $this->cloudflare_headers(),
+                ]
+            );
+            $result = json_decode( wp_remote_retrieve_body($result), true );
+            if ($result['success']) {
+                return $result['result'];
+            } else {
+                $this->add_admin_notice("Cloudflare Status: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+            }
+        }
+        return [];
     }
 
 
@@ -594,6 +664,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         return get_option( 'html_type' );
     }
 
+
     /**
      * Purge the cloudflare cache
      *
@@ -609,10 +680,10 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
             $site_url = parse_url( get_site_url() );
             $site_url = trailingslashit($site_url['host'] . ($site_url['path'] ?? '')).'*';
             $result = wp_remote_post($this->cloudflare_url . "purge_cache",
-                    [
-                        'headers'   => $this->cloudflare_headers(),
-                        'body'      => wp_json_encode([ "prefixes" => [$site_url] ])
-                    ]
+                [
+                    'headers'   => $this->cloudflare_headers(),
+                    'body'      => wp_json_encode([ "prefixes" => [$site_url] ])
+                ]
             );
             $result = json_decode( wp_remote_retrieve_body($result), true );
             if (is_array($result)) {
@@ -627,6 +698,38 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
             }
         }
         return $caches;
+    }
+
+
+    /**
+     * Pause the cloudflare dns service
+     *
+     * @param array $$option pause/resume
+     */
+    public function cloudflare_pause(string $option)
+    {
+        $pause = ($option == 'Pause');
+
+        $site_id = $this->cloudflare_status['name'];
+
+        if ($this->get_cf_auth() && $this->cloudflare_url)
+        {
+            $result = wp_remote_post($this->cloudflare_url,
+                [
+                    'method'    => 'PATCH',
+                    'headers'   => $this->cloudflare_headers(),
+                    'body'      => wp_json_encode([ "paused" => $pause ])
+                ]
+            );
+            $result = json_decode( wp_remote_retrieve_body($result), true );
+            if ($result['success']) {
+                $this->add_admin_notice("The Cloudflare service for {$site_id} has been {$option}d",'success');
+                return ($result['result']['paused'] == true) ? 'Pause' : 'Resume';
+            } else {
+                $this->add_admin_notice("Cloudflare Service Pause: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+            }
+        }
+        return $option;
     }
 
 
