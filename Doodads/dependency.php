@@ -303,7 +303,7 @@ if (! class_exists('\EarthAsylumConsulting\dependency'))
 			// Check for cached results
 			$cacheName = "plugin_dependency_{$slug}";
 			if ($cache = wp_cache_get($cacheName, 'plugin_dependency')) {
-			//	return (object)$cache;
+				return (object)$cache;
 			}
 
 			// Get remote json file
