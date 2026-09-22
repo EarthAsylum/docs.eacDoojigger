@@ -6,7 +6,7 @@
  * @package		myAwesomePlugin, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
  * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
- * @version		26.0831.1
+ * @version		26.0921.1
  */
 
 namespace myAwesomeNamespace\Plugin;
@@ -222,6 +222,20 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 					);
 				},20,3
 			);
+			/*
+			 * Optional - on plugins page, plugin_row_meta filter, add 'Sponsor' link
+			 */
+			add_filter( 'plugin_row_meta', function($pluginMeta, $pluginSlug, $pluginData, $status)
+				{
+					if ($pluginSlug == $this->PLUGIN_SLUG)
+					{
+						$pluginMeta['Sponsor'] =
+							'<a href="https://github.com/sponsors/EarthAsylum" target="_blank">'.
+							'<span class="dashicons dashicons-heart" style="color:#c00;font-size:13px;line-height:1.5"></span>Sponsor</a>';
+					}
+					return $pluginMeta;
+				},20,4
+			);
 		}
 	}
 
@@ -253,7 +267,10 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_activated(bool $isNetwork=false)
 	{
-		$this->add_admin_notice($this->pluginHeader('title') . ' activated.', 'success');
+		add_action('admin_notices', function()
+		{
+			$this->add_admin_notice($this->pluginHeader('title') . ' activated.', 'success');
+		});
 	}
 
 
@@ -265,7 +282,10 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_deactivated(bool $isNetwork=false)
 	{
-		$this->add_admin_notice($this->pluginHeader('Title') . ' deactivated.', 'success');
+		add_action('admin_notices', function()
+		{
+			$this->add_admin_notice($this->pluginHeader('Title') . ' deactivated.', 'success');
+		});
 	}
 
 
@@ -281,7 +301,10 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_installed($curVersion, $newVersion, $asNetworkAdmin)
 	{
-		$this->add_admin_notice($this->pluginHeader('Title') . ' installed.', 'success');
+		add_action('admin_notices', function()
+		{
+			$this->add_admin_notice($this->pluginHeader('Title') . ' installed.', 'success');
+		});
 	}
 
 
@@ -297,6 +320,9 @@ class myAwesomePlugin extends \EarthAsylumConsulting\abstract_context
 	 */
 	public function admin_plugin_updated($curVersion, $newVersion, $asNetworkAdmin)
 	{
-		$this->add_admin_notice($this->pluginHeader('Title') . ' updated.', 'success');
+		add_action('admin_notices', function()
+		{
+			$this->add_admin_notice($this->pluginHeader('Title') . ' updated.', 'success');
+		});
 	}
 }

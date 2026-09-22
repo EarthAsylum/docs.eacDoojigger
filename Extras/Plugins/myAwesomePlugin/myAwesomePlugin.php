@@ -13,7 +13,7 @@
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.3.4
+ * Version:				1.3.5
  * Requires at least:	5.8
  * Tested up to: 		7.1
  * Requires PHP:		8.1
@@ -24,11 +24,6 @@
  * Author URI:			http://www.earthasylum.com
  * Text Domain:			myAwesomePlugin
  * Domain Path:			/languages
- */
-
-/*
- * For automatic updates, include in above @wordpress-plugin block...
- * - Update URI: 	https://myawesomeserver.com/plugins/myAwesomePlugin/myAwesomePlugin.json
  */
 
 /*
@@ -47,18 +42,16 @@
 
 namespace myAwesomeNamespace
 {
-	// must have {eac}Doojigger and {eac}DoojiggerAutoloader activated
-	if (!defined('EACDOOJIGGER_VERSION'))
+	if (! class_exists( 'EarthAsylumConsulting\eacDoojigger', false ) )
 	{
-		\add_action( 'admin_notices', function()
-			{
-				echo '<div class="notice notice-error is-dismissible">'.
-					 '<em>My Awesome Plugin</em> requires installation & activation of '.
-					 '<a href="https://eacdoojigger.earthasylum.com/eacdoojigger" target="_blank">'.
-					 '{eac}Doojigger</a>.</div>';
-			}
-		);
-		return;
+		require_once 'dependency.php';
+		return \EarthAsylumConsulting\dependency::notice([
+			'plugin'	=>	[ 'My Awesome Plugin' 	=> plugin_basename( __FILE__ ) ],
+			'requires'	=> 	[ '{eac}Doojigger' 		=> 'eacDoojigger/eacDoojigger.php' ],
+			'manifest'	=> 'https://eacdoojigger.earthasylum.com/software-updates/eacdoojigger.json',
+			'download'	=> 'https://eacdoojigger.earthasylum.com/software-updates/eacdoojigger.zip',
+			'after'		=> '/wp-admin/admin.php?page=eacdoojigger-settings&tab=registration'
+		]);
 	}
 
 
