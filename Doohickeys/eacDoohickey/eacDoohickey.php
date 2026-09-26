@@ -20,7 +20,7 @@ namespace EarthAsylumConsulting;
  * Description:			{eac}Doohickey - a place to load {eac}Doololly extensions for {eac}Doojigger.
  * Version:				0.1.0
  * Requires at least:	5.8
- * Tested up to:		6.8
+ * Tested up to:		7.1
  * Requires PHP:		7.4
  * Plugin URI:			https://eacdoojigger.earthasylum.com/
  * Author:				EarthAsylum Consulting
@@ -28,6 +28,7 @@ namespace EarthAsylumConsulting;
  * License:				GPLv3 or later
  * License URI:			https://www.gnu.org/licenses/gpl.html
  */
+
 
 class eacDoohickey
 {

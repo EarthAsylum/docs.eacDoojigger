@@ -2,7 +2,7 @@
 Plugin URI: 		https://github.com/EarthAsylum/myAwesomePlugin
 Author:             [Me](https://www.myawesomeserver.com/profile/me)
 Stable tag:         1.3.5
-Last Updated:       21-Sep-2026
+Last Updated:       26-Sep-2026
 Requires at least:  5.8
 Tested up to:       7.1
 Requires PHP:       8.1
@@ -51,7 +51,7 @@ Requires [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v3.1+
 
 == Changelog ==
 
-= Version 1.3.5 – September 21, 2026 =
+= Version 1.3.5 – September 26, 2026 =
 
 +	Implemented new `dependency.php` script for automation of dependency installation.
 +	Tweaked examples in plugin.

@@ -50,7 +50,7 @@ namespace myAwesomeNamespace
 			'requires'	=> 	[ '{eac}Doojigger' 		=> 'eacDoojigger/eacDoojigger.php' ],
 			'manifest'	=> 'https://eacdoojigger.earthasylum.com/software-updates/eacdoojigger.json',
 			'download'	=> 'https://eacdoojigger.earthasylum.com/software-updates/eacdoojigger.zip',
-			'after'		=> '/wp-admin/admin.php?page=eacdoojigger-settings&tab=registration'
+			'after'		=> self_admin_url('/admin.php?page=eacdoojigger-settings&tab=registration')
 		]);
 	}
 
