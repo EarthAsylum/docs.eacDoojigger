@@ -195,7 +195,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2025 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2026 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
 </section>
 
                                     </dd>
@@ -255,6 +255,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_CODE">ALLOW_NON_CODE</a>
+    <span>
+        &nbsp;= 0b1000000                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP">ALLOW_NON_PHP</a>
     <span>
         &nbsp;= 0b100000                            </span>
@@ -264,7 +271,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_DEFAULT_DISABLED">DEFAULT_DISABLED</a>
     <span>
-        &nbsp;= 0b1000000                            </span>
+        &nbsp;= 0b10000000                            </span>
 </dt>
 <dd></dd>
 
@@ -276,16 +283,16 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_ALLOW_LIST">IP_ALLOW_LIST</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLACKLIST_FILE">IP_BLACKLIST_FILE</a>
     <span>
-        &nbsp;= ABSPATH . &quot;ip_allow_list.conf&quot;                            </span>
+        &nbsp;= ABSPATH . &quot;ip_block_list.conf&quot;                            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLOCK_LIST">IP_BLOCK_LIST</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_WHITELIST_FILE">IP_WHITELIST_FILE</a>
     <span>
-        &nbsp;= ABSPATH . &quot;ip_block_list.conf&quot;                            </span>
+        &nbsp;= ABSPATH . &quot;ip_allow_list.conf&quot;                            </span>
 </dt>
 <dd></dd>
 
@@ -297,9 +304,23 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_TTL">RA_TTL</a>
+    <span>
+        &nbsp;= HOUR_IN_SECONDS * 12                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RISK_TYPES">RISK_TYPES</a>
     <span>
-        &nbsp;= [&#039;fraud&#039; =&gt; 1.5, &#039;threat&#039; =&gt; 1.25, &#039;abuse&#039; =&gt; 1.0, &#039;risk&#039; =&gt; 0.75, &#039;none&#039; =&gt; 0]                            </span>
+        &nbsp;= [&#039;fraud&#039; =&gt; 1.5, &#039;threat&#039; =&gt; 1.25, &#039;abuse&#039; =&gt; 1.0, &#039;risk&#039; =&gt; 0.75, &#039;concern&#039; =&gt; 0.5, &#039;none&#039; =&gt; 0]                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RL_SPAN">RL_SPAN</a>
+    <span>
+        &nbsp;= MINUTE_IN_SECONDS * 10                            </span>
 </dt>
 <dd></dd>
 
@@ -313,7 +334,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_VERSION">VERSION</a>
     <span>
-        &nbsp;= &#039;25.0718.1&#039;                            </span>
+        &nbsp;= &#039;26.1004.1&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -374,25 +395,18 @@
 <dd>register options on options_settings_page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_allow_ip_file">allow_ip_file()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Input ip allow file</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_check_for_blocks">check_for_blocks()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Check http header and blocked IP addresses</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_clear_risk_action">clear_risk_action()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>clear/delete the risk report transient</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_get_risk_assessment_result">get_risk_assessment_result()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>get the risk assessment result</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias">getAlias()</a>
@@ -423,6 +437,13 @@
 <dd>initialize method - called from main plugin</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_input_ip_whitelist_file">input_ip_whitelist_file()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Input ip allow file</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_is_network_enabled">is_network_enabled()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -437,6 +458,13 @@
 <dd>is this class network enabled and does option match a value</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isBlacklisted">isBlacklisted()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Check http header and blocked IP addresses</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_isEnabled">isEnabled()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -444,14 +472,14 @@
 <dd>isEnabled - set or test extension enabled for use</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isIpIgnored">isIpIgnored()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isWhitelisted">isWhitelisted()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Check an IP address is in ignored list</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_output_ip_file">output_ip_file()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_output_ip_blacklist_file">output_ip_blacklist_file()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -466,32 +494,25 @@
 action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_api">register_risk_api()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Register a WP REST api</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_permission">register_risk_permission()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_permission">risk_api_permission()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Authenticate a WP REST api</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_request">register_risk_request()</a>
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_register">risk_api_register()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Register a WP REST api</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_register_request">risk_api_register_request()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Log the risk request via api</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_assessment_result">risk_assessment_result()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>get the risk assessment result</dd>
 
         </dl>
 
@@ -678,6 +699,35 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ALLOW_NON_CODE">
+        ALLOW_NON_CODE
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_CODE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">ALLOW_NON_CODE</span>
+    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ALLOW_NON_PHP">
         ALLOW_NON_PHP
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP" class="headerlink"><i class="fas fa-link"></i></a>
@@ -715,7 +765,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -724,7 +774,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">DEFAULT_DISABLED</span>
-    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
+    = <span class="phpdocumentor-signature__default-value">0b10000000</span>
 </code>
 
 
@@ -744,7 +794,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -765,15 +815,15 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_IP_ALLOW_LIST">
-        IP_ALLOW_LIST
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_ALLOW_LIST" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_IP_BLACKLIST_FILE">
+        IP_BLACKLIST_FILE
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLACKLIST_FILE" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -781,28 +831,28 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">IP_ALLOW_LIST</span>
-    = <span class="phpdocumentor-signature__default-value">ABSPATH . &quot;ip_allow_list.conf&quot;</span>
+    <span class="phpdocumentor-signature__name">IP_BLACKLIST_FILE</span>
+    = <span class="phpdocumentor-signature__default-value">ABSPATH . &quot;ip_block_list.conf&quot;</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>IP allow list file name</p>
+        <section class="phpdocumentor-description"><p>IP block list file name (write)</p>
 </section>
 
     
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_IP_BLOCK_LIST">
-        IP_BLOCK_LIST
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_BLOCK_LIST" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_IP_WHITELIST_FILE">
+        IP_WHITELIST_FILE
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_WHITELIST_FILE" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
@@ -810,13 +860,13 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">IP_BLOCK_LIST</span>
-    = <span class="phpdocumentor-signature__default-value">ABSPATH . &quot;ip_block_list.conf&quot;</span>
+    <span class="phpdocumentor-signature__name">IP_WHITELIST_FILE</span>
+    = <span class="phpdocumentor-signature__default-value">ABSPATH . &quot;ip_allow_list.conf&quot;</span>
 </code>
 
 
     
-        <section class="phpdocumentor-description"><p>IP block list file name</p>
+        <section class="phpdocumentor-description"><p>IP allow list file name (read)</p>
 </section>
 
     
@@ -852,6 +902,36 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_RA_TTL">
+        RA_TTL
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_TTL" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">RA_TTL</span>
+    = <span class="phpdocumentor-signature__default-value">HOUR_IN_SECONDS * 12</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>risk assessment time-to-live
+hold for n hours after last request</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_RISK_TYPES">
         RISK_TYPES
         <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RISK_TYPES" class="headerlink"><i class="fas fa-link"></i></a>
@@ -860,7 +940,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -869,13 +949,43 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">RISK_TYPES</span>
-    = <span class="phpdocumentor-signature__default-value">[&#039;fraud&#039; =&gt; 1.5, &#039;threat&#039; =&gt; 1.25, &#039;abuse&#039; =&gt; 1.0, &#039;risk&#039; =&gt; 0.75, &#039;none&#039; =&gt; 0]</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;fraud&#039; =&gt; 1.5, &#039;threat&#039; =&gt; 1.25, &#039;abuse&#039; =&gt; 1.0, &#039;risk&#039; =&gt; 0.75, &#039;concern&#039; =&gt; 0.5, &#039;none&#039; =&gt; 0]</span>
 </code>
 
 
     
         <section class="phpdocumentor-description"><p>risk type priority/weight
 when reported within the app without giving a score, the score is calculated and multiplied by weight.</p>
+</section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_RL_SPAN">
+        RL_SPAN
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RL_SPAN" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">RL_SPAN</span>
+    = <span class="phpdocumentor-signature__default-value">MINUTE_IN_SECONDS * 10</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"><p>rate limit time span
+limit request to n in n minutes</p>
 </section>
 
     
@@ -928,7 +1038,7 @@ when reported within the app without giving a score, the score is calculated and
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;25.0718.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;26.1004.1&#039;</span>
 </code>
 
 
@@ -961,7 +1071,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">608</span>
+    <span class="phpdocumentor-element-found-in__line">617</span>
 
     </aside>
 
@@ -1017,7 +1127,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -1062,7 +1172,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 
     </aside>
 
@@ -1095,7 +1205,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">628</span>
+    <span class="phpdocumentor-element-found-in__line">637</span>
 
     </aside>
 
@@ -1142,7 +1252,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 
     </aside>
 
@@ -1175,7 +1285,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">411</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 
     </aside>
 
@@ -1210,7 +1320,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 
     </aside>
 
@@ -1260,7 +1370,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
@@ -1301,72 +1411,6 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_allow_ip_file">
-        allow_ip_file()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_allow_ip_file" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">710</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Input ip allow file</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">allow_ip_file</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_check_for_blocks">
-        check_for_blocks()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_check_for_blocks" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">214</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Check http header and blocked IP addresses</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check_for_blocks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_clear_risk_action">
         clear_risk_action()
         <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_clear_risk_action" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1374,7 +1418,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">647</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -1412,6 +1456,50 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get_risk_assessment_result">
+        get_risk_assessment_result()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_get_risk_assessment_result" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">278</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">get the risk assessment result</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">get_risk_assessment_result</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arg</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$arg</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getAlias">
         getAlias()
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_getAlias" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1419,7 +1507,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">543</span>
+    <span class="phpdocumentor-element-found-in__line">552</span>
 
     </aside>
 
@@ -1454,7 +1542,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">514</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 
     </aside>
 
@@ -1499,7 +1587,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">532</span>
+    <span class="phpdocumentor-element-found-in__line">541</span>
 
     </aside>
 
@@ -1534,7 +1622,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -1560,6 +1648,39 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_input_ip_whitelist_file">
+        input_ip_whitelist_file()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_input_ip_whitelist_file" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">774</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Input ip allow file</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">input_ip_whitelist_file</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_is_network_enabled">
         is_network_enabled()
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_is_network_enabled" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1567,7 +1688,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">462</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 
     </aside>
 
@@ -1600,7 +1721,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">511</span>
 
     </aside>
 
@@ -1649,6 +1770,39 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_isBlacklisted">
+        isBlacklisted()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isBlacklisted" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">245</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check http header and blocked IP addresses</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isBlacklisted</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isEnabled">
         isEnabled()
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#method_isEnabled" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1656,7 +1810,7 @@ when reported within the app without giving a score, the score is calculated and
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">423</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
@@ -1703,14 +1857,14 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isIpIgnored">
-        isIpIgnored()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isIpIgnored" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_isWhitelisted">
+        isWhitelisted()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isWhitelisted" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">695</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -1718,7 +1872,7 @@ when reported within the app without giving a score, the score is calculated and
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">isIpIgnored</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ipAddress</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">isWhitelisted</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ipAddress</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1726,7 +1880,7 @@ when reported within the app without giving a score, the score is calculated and
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$ipAddress</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>IPv4 or IPv6 address</p>
 </section>
@@ -1748,14 +1902,14 @@ when reported within the app without giving a score, the score is calculated and
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_output_ip_file">
-        output_ip_file()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_output_ip_file" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_output_ip_blacklist_file">
+        output_ip_blacklist_file()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_output_ip_blacklist_file" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">738</span>
+    <span class="phpdocumentor-element-found-in__line">802</span>
 
     </aside>
 
@@ -1763,7 +1917,7 @@ when reported within the app without giving a score, the score is calculated and
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">output_ip_file</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ipAddress</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$report</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$threshold</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">output_ip_blacklist_file</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ipAddress</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$report</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$threshold</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1830,7 +1984,7 @@ status</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">545</span>
+    <span class="phpdocumentor-element-found-in__line">611</span>
 
     </aside>
 
@@ -1887,47 +2041,14 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_register_risk_api">
-        register_risk_api()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_api" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_risk_api_permission">
+        risk_api_permission()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_permission" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">468</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Register a WP REST api</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register_risk_api</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_register_risk_permission">
-        register_risk_permission()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_permission" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">492</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 
     </aside>
 
@@ -1935,7 +2056,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register_risk_permission</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">risk_api_permission</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1964,14 +2085,47 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_register_risk_request">
-        register_risk_request()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_request" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_risk_api_register">
+        risk_api_register()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_register" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Register a WP REST api</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">risk_api_register</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_risk_api_register_request">
+        risk_api_register_request()
+        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_register_request" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">582</span>
 
     </aside>
 
@@ -1979,7 +2133,7 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">register_risk_request</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">risk_api_register_request</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1991,50 +2145,6 @@ action {pluginName}_register_[fraud|threat|abuse|risk]</p>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>REST request</p>
 </section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_risk_assessment_result">
-        risk_assessment_result()
-        <a href="classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_assessment_result" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-security-class-security-ra-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/security/class.security_ra.extension.php">class.security_ra.extension.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">248</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">get the risk assessment result</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">risk_assessment_result</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arg</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$arg</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>

@@ -186,7 +186,7 @@ or {classname}_extensions_loaded or {classname}_ready</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2025 EarthAsylum Consulting &lt;www.earthasylum.com&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2026 EarthAsylum Consulting &lt;www.earthasylum.com&gt;</p>
 </section>
 
                                     </dd>
@@ -194,7 +194,7 @@ or {classname}_extensions_loaded or {classname}_ready</p>
                     <span class="phpdocumentor-tag__name">version</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">25.0411.1</span>
+                                            <span class="phpdocumentor-tag-link">26.0908.1</span>
                                                                                 
                                              
                                     </dd>
@@ -239,6 +239,14 @@ or {classname}_extensions_loaded or {classname}_ready</p>
                                 &nbsp;: object    </span>
 </dt>
 <dd>Convenience method to get existing instance of the plugin object.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_isCodeFile">isCodeFile()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>only load for code-file requests
+We only want to load the plugin for code files</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_isPHP">isPHP()</a>
@@ -395,6 +403,40 @@ or {classname}_extensions_loaded or {classname}_ready</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_isCodeFile">
+        isCodeFile()
+        <a href="classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_isCodeFile" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php"><a href="files/eacdoojigger-earthasylumconsulting-traits-plugin-loader-trait.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Traits/plugin_loader.trait.php">plugin_loader.trait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">276</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">only load for code-file requests
+We only want to load the plugin for code files</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">isCodeFile</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_isPHP">
         isPHP()
         <a href="classes/EarthAsylumConsulting-Traits-plugin-loader.html#method_isPHP" class="headerlink"><i class="fas fa-link"></i></a>
@@ -445,7 +487,7 @@ or {classname}_extensions_loaded or {classname}_ready</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">loadPlugin</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyPHP</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">loadPlugin</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyCode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"><p>Initialize the plugin &amp; extensions
 Add filters/actions and shortcodes once all plugins are loaded</p>
@@ -454,12 +496,12 @@ Add filters/actions and shortcodes once all plugins are loaded</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$onlyPHP</span>
+                <span class="phpdocumentor-signature__argument__name">$onlyCode</span>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><ul>
-<li>only load for PHP requests</li>
+<li>only load for code-file requests (see functions - is_non_code_request())</li>
 </ul>
 </section>
 

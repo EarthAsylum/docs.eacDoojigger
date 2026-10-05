@@ -159,7 +159,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -195,7 +195,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2025 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
+                                                 <section class="phpdocumentor-description"><p>Copyright (c) 2026 EarthAsylum Consulting &lt;www.EarthAsylum.com&gt;</p>
 </section>
 
                                     </dd>
@@ -205,14 +205,6 @@
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                                         <a class="phpdocumentor-tag-link" href="https://eacDoojigger.earthasylum.com/"> https://eacDoojigger.earthasylum.com/ </a>
                     
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">see</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="https://eacDoojigger.earthasylum.com/phpdoc/"><abbr title="https://eacDoojigger.earthasylum.com/phpdoc/">https://eacDoojigger.earthasylum.com/phpdoc/</abbr></a></span>
-                                        
-                                             
                                     </dd>
                         </dl>
 
@@ -270,6 +262,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_CODE">ALLOW_NON_CODE</a>
+    <span>
+        &nbsp;= 0b1000000                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP">ALLOW_NON_PHP</a>
     <span>
         &nbsp;= 0b100000                            </span>
@@ -279,14 +278,14 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_DEFAULT_DISABLED">DEFAULT_DISABLED</a>
     <span>
-        &nbsp;= 0b1000000                            </span>
+        &nbsp;= 0b10000000                            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#constant_DEFAULT_HTML">DEFAULT_HTML</a>
     <span>
-        &nbsp;= &quot;[PageHeader]\n[PageContent]\n&quot; . &quot;&lt;div style=&#039;background:#fff;color:#000;text-align:center;padding:3em;&#039;&gt;\n&quot; . &quot;\t&lt;div class=&#039;scheduled-maintenance&#039;&gt;\n&quot; . &quot;\t\t&lt;h1&gt;[BlogName]&lt;br&gt;[BlogDescription]&lt;/h1&gt;\n&quot; . &quot;\t\t&lt;h2&gt;This site is currently undergoing scheduled maintenance.&lt;/h2&gt;\n&quot; . &quot;\t\t&lt;h3&gt;We&#039;re sorry for the inconvenience. Please check back soon.&lt;/h3&gt;\n&quot; . &quot;\t&lt;/div&gt;\n&lt;/div&gt;\n&quot; . &quot;[/PageContent]\n[PageFooter]&quot;                            </span>
+        &nbsp;= &quot;[PageHeader]\n[PageContent]\n&quot; . &quot;&lt;div style=&#039;background:#fff;color:#000;text-align:center;padding:3em;&#039;&gt;\n&quot; . &quot;\t&lt;div class=&#039;scheduled-maintenance&#039;&gt;\n&quot; . &quot;\t\t&lt;h1&gt;[BlogName]&lt;br&gt;[BlogDescription]&lt;/h1&gt;\n&quot; . &quot;\t\t&lt;h2&gt;This site is currently undergoing scheduled maintenance.&lt;/h2&gt;\n&quot; . &quot;\t\t&lt;h3&gt;\n&quot; . &quot;\t\t\tWe&#039;re sorry for the inconvenience.\n&quot; . &quot;\t\t\tPlease check back after [UntilTime]g:i a[/UntilTime].\n&quot; . &quot;\t\t&lt;/h3&gt;\n&quot; . &quot;\t&lt;/div&gt;\n&lt;/div&gt;\n&quot; . &quot;[/PageContent]\n[PageFooter]&quot;                            </span>
 </dt>
 <dd></dd>
 
@@ -314,7 +313,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#constant_VERSION">VERSION</a>
     <span>
-        &nbsp;= &#039;25.0422.1&#039;                            </span>
+        &nbsp;= &#039;26.0908.1&#039;                            </span>
 </dt>
 <dd></dd>
 
@@ -382,9 +381,16 @@
 <dd>check maintenance mode</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_force_maintenance_mode">force_maintenance_mode()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>force maintenance mode</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_getActiveUntil">getActiveUntil()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: int|string    </span>
 </dt>
 <dd>get active (or not) until</dd>
 
@@ -443,6 +449,13 @@
                                 &nbsp;: bool    </span>
 </dt>
 <dd>isEnabled - set or test extension enabled for use</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_maintenance_mode_time">maintenance_mode_time()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>When maintenance_mode_time is submitted</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_network_check_enabled">network_check_enabled()</a>
@@ -636,6 +649,35 @@
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ALLOW_NON_CODE">
+        ALLOW_NON_CODE
+        <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_CODE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">ALLOW_NON_CODE</span>
+    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_ALLOW_NON_PHP">
         ALLOW_NON_PHP
         <a href="classes/EarthAsylumConsulting-abstract-extension.html#constant_ALLOW_NON_PHP" class="headerlink"><i class="fas fa-link"></i></a>
@@ -673,7 +715,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -682,7 +724,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">DEFAULT_DISABLED</span>
-    = <span class="phpdocumentor-signature__default-value">0b1000000</span>
+    = <span class="phpdocumentor-signature__default-value">0b10000000</span>
 </code>
 
 
@@ -702,7 +744,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -711,7 +753,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">DEFAULT_HTML</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;[PageHeader]\n[PageContent]\n&quot; . &quot;&lt;div style=&#039;background:#fff;color:#000;text-align:center;padding:3em;&#039;&gt;\n&quot; . &quot;\t&lt;div class=&#039;scheduled-maintenance&#039;&gt;\n&quot; . &quot;\t\t&lt;h1&gt;[BlogName]&lt;br&gt;[BlogDescription]&lt;/h1&gt;\n&quot; . &quot;\t\t&lt;h2&gt;This site is currently undergoing scheduled maintenance.&lt;/h2&gt;\n&quot; . &quot;\t\t&lt;h3&gt;We&#039;re sorry for the inconvenience. Please check back soon.&lt;/h3&gt;\n&quot; . &quot;\t&lt;/div&gt;\n&lt;/div&gt;\n&quot; . &quot;[/PageContent]\n[PageFooter]&quot;</span>
+    = <span class="phpdocumentor-signature__default-value">&quot;[PageHeader]\n[PageContent]\n&quot; . &quot;&lt;div style=&#039;background:#fff;color:#000;text-align:center;padding:3em;&#039;&gt;\n&quot; . &quot;\t&lt;div class=&#039;scheduled-maintenance&#039;&gt;\n&quot; . &quot;\t\t&lt;h1&gt;[BlogName]&lt;br&gt;[BlogDescription]&lt;/h1&gt;\n&quot; . &quot;\t\t&lt;h2&gt;This site is currently undergoing scheduled maintenance.&lt;/h2&gt;\n&quot; . &quot;\t\t&lt;h3&gt;\n&quot; . &quot;\t\t\tWe&#039;re sorry for the inconvenience.\n&quot; . &quot;\t\t\tPlease check back after [UntilTime]g:i a[/UntilTime].\n&quot; . &quot;\t\t&lt;/h3&gt;\n&quot; . &quot;\t&lt;/div&gt;\n&lt;/div&gt;\n&quot; . &quot;[/PageContent]\n[PageFooter]&quot;</span>
 </code>
 
 
@@ -821,7 +863,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -830,7 +872,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;25.0422.1&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;26.0908.1&#039;</span>
 </code>
 
 
@@ -863,7 +905,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">608</span>
+    <span class="phpdocumentor-element-found-in__line">617</span>
 
     </aside>
 
@@ -919,7 +961,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -964,7 +1006,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 
     </aside>
 
@@ -997,7 +1039,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">628</span>
+    <span class="phpdocumentor-element-found-in__line">637</span>
 
     </aside>
 
@@ -1044,7 +1086,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 
     </aside>
 
@@ -1079,7 +1121,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
@@ -1112,7 +1154,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 
     </aside>
 
@@ -1145,7 +1187,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -1193,7 +1235,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 
     </aside>
 
@@ -1219,6 +1261,39 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_force_maintenance_mode">
+        force_maintenance_mode()
+        <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_force_maintenance_mode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">224</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">force maintenance mode</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">force_maintenance_mode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getActiveUntil">
         getActiveUntil()
         <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_getActiveUntil" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1226,7 +1301,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">291</span>
+    <span class="phpdocumentor-element-found-in__line">340</span>
 
     </aside>
 
@@ -1234,14 +1309,39 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getActiveUntil</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getActiveUntil</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$asString</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$format</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$asString</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>return wp_date() string</li>
+</ul>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$format</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><ul>
+<li>wp_date format string</li>
+</ul>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
+    <span class="phpdocumentor-signature__response_type">int|string</span>
             &mdash;
         
     
@@ -1259,7 +1359,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">543</span>
+    <span class="phpdocumentor-element-found-in__line">552</span>
 
     </aside>
 
@@ -1294,7 +1394,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">514</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 
     </aside>
 
@@ -1339,7 +1439,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">279</span>
+    <span class="phpdocumentor-element-found-in__line">326</span>
 
     </aside>
 
@@ -1372,7 +1472,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">532</span>
+    <span class="phpdocumentor-element-found-in__line">541</span>
 
     </aside>
 
@@ -1407,7 +1507,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 
     </aside>
 
@@ -1440,7 +1540,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">462</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 
     </aside>
 
@@ -1473,7 +1573,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">511</span>
 
     </aside>
 
@@ -1529,7 +1629,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php"><a href="files/eacdoojigger-earthasylumconsulting-abstract-extension-class.html"><abbr title="eacDoojigger/EarthAsylumConsulting/abstract_extension.class.php">abstract_extension.class.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">423</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
@@ -1576,6 +1676,50 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_maintenance_mode_time">
+        maintenance_mode_time()
+        <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_maintenance_mode_time" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">138</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">When maintenance_mode_time is submitted</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">maintenance_mode_time</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$minutes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$minutes</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_network_check_enabled">
         network_check_enabled()
         <a href="classes/EarthAsylumConsulting-Extensions-maintenance-mode.html#method_network_check_enabled" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1583,7 +1727,7 @@ array 		override options for the 'Enabled' option (label,help,title,info, etc.)<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php"><a href="files/eacdoojigger-earthasylumconsulting-extensions-class-maintenance-mode-extension.html"><abbr title="eacDoojigger/EarthAsylumConsulting/Extensions/class.maintenance_mode.extension.php">class.maintenance_mode.extension.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">313</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
