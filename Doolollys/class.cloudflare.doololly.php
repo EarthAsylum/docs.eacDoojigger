@@ -12,6 +12,7 @@ namespace EarthAsylumConsulting\Extensions;
  * 4. Add 'Cache-Tag' header with mime type that can be used for selective cache purge.
  * 5. Set certain cloudflare toggle options directly from WordPress.
  * 6. Automatically purge cloudflare cache (by host name).
+ * 7. Create and update Cloudflare IP blacklist (account) and blocking rule (zone) using risk assessment results.
  *
  * Filters:
  * 1. 'cloudflare_purge_everything_actions' (array) - filter actions that trigger a cache purge.
@@ -40,12 +41,12 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     /**
      * @var string extension version
      */
-    const VERSION           = '26.0914.1';
+    const VERSION           = '26.1013.1';
 
     /**
      * @var string to set default tab name
      */
-    const TAB_NAME          = 'CloudFlare';
+    const TAB_NAME          = 'Cloudflare';
 
     /**
      * @var string|array|bool to set (or disable) default group display/switch
@@ -119,9 +120,25 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     ];
 
     /**
+     * @var string blacklist name & description
+     */
+    const BLACK_LIST_NAME   	= 'risk_assessment_blacklist';
+    const BLACK_LIST_DESC   	= 'Block IP addresses identified by Risk Assessment';
+    private $black_list_name 	= self::BLACK_LIST_NAME;
+
+    /**
      * @var string cloudflare api url
      */
     private $cloudflare_url;
+
+    /**
+     * @var array cloudflare account
+     *	'id' => '...',
+     *	'name' => '...',
+     * 	'type' => 'standard',
+	 *	'settings' => []
+     */
+    private $cloudflare_account;
 
     /**
      * @var string cloudflare zone
@@ -144,7 +161,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     private $cloudflare_settings;
 
     /**
-     * @var array cloudflare status
+     * @var array cloudflare zone status
      */
     private $cloudflare_status;
 
@@ -182,7 +199,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
             return $this->isEnabled(false);
         }
         $this->cloudflare_url = sprintf("https://api.cloudflare.com/client/v4/zones/%s/",$this->cloudflare_zone);
-    }
+	}
 
 
     /**
@@ -229,6 +246,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         {
             $this->cloudflare_status = $this->get_zone_status();
             $isPaused = ($this->cloudflare_status['paused']) ? 'Resume' : 'Pause';
+			$blacklist_id = $this->get_blacklist_list(false,false) ?: 'blacklist';
 
             $this->registerExtensionOptions( $this->className,
             [
@@ -283,10 +301,27 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                             array_filter(self::CLOUDFLARE_OPTIONS, function($v) {return isset($this->cloudflare_settings[$v]);})
                         ),
                         'info'      =>  'Enable/disable certain CloudFlare options.',
+                        'help'		=> 	'[info] : '.implode(', ',self::CLOUDFLARE_OPTIONS),
                         'validate'  =>  [$this,'set_cf_settings'],
                 ),
-            ],
-            );
+                'cloudflare_blacklist'=> array(
+                        'type'      =>  'switch',
+                        'label'     =>  'Risk Assessment Blacklist',
+                        'options'   =>  ["Blacklisting Enabled" => $blacklist_id],
+                        'info'      =>  'When a request is blocked by the Security::Risk Assessment process, '.
+                        				'add the remote IP address to the Cloudflare blacklist to prevent further access to the site.',
+                        'help'		=> 	"[info] This creates or updates a Cloudflare IP list ".
+                        				"<small>(Account &rarr; Configurations &rarr; Lists)</small> ".
+                        				"and adds a security rule ".
+                        				"<small>(Zone &rarr; Security &rarr; Security Rules)</small> ".
+                        				"to block the list.<br>".
+                        				"<small>Note: To use an existing IP list, change its description to <code>".self::BLACK_LIST_DESC."</code>.</small>",
+                        'validate'  =>  function($value){
+                        		if ($value) {$this->get_blacklist_list();$this->set_blacklist_rule();}
+                        		return $value;
+                        	},
+                ),
+            ]);
         }
     }
 
@@ -353,6 +388,11 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         foreach ($purge_actions as $action) {   // no arguments
             add_action($action,                 array($this,'cloudflare_purge'),100,0);
         }
+
+        if ($this->is_option('cloudflare_blacklist'))
+        {
+			$this->add_action('risk_assessment_blocked', array($this, 'cloudflare_blacklist'),10,2 );
+		}
     }
 
 
@@ -372,6 +412,31 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
         $this->cloudflare_zone  = $this->get_option('cloudflare_zone');
         return true;
     }
+
+
+	/**
+	 * Get the Cloudflare account
+	 *
+	 */
+	private function get_cloudflare_account()
+	{
+		if (empty($this->cloudflare_account))
+		{
+			$this->cloudflare_account = $this->get_transient('cloudflare_account', function()
+				{
+					$result = wp_remote_get("https://api.cloudflare.com/client/v4/accounts",
+						[
+							'headers'   => $this->cloudflare_headers(),
+						]
+					);
+					$result = json_decode( wp_remote_retrieve_body($result), true );
+					return ($result['success']) ? $result['result'][0] : null;
+				},
+				DAY_IN_SECONDS
+			);
+		}
+		return $this->cloudflare_account['id'];
+	}
 
 
     /**
@@ -421,9 +486,8 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
     {
         if ($this->get_cf_auth() && $this->cloudflare_url)
         {
-            $result = wp_remote_post($this->cloudflare_url,
+            $result = wp_remote_get($this->cloudflare_url,
                 [
-                    'method'    => 'GET',
                     'headers'   => $this->cloudflare_headers(),
                 ]
             );
@@ -431,7 +495,7 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
             if ($result['success']) {
                 return $result['result'];
             } else {
-                $this->add_admin_notice("Cloudflare Status: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+                $this->add_admin_notice("Cloudflare: Status (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
             }
         }
         return [];
@@ -496,14 +560,13 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 
         $result = json_decode( wp_remote_retrieve_body($result), true );
         if ($result['success']) {
-            //$this->add_admin_notice("<pre>CF settings ".var_export($result['result'],true)."</pre>");
             foreach ( $result['result'] as $list ) {
                 if (isset($list['value'],$list['id'])) {
                     if ($list['editable']) $settings[ $list['id'] ] = $list['value'];
                 }
             }
         } else {
-            $this->add_admin_notice('Unable to retrieve Cloudflare settings.','error');
+            $this->add_admin_notice('Cloudflare: Unable to retrieve settings.','error');
         }
 
         $this->cloudflare_settings = $settings;
@@ -686,16 +749,12 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                 ]
             );
             $result = json_decode( wp_remote_retrieve_body($result), true );
-            if (is_array($result)) {
-                if ($result['success']) {
-                    $this->add_admin_notice('The Cloudflare cache for '.$site_url.' has been purged','success');
-                    $caches[] = 'Cloudflare Cache';
-                } else {
-                    $this->add_admin_notice("Cloudflare Cache Purge: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
-                }
-            } else {
-                $this->add_admin_notice("Cloudflare Cache Purge: failed on unknown error",'error');
-            }
+			if ($result['success']) {
+				$this->add_admin_notice('The Cloudflare cache for '.$site_url.' has been purged','success');
+				$caches[] = 'Cloudflare Cache';
+			} else {
+				$this->add_admin_notice("Cloudflare Cache Purge: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+			}
         }
         return $caches;
     }
@@ -726,11 +785,223 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
                 $this->add_admin_notice("The Cloudflare service for {$site_id} has been {$option}d",'success');
                 return ($result['result']['paused'] == true) ? 'Pause' : 'Resume';
             } else {
-                $this->add_admin_notice("Cloudflare Service Pause: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
+                $this->add_admin_notice("Cloudflare Service {$option}: (".$result['errors'][0]['code'].") ".$result['errors'][0]['message'],'error');
             }
         }
         return $option;
     }
+
+
+	/**
+	 * Add IP to Cloudflare blacklist (IP access rules)
+	 *
+	 * @param string 	$ipAddress
+	 * @param array 	$data
+	 */
+	public function cloudflare_blacklist(string $ipAddress, array $data)
+	{
+		if ($list_id = $this->get_blacklist_list(false))
+		{
+			$account_id = $this->get_cloudflare_account();
+			$list_url = "https://api.cloudflare.com/client/v4/accounts/{$account_id}/rules/lists";
+
+			// add IP addres to blacklist
+			$comment = sprintf(
+				"%s score: %d/%d",
+				ucwords($data['RiskAssessmentType']),$data['RiskAssessmentScore'],$data['RiskAssessmentLimit']
+			);
+			// show provider scores
+			foreach ($data['RiskAssessmentScores'] as $provider => $score) {
+				if (current($score) > 0) {
+					$comment .= "; {$provider} ".key($score)."=".current($score);
+				}
+			}
+			// show internal (registered) messages
+			if (isset($data['RiskAssessmentData']['registered'])) {
+				$comment .= "; ".implode("; ",array_unique($data['RiskAssessmentData']['registered']['message']));
+			}
+			// show location
+			$location = $data['Region'] ?: $data['City'];
+			$comment .= "; (".trim($location.' '.$data['CountryCode']).")";
+
+			$result = wp_remote_post($list_url."/{$list_id}/items",
+				[
+					'headers'   => $this->cloudflare_headers(),
+					'body'      => wp_json_encode(array([
+						'ip'		=> $ipAddress,
+						'comment' 	=> trim($comment,' ;()'),
+					]))
+				]
+			);
+			$this->logNotice(trim($comment,' ;()'),'Cloudflare blacklist');
+			$result = json_decode( wp_remote_retrieve_body($result), true );
+	        if (!$result['success']) {
+				$this->logError($result['errors'],__METHOD__);
+			}
+		}
+	}
+
+
+    /**
+     * get or create blacklist list (at the account level)
+     *
+     */
+    public function get_blacklist_list($verbose = true, $create = true)
+    {
+		$account_id = $this->get_cloudflare_account();
+		$list_url 	= "https://api.cloudflare.com/client/v4/accounts/{$account_id}/rules/lists";
+		$list_id 	= false;
+
+		// get existing black list
+		$result = wp_remote_get($list_url,
+			[
+				'headers'   => $this->cloudflare_headers(),
+			]
+		);
+		$result = json_decode( wp_remote_retrieve_body($result), true );
+
+        if ($result['success'])
+        {
+            foreach ( $result['result'] as $list ) {
+            	if ($list['name'] == self::BLACK_LIST_NAME || $list['description'] == self::BLACK_LIST_DESC) {
+            		$list_id = $list['id'];
+            		$this->black_list_name = $list['name'];
+					if ($verbose) $this->add_admin_notice("Cloudflare: List '<em>".$list['name']."</em>' found",'success');
+            		break;
+            	}
+            }
+        }
+
+        // create new blacklist list
+        if (!$list_id && $create) {
+			$result = wp_remote_post($list_url,
+				[
+					'headers'   => $this->cloudflare_headers(),
+					'body'      => wp_json_encode([
+						'kind' 			=> 'ip',
+						'name' 			=> self::BLACK_LIST_NAME,
+						'description' 	=> self::BLACK_LIST_DESC,
+					])
+				]
+			);
+			$result = json_decode( wp_remote_retrieve_body($result), true );
+
+	        if ($result['success']) {
+				$list_id = $result['result']['id'];
+				if ($verbose) $this->add_admin_notice("Cloudflare: List '<em>".self::BLACK_LIST_NAME."</em>' created",'success');
+			} else {
+				if ($verbose) $this->add_admin_notice('Cloudflare List: '.$result['errors'][0]['message'],'error');
+			}
+        }
+
+        if (!$list_id) {
+        	$this->delete_option('cloudflare_blacklist');
+        	return false;
+        }
+        return $list_id;
+	}
+
+
+    /**
+     * get/create blacklist rule (at the zone level)
+     *
+     */
+    public function set_blacklist_rule()
+    {
+		$rule_url 	= $this->cloudflare_url.'/rulesets';
+		$rule_id  	= false;
+		$rule_list 	= false;
+
+		// get existing rulesets
+		$result = wp_remote_get($rule_url,
+			[
+				'headers'   => $this->cloudflare_headers(),
+			]
+		);
+		$result = json_decode( wp_remote_retrieve_body($result), true );
+
+        if ($result['success']) {
+			$rule_list = $result['result'];
+            foreach ( $rule_list as $rule ) {
+            	if ($rule['name'] == $this->black_list_name) {
+            		$rule_id = $rule['id'];
+            		break;
+            	}
+            }
+        }
+
+        // if not found, try to create new ruleset (paid account)
+        if (!$rule_id) {
+			$result = wp_remote_post($rule_url,
+				[
+					'headers'   => $this->cloudflare_headers(),
+					'body'      => wp_json_encode([
+						'kind' 			=> 'custom',
+						'name' 			=> self::BLACK_LIST_NAME,
+						'description' 	=> self::BLACK_LIST_DESC,
+						'phase' 		=> 'http_request_firewall_custom',
+					])
+				]
+			);
+			$result = json_decode( wp_remote_retrieve_body($result), true );
+
+	        if ($result['success']) {
+				$rule_id = $result['result']['id'];
+        	} else if ($rule_list) {
+        	// if not created, try to find the right 'phase' ruleset
+				foreach ( $rule_list as $rule ) {
+					if ($rule['phase'] == 'http_request_firewall_custom') {
+						$rule_id = $rule['id'];
+						break;
+					}
+				}
+			}
+		}
+
+		// not found, not created, we're done
+		if (!$rule_id) {
+			$this->add_admin_notice('Cloudflare Rule: '.$result['errors'][0]['message'].'error');
+			return;
+		}
+
+		// get list of rules from the ruleset
+		$result = wp_remote_get($rule_url."/{$rule_id}",
+			[
+				'headers'   => $this->cloudflare_headers(),
+			]
+		);
+		$result = json_decode( wp_remote_retrieve_body($result), true );
+		// find existing rule in ruleset
+        if ($result['success']) {
+            foreach ( $result['result']['rules'] as $rule ) {
+            	if ($rule['description'] == self::BLACK_LIST_DESC) {
+					$this->add_admin_notice("Cloudflare: Rule '<em>".self::BLACK_LIST_DESC."</em>' found",'success');
+            		return $rule['id'];
+            	}
+            }
+        }
+
+		// create a new rule
+		$result = wp_remote_post($rule_url."/{$rule_id}/rules",
+			[
+				'headers'   => $this->cloudflare_headers(),
+				'body'      => wp_json_encode([
+					'description' 	=> self::BLACK_LIST_DESC,
+					'expression' 	=> '(ip.src in $'.$this->black_list_name.')',
+					'action' 		=> 'block',
+					'enabled'		=> true,
+				])
+			]
+		);
+		$result = json_decode( wp_remote_retrieve_body($result), true );
+        if ($result['success']) {
+			$this->add_admin_notice("Cloudflare: Rule '<em>".self::BLACK_LIST_DESC."</em>' added",'success');
+            return $result['result']['id'];
+		} else {
+			$this->add_admin_notice('Cloudflare Rule: '.$result['errors'][0]['message'],'error');
+			return false;
+		}
+	}
 
 
     /**
