@@ -822,14 +822,14 @@ class cloudflare_extension extends \EarthAsylumConsulting\abstract_extension
 			}
 			// show location
 			$location = $data['Region'] ?: $data['City'];
-			$comment .= "; (".trim($location.' '.$data['CountryCode']).")";
+			$comment .= "; [".trim($location.' '.$data['CountryCode'])."]";
 
 			$result = wp_remote_post($list_url."/{$list_id}/items",
 				[
 					'headers'   => $this->cloudflare_headers(),
 					'body'      => wp_json_encode(array([
 						'ip'		=> $ipAddress,
-						'comment' 	=> trim($comment,' ;()'),
+						'comment' 	=> trim($comment,' ;'),
 					]))
 				]
 			);
