@@ -120,6 +120,9 @@ An {eac}Doojigger extension to translate a WordPress style markdown 'readme.txt'
 +   [{eac}SimpleGTM]
 Installs and configures the Google Tag Manager (GTM) or Google Analytics (GA4) script with optional tracking events.
 
++   [{eac}Cloudflare]
+Provides limited control of Cloudflare settings, caching, blacklisting, and rate-limiting from WordPress.
+
 +   [{eac}MetaPixel]
 An {eac}Doojigger extension to install the Facebook/Meta Pixel to enable tracking of PageView, ViewContent, AddToCart, InitiateCheckout and Purchase events.
 
@@ -133,5 +136,6 @@ An easy to use, efficient, key-value pair storage mechanism for WordPress that t
 [{eac}SimpleAWS]:			https://github.com/EarthAsylum/eacSimpleAWS/
 [{eac}Readme]:				https://github.com/EarthAsylum/eacReadme/
 [{eac}SimpleGTM]:			https://github.com/EarthAsylum/eacSimpleGTM/
+[{eac}Cloudflare]:			https://github.com/EarthAsylum/eacCloudflare/
 [{eac}MetaPixel]:			https://github.com/EarthAsylum/eacMetaPixel/
 [{eac}KeyValue]:			https://github.com/EarthAsylum/eacKeyValue/
