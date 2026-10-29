@@ -1,11 +1,11 @@
 === My Awesome Plugin ===
 Plugin URI: 		https://github.com/EarthAsylum/myAwesomePlugin
 Author:             [Me](https://www.myawesomeserver.com/profile/me)
-Stable tag:         1.3.5
-Last Updated:       26-Sep-2026
+Stable tag:         1.3.6
+Last Updated:       28-Oct-2026
 Requires at least:  5.8
 Tested up to:       7.1
-Requires PHP:       8.1
+Requires PHP:       8.2
 Requires EAC:       3.1
 Support link: 		https://github.com/EarthAsylum/docs.eacDoojigger
 
@@ -50,6 +50,10 @@ Copyright © 2026, Me
 Requires [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) v3.1+
 
 == Changelog ==
+
+= Version 1.3.6 – October 28, 2026 =
+
++ 	Updated registration sdk for compatibility with PHP 8.4+.
 
 = Version 1.3.5 – September 26, 2026 =
 

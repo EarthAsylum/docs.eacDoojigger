@@ -9,8 +9,8 @@ namespace myAwesomeNamespace\Traits;
  * @category	WordPress Plugin
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		25.0725.1
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version		26.1025.1
  */
 
 trait myAwesomePlugin_registration_interface
@@ -54,7 +54,7 @@ trait myAwesomePlugin_registration_interface
 	 * @param string $endpoint one of 'create', 'activate', 'deactivate', 'verify'
 	 * @return string
 	 */
-	public function getApiEndPoint(string $endpoint = null)
+	public function getApiEndPoint(?string $endpoint = null)
 	{
 		return rtrim(self::SOFTWARE_REGISTRY_HOST_URL.'/'.$endpoint, '/');
 	}
@@ -73,7 +73,7 @@ trait myAwesomePlugin_registration_interface
 	 *
 	 * @return object|bool scheduled event or false
 	 */
-	abstract function nextRegistryRefreshEvent(string $registrationKey=null);
+	abstract function nextRegistryRefreshEvent(?string $registrationKey = null);
 
 
 	/**
@@ -81,7 +81,7 @@ trait myAwesomePlugin_registration_interface
 	 *
 	 * @return bool
 	 */
-	abstract function checkRegistryRefreshEvent(string $registrationKey=null);
+	abstract function checkRegistryRefreshEvent(?string $registrationKey = null);
 
 
 	/**
@@ -101,7 +101,7 @@ trait myAwesomePlugin_registration_interface
 	 * @param string registration key
 	 * @return bool
 	 */
-	public function isValidRegistration(string $registrationKey=null)
+	public function isValidRegistration(?string $registrationKey = null)
 	{
 		static $isValid = null;
 
@@ -182,7 +182,7 @@ trait myAwesomePlugin_registration_interface
 	 * @param string registration key
 	 * @return object|null
 	 */
-	public function getCurrentRegistration(string $registrationKey=null)
+	public function getCurrentRegistration(?string $registrationKey = null)
 	{
 		static $registryKey = null;
 		static $currentRegistry = null;
@@ -206,7 +206,7 @@ trait myAwesomePlugin_registration_interface
 	 * @param string registration key
 	 * @return string
 	 */
-	public function refreshRegistration(string $registrationKey=null, array $registrationValues=[])
+	public function refreshRegistration(?string $registrationKey = null, array $registrationValues=[])
 	{
 		$registrationKey = $this->getRegistrationKey($registrationKey);
 
@@ -256,7 +256,7 @@ trait myAwesomePlugin_registration_interface
 	 * @param string registration key
 	 * @return string
 	 */
-	abstract public function getRegistrationKey(string $registrationKey=null);
+	abstract public function getRegistrationKey(?string $registrationKey = null);
 
 
 	/**
@@ -316,7 +316,7 @@ trait myAwesomePlugin_registration_interface
 
 		$request = [
 			'method' 		=> $method,
-			'timeout' 		=> 6,
+			'timeout' 		=> 12,
 			'redirection' 	=> 5,
 			'sslverify' 	=> false,
 		];

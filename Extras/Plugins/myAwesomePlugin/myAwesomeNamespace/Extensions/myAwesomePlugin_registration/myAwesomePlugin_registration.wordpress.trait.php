@@ -69,7 +69,7 @@ trait myAwesomePlugin_registration_wordpress
 	 *
 	 * @return object|bool scheduled event or false
 	 */
-	public function nextRegistryRefreshEvent(string $registrationKey=null)
+	public function nextRegistryRefreshEvent(?string $registrationKey = null)
 	{
 		if ($registrationKey = $this->getRegistrationKey($registrationKey))
 		{
@@ -96,7 +96,7 @@ trait myAwesomePlugin_registration_wordpress
 	 *
 	 * @return void
 	 */
-	public function checkRegistryRefreshEvent(string $registrationKey=null)
+	public function checkRegistryRefreshEvent(?string $registrationKey = null)
 	{
 		if (!defined('REST_REQUEST') && !defined('XMLRPC_REQUEST'))
 		{
@@ -152,7 +152,7 @@ trait myAwesomePlugin_registration_wordpress
 	 * @param string registration key
 	 * @return string
 	 */
-	public function getRegistrationKey(string $registrationKey=null)
+	public function getRegistrationKey(?string $registrationKey = null)
 	{
 		if (!empty($registrationKey))
 		{

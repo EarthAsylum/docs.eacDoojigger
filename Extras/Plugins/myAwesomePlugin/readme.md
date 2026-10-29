@@ -8,11 +8,11 @@
 
 Plugin URI: 		https://github.com/EarthAsylum/myAwesomePlugin  
 Author:             [Me](https://www.myawesomeserver.com/profile/me)  
-Stable tag:         1.3.5  
-Last Updated:       26-Sep-2026  
+Stable tag:         1.3.6  
+Last Updated:       28-Oct-2026  
 Requires at least:  5.8  
 Tested up to:       7.1  
-Requires PHP:       8.1  
+Requires PHP:       8.2  
 Requires EAC:       3.1  
 Support link: 		https://github.com/EarthAsylum/docs.eacDoojigger  
 

@@ -13,10 +13,10 @@
  * @wordpress-plugin
  * Plugin Name:			My Awesome Plugin
  * Description:			EarthAsylum Consulting {eac}Doojigger Awesome derivative
- * Version:				1.3.5
+ * Version:				1.3.6
  * Requires at least:	5.8
  * Tested up to: 		7.1
- * Requires PHP:		8.1
+ * Requires PHP:		8.2
  * Requires EAC:		3.1
  * Plugin URI: 			https://github.com/EarthAsylum/myAwesomePlugin
  * Update URI: 			https://dev.earthasylum.net/software-updates/myAwesomePlugin.json
@@ -75,7 +75,7 @@ namespace myAwesomeNamespace
 				'NameSpace'			=> __NAMESPACE__,
 				'PluginClass'		=> __NAMESPACE__.'\\Plugin\\myAwesomePlugin',
 				'RequiresWP'		=> '5.8',			// WordPress
-				'RequiresPHP'		=> '8.1',			// PHP
+				'RequiresPHP'		=> '8.2',			// PHP
 				'RequiresEAC'		=> '3.1',			// eacDoojigger
 			//	'RequiresWC'		=> '9.0',			// WooCommerce
 				'NetworkActivate'	=>	false,			// require (or forbid) network activation
