@@ -18,13 +18,14 @@ namespace EarthAsylumConsulting\Extensions;
  * @copyright   Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
  * @link        https://eacDoojigger.earthasylum.com/
  */
+defined( 'ABSPATH' ) or exit;
 
 class webhooks_debugging_extension extends \EarthAsylumConsulting\abstract_extension
 {
     /**
      * @var string extension version
      */
-    const VERSION           = '25.0429.1';
+    const VERSION           = '26.1117.1';
 
     /**
      * @var string extension tab name
@@ -159,7 +160,7 @@ class webhooks_debugging_extension extends \EarthAsylumConsulting\abstract_exten
                 $this->webhookAction = $rest->get_header( 'x-wc-webhook-topic' )
                 					?? $rest->get_header( 'x-github-event' );
                 if ($origin = $rest->get_header( 'x-wc-webhook-source' )) {
-                	$origin = parse_url($origin);
+                	$origin = wp_parse_url($origin);
                 	$this->webhookSource = $origin['host'];
                 	$origin = $origin['scheme'].'://'.$origin['host'];
                 } else {
@@ -177,6 +178,7 @@ class webhooks_debugging_extension extends \EarthAsylumConsulting\abstract_exten
                 return true;
             }
         }
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
         else if (isset($_POST['webhook_id']) || $rest->get_header( 'X-GitHub-Hook-ID' ))
         {
             // test ping from woo when the webhook is first created
@@ -202,6 +204,7 @@ class webhooks_debugging_extension extends \EarthAsylumConsulting\abstract_exten
             ? $rest->get_json_params()
             : $rest->get_params();
 
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
         do_action( 'eacDoojigger_log_debug', $payload, $this->webhookAction.' ('.$this->webhookSource.')' );
     }
 }
