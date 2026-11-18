@@ -556,6 +556,11 @@ Search.appendIndex(
             "summary": "now\u0020an\u0020alias\u0020to\u0020\u0024tthis\u002D\u003Edoing_ajax\u0028\u0029",
             "url": "classes/EarthAsylumConsulting-abstract-core.html#method_isAjaxRequest"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003Aunparse_url\u0028\u0029",
+            "name": "unparse_url",
+            "summary": "reverse\u0020parse_url",
+            "url": "classes/EarthAsylumConsulting-abstract-core.html#method_unparse_url"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\abstract_core\u003A\u003AgetRequestURL\u0028\u0029",
             "name": "getRequestURL",
             "summary": "get\u0020the\u0020current\u0020url\u0020based\u0020on\u0020WP\u0020request",
@@ -2308,7 +2313,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_extension\u003A\u003AcheckTemplatePage\u0028\u0029",
             "name": "checkTemplatePage",
-            "summary": "set\u0020flags\u0020in\u0020Set\u002DCookie\u0020headers\u0020before\u0020output\u0020\u0028used\u0020by\u0020header_register_callback\u0029",
+            "summary": "get\u0020404\u0020template\u0020when\u0020looking\u0020for\u0020author",
             "url": "classes/EarthAsylumConsulting-Extensions-security-extension.html#method_checkTemplatePage"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_extension\u003A\u003AcheckCookieFlags\u0028\u0029",
@@ -2521,6 +2526,11 @@ Search.appendIndex(
             "summary": "Add\u0020filters\u0020and\u0020actions\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_addActionsAndFilters"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003AaddAssessmentActions\u0028\u0029",
+            "name": "addAssessmentActions",
+            "summary": "Add\u0020assessment\u0020actions\u0020on\u0020init",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_addAssessmentActions"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003AisWhitelisted\u0028\u0029",
             "name": "isWhitelisted",
             "summary": "Check\u0020an\u0020IP\u0020address\u0020is\u0020in\u0020ignored\u0020list",
@@ -2528,28 +2538,53 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003AisBlacklisted\u0028\u0029",
             "name": "isBlacklisted",
-            "summary": "Check\u0020http\u0020header\u0020and\u0020blocked\u0020IP\u0020addresses",
+            "summary": "Check\u0020blocked\u0020IP\u0020addresses",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isBlacklisted"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003AisExternalRisk\u0028\u0029",
+            "name": "isExternalRisk",
+            "summary": "Check\u0020http\u0020header\u0020and\u0020URL\u0020parameter",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_isExternalRisk"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aget_risk_assessment_result\u0028\u0029",
             "name": "get_risk_assessment_result",
             "summary": "get\u0020the\u0020risk\u0020assessment\u0020result",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_get_risk_assessment_result"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Arisk_api_register\u0028\u0029",
-            "name": "risk_api_register",
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aasync_assessment_providers\u0028\u0029",
+            "name": "async_assessment_providers",
+            "summary": "Do\u0020risk\u0020assessment\u0020asynchronously",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_async_assessment_providers"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Arisk_assessment_api\u0028\u0029",
+            "name": "risk_assessment_api",
             "summary": "Register\u0020a\u0020WP\u0020REST\u0020api",
-            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_register"
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_assessment_api"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Arisk_api_permission\u0028\u0029",
-            "name": "risk_api_permission",
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Arisk_assessment_api_auth\u0028\u0029",
+            "name": "risk_assessment_api_auth",
+            "summary": "Register\u0020a\u0020WP\u0020REST\u0020api",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_assessment_api_auth"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Arisk_assessment_api_request\u0028\u0029",
+            "name": "risk_assessment_api_request",
+            "summary": "Do\u0020the\u0020risk\u0020assessment",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_assessment_api_request"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aregister_risk_api\u0028\u0029",
+            "name": "register_risk_api",
+            "summary": "Register\u0020a\u0020WP\u0020REST\u0020api",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_api"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aregister_risk_api_auth\u0028\u0029",
+            "name": "register_risk_api_auth",
             "summary": "Authenticate\u0020a\u0020WP\u0020REST\u0020api",
-            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_permission"
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_api_auth"
         },                {
-            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Arisk_api_register_request\u0028\u0029",
-            "name": "risk_api_register_request",
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aregister_risk_api_request\u0028\u0029",
+            "name": "register_risk_api_request",
             "summary": "Log\u0020the\u0020risk\u0020request\u0020via\u0020api",
-            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_risk_api_register_request"
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#method_register_risk_api_request"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003Aregister_risk_action\u0028\u0029",
             "name": "register_risk_action",
@@ -2615,6 +2650,36 @@ Search.appendIndex(
             "name": "IP_WHITELIST_FILE",
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_IP_WHITELIST_FILE"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003ARISK_ASSESSMENT_ORIGIN",
+            "name": "RISK_ASSESSMENT_ORIGIN",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RISK_ASSESSMENT_ORIGIN"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003ARA_MODE_OFF",
+            "name": "RA_MODE_OFF",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_MODE_OFF"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003ARA_MODE_API",
+            "name": "RA_MODE_API",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_MODE_API"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003ARA_MODE_INLINE",
+            "name": "RA_MODE_INLINE",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_MODE_INLINE"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003ARA_MODE_ASYNC",
+            "name": "RA_MODE_ASYNC",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_MODE_ASYNC"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_extension\u003A\u003ARA_MODE_ACTIVE",
+            "name": "RA_MODE_ACTIVE",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-extension.html#constant_RA_MODE_ACTIVE"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_abuseipdb",
             "name": "security_ra_abuseipdb",
@@ -2716,6 +2781,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-fraudguard.html#constant_ACCOUNT_LIMITS"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis",
+            "name": "security_ra_ipasis",
+            "summary": "Extension\u003A\u0020Risk\u0020Assessment\u0020\u002D\u0020iPASIS\u0020API\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003Aadmin_options_settings\u0028\u0029",
+            "name": "admin_options_settings",
+            "summary": "register\u0020options\u0020on\u0020options_settings_page",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#method_admin_options_settings"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003Aadmin_options_help\u0028\u0029",
+            "name": "admin_options_help",
+            "summary": "Add\u0020help\u0020tab\u0020on\u0020admin\u0020page",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#method_admin_options_help"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "initialize\u0020method\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#method_initialize"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003Aget_assessment_result\u0028\u0029",
+            "name": "get_assessment_result",
+            "summary": "Use\u0020the\u0020iPASIS\u0020API\u0020to\u0020validate\/block\u0020IP\u0020address",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#method_get_assessment_result"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003AVERSION",
+            "name": "VERSION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#constant_VERSION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003APROVIDER",
+            "name": "PROVIDER",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#constant_PROVIDER"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipasis\u003A\u003AENABLE_OPTION",
+            "name": "ENABLE_OPTION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipasis.html#constant_ENABLE_OPTION"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipgeolocation",
             "name": "security_ra_ipgeolocation",
             "summary": "Extension\u003A\u0020ipgeolocation\u0020\u002D\u0020ipgeolocation\u0020API\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
@@ -2761,6 +2866,86 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipgeolocation.html#constant_ACCOUNT_LIMITS"
         },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore",
+            "name": "security_ra_ipqualityscore",
+            "summary": "Extension\u003A\u0020Risk\u0020Assessment\u0020\u002D\u0020IPQualityScore\u0020API\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003Aadmin_options_settings\u0028\u0029",
+            "name": "admin_options_settings",
+            "summary": "register\u0020options\u0020on\u0020options_settings_page",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#method_admin_options_settings"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003Aadmin_options_help\u0028\u0029",
+            "name": "admin_options_help",
+            "summary": "Add\u0020help\u0020tab\u0020on\u0020admin\u0020page",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#method_admin_options_help"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "initialize\u0020method\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#method_initialize"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003Aget_assessment_result\u0028\u0029",
+            "name": "get_assessment_result",
+            "summary": "Use\u0020the\u0020IPQS\u0020API\u0020to\u0020validate\/block\u0020IP\u0020address",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#method_get_assessment_result"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003AVERSION",
+            "name": "VERSION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#constant_VERSION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003APROVIDER",
+            "name": "PROVIDER",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#constant_PROVIDER"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_ipqualityscore\u003A\u003AENABLE_OPTION",
+            "name": "ENABLE_OPTION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-ipqualityscore.html#constant_ENABLE_OPTION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics",
+            "name": "security_ra_scamalytics",
+            "summary": "Extension\u003A\u0020Risk\u0020Assessment\u0020\u002D\u0020Scamalytics\u0020API\u0020\u002D\u0020\u007Beac\u007DDoojigger\u0020for\u0020WordPress",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003Aadmin_options_settings\u0028\u0029",
+            "name": "admin_options_settings",
+            "summary": "register\u0020options\u0020on\u0020options_settings_page",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#method_admin_options_settings"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003Aadmin_options_help\u0028\u0029",
+            "name": "admin_options_help",
+            "summary": "Add\u0020help\u0020tab\u0020on\u0020admin\u0020page",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#method_admin_options_help"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "initialize\u0020method\u0020\u002D\u0020called\u0020from\u0020main\u0020plugin",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#method_initialize"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003Aget_assessment_result\u0028\u0029",
+            "name": "get_assessment_result",
+            "summary": "Use\u0020the\u0020Scamalytics\u0020API\u0020to\u0020validate\/block\u0020IP\u0020address",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#method_get_assessment_result"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003AVERSION",
+            "name": "VERSION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#constant_VERSION"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003APROVIDER",
+            "name": "PROVIDER",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#constant_PROVIDER"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_scamalytics\u003A\u003AENABLE_OPTION",
+            "name": "ENABLE_OPTION",
+            "summary": "",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-scamalytics.html#constant_ENABLE_OPTION"
+        },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_abstract",
             "name": "security_ra_abstract",
             "summary": "Extension\u003A\u0020security_ra\u0020\u002D\u0020abstract\u0020class\u0020for\u0020risk\u0020assessment\u0020providers",
@@ -2800,6 +2985,11 @@ Search.appendIndex(
             "name": "get_assessment_result",
             "summary": "Use\u0020the\u0020provider\u0020API\u0020to\u0020validate\/block\u0020IP\u0020address",
             "url": "classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#method_get_assessment_result"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_abstract\u003A\u003Aassessment_result_error\u0028\u0029",
+            "name": "assessment_result_error",
+            "summary": "Process\u0020an\u0020API\u0020error\u0020\u0028status\u0020\u0021\u003D\u0020200\u0029",
+            "url": "classes/EarthAsylumConsulting-Extensions-security-ra-abstract.html#method_assessment_result_error"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Extensions\\security_ra_abstract\u003A\u003AVERSION",
             "name": "VERSION",
@@ -3280,6 +3470,11 @@ Search.appendIndex(
             "name": "admin_construct",
             "summary": "constructor\u0020method\u0020\u0028for\u0020admin\/backend\u0029",
             "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger-admin-traits.html#method_admin_construct"
+        },                {
+            "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger_admin_traits\u003A\u003Aalter_plugin_update\u0028\u0029",
+            "name": "alter_plugin_update",
+            "summary": "alter\u0020the\u0020plugin\u0020update\u0020url\u0020to\u0020use\u0020once\u0020for\u0020all\u0020doojigger\u0020plugins.",
+            "url": "classes/EarthAsylumConsulting-Plugin-eacDoojigger-admin-traits.html#method_alter_plugin_update"
         },                {
             "fqsen": "\\EarthAsylumConsulting\\Plugin\\eacDoojigger_admin_traits\u003A\u003Aadmin_options_settings\u0028\u0029",
             "name": "admin_options_settings",
