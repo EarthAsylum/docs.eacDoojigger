@@ -1,4 +1,4 @@
-## {eac}Doohickey, Plugin Extensions  
+## {eac}Doohickey 
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
 [![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
@@ -8,11 +8,11 @@
 
 Plugin URI:             https://eacDoojigger.earthasylum.com/  
 Author:                 [EarthAsylum Consulting](https://www.earthasylum.com)  
-Stable tag:             0.1.0  
-Last Updated:           30-Apr-2025  
-Requires at least:      5.8  
-Tested up to:           6.8  
-Requires PHP:           8.1  
+Stable tag:             0.1.1  
+Last Updated:           17-Nov-2026  
+Requires at least:      5.9  
+Tested up to:           7.1  
+Requires PHP:           8.2  
 Contributors:           earthasylum@github,kevinburkholder@wordpress  
 Donate link:            https://github.com/sponsors/EarthAsylum  
 License:				GPLv3 or later  

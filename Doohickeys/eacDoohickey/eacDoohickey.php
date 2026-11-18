@@ -18,17 +18,17 @@ namespace EarthAsylumConsulting;
  * @wordpress-plugin
  * Plugin Name:			{eac}Doohickey
  * Description:			{eac}Doohickey - a place to load {eac}Doololly extensions for {eac}Doojigger.
- * Version:				0.1.0
- * Requires at least:	5.8
+ * Version:				0.1.1
+ * Requires at least:	5.9
  * Tested up to:		7.1
- * Requires PHP:		7.4
+ * Requires PHP:		8.2
  * Plugin URI:			https://eacdoojigger.earthasylum.com/
  * Author:				EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
  * License:				GPLv3 or later
  * License URI:			https://www.gnu.org/licenses/gpl.html
  */
-
+defined( 'ABSPATH' ) or exit;
 
 class eacDoohickey
 {
