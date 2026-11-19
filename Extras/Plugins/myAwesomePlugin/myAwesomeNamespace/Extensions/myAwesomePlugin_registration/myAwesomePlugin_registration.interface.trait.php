@@ -10,7 +10,7 @@ namespace myAwesomeNamespace\Traits;
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
  * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		26.1025.1
+ * @version		26.1119.1
  */
 
 trait myAwesomePlugin_registration_interface
@@ -293,6 +293,9 @@ trait myAwesomePlugin_registration_interface
 	 */
 	public function registryApiRequest($endpoint,$params)
 	{
+		// phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
 		$endpoint = strtolower($endpoint);
 		switch ($endpoint)
 		{
@@ -324,8 +327,20 @@ trait myAwesomePlugin_registration_interface
 		$request['headers']	= [
 			'Accept'		=> 'application/json',
 			'Referer'		=> 	(PHP_SAPI === 'cli')
-								? sprintf('%s://%s%s', 'file', gethostname(), (!empty($argv)) ? '?'.http_build_query($argv) : '' )
-								: sprintf('%s://%s%s', isset($_SERVER['HTTPS']) ? 'https' : 'http', $_SERVER['HTTP_HOST'], $_SERVER['REQUEST_URI']),
+								? sprintf('%s://%s%s',
+									'file',
+									gethostname(),
+									(!empty($argv)) ? '?'.http_build_query($argv) : ''
+								)
+								: sprintf('%s://%s%s',
+									isset($_SERVER['HTTPS']) ? 'https' : 'http',
+									htmlspecialchars(stripslashes(
+										$_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? 'unknown_host',
+									),ENT_QUOTES, 'UTF-8'),
+									htmlspecialchars(stripslashes(
+										$_SERVER['REQUEST_URI'] ?? ''
+									), ENT_QUOTES, 'UTF-8'),
+								),
 			'Authorization'	=> 'Bearer '.base64_encode($apiKey),
 		];
 		if (in_array($method,['GET','HEAD','DELETE'])) {
@@ -347,6 +362,9 @@ trait myAwesomePlugin_registration_interface
 			$this->scheduleRegistryRefresh($response->registrar->refreshInterval,$response->registrar->refreshSchedule,$response->registration);
 		}
 		return $response;
+
+		// phpcs:enable WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+		// phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 	}
 
 

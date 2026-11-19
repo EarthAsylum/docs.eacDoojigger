@@ -7,11 +7,11 @@ namespace myAwesomeNamespace\Extensions;
  * @category	WordPress Plugin
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2023 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
  * @see 		https://eacDoojigger.earthasylum.com/phpdoc/
  * @uses 		\EarthAsylumConsulting\Traits\swRegistrationUI;
  */
+defined( 'ABSPATH' ) or exit;
 
 include "myAwesomePlugin_registration/myAwesomePlugin_registration.includes.php";
 
@@ -25,7 +25,7 @@ class myAwesomePlugin_registration extends \EarthAsylumConsulting\abstract_exten
 	/**
 	 * @var string extension version
 	 */
-	const VERSION	= '23.0603.1';
+	const VERSION	= '26.1118.1';
 
 	/**
 	 * @var ALIAS constant ($this->Registration->...)

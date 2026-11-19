@@ -9,8 +9,8 @@ namespace myAwesomeNamespace\Traits;
  * @category	WordPress Plugin
  * @package		{eac}SoftwareRegistry
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		25.0725.1
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
+ * @version		26.1119.1
  */
 
 trait myAwesomePlugin_registration_wordpress
@@ -209,6 +209,7 @@ trait myAwesomePlugin_registration_wordpress
 		 * action {productid}_update_registration
 		 * @param array $registration registration object
 		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 		\do_action(self::SOFTWARE_REGISTRY_PRODUCTID.'_update_registration', $registration);
 	}
 
@@ -238,6 +239,7 @@ trait myAwesomePlugin_registration_wordpress
 		/**
 		 * action {productid}_purge_registration
 		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 		\do_action(self::SOFTWARE_REGISTRY_PRODUCTID.'_purge_registration');
 	}
 
@@ -258,6 +260,7 @@ trait myAwesomePlugin_registration_wordpress
 		 * @param	string $endpoint create, activate, deactivate, verify, refresh, revise
 		 * @return	array request body
 		 */
+		 // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 		$request = \apply_filters(self::SOFTWARE_REGISTRY_PRODUCTID.'_api_remote_request', $request, $endpoint);
 
 		$result = wp_remote_request($remoteUrl,$request);
@@ -280,6 +283,7 @@ trait myAwesomePlugin_registration_wordpress
 			 * @param	array $request ['method'=>, 'timeout'=>, 'redirection'=>, 'sslverify'=>, 'headers'=>, 'body'=>]
 			 * @param	string $endpoint create, activate, deactivate, verify, refresh, revise
 			 */
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 			\do_action(self::SOFTWARE_REGISTRY_PRODUCTID.'_api_remote_error', $error, $request, $endpoint);
 
 			return $error;
@@ -293,6 +297,7 @@ trait myAwesomePlugin_registration_wordpress
 		 * @param	array $request ['method'=>, 'timeout'=>, 'redirection'=>, 'sslverify'=>, 'headers'=>, 'body'=>]
 		 * @param	string $endpoint create, activate, deactivate, verify, refresh, revise
 		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 		\do_action(self::SOFTWARE_REGISTRY_PRODUCTID.'_api_remote_response', $body, $request, $endpoint);
 		/**
 		 * action {productid}_api_remote_$endpoint
@@ -300,6 +305,7 @@ trait myAwesomePlugin_registration_wordpress
 		 * @param	array $request ['method'=>, 'timeout'=>, 'redirection'=>, 'sslverify'=>, 'headers'=>, 'body'=>]
 		 * @param	string $endpoint create, activate, deactivate, verify, refresh, revise
 		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 		\do_action(self::SOFTWARE_REGISTRY_PRODUCTID.'_api_remote_'.$endpoint, $body, $request, $endpoint);
 
 		return $body;
