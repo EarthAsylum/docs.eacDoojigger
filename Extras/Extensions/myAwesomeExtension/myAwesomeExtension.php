@@ -1,22 +1,24 @@
 <?php
+namespace myAwesomeNamespace;
+
 /**
  * Add myAwesomeExtension extension to myAwesomePlugin
  *
  * @category	WordPress Plugin
  * @package		myAwesomePlugin
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2024 EarthAsylum Consulting <www.earthasylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
  *
  * @wordpress-plugin
  * Plugin Name:			My Awesome Extension
  * Description:			My Awesome Extension
- * Version:				1.1.3
- * Requires at least:	5.8
- * Tested up to: 		6.8
- * Requires PHP:		7.4
+ * Version:				1.1.4
+ * Requires at least:	5.9
+ * Requires PHP:		8.2
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
+ * License: 			GPLv3 or later
+ * License URI: 		https://www.gnu.org/licenses/gpl.html
  */
 
 /**
@@ -24,7 +26,7 @@
  * Using this method prevents overwriting extensions when the plugin is updated or reinstalled.
  */
 
-namespace myAwesomeNamespace;
+if (! defined( 'ABSPATH' )) exit;
 
 class myAwesomeExtension
 {

@@ -1,22 +1,25 @@
 <?php
+namespace EarthAsylumConsulting;
+
 /**
  * Add myFunctions extension to {eac}Doojigger
  *
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\eacDoojigger
  *
  * @wordpress-plugin
  * Plugin Name:			myFunctions
  * Description:			myFunctions loads custom php functions, JavaScript and Stylesheet
- * Version:				1.1.1
- * Requires at least:	5.8
- * Tested up to: 		6.8
- * Requires PHP:		7.4
+ * Version:				1.1.2
+ * Requires at least:	5.9
+ * Requires PHP:		8.2
  * Author:				Kevin Burkholder @ EarthAsylum Consulting
  * Author URI:			http://www.earthasylum.com
+ * License: 			GPLv3 or later
+ * License URI: 		https://www.gnu.org/licenses/gpl.html
  */
 
 /**
@@ -26,7 +29,7 @@
  * To load as an extension to a derivative plugin, simply change "eacDoojigger" to the name of your derivative.
  */
 
-namespace EarthAsylumConsulting;
+if (! defined( 'ABSPATH' )) exit;
 
 class myFunctions
 {

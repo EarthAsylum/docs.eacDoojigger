@@ -1,4 +1,6 @@
 <?php
+namespace myAwesomeNamespace\Plugin;
+
 /**
  * EarthAsylum Consulting {eac}Doojigger derivative
  *
@@ -7,11 +9,11 @@
  * @category	WordPress Plugin
  * @package		myOptionsTest, {eac}Doojigger derivative
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
- * @version		25.0423.1
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
+ * @version		26.1119.1
  */
 
-namespace myAwesomeNamespace\Plugin;
+if (! defined( 'ABSPATH' )) exit;
 
 class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 {
@@ -330,7 +332,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 				{
 					// do something here...
 				}
-				unlink($value['file']);
+				wp_delete_file($value['file']);
 				return $value;
 			}
 			else
@@ -342,7 +344,7 @@ class myOptionsTest extends \EarthAsylumConsulting\abstract_context
 			}
 		}
 
-		unlink($values['file']);
+		wp_delete_file($values['file']);
 		return $value;
 	}
 

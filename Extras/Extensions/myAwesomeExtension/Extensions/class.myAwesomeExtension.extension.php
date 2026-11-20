@@ -1,22 +1,24 @@
 <?php
+namespace myAwesomeNamespace\Extensions;
+
 /**
  * my Awesome Extension - {eac}Doojigger for WordPress
  *
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\eacDoojigger
  */
 
-namespace myAwesomeNamespace\Extensions;
+if (! defined( 'ABSPATH' )) exit;
 
 class myAwesomeExtension extends \EarthAsylumConsulting\abstract_extension
 {
 	/**
 	 * @var string extension version
 	 */
-	const VERSION		= '25.0423.1';
+	const VERSION		= '26.1119.1';
 
 	/**
 	 * @var string extension tab name (if not set, add to 'General')

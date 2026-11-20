@@ -1,22 +1,24 @@
 <?php
+namespace EarthAsylumConsulting\Extensions;
+
 /**
  * myFunctions - {eac}Doojigger for WordPress
  *
  * @category	WordPress Plugin
  * @package		{eac}Doojigger
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.earthasylum.com>
+ * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
  * @uses		EarthAsylumConsulting\eacDoojigger
  */
 
-namespace EarthAsylumConsulting\Extensions;
+if (! defined( 'ABSPATH' )) exit;
 
 class functions_extension extends \EarthAsylumConsulting\abstract_extension
 {
 	/**
 	 * @var string extension version
 	 */
-	const VERSION	= '25.0423.1';
+	const VERSION	= '26.1119.1';
 
 
 	/**
@@ -218,7 +220,7 @@ class functions_extension extends \EarthAsylumConsulting\abstract_extension
 			$custFile = '/css/functions.css';
 			if (file_exists(dirname(__DIR__).$custFile))
 			{
-				wp_register_style('myFunctions', plugins_url($custFile,__DIR__));
+				wp_register_style('myFunctions', plugins_url($custFile,__DIR__),[],self::VERSION);
 				wp_enqueue_style('myFunctions');
 			}
 		}
@@ -227,7 +229,7 @@ class functions_extension extends \EarthAsylumConsulting\abstract_extension
 			$custFile = '/js/functions.js';
 			if (file_exists(dirname(__DIR__).$custFile))
 			{
-				wp_register_script('myFunctions', plugins_url($custFile,__DIR__));
+				wp_register_script('myFunctions', plugins_url($custFile,__DIR__),[],self::VERSION,true);
 				wp_enqueue_script('myFunctions');
 			}
 		}

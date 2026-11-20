@@ -1,11 +1,13 @@
 === My Options Test ===
 Plugin URI:         https://myawesomeserver.com/myAwesomePlugin/
 Author: 			[EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.4.2
-Last Updated:       23-Apr-2025
-Requires at least:  5.8
-Tested up to:       6.8
-Requires PHP:       7.4
+Stable tag:         1.4.3
+Last Updated:       19-Nov-2026
+Requires at least:  5.9
+Tested up to:       7.1
+Requires PHP:       8.2
+License: 			GPLv3 or later
+License URI: 		https://www.gnu.org/licenses/gpl.html
 
 My Options Test -  Provides examples of input types, parameters, and processing callbacks & filters.
 
@@ -36,6 +38,13 @@ myOptionsTest is a derivative plugin of and requires installation and registrati
 Find this plugin, further documentation, and all {eac}Doojigger Extras at [this GitHub repository](https://github.com/EarthAsylum/docs.eacDoojigger)
 
 == Changelog ==
+
+= Version 1.4.3 – November 19, 2026 =
+
++	Addressed concerns generated from WordPress Plugin Checker.
++	Updated WordPress Requires at least to 5.9.
++	Updated Requires PHP to 8.2.
++	Compatible with WordPress 7.1.
 
 = Version 1.4.2 – April 23, 2025 =
 

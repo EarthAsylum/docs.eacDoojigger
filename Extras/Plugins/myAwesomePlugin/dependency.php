@@ -89,7 +89,7 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 			$dependency['download']	= (isset( $dependency['download'] ))
 				? esc_url_raw($dependency['download']) : false;
 			$dependency['after']	= (isset( $dependency['after'] ))
-				? esc_url_raw($dependency['after']) : esc_url_raw($_SERVER['REQUEST_URI'] ?? '');
+				? esc_url_raw($dependency['after']) : esc_url_raw(wp_unslash($_SERVER['REQUEST_URI'] ?? ''));
 
 			self::$notices_hook 	= (is_network_admin()) ? 'network_admin_notices' : 'admin_notices';
 			$slug 					= dirname( current($dependency['requires']) );
@@ -357,9 +357,13 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 
 			// Redirect (back to the plugins screen) (before any output)
 			if ($action == 'dependency_install_activate') {
-				wp_safe_redirect( remove_query_arg(['action','plugin','_wpnonce'],$dependency['after']) );
+				wp_safe_redirect(
+					remove_query_arg(['action','plugin','_wpnonce'],$dependency['after'])
+				);
 			} else {
-				wp_safe_redirect( remove_query_arg(['action','plugin','_wpnonce'],esc_url_raw($_SERVER['REQUEST_URI'] ?? '')) );
+				wp_safe_redirect(
+					remove_query_arg(['action','plugin','_wpnonce'],esc_url_raw(wp_unslash($_SERVER['REQUEST_URI'] ?? '')))
+				);
 			}
 
 			// We can't capture the output (install flushes the buffers) but we can wrap it (if not redirecting)

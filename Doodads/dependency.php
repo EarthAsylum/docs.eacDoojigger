@@ -11,7 +11,7 @@ namespace EarthAsylumConsulting;
  * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
  * @license		https://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  * @link		https://github.com/EarthAsylum/docs.eacDoojigger/tree/main/Doodads
- * @version		26.0927.1
+ * @version		26.1119.1
  */
 
 if (! defined( 'ABSPATH' )) exit;
@@ -66,11 +66,6 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		const NOTICE_PRIORITY 	= 5;
 
 		/**
-		 * @var array the dependency array passed from caller
-		 */
-		public static $dependency;
-
-		/**
 		 * @var string notification hook ('network_admin_notices', 'admin_notices')
 		 */
 		public static $notices_hook;
@@ -94,29 +89,35 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 			$dependency['download']	= (isset( $dependency['download'] ))
 				? esc_url_raw($dependency['download']) : false;
 			$dependency['after']	= (isset( $dependency['after'] ))
-				? esc_url_raw($dependency['after']) : esc_url_raw($_SERVER['REQUEST_URI']);
+				? esc_url_raw($dependency['after']) : esc_url_raw(wp_unslash($_SERVER['REQUEST_URI'] ?? ''));
 
 			self::$notices_hook 	= (is_network_admin()) ? 'network_admin_notices' : 'admin_notices';
 			$slug 					= dirname( current($dependency['requires']) );
-
-			self::$dependency 		= $dependency;
 
 			// Only do this once even if multiple plugins are dependent
 			if ( ($dependency['manifest'] || $dependency['download'])
 					&& ( ! is_multisite() || is_network_admin() )
 					&& ( ! has_action("plugin_dependency_{$slug}") )
 			) {
-				add_action( 'current_screen',	[self::class,'remote_plugin_dependency'],10,1);
-				add_action( 'plugins_api',		[self::class,'remote_plugin_information'],10,3);
+				add_action( 'current_screen',	function($screen) use ($dependency) {
+					self::remote_plugin_dependency( $screen, $dependency );
+				},10,1 );
+				add_filter( 'plugins_api',		function($res, $action, $args) use ($dependency) {
+					return self::remote_plugin_information( $res, $action, $args, $dependency );
+				},10,3 );
 				add_action( "plugin_dependency_{$slug}", '__return_true' );
 			}
 			else // Otherwise, display a simple notice
 			{
-				add_action( 'current_screen',	[self::class,'remote_plugin_notice'],10,1);
+				add_action( 'current_screen',	function($screen) use ($dependency) {
+					self::remote_plugin_notice( $screen, $dependency );
+				},10,1 );
 			}
 
 			// Also display a notice with the plugin on the plugins screen
-			add_action( 'after_plugin_row_meta',[self::class,'remote_plugin_message'],10,2);
+			add_action( 'after_plugin_row_meta',function($plugin_file, $plugin_data) use ($dependency) {
+				self::remote_plugin_message( $plugin_file, $plugin_data, $dependency );
+			},10,2 );
 			return true;
 		}
 
@@ -126,9 +127,11 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 *
 		 * @param object the current screen
 		 */
-		public static function remote_plugin_dependency($screen): void
+		public static function remote_plugin_dependency($screen,$dependency=[]): void
 		{
 			global $pagenow;
+
+			if ( empty($dependency) ) return;
 
 			// Pages where we want to show our dependency and allow updating
 			if ( ! in_array($pagenow, ['plugins.php','plugin-install.php','update-core.php'] ) ) {
@@ -143,13 +146,17 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 
-			$plugin = current(self::$dependency['requires']);
+			$plugin = sanitize_text_field( current($dependency['requires']) );
 			$slug 	= dirname($plugin);
 
 			// Catch custom action when the user clicks our installer link
-			if ( isset( $_GET['action'] ) && str_starts_with($_GET['action'],'dependency') && wp_unslash($_GET['plugin']) == $plugin )
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$_action = (isset( $_GET['action'] )) ? sanitize_text_field( wp_unslash($_GET['action']) ) : '';
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$_plugin = (isset( $_GET['plugin'] )) ? sanitize_text_field( wp_unslash($_GET['plugin']) ) : '';
+			if ( str_starts_with($_action,'dependency') && $_plugin == $plugin )
 			{
-				self::handle_remote_action($_GET['action'],$plugin,$slug);
+				self::handle_remote_action($dependency,$_action,$plugin,$slug);
 				return;
 			}
 
@@ -157,23 +164,25 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 			if ( is_plugin_active( $plugin ) ) return;
 
 			// Deactivate the dependent plugin
-			//deactivate_plugins( current(self::$dependency['plugin']) );
+			//deactivate_plugins( current($dependency['plugin']) );
 
 			// Pass the generated links to the admin notices hook
-			add_action( self::$notices_hook, static function() use ($plugin, $slug)
+			add_action( self::$notices_hook, static function() use ($dependency, $plugin, $slug)
 				{
-					if ( $action_link = self::get_plugin_action_link( $plugin, $slug ) )
+					if ( $action_link = self::get_plugin_action_link( $dependency, $plugin, $slug ) )
 					{
 						echo '<style>@keyframes spin-icon {0% {transform:rotate(0deg);} 100% {transform:rotate(360deg);}}'.
 							 '.spin-icon {color:#cc1818; animation:spin-icon 2s linear infinite;}</style>';
 						echo '<div class="notice notice-error is-dismissible">'.
 							 '<span id="spin-icon" class="dashicons dashicons-update"></span>&nbsp;';
-						printf(self::NOTICE_STRING.
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						printf(self::NOTICE_STRING .
 							 '<div style="width:max-content;margin:0 1em;line-height:2;">%3$s</div></div>',
-							key(self::$dependency['plugin']),
-							key(self::$dependency['requires']),
+							esc_attr( key($dependency['plugin']) ),
+							esc_attr( key($dependency['requires']) ),
+							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							nl2br(ltrim(
-								self::get_plugin_info_link( $plugin, $slug ) . "\n" .
+								self::get_plugin_info_link( $dependency, $plugin, $slug ) . "\n" .
 								$action_link
 							))
 						);
@@ -188,21 +197,24 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 *
 		 * @param object the current screen
 		 */
-		public static function remote_plugin_notice($screen): void
+		public static function remote_plugin_notice( $screen, $dependency=[] ): void
 		{
 			global $pagenow;
+
+			if ( empty($dependency) ) return;
 
 			// Pages where we want to show our dependency and allow updating
 			if ( ! in_array($pagenow, ['plugins.php','plugin-install.php','update-core.php'] ) ) {
 				return;
 			}
 
-			add_action( self::$notices_hook, static function()
+			add_action( self::$notices_hook, static function() use ($dependency)
 				{
 					printf('<div class="notice notice-warning is-dismissible">'.
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							self::NOTICE_STRING.'</div>',
-						key(self::$dependency['plugin']),
-						key(self::$dependency['requires'])
+						esc_attr( key($dependency['plugin']) ),
+						esc_attr( key($dependency['requires']) )
 					);
 				},self::NOTICE_PRIORITY+1
 			);
@@ -215,14 +227,17 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 * @param string $plugin_file Refer to {@see 'plugin_row_meta'} filter.
 		 * @param array  $plugin_data Refer to {@see 'plugin_row_meta'} filter.
 		 */
-		public static function remote_plugin_message( $plugin_file, $plugin_data )
+		public static function remote_plugin_message( $plugin_file, $plugin_data, $dependency=[] )
 		{
-			if ($plugin_file == current(self::$dependency['plugin']))
+			if ( empty($dependency) ) return;
+
+			if ($plugin_file == current($dependency['plugin']))
 			{
 				printf( '<div class="notice notice-warning inline">'.
-						strip_tags(self::NOTICE_STRING).'</div>',
-					key(self::$dependency['plugin']),
-					key(self::$dependency['requires'])
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						wp_strip_all_tags(self::NOTICE_STRING).'</div>',
+					esc_attr( key($dependency['plugin']) ),
+					esc_attr( key($dependency['requires']) )
 				);
 			}
 		}
@@ -235,11 +250,12 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 * @param string $action action from plugins_api
 		 * @param object $args arguments from plugins_api
 		 */
-		public static function remote_plugin_information( $res, $action, $args )
+		public static function remote_plugin_information( $res, $action, $args, $dependency=[] )
 		{
-			if ( ! self::$dependency['manifest'] ) return $res;
+			if ( empty($dependency) ) return $res;
+			if ( ! $dependency['manifest'] ) return $res;
 
-			$slug = dirname(current(self::$dependency['requires']));
+			$slug = dirname(current($dependency['requires']));
 
 			// Only if we're looking for our specific self-hosted plugin slug
 			// ajax installer (ajax-action.php) converts slug to lower case
@@ -254,7 +270,7 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 			}
 
 			// Get remote json file
-			$response	= wp_remote_get( self::$dependency['manifest'] );
+			$response	= wp_remote_get( $dependency['manifest'] );
 
 			if ( is_wp_error( $response ) ) {
 				return $response;
@@ -283,7 +299,7 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 * @param string $plugin plugin name (plugin/plugin.php)
 		 * @param string $slug plugin slug (plugin)
 		 */
-		private static function handle_remote_action(string $action, string $plugin, string $slug ): void
+		private static function handle_remote_action( array $dependency, string $action, string $plugin, string $slug ): void
 		{
 			// Validate the nonce
 			check_admin_referer( $action );
@@ -293,26 +309,26 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 				activate_plugin( $plugin, '', (is_multisite() && is_network_admin()) );
 
 				// Redirect (back to the plugins screen)
-				wp_safe_redirect( remove_query_arg(['action','plugin','_wpnonce'],self::$dependency['after']) );
+				wp_safe_redirect( remove_query_arg(['action','plugin','_wpnonce'],$dependency['after']) );
 			}
 			else if ( str_starts_with($action,'dependency_install') )
 			{
 				// Use the manifest file to get the download link
-				if ( ! self::$dependency['download'] && self::$dependency['manifest'] )
+				if ( ! $dependency['download'] && $dependency['manifest'] )
 				{
-					$result = self::remote_plugin_information( false, 'plugin_information', (object)['slug'=>$slug]);
+					$result = self::remote_plugin_information( false, 'plugin_information', (object)['slug'=>$slug], $dependency);
 					if (is_wp_error($result)) {
 						add_action(self::$notices_hook, static function() use($result) {
-							echo "<div class='notice notice-warning'>".$result->get_error_message()."</div>";
+							echo "<div class='notice notice-warning'>".esc_attr($result->get_error_message())."</div>";
 						},self::NOTICE_PRIORITY);
 					} else {
-						self::$dependency['download'] = esc_url_raw($result->download_link);
+						$dependency['download'] = esc_url_raw($result->download_link);
 					}
 				}
 
-				if ( ! empty( self::$dependency['download'] ) )
+				if ( ! empty( $dependency['download'] ) )
 				{
-					self::handle_remote_install( $action, $plugin, $slug, self::$dependency );
+					self::handle_remote_install( $dependency, $action, $plugin, $slug, $dependency );
 				}
 			}
 			exit;
@@ -326,14 +342,14 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 * @param string $plugin plugin name (plugin/plugin.php)
 		 * @param string $slug plugin slug (plugin)
 		 */
-		private static function handle_remote_install(string $action, string $plugin, string $slug )
+		private static function handle_remote_install( array $dependency, string $action, string $plugin, string $slug )
 		{
 			include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
 			// Use standard WordPress skin & installer
 			$upgrader = new \Plugin_Upgrader(
 				new \Plugin_Installer_Skin([
-					'title'		=> key(self::$dependency['requires']).' Installation',
+					'title'		=> key($dependency['requires']).' Installation',
 					'plugin'	=> urlencode($plugin),
 					'nonce' 	=> $action
 				])
@@ -341,15 +357,19 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 
 			// Redirect (back to the plugins screen) (before any output)
 			if ($action == 'dependency_install_activate') {
-				wp_safe_redirect( remove_query_arg(['action','plugin','_wpnonce'],self::$dependency['after']) );
+				wp_safe_redirect(
+					remove_query_arg(['action','plugin','_wpnonce'],$dependency['after'])
+				);
 			} else {
-				wp_safe_redirect( remove_query_arg(['action','plugin','_wpnonce'],$_SERVER['REQUEST_URI']) );
+				wp_safe_redirect(
+					remove_query_arg(['action','plugin','_wpnonce'],esc_url_raw(wp_unslash($_SERVER['REQUEST_URI'] ?? '')))
+				);
 			}
 
 			// We can't capture the output (install flushes the buffers) but we can wrap it (if not redirecting)
 			ob_start();
 			echo "<div class='notice notice-warning'>";
-			$result = $upgrader->install( self::$dependency['download'] );
+			$result = $upgrader->install( $dependency['download'] );
 			echo "</div>";
 
 			// Automatically activate after a successful installation
@@ -365,9 +385,9 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 * @param string $plugin plugin name (plugin/plugin.php)
 		 * @param string $slug plugin slug (plugin)
 		 */
-		private static function get_plugin_info_link(string $plugin, string $slug ): string
+		private static function get_plugin_info_link(array $dependency, string $plugin, string $slug ): string
 		{
-			if ( ! self::$dependency['manifest'] ) return '';
+			if ( ! $dependency['manifest'] ) return '';
 
 			$action_url = self_admin_url( 'plugin-install.php?tab=plugin-information&plugin=' . $slug . '&TB_iframe=true&width=600&height=550' );
 
@@ -376,8 +396,8 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 				'&rarr; <a href="%1$s" class="thickbox open-plugin-details-modal" '.
 					'aria-label="View details about %2$s" data-title="%2$s Details">%3$s</a>',
 				$action_url,
-				key(self::$dependency['requires']),
-				"View <em>".key(self::$dependency['requires'])."</em> details"
+				esc_attr( key($dependency['requires']) ),
+				"View <em>".esc_attr( key($dependency['requires']) )."</em> details"
 			);
 		}
 
@@ -388,10 +408,10 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 		 * @param string $plugin plugin name (plugin/plugin.php)
 		 * @param string $slug plugin slug (plugin)
 		 */
-		private static function get_plugin_action_link(string $plugin, string $slug ): string
+		private static function get_plugin_action_link(array $dependency, string $plugin, string $slug ): string
 		{
 			// Should we network activate? Only if the dependent plugin is.
-			$network = (is_multisite() && is_plugin_active_for_network(current(self::$dependency['plugin'])))
+			$network = (is_multisite() && is_plugin_active_for_network(current($dependency['plugin'])))
 				? 'Network ' : '';
 
 			// Check whether it is not installed or just deactivated
@@ -402,7 +422,7 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 				if ( current_user_can( 'activate_plugins' ) && (!is_network_admin() || !empty($network)) ) {
 					// Action to activate an installed plugin
 					$action 	= 'dependency_activate';
-					$link_text 	= "{$network}Activate <em>".key(self::$dependency['requires'])."</em>";
+					$link_text 	= "{$network}Activate <em>".esc_attr( key($dependency['requires']) )."</em>";
 				}
 			}
 			else if ( current_user_can( 'install_plugins' ) )
@@ -410,11 +430,11 @@ if ( ! class_exists('\EarthAsylumConsulting\dependency') )
 				if (is_multisite() && empty($network)) {
 					// Action to install the plugin
 					$action 	= 'dependency_install';
-					$link_text 	= "Install <em>".key(self::$dependency['requires'])."</em>";
+					$link_text 	= "Install <em>".esc_attr( key($dependency['requires']) )."</em>";
 				} else {
 					// Action to install & activate the plugin
 					$action 	= 'dependency_install_activate';
-					$link_text 	= "Install and {$network}Activate <em>".key(self::$dependency['requires'])."</em>";
+					$link_text 	= "Install and {$network}Activate <em>".esc_attr( key($dependency['requires']) )."</em>";
 				}
 			}
 
